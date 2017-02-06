@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/shopcar_body_srcoll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="50.0dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="5.0dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="收货人："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/add_address_name_edit"
+                    android:layout_width="230.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="手机："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/add_address_mobile_edit"
+                    android:layout_width="230.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5.0dip"
+                    android:phoneNumber="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="固定电话："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/add_address_tel_edit"
+                    android:layout_width="230.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5.0dip"
+                    android:phoneNumber="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_address_province_ly"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:clickable="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="省份："
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/add_address_province_name_text"
+                    android:layout_width="230.0dip"
+                    android:layout_height="49.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@drawable/detail_has_size_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="80.0dip"
+                    android:text="请选择" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_address_city_ly"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:clickable="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="城市："
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/add_address_city_name_text"
+                    android:layout_width="230.0dip"
+                    android:layout_height="49.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@drawable/detail_has_size_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="80.0dip"
+                    android:text="请选择" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_address_area_ly"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:clickable="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="地区："
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/add_address_area_name_text"
+                    android:layout_width="230.0dip"
+                    android:layout_height="49.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@drawable/detail_has_size_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="80.0dip"
+                    android:text="请选择" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="详细地址："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/add_address_detail_edit"
+                    android:layout_width="230.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="70.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="邮编："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/add_address_zipcode_edit"
+                    android:layout_width="230.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5.0dip"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/save_address_button"
+                    android:layout_width="120.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10.0dip"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textSize="16.0sp" />
+
+                <Button
+                    android:id="@+id/cancel_address_button"
+                    android:layout_width="120.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10.0dip"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+
+</RelativeLayout>

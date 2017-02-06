@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+	
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/topbar" />
+    
+    <org.senydevpkg.view.LoadStateLayout
+        android:id="@+id/myfavorite_productlist_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/fraHead"
+        android:layout_above="@id/bottomSpace">
+
+        <ListView
+            android:id="@+id/mylimitbuy_product_list"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true" />
+    </org.senydevpkg.view.LoadStateLayout>
+    <RelativeLayout
+        android:id="@id/bottomSpace"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true" />
+	<include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+</RelativeLayout>

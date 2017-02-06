@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="5.0dip"
+    android:paddingTop="5.0dip" >
+
+    <RelativeLayout
+        android:id="@id/relImage"
+        android:layout_width="82.0dip"
+        android:layout_height="82.0dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10.0dip" >
+
+        <ImageView
+            android:id="@+id/goodsIconIv"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_marginLeft="1.0dip"
+            android:layout_marginTop="1.0dip"
+            android:src="@drawable/product_loading" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_80" />
+
+        <ImageView
+            android:id="@id/imgIsNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/isnew"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@id/imgIsBargain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/issale"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@id/relContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="10.0dip" >
+
+        <TextView
+            android:id="@id/textClothesName"
+            style="@style/style_15_666666_BOLD"
+            android:layout_width="180.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:maxLines="2"
+            android:text="郁美净高级儿童霜(30g)" />
+
+        <TextView
+            android:id="@id/textClothesPrice"
+            style="@style/style_15_C21513_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesName"
+            android:layout_marginTop="5.0dip"
+            android:text="100" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesName"
+            android:layout_toRightOf="@id/textClothesPrice"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginLeft="15dip"
+             >
+
+            <TextView
+                android:id="@id/textMarketPrice"
+                style="@style/style_13_9F9F9F_BOLD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:text="80.0" />
+
+            <ImageView
+                android:layout_width="40dip"
+                android:layout_height="1dip"
+                android:layout_centerVertical="true"
+                android:src="@drawable/limit_line" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@id/textProductComment"
+            style="@style/style_15_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesPrice"
+            android:textColor="@color/yellow"
+            android:layout_marginLeft="8.0dip"
+            android:text="已有" />
+
+        <TextView
+            android:id="@+id/textProductCommentNum"
+            style="@style/style_15_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesPrice"
+            android:textColor="@color/yellow"
+            android:layout_toRightOf="@id/textProductComment"
+            android:text="0" />
+
+        <TextView
+            style="@style/style_15_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesPrice"
+            android:layout_toRightOf="@id/textProductCommentNum"
+            android:textColor="@color/yellow"
+            android:text="人评价" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud" >
+
+    <FrameLayout
+        android:id="@id/fraHead"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head_bg" >
+
+        <TextView
+            android:id="@+id/head_back_text"
+            style="@style/style_15_EBEBEB_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/head_back"
+            android:gravity="center"
+            android:text="返  回" />
+
+        <TextView
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="留 言" />
+
+        <TextView
+            android:id="@+id/head_save_text"
+            style="@style/style_15_EBEBEB_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/head_button"
+            android:gravity="center"
+            android:text="保 存" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/fraHead"
+        android:layout_marginBottom="50.0dip" >
+
+        <LinearLayout
+            android:id="@+id/remark_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10.0dip"
+            android:background="@drawable/shape_rounded_rectangle"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/remark_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="150.0dip"
+                android:background="@null"
+                android:focusable="true"
+                android:gravity="top|left|center"
+                android:maxLength="50"
+                android:padding="10.0dip" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_16_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/remark_layout"
+            android:layout_below="@id/remark_layout"
+            android:text="留言请在50字以内" />
+    </LinearLayout>
+
+    <include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud" >
+
+     <FrameLayout
+        android:id="@id/fraHead"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head_bg" > 
+
+        <TextView
+            android:id="@id/backTv"
+            style="@style/style_15_EBEBEB_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:background="@drawable/head_back"
+            android:gravity="center"
+            android:text="更 多" />
+
+        <TextView
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="关 于" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fraHead"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120.0dip"
+        android:src="@drawable/about" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10.0dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@id/textVersion"
+            style="@style/style_14_666666_BOLD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            style="@style/style_14_666666_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25.0dip"
+            android:text="© 2004-2012" />
+
+        <TextView
+            style="@style/style_14_666666_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="北京红孩子互联科技有限公司" />
+    </LinearLayout>
+
+    <include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+
+</RelativeLayout>

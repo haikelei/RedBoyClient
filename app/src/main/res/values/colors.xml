@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="orange">#ffff740f</color>
+    <color name="yellow">#ffe87215</color>
+    <color name="red">#ffff0000</color>
+    <color name="gray">#ff7d7d7d</color>
+    <color name="darkgray">#ff808080</color>
+    <color name="fontblack">#ff4b4b4b</color>
+    <!-- 白色 -->
+    <color name="white_bg">#c35200</color>
+    <color name="white_text">#aa4a12</color>
+    <color name="white_text_bg">#ffffff</color>
+    <color name="white_text_btn">#ae4a12</color>
+    <!-- 黑色 -->
+    <color name="text_manager">#FFFFFF</color>
+   <!--字体颜色-->
+   <color name="fontcolor">#424542</color>
+   <!--字体黑颜色-->
+   <color name="blackcolor">#333333</color>
+    <!--作者字体颜色-->
+   <color name="anthorcolor">#111111</color>
+   <!--书籍介绍字体颜色-->
+   <color name="introcolor">#666666</color>
+   <color name="introcolor2">#999999</color>
+   <!-- 个人中心号码颜色 -->
+   <color name="deep_black">#333333</color>
+   <color name="deep_gray">#888888</color>
+   <color name="temp_word">#cccccc</color>
+   <color name="money_color">#469c00</color>
+   <!--书籍状态字体颜色-->
+   <color name="statuscolor">#68a83d</color>
+   <color name="transparent">#00000000</color>
+   <!-- 书籍详情界面评论数量字体颜色 -->
+   <color name="font_hint_gay">#888888</color>
+   <color name="blue_font">#0081cc</color>
+   <color name="green_font">#F56502</color>
+   <color name="more">#555555</color>
+   <color name="jp_bookname">#7f2d00</color>
+   <color name="jp_category">#3364a1</color>
+   <!--书籍原价-->
+   <color name="fee_normal">#ff000000</color>
+   <!--  修改密码字体颜色-->
+   <color name="change_pwd">#000000</color>
+      <!--活动专区字体颜色-->
+   <color name="books_name">#7f2d00</color>
+   <color name="text_status">#22ac38</color>
+   <color name="text_new_price">#f56502</color>
+   <color name="text_time">#959595</color>
+</resources>

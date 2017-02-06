@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+  <FrameLayout
+        android:id="@id/fraHead"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head_bg" >
+
+        <TextView
+            android:id="@id/backTv"
+            style="@style/style_15_EBEBEB_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/head_back"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:text="返回" />
+
+        <TextView
+            android:id="@id/textTitle"
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</merge>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_41bg_normal" >
+
+     <TextView
+            android:id="@id/titleBack"
+           	android:textColor="@color/black"
+            android:textSize="17.0dip" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginLeft="12.0dip"/>
+
+        <TextView
+            android:id="@id/categoryTitle"
+            android:textColor="@color/black"
+            android:textSize="17.0dip" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginRight="25.0dip"
+            android:text="全部"/>
+
+    
+
+</RelativeLayout>

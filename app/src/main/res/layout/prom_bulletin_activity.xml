@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud" >
+
+    <RelativeLayout
+        android:id="@id/category_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/head_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@id/textTitle"
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/prom_bulletin" />
+    </RelativeLayout>
+	
+    <RelativeLayout
+		android:animationCache="false"
+		android:layout_width="fill_parent"
+		android:layout_height="50.0dip"
+		android:layout_alignParentBottom="true"
+		>
+	</RelativeLayout>
+        
+    <ListView
+	        android:id="@id/promBulldtinLv"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@id/bottomBar"
+	        android:layout_below="@id/category_layout"
+	        android:layout_marginBottom="50.0dip"
+	        android:cacheColorHint="#00000000"
+	        android:fadingEdge="none" />
+    <include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+</RelativeLayout>

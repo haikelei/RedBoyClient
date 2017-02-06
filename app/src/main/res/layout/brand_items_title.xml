@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="35.0dip"
+    android:background="@drawable/segment_bg"
+    android:gravity="left" >
+
+    <TextView
+        android:id="@+id/brand_TV"
+        style="@style/style_18_C21513_BOLD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="5.0dip" 
+        android:paddingLeft="10.0dip" />
+
+</RelativeLayout>

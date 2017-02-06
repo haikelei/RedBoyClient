@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@id/relTop"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/head_bg_home"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="100.0dip"
+            android:layout_height="26.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="10.0dip"
+            android:singleLine="true"
+            android:textSize="15.0dip" />
+
+        <ImageView
+            android:id="@id/loginIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="10.0dip"
+            android:drawable="@drawable/login_normal"
+            android:paddingRight="5.0dip" />
+
+        <ImageView
+            android:id="@id/imgAvataIcon"
+            android:layout_width="29.0dip"
+            android:layout_height="30.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawable="@drawable/login_user_selected"
+            android:paddingRight="5.0dip"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
+        android:layout_below="@id/relTop"
+        android:paddingBottom="50.0dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/relSearch"
+                android:layout_width="fill_parent"
+                android:layout_height="39.0dip"
+                android:layout_below="@id/relTop"
+                android:background="@drawable/home_search2" >
+
+                <EditText
+                    android:id="@id/editSearchInfo"
+                    style="@style/style_14_4B4B4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="35.0dip"
+                    android:background="#00ffffff"
+                    android:hint="请输入您要搜索的商品"
+                    android:maxLength="26"
+                    android:singleLine="true" />
+
+                <ImageView
+                    android:id="@id/ok"
+                    android:layout_width="40.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_alignBottom="@id/relSearch"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/relSearch"
+                    android:paddingLeft="3.0dip"
+                    android:paddingRight="5.0dip"
+                    android:src="@drawable/temp_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSearch"
+                android:padding="5.0dip" >
+
+             
+                     <Gallery
+                    android:id="@id/gallery"
+                    android:layout_width="320.0dip"
+                    android:layout_height="200dip"
+                    android:layout_centerHorizontal="true" />
+               
+
+                 <android.support.v4.view.ViewPager
+                    android:id="@+id/vp"
+                    android:layout_width="320.0dip"
+                    android:layout_height="200dip"
+                    android:layout_centerHorizontal="true" >
+                </android.support.v4.view.ViewPager>
+
+                <ImageView
+                    android:id="@id/imgPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="6.0dip" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@id/custonInfoListView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250.dip"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@drawable/listview_item_line"
+                    android:listSelector="@drawable/index_item_bg"
+                    android:scrollbars="none" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@id/orderTelTv"
+                        style="@style/style_16_FFFFFF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/button_long"
+                        android:gravity="center"
+                        android:text="订购热线：010-88499999" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@id/bottomBar"
+        layout="@layout/bottombar" />
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/imgRel"
+        android:layout_width="82.0dip"
+        android:layout_height="82.0dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="5.0dip" >
+
+        <ImageView
+            android:id="@+id/browse_product_img"
+            android:layout_width="80.0dip"
+            android:layout_height="60.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/itemRel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@id/imgRel"
+        android:orientation="vertical"
+        android:paddingLeft="5.0dip"
+        android:paddingRight="10.0dip" >
+
+        <TextView
+            android:id="@+id/prodname_text"
+            style="@style/style_15_666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="4.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/browse_product_img"
+            android:maxLines="2"
+            android:minLines="2" />
+
+        <TextView
+            android:id="@+id/promotion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prodname_text"
+            android:layout_marginBottom="4.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/browse_product_img"
+            android:textColor="@color/red"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/vip_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/promotion_text"
+            android:layout_marginBottom="3.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/browse_product_img"
+            android:textColor="@color/red"
+            android:textSize="14.0sp" />
+
+        <TextView
+            android:id="@+id/market_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/promotion_text"
+            android:layout_marginBottom="3.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/vip_price_text"
+            android:textSize="14.0sp" />
+
+        <TextView
+            android:id="@+id/prod_stock_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/promotion_text"
+            android:layout_marginBottom="3.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/market_price_text"
+            android:text="无库存"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/prod_comment_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vip_price_text"
+            android:layout_marginBottom="3.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/browse_product_img"
+            android:text="暂无评论"
+            android:textColor="@color/yellow" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10.0dip"
+        android:src="@drawable/arrow" />
+
+</RelativeLayout>

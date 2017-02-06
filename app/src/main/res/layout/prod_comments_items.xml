@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingLeft="10.0dip"
+    android:paddingRight="10.0dip" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginTop="5.0dip" >
+
+        <TextView
+            android:id="@id/textTitleIcon"
+            style="@style/style_15_666666_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="标题： " />
+
+        <TextView
+            android:id="@id/textComTitle"
+            style="@style/style_15_666666_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textTitleIcon" />
+
+        <TextView
+            android:id="@id/textClothesDetail"
+            style="@style/style_15_666666_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textComTitle"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginTop="5.0dip" />
+
+        <TextView
+            android:id="@id/textComFrom"
+            style="@style/style_13_9F9F9F_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesDetail"
+            android:layout_marginTop="5.0dip"/>
+
+        <TextView
+            android:id="@id/textComDate"
+            style="@style/style_13_9F9F9F_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textClothesDetail"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_toRightOf="@id/textComFrom" />
+    </RelativeLayout>
+
+</LinearLayout>

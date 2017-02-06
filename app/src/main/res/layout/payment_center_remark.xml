@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="170dip"
+    android:background="@color/white" >
+
+    <EditText
+        android:id="@+id/dialog_remark_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="150.0dip"
+        android:gravity="top|left|center"
+        android:maxLength="50"
+        android:padding="10.0dip" />
+
+    <TextView
+        style="@style/style_16_666666"
+        android:layout_width="wrap_content"
+        android:layout_height="20dip"
+        android:layout_below="@id/dialog_remark_edit"
+        android:text="留言请在50字以内" />
+
+</RelativeLayout>

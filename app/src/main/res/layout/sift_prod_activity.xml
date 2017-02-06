@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_backgroud"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@id/relTop"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head_bg" >
+
+        <TextView
+            android:id="@id/titleBack"
+            style="@style/style_15_EBEBEB_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="8.0dip"
+            android:gravity="center" 
+            android:text="商品筛选" />
+
+        <Button
+            android:id="@id/productlist_sift"
+            android:layout_width="70.0dip"
+            android:layout_height="30.0dip"
+            android:layout_gravity="right"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="8.0dip"
+            android:background="@drawable/list_btn_select" />
+    </FrameLayout>
+
+    <ListView
+        android:id="@id/categoryList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relTop"
+        android:layout_marginBottom="50.0dip"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@drawable/index_item_bg" />
+
+</RelativeLayout>
