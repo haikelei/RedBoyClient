@@ -20,7 +20,7 @@
         android:layout_below="@id/topic_TV"
         android:layout_centerHorizontal="true"
         android:padding="10dip"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:src="@drawable/product_loading" />
 
 </RelativeLayout>
