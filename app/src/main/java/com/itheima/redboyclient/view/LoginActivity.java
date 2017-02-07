@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.view;
 
+import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BaseActivity;
 
 /**
@@ -9,6 +10,6 @@ import com.itheima.redboyclient.activities.BaseActivity;
 public class LoginActivity extends BaseActivity {
     @Override
     protected int initContentView() {
-        return 0;
+        return R.layout.login_activity;
     }
 }
