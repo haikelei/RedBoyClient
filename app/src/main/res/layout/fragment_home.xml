@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="39.0dip"
+        android:layout_below="@id/relTop"
+        android:background="@drawable/home_search2" >
+        <EditText
+            android:id="@id/editSearchInfo"
+            style="@style/style_14_4B4B4B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35.0dip"
+            android:background="#00ffffff"
+            android:hint="请输入您要搜索的商品"
+            android:maxLength="26"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+    </android.support.v4.view.ViewPager>
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></ListView>
+
+</LinearLayout>
