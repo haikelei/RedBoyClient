@@ -192,7 +192,6 @@
     <item type="id" name="imgPosterIcon">false</item>
     <item type="id" name="loginIv">false</item>
     <item type="id" name="imgAvataIcon">false</item>
-    <item type="id" name="relSearch">false</item>
     <item type="id" name="editSearchInfo">false</item>
     <item type="id" name="ok">false</item>
     <item type="id" name="gallery">false</item>

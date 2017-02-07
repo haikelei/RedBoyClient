@@ -7,6 +7,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.adapter.MainPagerAdapter;
+import com.itheima.redboyclient.view.NoScrollViewPager;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -22,8 +24,6 @@ public class MainActivity extends BaseActivity {
     TextView addressManagerAddText;
     @InjectView(R.id.title_bar)
     FrameLayout titleBar;
-    @InjectView(R.id.fl_content)
-    FrameLayout flContent;
     @InjectView(R.id.imgHome)
     RadioButton imgHome;
     @InjectView(R.id.imgClassify)
@@ -36,26 +36,39 @@ public class MainActivity extends BaseActivity {
     RadioButton imgMore;
     @InjectView(R.id.linToolBar)
     RadioGroup linToolBar;
+    @InjectView(R.id.vp_main)
+    NoScrollViewPager vpMain;
 
     @Override
     protected int initContentView() {
         return R.layout.activity_main;
     }
 
+    @Override
+    protected void initView() {
+        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        vpMain.setAdapter(mainPagerAdapter);
+    }
 
     @OnClick({R.id.imgHome, R.id.imgClassify, R.id.imgSearch, R.id.imgShoppingCar, R.id.imgMore})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgHome:
+                vpMain.setCurrentItem(0,false);
                 break;
             case R.id.imgClassify:
+                vpMain.setCurrentItem(1,false);
                 break;
             case R.id.imgSearch:
+                vpMain.setCurrentItem(2,false);
                 break;
             case R.id.imgShoppingCar:
+                vpMain.setCurrentItem(3,false);
                 break;
             case R.id.imgMore:
+                vpMain.setCurrentItem(4,false);
                 break;
         }
     }
+
 }
