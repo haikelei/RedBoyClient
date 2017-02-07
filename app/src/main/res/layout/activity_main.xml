@@ -4,11 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <FrameLayout
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/head_bg">
+        android:background="@drawable/head_bg_home">
 
         <TextView
             android:id="@+id/head_back_text"
@@ -17,14 +18,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/head_back"
             android:gravity="center"
-            android:text="返回" />
+            android:text="返回"
+            android:visibility="gone" />
 
         <TextView
             style="@style/style_18_BEBEBE_BOLD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="标题" />
+            android:text="标题"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/address_manager_add_text"
@@ -34,17 +37,18 @@
             android:layout_gravity="right"
             android:background="@drawable/head_button"
             android:gravity="center"
-            android:text="添 加" />
+            android:text="添 加"
+            android:visibility="gone" />
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/fl_content"
+    <com.itheima.redboyclient.view.NoScrollViewPager
+        android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></FrameLayout>
+        android:layout_weight="1"></com.itheima.redboyclient.view.NoScrollViewPager>
 
     <RadioGroup
-        android:id="@id/linToolBar"
+        android:id="@+id/linToolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bar_bg"
@@ -52,16 +56,16 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@id/imgHome"
+            android:id="@+id/imgHome"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:checked="true"
             android:background="@drawable/tab_home_selector"
-            android:button="@null" />
+            android:button="@null"
+            android:checked="true" />
 
         <RadioButton
-            android:id="@id/imgClassify"
+            android:id="@+id/imgClassify"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
@@ -69,7 +73,7 @@
             android:button="@null" />
 
         <RadioButton
-            android:id="@id/imgSearch"
+            android:id="@+id/imgSearch"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
@@ -85,7 +89,7 @@
             android:button="@null" />
 
         <RadioButton
-            android:id="@id/imgMore"
+            android:id="@+id/imgMore"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"

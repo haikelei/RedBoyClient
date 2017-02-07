@@ -1,16 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.HomeFragment">
+
     <RelativeLayout
         android:id="@+id/relSearch"
-        android:layout_width="fill_parent"
-        android:layout_height="39.0dip"
-        android:layout_below="@id/relTop"
-        android:background="@drawable/home_search2" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_search2">
+
         <EditText
-            android:id="@id/editSearchInfo"
+            android:id="@+id/editSearchInfo"
             style="@style/style_14_4B4B4B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,19 +23,41 @@
             android:hint="请输入您要搜索的商品"
             android:maxLength="26"
             android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="40.0dip"
+            android:layout_height="60.0dip"
+            android:layout_alignBottom="@id/editSearchInfo"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/editSearchInfo"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="5.0dip"
+            android:src="@drawable/temp_bg" />
     </RelativeLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        >
-    </android.support.v4.view.ViewPager>
-
-    <ListView
-        android:id="@+id/lv"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></ListView>
+        android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_point_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:orientation="horizontal"></LinearLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>
