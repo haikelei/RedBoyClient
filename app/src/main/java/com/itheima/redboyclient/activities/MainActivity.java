@@ -1,5 +1,7 @@
 package com.itheima.redboyclient.activities;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
@@ -7,6 +9,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.fragment.HomeFragment;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -47,6 +50,11 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imgHome:
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                HomeFragment homeFragment = new HomeFragment();
+                ft.add(R.id.fl_content,homeFragment);
+                ft.commit();
                 break;
             case R.id.imgClassify:
                 break;
