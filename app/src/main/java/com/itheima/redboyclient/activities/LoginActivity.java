@@ -2,15 +2,12 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
@@ -40,11 +36,10 @@ import butterknife.InjectView;
  * Created by yudenghao on 2017/2/7.
  */
 
-public class LoginActivity extends BaseActivity implements TextView.OnEditorActionListener,View.OnClickListener, HttpLoader.HttpListener {
+public class LoginActivity extends BaseActivity implements TextView.OnEditorActionListener, View.OnClickListener, HttpLoader.HttpListener {
+
     @InjectView(R.id.tv_title)
     TextView tvTitle;
-    @InjectView(R.id.back_home)
-    TextView back;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.imageView)
@@ -63,20 +58,31 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
     TextView tvNewuser;
     @InjectView(R.id.tv_backpwd)
     TextView tvBackpwd;
+    @InjectView(R.id.pb)
+    ProgressBar pb;
     private ProgressBar progressbar;
 
     private String username;
     private String password;
     private LoginResopnse loginResopnse;
+
     @Override
     protected int initContentView() {
         return R.layout.login_activity;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ButterKnife.inject(this);
+    protected void initView() {
+        super.initView();
+        initToolBar();
+    }
+
+    private void initToolBar() {
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        tvTitle.setText("欢迎登录");
+        //显示左边的Home按钮
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
@@ -99,14 +105,21 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         super.initListener();
         etPassword.setOnEditorActionListener(this);
         btnLogin.setOnClickListener(this);
-        back.setOnClickListener(this);
+        //back.setOnClickListener(this);
         tvNewuser.setOnClickListener(this);//注册
         tvBackpwd.setOnClickListener(this);//找回密码
+            //给toolbar添加监听
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(MainActivity.class, true);
+            }
+        });
     }
 
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        if (v.getId()== R.id.et_password) {
+        if (v.getId() == R.id.et_password) {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 login();
                 return true;
@@ -134,36 +147,38 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         }
 
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-            Toast.makeText(this,"用户名或者密码不能为空!",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "用户名或者密码不能为空!", Toast.LENGTH_LONG).show();
             progressbar.setVisibility(View.GONE);
             return;
         }
 
         //http://localhost:8080/RedBabyServer/login?username=xiaowen@itcast.cn&password=123456
-        HttpParams params = new HttpParams().put("username",username).put("password",password);
-        App.HL.post(ConstantsRedBaby.URL_LOGIN,params, LoginResopnse.class,ConstantsRedBaby.REQUEST_CODE_LOGIN,this);
+        HttpParams params = new HttpParams().put("username", username).put("password", password);
+        App.HL.post(ConstantsRedBaby.URL_LOGIN, params, LoginResopnse.class, ConstantsRedBaby.REQUEST_CODE_LOGIN, this);
         progressbar.setVisibility(View.GONE);
     }
 
     @Override
     public void onClick(View v) {
-       switch (v.getId()) {
-           case R.id.back_home:
-            startActivity(MainActivity.class,true);
-           case R.id.btn_login:
-               login();
-               break;
-           case R.id.tv_newuser:
-               startActivity(RegisterActivity.class,false);
-            break;
-           case R.id.tv_backpwd:
-               break;
-           default:
-               break;
-       }
+        switch (v.getId()) {
+           /* case R.id.back_home:
+                startActivity(MainActivity.class, true);
+                break;*/
+            case R.id.btn_login:
+                login();
+                break;
+            case R.id.tv_newuser:
+                startActivity(RegisterActivity.class, false);
+                break;
+            case R.id.tv_backpwd:
+                break;
+            default:
+                break;
+        }
     }
 
-    public void startActivity(Class clazz,boolean isFinish) {
+
+    public void startActivity(Class clazz, boolean isFinish) {
         if (isFinish) {
             startActivity(new Intent(getApplicationContext(), clazz));
             finish();
@@ -175,6 +190,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
 
     /**
      * 登录成功
+     *
      * @param requestCode response对应的requestCode
      * @param response    返回的response
      */
@@ -186,33 +202,36 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
 
     /**
      * 登录失败
+     *
      * @param requestCode 请求码
      * @param error       异常详情
      */
     @Override
     public void onGetResponseError(int requestCode, VolleyError error) {
-        Toast.makeText(this,"登录失败" + error+ "!",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "登录失败" + error + "!", Toast.LENGTH_LONG).show();
         progressbar.setVisibility(View.GONE);
     }
+
     //请求成功
     private void handleLoginResopnse(LoginResopnse response) {
         loginResopnse = response;
         //没做做判断逻辑
         if (loginResopnse.userInfo != null) {
             progressbar.setVisibility(View.GONE);
-            App.EDIT.putString("username",username);
-            App.EDIT.putString("password",password);
+            App.EDIT.putString("username", username);
+            App.EDIT.putString("password", password);
             App.EDIT.commit();
-            startActivity(MainActivity.class,true);
+            startActivity(MainActivity.class, true);
         } else {
             progressbar.setVisibility(View.GONE);
-            Toast.makeText(this,"登录失败请检查用户名或者密码!",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "登录失败请检查用户名或者密码!", Toast.LENGTH_LONG).show();
         }
 
     }
 
     /**
      * 验证邮箱
+     *
      * @param mail
      * @return
      */
