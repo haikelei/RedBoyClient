@@ -9,6 +9,7 @@ public class ConstantsRedBaby {
     public static final String URL_LOGIN = URL_SERVER +"/login";
     public static final String URL_SEARCH_RECOMMEND = URL_SEARCH +"/recommend";
     public static final String URL_BRAND = URL_SERVER + "/brand";
+    public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
 
 
 
@@ -23,6 +24,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_BRAND = 4;
     public static final int REQUEST_CODE_SEARCH = 5;
     public static final int REQUEST_CODE_RECOMMEND = 6;
+    public static final int REQUEST_NEW_PRODUCT = 7;
 
 
 }
