@@ -4,41 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/title_bar"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/head_bg_home">
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
 
         <TextView
-            android:id="@+id/head_back_text"
-            style="@style/style_15_EBEBEB_BOLD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/head_back"
-            android:gravity="center"
-            android:text="返回"
-            android:visibility="gone" />
-
-        <TextView
-            style="@style/style_18_BEBEBE_BOLD"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="标题"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/address_manager_add_text"
-            style="@style/style_15_EBEBEB_BOLD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@drawable/head_button"
-            android:gravity="center"
-            android:text="添 加"
-            android:visibility="gone" />
-    </FrameLayout>
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/fl_content"
@@ -49,6 +30,6 @@
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

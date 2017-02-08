@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -24,6 +25,8 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 
+import java.text.BreakIterator;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -31,7 +34,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
@@ -75,6 +78,7 @@ public class HomeFragment extends BaseFragment {
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
         lv.setAdapter(lvAdapter);
+        lv.setOnItemClickListener(this);
     }
 
 
@@ -82,5 +86,29 @@ public class HomeFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+    }
+
+    //homefragment的item点击事件
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position){
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+
+        }
+
     }
 }
