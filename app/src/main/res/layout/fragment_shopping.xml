@@ -2,69 +2,69 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="全选" />
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="#FF6600"
+            android:gravity="center"
+            android:text="结算(0)"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/tv_buy">
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:paddingRight="15dp"
+                android:paddingTop="2dp"
+                android:text="￥ 0"
+                android:textColor="#FF6600" />
+
+            <TextView
+                android:id="@+id/tv0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tv_total"
+                android:paddingTop="2dp"
+                android:text="合计："
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_total"
+                android:layout_marginRight="15dp"
+                android:text="赠送积分：120" />
+        </RelativeLayout>
+    </RelativeLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/relativeLayout"></android.support.v7.widget.RecyclerView>
-
-<RelativeLayout
-    android:layout_alignParentBottom="true"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:id="@+id/relativeLayout">
-    <CheckBox
-        android:layout_centerVertical="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="全选"
-        />
-    <TextView
-        android:id="@+id/tv_buy"
-        android:text="结算(0)"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:background="#FF6600"
-        android:layout_alignParentRight="true"
-        android:layout_width="80dp"
-        android:layout_height="match_parent" />
-    <RelativeLayout
-        android:layout_toLeftOf="@+id/tv_buy"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp">
-
-        <TextView
-            android:paddingTop="5dp"
-            android:id="@+id/tv0"
-            android:text="合计："
-            android:textColor="#000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/tv_total"
-            />
-        <TextView
-            android:layout_marginTop="2dp"
-            android:layout_below="@id/tv_total"
-            android:text="赠送积分：120"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
-            />
-
-        <TextView
-            android:paddingRight="15dp"
-            android:paddingTop="5dp"
-            android:id="@+id/tv_total"
-            android:textColor="#FF6600"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¥ 0"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true" />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+        android:layout_above="@id/relativeLayout"
+        >
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
