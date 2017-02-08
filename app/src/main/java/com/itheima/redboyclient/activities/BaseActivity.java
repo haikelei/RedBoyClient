@@ -2,8 +2,8 @@ package com.itheima.redboyclient.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -35,7 +35,7 @@ import butterknife.ButterKnife;
  * <p>
  * Created by Seny on 2015/12/1.
  */
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     protected SharedPreferences sp;
     protected SharedPreferences.Editor edit;
