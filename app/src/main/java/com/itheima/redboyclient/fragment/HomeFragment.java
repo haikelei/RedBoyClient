@@ -92,6 +92,9 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
+            case 0:
+
+                break;
             case 1:
 
                 break;
@@ -102,9 +105,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                 break;
             case 4:
-
-                break;
-            case 5:
 
                 break;
 
