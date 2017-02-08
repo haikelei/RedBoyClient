@@ -25,8 +25,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 
-import java.text.BreakIterator;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -62,7 +60,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
-                handleHomeResponse((HomeResponse)response);
+                handleHomeResponse((HomeResponse) response);
             }
 
             @Override
@@ -74,7 +72,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     private void handleHomeResponse(HomeResponse response) {
 
-        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(),getActivity());
+        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(), getActivity());
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
         lv.setAdapter(lvAdapter);
@@ -91,20 +89,20 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     //homefragment的item点击事件
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
+        switch (position) {
+            case 0:
+
+                break;
             case 1:
 
                 break;
             case 2:
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new NewProductFragment()).commit();
                 break;
             case 3:
 
                 break;
             case 4:
-
-                break;
-            case 5:
 
                 break;
 
