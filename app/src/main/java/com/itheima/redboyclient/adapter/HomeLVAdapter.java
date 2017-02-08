@@ -1,12 +1,22 @@
 package com.itheima.redboyclient.adapter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.itheima.redboyclient.R;
+
+import org.senydevpkg.base.AbsBaseAdapter;
+import org.senydevpkg.base.BaseHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by gary on 2017/2/7.
