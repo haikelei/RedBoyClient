@@ -89,9 +89,9 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         username = etUsername.getText().toString().trim();
         //获取密码
         password = etPassword.getText().toString().trim();
-        App.EDIT.putString("username",username);
+      /*  App.EDIT.putString("username",username);
         App.EDIT.putString("password",password);
-        App.EDIT.commit();
+        App.EDIT.commit();*/
     }
 
     @Override
@@ -200,6 +200,9 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         //没做做判断逻辑
         if (loginResopnse.userInfo != null) {
             progressbar.setVisibility(View.GONE);
+            App.EDIT.putString("username",username);
+            App.EDIT.putString("password",password);
+            App.EDIT.commit();
             startActivity(MainActivity.class,true);
         } else {
             progressbar.setVisibility(View.GONE);
