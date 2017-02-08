@@ -2,15 +2,11 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -154,7 +150,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                login();
                break;
            case R.id.tv_newuser:
-             //  startActivity(RregisterActivity.class,false);
+              startActivity(RegisterActivity.class,false);
             break;
            case R.id.tv_backpwd:
                break;
