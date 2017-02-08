@@ -13,6 +13,9 @@
     <string name="recent_browse_title">最近浏览</string>
     <string name="menu_home">主页</string>
     <string name="menu_search">搜索</string>
+    <string name="menu_classify">品牌</string>
+    <string name="menu_shopping">购物车</string>
+    <string name="menu_more">更多</string>
     <string name="menu_favorites">收藏夹</string>
     <string name="menu_myorder">我的订单</string>
     <string name="menu_history">浏览历史</string>
