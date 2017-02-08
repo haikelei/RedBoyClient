@@ -3,6 +3,7 @@ package com.itheima.redboyclient.activities;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -21,16 +22,14 @@ import butterknife.InjectView;
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
 
-    @InjectView(R.id.head_back_text)
-    TextView headBackText;
-    @InjectView(R.id.address_manager_add_text)
-    TextView addressManagerAddText;
-    @InjectView(R.id.title_bar)
-    FrameLayout titleBar;
     @InjectView(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
     @InjectView(R.id.fl_content)
     FrameLayout flContent;
+    @InjectView(R.id.tv_title)
+    TextView tvTitle;
+    @InjectView(R.id.toolbar)
+    Toolbar toolbar;
 
     private int[] titleIds = {R.string.menu_home, R.string.menu_search, R.string.menu_classify, R.string.menu_shopping, R.string.menu_more};
 
@@ -42,10 +41,16 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     protected void initView() {
+        initToolBar();
         initBottomNavigation();
         initFirstFragment();
 
 
+    }
+
+    private void initToolBar() {
+        toolbar.setTitle("");
+        tvTitle.setText("首页");
     }
 
     private void initBottomNavigation() {
@@ -57,7 +62,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[0]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[1]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[2]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, "购物车"));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[3]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[4]));
         bottomNavigationBar.setActiveColor(R.color.btn_normal);
         bottomNavigationBar.setInActiveColor(R.color.inActive);
@@ -88,6 +93,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             transaction.add(R.id.fl_content, fragment, "" + position);
         }
         transaction.show(fragment).commit();
+        tvTitle.setText(titleIds[position]);
     }
 
     @Override
@@ -99,4 +105,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     public void onTabReselected(int position) {
 
     }
+
+
 }
