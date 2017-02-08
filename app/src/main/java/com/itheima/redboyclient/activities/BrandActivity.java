@@ -116,5 +116,6 @@ public class BrandActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @OnClick(R.id.button)
     public void onClick() {
+        finish();
     }
 }
