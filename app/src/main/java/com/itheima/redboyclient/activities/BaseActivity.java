@@ -38,8 +38,19 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected SharedPreferences sp;
+
+
+
     protected SharedPreferences.Editor edit;
     protected FragmentManager fm;
+
+    public SharedPreferences getSp() {
+        return sp;
+    }
+
+    public SharedPreferences.Editor getEdit() {
+        return edit;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

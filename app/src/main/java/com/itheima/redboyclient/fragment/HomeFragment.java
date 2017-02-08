@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BrandActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -24,8 +25,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
-
-import java.text.BreakIterator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -105,6 +104,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                 break;
             case 4:
+                Intent intent = new Intent(getContext(), BrandActivity.class);
+                startActivity(intent);
 
                 break;
 

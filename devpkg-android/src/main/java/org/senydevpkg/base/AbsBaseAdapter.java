@@ -36,7 +36,7 @@ import java.util.List;
 public abstract class AbsBaseAdapter<T> extends BaseAdapter {
 
     protected final Context mContext;
-    private List<T> mData = new ArrayList<>();
+    public List<T> mData = new ArrayList<>();
 
     /**
      * 接收AbsListView要显示的数据
