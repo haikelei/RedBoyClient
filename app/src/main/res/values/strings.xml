@@ -58,4 +58,9 @@
 	<string name="hotproduct">hotproduct</string>
 	<string name="brand">brand</string>
 	<string name="addresslist">addresslist</string>
+	<string name="username">用户名</string>
+	<string name="pwd">密码</string>
+	<string name="pwd2">确认密码</string>
+	<string name="regist">注册</string>
+
 </resources>

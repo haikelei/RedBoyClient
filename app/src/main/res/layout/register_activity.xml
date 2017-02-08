@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/home_backgroud" >
+    android:background="@color/gray" >
 
     <FrameLayout
         android:id="@id/fraHead"
@@ -38,108 +38,86 @@
         android:layout_below="@id/fraHead"
         android:layout_centerHorizontal="true"
         android:layout_margin="10.0dip"
-        android:layout_marginBottom="50.0dip"
-        android:background="@drawable/shape_rounded_rectangle"
+        android:layout_marginBottom="80.0dip"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="0dip"
-            android:paddingLeft="10.0dip"
-            android:paddingTop="5.0dip" >
+        <ImageView
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/biq"
+            />
 
-            <TextView
-                style="@style/style_16_4B4B4B"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email：" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <EditText 
-                android:id="@+id/register_email"
+            <EditText
+                android:textColor="@color/black"
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dip"
-                android:inputType="textEmailAddress"
-                android:lines="1"
-                android:hint="请输入Email地址"
-                />
-        </LinearLayout>
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:hint="@string/username"
+                android:textColorHint="#999999"
+                android:imeOptions="actionNext"
+                android:inputType="text"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:background="@drawable/line" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="0dip"
-            android:paddingLeft="10.0dip"
-            android:paddingTop="5dip" >
-
-            <TextView
-                style="@style/style_16_4B4B4B"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="密        码："/>
-            <EditText 
-                android:id="@+id/register_password"
+            <EditText
+                android:textColor="@color/black"
+                android:id="@+id/et_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dip"
-                android:inputType="textPassword"
-                android:lines="1" 
-                android:hint="请输入至少6位密码" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/line" />
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="0dip"
-            android:paddingLeft="10.0dip"
-            android:paddingTop="5dip" >
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:hint="@string/pwd"
+                android:textColorHint="#999999"
+                android:inputType="numberPassword"/>
+        </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                style="@style/style_16_4B4B4B"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="确认密码：" />
-            <EditText 
-                android:id="@+id/register_rpassword"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_pwd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:textColor="@color/black"
+                android:id="@+id/et_pwd2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dip"
-                android:inputType="textPassword"
-                android:lines="1" 
-                android:hint="请再输入一遍密码"   />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout 
-        android:layout_below="@id/register_editor"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dip"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/refister_text"
-            style="@style/style_17_FFFFFF_BOLD"
-            android:layout_width="200dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/button_long"
-            android:gravity="center"
-            android:text="注册" />
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"
+                android:hint="@string/pwd2"
+                android:imeOptions="actionDone"
+                android:inputType="numberPassword"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_regist"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/register_btn_selector"
+            android:text="@string/regist"
+            android:textColor="#ffffff"
+            android:textSize="14sp"/>
+
     </LinearLayout>
 
-    <include
-        android:id="@id/bottomBar"
-        layout="@layout/bottombar" />
+
 
 </RelativeLayout>
