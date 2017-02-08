@@ -37,9 +37,9 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends FragmentActivity {
 
-    protected SharedPreferences SP;
-    protected SharedPreferences.Editor EDIT;
-    protected FragmentManager FM;
+    protected SharedPreferences sp;
+    protected SharedPreferences.Editor edit;
+    protected FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +50,11 @@ public abstract class BaseActivity extends FragmentActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         //初始化通用的SP&EDIT
-        SP = App.SP;
-        EDIT = App.EDIT;
+        sp = App.SP;
+        edit = App.EDIT;
 
         //Fragment相关
-        FM = getSupportFragmentManager();
+        fm = getSupportFragmentManager();
 
         setContentView(initContentView());
         ButterKnife.inject(this);//初始化ButterKnife
