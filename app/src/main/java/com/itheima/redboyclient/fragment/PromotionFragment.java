@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
@@ -36,6 +37,8 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
     Toolbar toolBar;
     @InjectView(R.id.listview)
     ListView listview;
+    @InjectView(R.id.toolbar_title)
+    TextView textView;
     @InjectView(R.id.myfavorite_productlist_layout)
     LoadStateLayout myfavoriteProductlistLayout;
     private PromotionAdapter adapter;
@@ -50,13 +53,14 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        initToolBar();
+//        initToolBar();
         initData();
     }
 
     private void initToolBar() {
-        toolBar.setNavigationIcon(R.mipmap.ic_launcher);//设置导航栏图标
-        toolBar.setTitle("促销快报");
+        toolBar.setTitle("");
+
+        textView.setText("促销快报");
     }
 
     /**
