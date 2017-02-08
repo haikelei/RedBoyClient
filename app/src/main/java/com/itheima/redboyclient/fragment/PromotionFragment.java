@@ -1,8 +1,6 @@
 package com.itheima.redboyclient.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -66,7 +64,7 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
     /**
      * 初始化数据
      */
-    private void initData() {
+    protected void initData() {
 
         myfavoriteProductlistLayout.setEmptyView(R.layout.state_empty);
         myfavoriteProductlistLayout.setErrorView(R.layout.state_error);

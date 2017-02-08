@@ -99,7 +99,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                 break;
             case 2:
-
+                getFragmentManager().beginTransaction().replace(R.id.fl_content,new NewProductFragment()).commit();
                 break;
             case 3:
 
