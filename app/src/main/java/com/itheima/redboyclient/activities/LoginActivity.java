@@ -154,7 +154,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                login();
                break;
            case R.id.tv_newuser:
-             //  startActivity(RregisterActivity.class,false);
+               startActivity(RegisterActivity.class,false);
             break;
            case R.id.tv_backpwd:
                break;
