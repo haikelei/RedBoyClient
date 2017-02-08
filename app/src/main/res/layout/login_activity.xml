@@ -7,7 +7,7 @@
     android:orientation="vertical"
     >
 
-    <Toolbar
+    <android.support.v7.widget.Toolbar
         android:background="#453d3d"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,15 +21,15 @@
             android:text="欢迎登录"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <TextView
+       <!-- <TextView
             android:id="@+id/back_home"
             android:layout_marginLeft="5dp"
             android:gravity="center"
             android:background="@drawable/head_back"
             android:text="返回"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </Toolbar>
+            android:layout_height="wrap_content"/>-->
+    </android.support.v7.widget.Toolbar>
 
 
     <ImageView

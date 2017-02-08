@@ -1,7 +1,6 @@
 package com.itheima.redboyclient.activities;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
@@ -72,10 +71,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     }
 
     private void initFirstFragment() {
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
         for (int i = 0; i < titleIds.length; i++) {
-            Fragment fragment = supportFragmentManager.findFragmentByTag(i + "");
+            Fragment fragment = fm.findFragmentByTag(i + "");
             if (fragment != null) {
                 fragmentTransaction.remove(fragment);
             }
@@ -106,5 +104,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     }
 
-
+    public Toolbar getToolbar() {
+        return toolbar;
+    }
 }

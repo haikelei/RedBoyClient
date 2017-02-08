@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BrandActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -24,8 +26,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
-
-import java.text.BreakIterator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -58,11 +58,11 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         initData();
     }
 
-    private void initData() {
+    protected void initData() {
         App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
-                handleHomeResponse((HomeResponse) response);
+                handleHomeResponse((HomeResponse)response);
             }
 
             @Override
@@ -74,7 +74,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     private void handleHomeResponse(HomeResponse response) {
 
-        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(), getActivity());
+        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(),getActivity());
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
         lv.setAdapter(lvAdapter);
@@ -91,12 +91,12 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     //homefragment的item点击事件
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
+        switch (position){
             case 0:
 
                 break;
             case 1:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
+
                 break;
             case 2:
 
@@ -105,7 +105,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                 break;
             case 4:
-
+                Intent intent = new Intent(getContext(), BrandActivity.class);
+                startActivity(intent);
                 break;
 
         }
