@@ -6,17 +6,23 @@ public class ConstantsRedBaby {
     public static final String URL_REGIST =URL_SERVER + "/register";
     public static final String URL_HOME = URL_SERVER + "/home";
     public static final String URL_SEARCH = URL_SERVER +"/search";
+    public static final String URL_LOGIN = URL_SERVER +"/login";
     public static final String URL_SEARCH_RECOMMEND = URL_SEARCH +"/recommend";
+    public static final String URL_BRAND = URL_SERVER + "/brand";
+
+
 
 
     /**
      * topic请求码
      */
     public static final int REQUEST_CODE_TOPIC = 0;
-    public static final int REQUEST_CODE_REGIST = 2;
     public static final int REQUEST_CODE_HOME = 1;
-    public static final int REQUEST_CODE_SEARCH = 3;
-    public static final int REQUEST_CODE_RECOMMEND = 4;
+    public static final int REQUEST_CODE_LOGIN = 2;
+    public static final int REQUEST_CODE_REGIST = 3;
+    public static final int REQUEST_CODE_BRAND = 4;
+    public static final int REQUEST_CODE_SEARCH = 5;
+    public static final int REQUEST_CODE_RECOMMEND = 6;
 
 
 }

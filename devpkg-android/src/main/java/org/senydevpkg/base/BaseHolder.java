@@ -37,6 +37,9 @@ public abstract class BaseHolder<T> {
     public void bindData(T data) {
 
     }
+    public View getHolderView() {
+        return rootView;
+    }
 
 
 }

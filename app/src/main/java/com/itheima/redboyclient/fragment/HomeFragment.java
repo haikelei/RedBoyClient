@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -16,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BrandActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -31,7 +34,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
@@ -75,6 +78,7 @@ public class HomeFragment extends BaseFragment {
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
         lv.setAdapter(lvAdapter);
+        lv.setOnItemClickListener(this);
     }
 
 
@@ -82,5 +86,30 @@ public class HomeFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+    }
+
+    //homefragment的item点击事件
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position){
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+                Intent intent = new Intent(getContext(), BrandActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+
     }
 }
