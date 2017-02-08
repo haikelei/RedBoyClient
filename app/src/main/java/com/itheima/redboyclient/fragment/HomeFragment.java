@@ -55,7 +55,7 @@ public class HomeFragment extends BaseFragment {
         initData();
     }
 
-    private void initData() {
+    protected void initData() {
         App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
