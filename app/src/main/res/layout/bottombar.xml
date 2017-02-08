@@ -23,28 +23,28 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:background="@drawable/bar_class_normal" />
+            android:background="@mipmap/bar_class_normal" />
 
         <ImageView
             android:id="@id/imgSearch"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:background="@drawable/bar_search_normal" />
+            android:background="@mipmap/bar_search_normal" />
 
         <ImageView
             android:id="@id/imgShoppingCar"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:background="@drawable/bar_shopping_normal" />
+            android:background="@mipmap/bar_shopping_normal" />
 
         <ImageView
             android:id="@id/imgMore"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            android:background="@drawable/bar_more_normal" />
+            android:background="@mipmap/bar_more_normal" />
     </LinearLayout>
 
     <TextView
