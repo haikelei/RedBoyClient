@@ -1,7 +1,6 @@
 package com.itheima.redboyclient.utils;
 
-import android.support.v4.app.Fragment;
-
+import com.itheima.redboyclient.fragment.BaseFragment;
 import com.itheima.redboyclient.fragment.ClassifyFragment;
 import com.itheima.redboyclient.fragment.HomeFragment;
 import com.itheima.redboyclient.fragment.MoreFragment;
@@ -13,28 +12,46 @@ import com.itheima.redboyclient.fragment.ShoppingFragment;
  *
  */
 public class FragmentFactory {
+    private static HomeFragment homeFragment;
+    private static SearchFragment searchFragment;
+    private static ClassifyFragment classifyFragment;
+    private static ShoppingFragment shoppingFragment;
+    private static MoreFragment moreFragment;
 
-    public static Fragment create(int position){
-        Fragment fragment = null;
-        switch (position){
+    public static BaseFragment getFragment(int position) {
+        BaseFragment baseFragment = null;
+        switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                if (homeFragment == null) {
+                    homeFragment = new HomeFragment();
+                }
+                baseFragment = homeFragment;
                 break;
             case 1:
-                fragment = new ClassifyFragment();
+                if (searchFragment == null) {
+                    searchFragment = new SearchFragment();
+                }
+                baseFragment = searchFragment;
                 break;
             case 2:
-                fragment = new SearchFragment();
+                if (classifyFragment == null) {
+                    classifyFragment = new ClassifyFragment();
+                }
+                baseFragment = classifyFragment;
                 break;
             case 3:
-                fragment = new ShoppingFragment();
+                if (shoppingFragment == null) {
+                    shoppingFragment = new ShoppingFragment();
+                }
+                baseFragment = shoppingFragment;
                 break;
             case 4:
-                fragment = new MoreFragment();
+                if (moreFragment == null) {
+                    moreFragment = new MoreFragment();
+                }
+                baseFragment = moreFragment;
                 break;
-
-
         }
-        return fragment;
+        return baseFragment;
     }
 }
