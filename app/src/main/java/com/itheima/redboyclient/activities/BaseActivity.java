@@ -44,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         //界面中如果有EditText，默认隐藏输入法
         getWindow().setSoftInputMode(
