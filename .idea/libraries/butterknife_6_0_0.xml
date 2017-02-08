@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/app/libs/butterknife-6.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/butterknife-6.0.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
