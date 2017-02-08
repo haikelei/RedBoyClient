@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BrandActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -24,8 +26,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
-
-import java.text.BreakIterator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -92,6 +92,9 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
+            case 0:
+
+                break;
             case 1:
 
                 break;
@@ -102,10 +105,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                 break;
             case 4:
-
-                break;
-            case 5:
-
+                Intent intent = new Intent(getContext(), BrandActivity.class);
+                startActivity(intent);
                 break;
 
         }
