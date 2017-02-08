@@ -11,6 +11,8 @@ public class ConstantsRedBaby {
     public static final String URL_BRAND = URL_SERVER + "/brand";
 
 
+
+
     /**
      * topic请求码
      */
@@ -18,7 +20,9 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_HOME = 1;
     public static final int REQUEST_CODE_LOGIN = 2;
     public static final int REQUEST_CODE_REGIST = 3;
+    public static final int REQUEST_CODE_BRAND = 4;
+    public static final int REQUEST_CODE_SEARCH = 5;
+    public static final int REQUEST_CODE_RECOMMEND = 6;
 
-    public static final int REQUEST_CODE_BRAND = 5;
 
 }
