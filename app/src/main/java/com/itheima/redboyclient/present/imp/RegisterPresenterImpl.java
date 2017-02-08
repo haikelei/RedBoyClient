@@ -2,8 +2,6 @@ package com.itheima.redboyclient.present.imp;
 
 
 import com.itheima.redboyclient.App;
-import com.itheima.redboyclient.activities.RegisterActivity;
-import com.itheima.redboyclient.activities.RegisterView;
 import com.itheima.redboyclient.net.resp.RegisterResponse;
 import com.itheima.redboyclient.present.RegisterPresenter;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
