@@ -27,9 +27,7 @@ import java.util.List;
 import butterknife.InjectView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class SearchFragment extends MainBaseFragment implements AdapterView.OnItemClickListener {
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
