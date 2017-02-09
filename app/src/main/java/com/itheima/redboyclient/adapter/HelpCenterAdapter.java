@@ -4,12 +4,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.itheima.redboyclient.net.resp.HelpResponse;
+
+import java.util.List;
+
 /**
  * Created by sjk on 2017/2/8.
  */
 
 public class HelpCenterAdapter extends BaseAdapter {
-    public HelpCenterAdapter() {
+     List<HelpResponse.HelpListBean> helpList;
+
+    public HelpCenterAdapter(List<HelpResponse.HelpListBean> helpList) {
+        this.helpList = helpList;
     }
 
     @Override

@@ -68,8 +68,11 @@ public class HelpCenterActivity extends BaseActivity implements  HttpLoader.Http
 
     @Override
     public void onGetResponseSuccess(int requestCode, IResponse response) {
+        HelpResponse helpResponse = (HelpResponse) response;
+
+
         //这边要把请求的数据传过去
-        lv.setAdapter(new HelpCenterAdapter());
+        lv.setAdapter(new HelpCenterAdapter(helpResponse.getHelpList()));
     }
 
     @Override
