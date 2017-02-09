@@ -16,13 +16,15 @@ public class ConstantsRedBaby {
     /**
      * topic请求码
      */
-    public static final int REQUEST_CODE_TOPIC = 0;
-    public static final int REQUEST_CODE_HOME = 1;
-    public static final int REQUEST_CODE_LOGIN = 2;
-    public static final int REQUEST_CODE_REGIST = 3;
-    public static final int REQUEST_CODE_BRAND = 4;
-    public static final int REQUEST_CODE_SEARCH = 5;
-    public static final int REQUEST_CODE_RECOMMEND = 6;
+    public static final int REQUEST_CODE_HOME = 0;
+    public static final int REQUEST_CODE_RECOMMEND = 1;
+    //TODO 主页五个fragment使用0-4；
+
+    public static final int REQUEST_CODE_TOPIC = 5;
+    public static final int REQUEST_CODE_LOGIN = 6;
+    public static final int REQUEST_CODE_REGIST = 7;
+    public static final int REQUEST_CODE_BRAND = 8;
+    public static final int REQUEST_CODE_SEARCH = 9;
 
 
 }

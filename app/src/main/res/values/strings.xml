@@ -65,4 +65,7 @@
     <string name="pwd">密码</string>
     <string name="pwd2">确认密码</string>
     <string name="regist">注册</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
