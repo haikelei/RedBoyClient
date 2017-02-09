@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -19,7 +21,6 @@ public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     private View rootView;
 
-public class BaseFragment extends Fragment {
 
 
     @Override
@@ -31,7 +32,6 @@ public class BaseFragment extends Fragment {
         initView();
         initListener();
         initData();
-        return rootView;
         TextView textView = new TextView(getActivity());
         textView.setText(this.getClass().getSimpleName());
         initData();
@@ -64,9 +64,6 @@ public class BaseFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-    private void initData() {
-    }
-
 
 
 }
