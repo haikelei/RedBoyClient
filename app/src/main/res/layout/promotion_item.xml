@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pro_TV"
+        style="@style/style_18_000000_BOLD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingTop="10.dip"
+        android:text="nihao " />
+
+    <ImageView
+        android:id="@+id/pro_IV"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/pro_TV"
+        android:layout_centerHorizontal="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="10dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/product_loading" />
+</RelativeLayout>

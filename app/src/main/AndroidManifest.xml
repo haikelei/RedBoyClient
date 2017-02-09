@@ -12,27 +12,19 @@
         android:theme="@style/AppTheme"
         android:label="@string/app_name">
         <activity android:name=".activities.HelpCenterActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-
         <activity android:name=".activities.TopicActivity"/>
-
         <activity android:name=".activities.RegisterActivity"/>
 
-
-
-
         <activity android:name=".activities.MainActivity">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
+
+        <activity android:name=".activities.GoodDetailActivity"></activity>
+        <activity android:name=".activities.BrandActivity"></activity>
         <activity android:name=".activities.LoginActivity"
             android:launchMode="singleTask"/>
 

@@ -37,7 +37,7 @@ public class LoginResopnse implements IResponse {
          * userid : 154636
          */
 
-        private String userid;
+        public String userid;
 
         public String getUserid() {
             return userid;
