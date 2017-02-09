@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,10 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.LoginActivity;
+import com.itheima.redboyclient.adapter.MyItemDecoration;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
 
 import butterknife.ButterKnife;
@@ -26,6 +30,15 @@ public class ShoppingFragment extends BaseFragment {
     private static final String TAG = "ShoppingFragment";
     @InjectView(R.id.rv)
     RecyclerView rv;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String userid = App.SP.getString("userid","");
+        if("".equals(userid)){
+            getActivity().startActivity(new Intent(getActivity(),LoginActivity.class));
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +65,8 @@ public class ShoppingFragment extends BaseFragment {
         });
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(adapter);
+        rv.addItemDecoration(new MyItemDecoration());
+
     }
 
     @Override
