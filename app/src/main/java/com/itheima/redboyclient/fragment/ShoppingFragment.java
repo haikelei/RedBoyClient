@@ -11,11 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.activities.LoginActivity;
 import com.itheima.redboyclient.adapter.MyItemDecoration;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
@@ -26,7 +25,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingFragment extends BaseFragment {
+public class ShoppingFragment extends MainBaseFragment {
     private static final String TAG = "ShoppingFragment";
     @InjectView(R.id.rv)
     RecyclerView rv;
@@ -54,7 +53,10 @@ public class ShoppingFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 Log.e(TAG, "onItemClick: "+position );
-                //item点击事件
+                // TODO: 2017/2/9
+                //item点击事件临时测试 打开商品详情页
+                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
+                getActivity().startActivity(intent);
             }
 
             @Override

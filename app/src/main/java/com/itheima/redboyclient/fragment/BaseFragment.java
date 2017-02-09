@@ -21,8 +21,6 @@ public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     private View rootView;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -31,15 +29,12 @@ public abstract class BaseFragment extends Fragment {
         ButterKnife.inject(this, rootView);
         initView();
         initListener();
-        initData();
         TextView textView = new TextView(getActivity());
         textView.setText(this.getClass().getSimpleName());
         initData();
         return textView;
     }
 
-    protected void initData() {
-    }
 
     protected void initListener() {
     }
@@ -59,11 +54,16 @@ public abstract class BaseFragment extends Fragment {
         mActivity = null;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
-    }
+        @Override
+        public void onDestroyView() {
+            super.onDestroyView();
+            ButterKnife.reset(this);
+        }
 
+        private void initData() {
+        }
 
 }
+
+
+

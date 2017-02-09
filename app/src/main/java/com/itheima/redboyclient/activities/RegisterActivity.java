@@ -79,6 +79,7 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
     @OnClick( R.id.btn_regist)
     public void onClick(View view) {
         switch (view.getId()) {
+
             case R.id.btn_regist:
                 username = etUsername.getText().toString().trim();
                 pwd = etPwd.getText().toString().trim();

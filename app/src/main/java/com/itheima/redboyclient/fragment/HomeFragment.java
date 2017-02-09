@@ -34,7 +34,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class HomeFragment extends MainBaseFragment implements AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
@@ -107,7 +107,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);
                 startActivity(intent);
-
                 break;
 
         }
