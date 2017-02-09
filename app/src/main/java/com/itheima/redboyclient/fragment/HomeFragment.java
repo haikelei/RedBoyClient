@@ -107,7 +107,6 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);
                 startActivity(intent);
-
                 break;
 
         }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.activities.LoginActivity;
 import com.itheima.redboyclient.adapter.MyItemDecoration;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
@@ -52,7 +53,10 @@ public class ShoppingFragment extends MainBaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 Log.e(TAG, "onItemClick: "+position );
-                //item点击事件
+                // TODO: 2017/2/9
+                //item点击事件临时测试 打开商品详情页
+                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
+                getActivity().startActivity(intent);
             }
 
             @Override
