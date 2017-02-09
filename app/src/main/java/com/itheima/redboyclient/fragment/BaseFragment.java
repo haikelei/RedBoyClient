@@ -2,15 +2,11 @@ package com.itheima.redboyclient.fragment;
 
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import butterknife.ButterKnife;
 
@@ -29,10 +25,8 @@ public abstract class BaseFragment extends Fragment {
         ButterKnife.inject(this, rootView);
         initView();
         initListener();
-        TextView textView = new TextView(getActivity());
-        textView.setText(this.getClass().getSimpleName());
-        initData();
-        return textView;
+
+        return rootView;
     }
 
 
@@ -52,16 +46,8 @@ public abstract class BaseFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         mActivity = null;
+        ButterKnife.reset(this);
     }
-
-        @Override
-        public void onDestroyView() {
-            super.onDestroyView();
-            ButterKnife.reset(this);
-        }
-
-        private void initData() {
-        }
 
 }
 

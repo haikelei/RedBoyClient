@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     protected void initView() {
-        //initToolBar();
+        initToolBar();
         initLoadStateLayout();
         initBottomNavigation();
         //initFirstFragment();
