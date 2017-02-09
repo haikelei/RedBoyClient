@@ -70,7 +70,7 @@ public class BrandActivity extends BaseActivity implements HttpLoader.HttpListen
     @Override
     protected void initData() {
         App.HL.get(ConstantsRedBaby.URL_BRAND, null, BrandResponse.class, ConstantsRedBaby
-                .REQUEST_CODE_TOPIC, BrandActivity.this).setTag(this);
+                .REQUEST_CODE_BRAND, BrandActivity.this).setTag(this);
 
     }
 

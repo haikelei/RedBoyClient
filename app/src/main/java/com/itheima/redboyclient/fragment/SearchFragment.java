@@ -44,7 +44,6 @@ public class SearchFragment extends BaseFragment implements HttpLoader.HttpListe
         return R.layout.fragment_search;
     }
 
-    @Override
     protected void initData() {
         hotSearch = new ArrayList<>();
         searchHistory = new ArrayList<>();

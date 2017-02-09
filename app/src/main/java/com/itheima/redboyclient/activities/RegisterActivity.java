@@ -80,7 +80,7 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
         switch (view.getId()) {
             case R.id.registrt_head_back_text:
                 // TODO: 2017/2/7 这边做返回的逻辑
-
+                    finish();
                 break;
             case R.id.btn_regist:
                 username = etUsername.getText().toString().trim();

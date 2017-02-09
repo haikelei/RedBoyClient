@@ -29,6 +29,7 @@
             </intent-filter>-->
         </activity>
         <activity android:name=".activities.GoodDetailActivity"></activity>
+        <activity android:name=".activities.BrandActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -106,7 +107,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);
                 startActivity(intent);
-
                 break;
 
         }
