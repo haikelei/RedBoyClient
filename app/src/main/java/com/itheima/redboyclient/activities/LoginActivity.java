@@ -112,7 +112,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(MainActivity.class, true);
+              finish();
             }
         });
     }
@@ -220,6 +220,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             progressbar.setVisibility(View.GONE);
             App.EDIT.putString("username", username);
             App.EDIT.putString("password", password);
+            App.EDIT.putString("userid",loginResopnse.userInfo.userid);
             App.EDIT.commit();
             startActivity(MainActivity.class, true);
         } else {
