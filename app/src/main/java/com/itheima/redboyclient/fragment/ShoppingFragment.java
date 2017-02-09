@@ -11,8 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
@@ -27,7 +25,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingFragment extends BaseFragment {
+public class ShoppingFragment extends MainBaseFragment {
     private static final String TAG = "ShoppingFragment";
     @InjectView(R.id.rv)
     RecyclerView rv;
