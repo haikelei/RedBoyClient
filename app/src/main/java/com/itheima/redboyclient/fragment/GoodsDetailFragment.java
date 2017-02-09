@@ -9,12 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+import com.itheima.redboyclient.R;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 
-import ysnow.ysnowsslidingmenu.R;
-import ysnow.ysnowsslidingmenu.utils.GlideImageLoader;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,7 +58,7 @@ public class GoodsDetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         banner = (Banner) view.findViewById(R.id.banner);
 
-        banner.setImages(list).setImageLoader(new GlideImageLoader()).start();
+//       banner.setImages(list).setImageLoader(new GlideImageLoader()).start();
         webview = (WebView) view.findViewById(R.id.webview);
         webview.loadUrl("https://github.com/ysnows");
 //

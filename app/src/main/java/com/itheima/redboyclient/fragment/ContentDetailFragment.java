@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ysnow.ysnowsslidingmenu.R;
+import com.itheima.redboyclient.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

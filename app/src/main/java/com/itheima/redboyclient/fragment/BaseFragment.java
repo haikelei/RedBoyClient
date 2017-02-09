@@ -12,15 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     private View rootView;
-
-public class BaseFragment extends Fragment {
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,15 +29,12 @@ public class BaseFragment extends Fragment {
         ButterKnife.inject(this, rootView);
         initView();
         initListener();
-        initData();
         TextView textView = new TextView(getActivity());
         textView.setText(this.getClass().getSimpleName());
         initData();
         return textView;
     }
 
-    protected void initData() {
-    }
 
     protected void initListener() {
     }
@@ -70,4 +66,4 @@ public class BaseFragment extends Fragment {
 }
 
 
-}
+
