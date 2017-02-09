@@ -66,7 +66,7 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
     /**
      * 初始化数据
      */
-    private void initData() {
+    protected void initData() {
 
         myfavoriteProductlistLayout.setEmptyView(R.layout.state_empty);
         myfavoriteProductlistLayout.setErrorView(R.layout.state_error);

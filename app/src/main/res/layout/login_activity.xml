@@ -67,7 +67,7 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入用户名"
+            android:hint="请输入密码"
             android:imeOptions="actionDone"
             android:inputType="numberPassword"/>
     </android.support.design.widget.TextInputLayout>
