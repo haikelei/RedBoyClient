@@ -1,12 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
-import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -17,6 +12,7 @@ import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.net.resp.SearchTitleBean;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
@@ -28,7 +24,7 @@ import butterknife.InjectView;
 
 
 
-public class SearchFragment extends MainBaseFragment implements AdapterView.OnItemClickListener {
+public class SearchFragment extends MainBaseFragment implements SearchAdapter.ItemOnClickListener {
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
     @InjectView(R.id.relSearch)
@@ -48,7 +44,7 @@ public class SearchFragment extends MainBaseFragment implements AdapterView.OnIt
     private SearchTitleBean hotTitle;
     //搜索历史标题
     private SearchTitleBean historyTitle;
-    private String NOHISTORY = "没有搜索记录";;
+
 
     public SearchFragment() {
         hotSearch = new ArrayList<>();
@@ -64,6 +60,7 @@ public class SearchFragment extends MainBaseFragment implements AdapterView.OnIt
         historyTitle.setShow(true);
 
         adapter = new SearchAdapter(hotTitle, hotSearch, historyTitle, searchHistory);
+        adapter.setItemOnClickListener(this);
     }
 
     @Override
@@ -71,11 +68,6 @@ public class SearchFragment extends MainBaseFragment implements AdapterView.OnIt
         return R.layout.fragment_search;
     }
 
-    @Override
-    protected void initListener() {
-        Log.i(TAG, "initListener: ");
-        lvSearch.setOnItemClickListener(this);
-    }
 
     @Override
     protected void initView() {
@@ -101,7 +93,7 @@ public class SearchFragment extends MainBaseFragment implements AdapterView.OnIt
 
         if (searchHistory.size() == 0) {
             //没有搜索记录,设置默认显示
-            searchHistory.add(NOHISTORY);
+            searchHistory.add(ConstantsRedBaby.NOHISTORY);
         }
         //刷新数据
         adapter.initData();
@@ -125,40 +117,11 @@ public class SearchFragment extends MainBaseFragment implements AdapterView.OnIt
         App.HL.cancelRequest(this);
     }
 
+
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.i(TAG, "onItemClick: ");
-        if (position == 0) {
-            //改变热门搜索的显示状态，刷新页面
-            boolean isShow = hotTitle.isShow();
-            hotTitle.setShow(!isShow);
-            adapter.initData();
-
-        } else if (position == hotSearch.size() + 1) {
-            //改变搜索历史的显示状态，刷新页面
-            boolean isShow = historyTitle.isShow();
-            historyTitle.setShow(!isShow);
-            adapter.initData();
-        } else {
-            //获得点击条目的内容
-            String itemName = adapter.getItemName(view);
-            MyToast.show(getActivity().getApplicationContext(), itemName);
-            //将点击条目与sp保存的历史纪录拼接，存入sp
-            SharedPreferences sp = ((MainActivity) mActivity).getSp();
-            SharedPreferences.Editor edit = ((MainActivity) mActivity).getEdit();
-            String localHistory = sp.getString("searchHistory", "");
-            localHistory = itemName + "," + localHistory;
-            edit.putString("searchHistory",localHistory);
-            edit.commit();
-            if (NOHISTORY.equals(searchHistory.get(0))) {
-                searchHistory.remove(0);
-            }
-            searchHistory.add(0,itemName);
-            adapter.initData();
-
-            //TODO 将内容显示到搜索栏并搜索
-        }
+    public void OnClick(String itemName) {
+        //TODO 将内容显示到搜索栏并搜索
+        MyToast.show(getActivity().getApplicationContext(), itemName);
+        editSearchInfo.setText(itemName);
     }
-
-
 }

@@ -11,7 +11,7 @@ public class ConstantsRedBaby {
     public static final String URL_BRAND = URL_SERVER + "/brand";
 
 
-
+    public static final String NOHISTORY = "没有搜索记录";
 
     /**
      * topic请求码
