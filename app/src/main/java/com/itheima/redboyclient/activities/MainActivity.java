@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     protected void initView() {
-        initToolBar();
+        //initToolBar();
         initLoadStateLayout();
         initBottomNavigation();
         //initFirstFragment();
@@ -63,6 +63,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     private void initToolBar() {
         toolbar.setTitle("");
+        //setSupportActionBar(toolbar);
         tvTitle.setText("首页");
     }
 
