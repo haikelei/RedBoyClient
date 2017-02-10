@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,8 @@ import android.widget.RelativeLayout;
 
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
-import com.itheima.redboyclient.activities.NewProductActivity;
+import com.itheima.redboyclient.activities.FlashActivity;
+import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -56,10 +58,8 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
     protected void initData() {
         HomeResponse response = (HomeResponse) getData();
-            //Log.e(TAG, "initData: "+response.toString() );
-            handleHomeResponse(response);
-
-
+        Log.e(TAG, "initData: "+response.toString() );
+        handleHomeResponse(response);
 
         /*App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
@@ -96,15 +96,13 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-
+                getActivity().startActivity(new Intent(getContext(),FlashActivity.class));
                 break;
             case 1:
-
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
+                getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
                 break;
             case 2:
-                Intent intent1 = new Intent(getContext(), NewProductActivity.class);
-                startActivity(intent1);
+
                 break;
             case 3:
 
