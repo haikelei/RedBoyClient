@@ -1,7 +1,7 @@
 package com.itheima.redboyclient.utils;
 
 import com.itheima.redboyclient.fragment.BaseFragment;
-import com.itheima.redboyclient.fragment.ClassifyFragment;
+import com.itheima.redboyclient.fragment.CategoryFragment;
 import com.itheima.redboyclient.fragment.HomeFragment;
 import com.itheima.redboyclient.fragment.MoreFragment;
 import com.itheima.redboyclient.fragment.SearchFragment;
@@ -14,7 +14,7 @@ import com.itheima.redboyclient.fragment.ShoppingFragment;
 public class FragmentFactory {
     private static HomeFragment homeFragment;
     private static SearchFragment searchFragment;
-    private static ClassifyFragment classifyFragment;
+    private static CategoryFragment categoryFragment;
     private static ShoppingFragment shoppingFragment;
     private static MoreFragment moreFragment;
 
@@ -34,10 +34,10 @@ public class FragmentFactory {
                 baseFragment = searchFragment;
                 break;
             case 2:
-                if (classifyFragment == null) {
-                    classifyFragment = new ClassifyFragment();
+                if (categoryFragment == null) {
+                    categoryFragment = new CategoryFragment();
                 }
-                baseFragment = classifyFragment;
+                baseFragment = categoryFragment;
                 break;
             case 3:
                 if (shoppingFragment == null) {
