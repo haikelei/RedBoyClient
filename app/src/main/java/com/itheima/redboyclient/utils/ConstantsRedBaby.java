@@ -14,6 +14,9 @@ public class ConstantsRedBaby {
     public static final String URL_HELP= URL_SERVER + "/help";
     public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
 
+    public static final String URL_BROWSING_HISTORY= URL_SERVER + "/product";
+
+
 
 
     public static final String NOHISTORY = "没有搜索记录";
@@ -31,7 +34,8 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
-    pubiic static final int REQUEST_CODE_HELP = 10;
-    pubiic static final int REQUEST_CODE_HELP_DETAIL = 11;
+    public static final int REQUEST_CODE_HELP = 10;
+    public static final int REQUEST_CODE_HELP_DETAIL = 11;
+    public static final int REQUEST_CODE_GOODDETAIL =12;
 
 }
