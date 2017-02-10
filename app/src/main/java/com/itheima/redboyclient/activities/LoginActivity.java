@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -29,7 +28,6 @@ import org.senydevpkg.net.resp.IResponse;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
@@ -168,7 +166,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 login();
                 break;
             case R.id.tv_newuser:
-                startActivity(RegisterActivity.class, false);
+
                 break;
             case R.id.tv_backpwd:
                 break;
