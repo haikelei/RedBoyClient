@@ -12,5 +12,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 
     public void test()throws Exception{
+
     }
 }

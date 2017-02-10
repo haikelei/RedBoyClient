@@ -13,7 +13,10 @@ public class ConstantsRedBaby {
     public static final String URL_BRAND = URL_SERVER + "/brand";
 
 
-    public static final String NOHISTORY = "没有搜索记录";
+    public static final String NO_HISTORY = "没有搜索记录";
+    public static final String SHOPPING_CAR = "shoppingCar";
+    public static final String BROWSE_RECORD = "浏览记录";
+
 
     /**
      * topic请求码
@@ -28,6 +31,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
+    public static final int REQUEST_CODE_GOODDETAIL = 10;
 
 
 }

@@ -14,7 +14,7 @@ import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
-import com.itheima.redboyclient.damain.SearchTitleBean;
+import com.itheima.redboyclient.domain.SearchTitle;
 import com.itheima.redboyclient.net.resp.SearchResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -47,9 +47,9 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private List<String> searchHistory;
 
     //热门搜索标题
-    private SearchTitleBean hotTitle;
+    private SearchTitle hotTitle;
     //搜索历史标题
-    private SearchTitleBean historyTitle;
+    private SearchTitle historyTitle;
 
     private SharedPreferences.Editor edit;
     private SharedPreferences sp;
@@ -62,11 +62,11 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         searchHistory = new ArrayList<>();
 
         //热门搜索条目默认不显示
-        hotTitle = new SearchTitleBean();
+        hotTitle = new SearchTitle();
         hotTitle.setTitle("热门搜索");
         hotTitle.setShow(false);
         //搜索历史条目默认显示
-        historyTitle = new SearchTitleBean();
+        historyTitle = new SearchTitle();
         historyTitle.setTitle("搜索历史");
         historyTitle.setShow(true);
 
@@ -102,13 +102,12 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
             }
         });
 
-        //初始化数据
-        initData();
+
 
 
     }
 
-    private void initData() {
+    protected void initData() {
         IResponse data = getData();
         SearchRecommendResponse scr = (SearchRecommendResponse) data;
         //记录热门搜索数据
@@ -136,7 +135,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
 
         if (searchHistory.size() == 0) {
             //没有搜索记录,设置默认显示
-            searchHistory.add(ConstantsRedBaby.NOHISTORY);
+            searchHistory.add(ConstantsRedBaby.NO_HISTORY);
         }
         //刷新数据
         adapter.refresh();
@@ -182,7 +181,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private void refreshHistory(String searchInfo) {
         //记录搜索
         tempSearchInfo = searchInfo;
-        if (ConstantsRedBaby.NOHISTORY.equals(searchHistory.get(0))) {
+        if (ConstantsRedBaby.NO_HISTORY.equals(searchHistory.get(0))) {
             //如果搜索记录只有搜索历史 将此条目移除
             searchHistory.remove(0);
         }
