@@ -55,8 +55,8 @@ public class ShoppingFragment extends MainBaseFragment {
                 Log.e(TAG, "onItemClick: "+position );
                 // TODO: 2017/2/9
                 //item点击事件临时测试 打开商品详情页
-                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
-                getActivity().startActivity(intent);
+//                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
+//                getActivity().startActivity(intent);
             }
 
             @Override

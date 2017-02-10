@@ -131,8 +131,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             case 2:
                 //TODO
                 break;
-            case 3:
-                //Todo
+            case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
+                //购物车测试url用home
+                url = ConstantsRedBaby.URL_HOME;
+                bean = HomeResponse.class;
                 break;
             case 4:
                 //Todo
@@ -177,6 +179,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 break;
             case ConstantsRedBaby.REQUEST_CODE_RECOMMEND:
                 list = ((SearchRecommendResponse) response).getSearchKeywords();
+                break;
+            //购物车临时测试
+            case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
+                list = ((HomeResponse)response).getHomeTopic();
                 break;
         }
 
