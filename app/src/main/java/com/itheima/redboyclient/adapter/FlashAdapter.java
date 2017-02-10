@@ -2,6 +2,7 @@ package com.itheima.redboyclient.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,10 +95,15 @@ public class FlashAdapter extends AbsBaseAdapter<FlashResponse.ProductListBean> 
         public void bindData(FlashResponse.ProductListBean data) {
             App.HL.display(iv, ConstantsRedBaby.URL_SERVER + data.getPic());
             tv1.setText(data.getName());
-            tv2.setText("¥ :" + data.getPrice());
-            tv3.setText("限时特价 :" + data.getLimitPrice());
+            tv2.setText("¥ : " + data.getPrice());
+            tv2.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
+            tv2.getPaint().setAntiAlias(true);// 抗锯齿
+            tv3.setText("限时特价 : ¥ " + data.getLimitPrice());
             tv3.setTextColor(Color.RED);
-            tv4.setText("剩余时间 :" + toTimeStr(Integer.parseInt(data.getLeftTime())));
+            tv4.setText("剩余时间 : " + toTimeStr(Integer.parseInt(data.getLeftTime())));
+
+//            flash.setBackground(R.drawable.btn_normal);
+
 
         }
     }
