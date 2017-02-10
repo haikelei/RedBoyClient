@@ -69,7 +69,8 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @Override
     protected void initData() {
-
+//        PromotionActivity fm = new PromotionActivity();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fl,fm).commit();
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "8");
 
         App.HL.get(ConstantsRedBaby.URL_TOPIC, params, TopicResponse.class, ConstantsRedBaby.REQUEST_CODE_TOPIC, TopicActivity.this).setTag(this);

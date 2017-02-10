@@ -15,17 +15,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.android.volley.VolleyError;
-import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
+import com.itheima.redboyclient.activities.FlashActivity;
+import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
-import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
-import org.senydevpkg.net.HttpLoader;
-import org.senydevpkg.net.resp.IResponse;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -34,7 +30,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class HomeFragment extends MainBaseFragment implements AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
@@ -49,19 +45,26 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         ButterKnife.inject(this, view);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
         initData();
     }
 
-    private void initData() {
-        App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
+    protected void initData() {
+        HomeResponse response = (HomeResponse) getData();
+        Log.e(TAG, "initData: "+response.toString() );
+        handleHomeResponse(response);
+
+        /*App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
+                Log.e(TAG, "onGetResponseSuccess: "+response.toString() );
                 handleHomeResponse((HomeResponse)response);
             }
 
@@ -69,7 +72,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             public void onGetResponseError(int requestCode, VolleyError error) {
                 Log.e(TAG, "onGetResponseerror: ");
             }
-        });
+        });*/
     }
 
     private void handleHomeResponse(HomeResponse response) {
@@ -93,10 +96,10 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-
+                getActivity().startActivity(new Intent(getContext(),FlashActivity.class));
                 break;
             case 1:
-
+                getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
                 break;
             case 2:
 

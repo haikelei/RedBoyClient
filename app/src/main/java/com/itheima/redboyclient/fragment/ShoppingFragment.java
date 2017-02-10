@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
+import com.itheima.redboyclient.activities.LoginActivity;
+import com.itheima.redboyclient.adapter.MyItemDecoration;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
 
 import butterknife.ButterKnife;
@@ -22,10 +25,19 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingFragment extends BaseFragment {
+public class ShoppingFragment extends MainBaseFragment {
     private static final String TAG = "ShoppingFragment";
     @InjectView(R.id.rv)
     RecyclerView rv;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String userid = App.SP.getString("userid","");
+        if("".equals(userid)){
+            getActivity().startActivity(new Intent(getActivity(),LoginActivity.class));
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,7 +53,10 @@ public class ShoppingFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, int position) {
                 Log.e(TAG, "onItemClick: "+position );
-                //item点击事件
+                // TODO: 2017/2/9
+                //item点击事件临时测试 打开商品详情页
+                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
+                getActivity().startActivity(intent);
             }
 
             @Override
@@ -52,6 +67,8 @@ public class ShoppingFragment extends BaseFragment {
         });
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(adapter);
+        rv.addItemDecoration(new MyItemDecoration());
+
     }
 
     @Override
