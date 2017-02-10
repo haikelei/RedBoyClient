@@ -4,15 +4,28 @@ package com.itheima.redboyclient.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+import com.android.volley.VolleyError;
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.youth.banner.Banner;
+import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
+import com.itheima.redboyclient.net.resp.GoodResponse;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
-import java.util.ArrayList;
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
+import org.senydevpkg.net.resp.IResponse;
+import org.w3c.dom.ProcessingInstruction;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 
 /**
@@ -21,9 +34,15 @@ import java.util.ArrayList;
 public class GoodsDetailFragment extends Fragment {
 
 
-    private WebView webview;
-    private Banner banner;
-    private ArrayList<String> list = new ArrayList<>();
+    private static final String TAG = "GoodsDetailFragment";
+    @InjectView(R.id.vp)
+    ViewPager vp;
+    @InjectView(R.id.pageOne)
+    NestedScrollView pageOne;
+    @InjectView(R.id.webview)
+    WebView webview;
+
+    public static String pId;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -33,7 +52,8 @@ public class GoodsDetailFragment extends Fragment {
     private static GoodsDetailFragment fragment = null;
 
 
-    public static GoodsDetailFragment newInstance() {
+    public static GoodsDetailFragment newInstance(String id) {
+        pId = id;
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
         }
@@ -44,23 +64,36 @@ public class GoodsDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_goods_detail_with_webview, container, false);
-
-        list.add("https://raw.githubusercontent.com/youth5201314/banner/master/app/src/main/res/mipmap-xhdpi/b3.jpg");
-        list.add("https://raw.githubusercontent.com/youth5201314/banner/master/app/src/main/res/mipmap-xhdpi/b1.jpg");
-        list.add("https://raw.githubusercontent.com/youth5201314/banner/master/app/src/main/res/mipmap-xhdpi/b2.jpg");
-        return inflater.inflate(R.layout.fragment_goods_detail_with_webview, container, false);
+        View view = inflater.inflate(R.layout.fragment_goods_detail_with_webview, container, false);
+        ButterKnife.inject(this, view);
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        banner = (Banner) view.findViewById(R.id.banner);
+        //测试时pid用1，以后改成pid
+        HttpParams params  = new HttpParams().put("pId","1");
+        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+            @Override
+            public void onGetResponseSuccess(int requestCode, IResponse response) {
+                GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(response,getActivity());
+                vp.setAdapter(adapter);
+            }
 
-//       banner.setImages(list).setImageLoader(new GlideImageLoader()).start();
-        webview = (WebView) view.findViewById(R.id.webview);
+            @Override
+            public void onGetResponseError(int requestCode, VolleyError error) {
+
+            }
+        });
+
         webview.loadUrl("https://github.com/ysnows");
 //
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
     }
 }

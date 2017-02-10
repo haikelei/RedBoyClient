@@ -27,6 +27,7 @@ public class GoodDetailActivity extends AppCompatActivity {
     private TabLayout tabs;
     private ViewPager viewpager;
     private Toolbar toolbar;
+    private String pId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,9 @@ public class GoodDetailActivity extends AppCompatActivity {
         viewpager.setAdapter(minePagerAdapter);
         tabs.setupWithViewPager(viewpager);
 
+        //打开activity的时候通过intent传入商品id，这里获取商品的商品id
+        pId = getIntent().getStringExtra("pId");
+
     }
 
 
@@ -55,7 +59,7 @@ public class GoodDetailActivity extends AppCompatActivity {
 //     * ViewPager的PagerAdapter
 
     public class MinePagerAdapter extends FragmentPagerAdapter {
-        Fragment[] fragments = new Fragment[]{GoodsDetailFragment.newInstance(), ContentDetailFragment.newInstance(), CommentFragment.newInstance()};
+        Fragment[] fragments = new Fragment[]{GoodsDetailFragment.newInstance(pId), ContentDetailFragment.newInstance(), CommentFragment.newInstance()};
         String[] titles = new String[]{"商品", "详情", "评价"};
 
         public MinePagerAdapter(FragmentManager fm) {

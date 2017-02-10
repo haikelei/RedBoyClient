@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.GoodDetailActivity"></activity>
+        <activity android:name=".activities.GoodDetailActivity">
+
+        </activity>
         <activity android:name=".activities.BrandActivity"></activity>
         <activity android:name=".activities.LoginActivity"
             android:launchMode="singleTask"/>
