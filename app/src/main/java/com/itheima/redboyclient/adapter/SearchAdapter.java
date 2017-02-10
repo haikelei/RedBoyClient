@@ -10,11 +10,12 @@ import android.widget.TextView;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.net.resp.SearchTitleBean;
+import com.itheima.redboyclient.damain.SearchTitleBean;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by fee1in on 2017/2/8.
@@ -62,7 +63,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
         return size;
     }
 
-    public void initData() {
+    public void refresh() {
         //根据标题的状态确定是否显示数据
         showHotSearch.clear();
         showSearchHistory.clear();
@@ -170,13 +171,13 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
                 //改变热门搜索的显示状态，刷新页面
                 boolean hotIsShow = hotTitle.isShow();
                 hotTitle.setShow(!hotIsShow);
-                initData();
+                refresh();
                 break;
             case HISTORYTITLE:
                 //改变搜索历史的显示状态，刷新页面
                 boolean historyIsShow = historyTitle.isShow();
                 historyTitle.setShow(!historyIsShow);
-                initData();
+                refresh();
                 break;
 
 
@@ -189,25 +190,8 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
                     //如果点击的是没有搜索历史 直接返回
                     return;
                 }
-                if (ConstantsRedBaby.NOHISTORY.equals(mSearchHistory.get(0))) {
-                    //如果搜索记录为 没有搜索历史 将此条目移除
-                    mSearchHistory.remove(0);
-                }
-                //将搜索历史中相同的条目移除
-                mSearchHistory.remove(itemName);
-                //添加条目
-                mSearchHistory.add(0, itemName);
-                //将搜索历史中的条目拼接好，存入sp
-                StringBuilder localHistory = new StringBuilder();
-                for (String history : mSearchHistory) {
-                    localHistory.append(history).append(",");
-                }
-                edit.putString("searchHistory", localHistory.toString());
-                edit.commit();
-                //刷新数据
-                initData();
                 if (listener != null) {
-                    listener.OnClick(itemName);
+                    listener.onClick(itemName);
                 }
                 break;
         }
@@ -231,7 +215,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
     }
 
     public interface ItemOnClickListener {
-        void OnClick(String itemName);
+        void onClick(String itemName);
     }
 
 }
