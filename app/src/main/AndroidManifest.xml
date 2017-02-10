@@ -30,6 +30,7 @@
         <activity android:name=".activities.LoginActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".activities.PromotionActivity"></activity>
+        <activity android:name=".activities.FlashActivity"></activity>
     </application>
 
 </manifest>

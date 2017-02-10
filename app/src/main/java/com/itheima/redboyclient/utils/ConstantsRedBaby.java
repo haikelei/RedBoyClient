@@ -6,6 +6,7 @@ public class ConstantsRedBaby {
     public static final String URL_REGIST =URL_SERVER + "/register";
     public static final String URL_HOME = URL_SERVER + "/home";
     public static final String URL_GOODDETAIL = URL_SERVER + "/product";
+    public static final String URL_FLASH = URL_SERVER + "/limitbuy";
 
     public static final String URL_SEARCH = URL_SERVER +"/search";
     public static final String URL_LOGIN = URL_SERVER +"/login";
@@ -24,10 +25,12 @@ public class ConstantsRedBaby {
     //TODO 主页五个fragment使用0-4；
 
     public static final int REQUEST_CODE_TOPIC = 5;
+    public static final int REQUEST_CODE_GOODDETAIL = 11;
     public static final int REQUEST_CODE_LOGIN = 6;
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
+    public static final int REQUEST_CODE_FLASH= 10;
 
 
 }

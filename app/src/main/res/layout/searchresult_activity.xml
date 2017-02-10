@@ -5,8 +5,8 @@
     android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:background="#f00"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="?android:actionBarSize"
+        android:background="#f00">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -23,26 +23,27 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
-                android:text="搜索结果"
+                android:text="推荐品牌"
                 android:layout_gravity="center"
-                android:textSize="22sp"/>
+                android:textSize="30sp"/>
 
         </FrameLayout>
+
     </android.support.v7.widget.Toolbar>
-    <com.ashokvarma.bottomnavigation.BottomNavigationBar
-        android:id="@+id/boomBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </com.ashokvarma.bottomnavigation.BottomNavigationBar>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <org.senydevpkg.view.LoadStateLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:id="@+id/loadstatelayout">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listview">
+        </ListView>
+    </org.senydevpkg.view.LoadStateLayout>
 
 </LinearLayout>
