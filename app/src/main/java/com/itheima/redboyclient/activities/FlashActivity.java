@@ -44,6 +44,7 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @Override
     protected void initView() {
+
         button = (Button) findViewById(R.id.button);
         tv = (TextView) findViewById(R.id.tv);
         loadstatelayout = (LoadStateLayout) findViewById(R.id.loadstatelayout);
