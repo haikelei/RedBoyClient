@@ -12,6 +12,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.fragment.MainBaseFragment;
+import com.itheima.redboyclient.net.resp.CategoryResponse;
 import com.itheima.redboyclient.net.resp.HomeResponse;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
@@ -128,8 +129,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 url = ConstantsRedBaby.URL_SEARCH_RECOMMEND;
                 bean = SearchRecommendResponse.class;
                 break;
-            case 2:
-                //TODO
+            case ConstantsRedBaby.REQUEST_CODE_CATEGORY:
+                url = ConstantsRedBaby.URL_CATEGORY;
+                bean = CategoryResponse.class;
                 break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
                 //购物车测试url用home
@@ -180,9 +182,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             case ConstantsRedBaby.REQUEST_CODE_RECOMMEND:
                 list = ((SearchRecommendResponse) response).getSearchKeywords();
                 break;
+            case ConstantsRedBaby.REQUEST_CODE_CATEGORY:
+                list = ((CategoryResponse)response).getCategory();
             //购物车临时测试
+                break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-                list = ((HomeResponse)response).getHomeTopic();
+               // list = ((HomeResponse)response).getHomeTopic();
                 break;
         }
 
