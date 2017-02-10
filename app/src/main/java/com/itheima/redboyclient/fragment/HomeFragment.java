@@ -96,7 +96,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
                 break;
             case 1:
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
                 break;
             case 2:
 
