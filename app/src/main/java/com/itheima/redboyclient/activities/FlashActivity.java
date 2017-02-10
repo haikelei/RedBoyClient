@@ -50,6 +50,7 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
         loadstatelayout = (LoadStateLayout) findViewById(R.id.loadstatelayout);
         listView = (ListView) findViewById(R.id.listview);
 
+
         loadstatelayout.setEmptyView(R.layout.state_empty);
         loadstatelayout.setErrorView(R.layout.state_error);
         loadstatelayout.setLoadingView(R.layout.state_loading);
