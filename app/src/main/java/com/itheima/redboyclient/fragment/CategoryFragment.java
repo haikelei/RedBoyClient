@@ -1,22 +1,16 @@
 package com.itheima.redboyclient.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.android.volley.VolleyError;
-import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.Category_Second_activity;
 import com.itheima.redboyclient.adapter.CategoryAdapter;
 import com.itheima.redboyclient.net.resp.CategoryResponse;
-import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
-import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 
 import java.util.ArrayList;
@@ -44,14 +38,13 @@ import butterknife.InjectView;
  * 　　　　　┗┻┛　┗┻┛
  * ━━━━ bug with the XYY protecting━━━
  */
-public class CategoryFragment extends MainBaseFragment implements HttpLoader.HttpListener {
+public class CategoryFragment extends MainBaseFragment{
 
 
     @InjectView(R.id.category_recyclerview)
     RecyclerView recyclerView;
 
     private static final String TAG = "CategoryFragment";
-    private CategoryResponse categoryResponse;
     private List<CategoryResponse.CategoryBean> categoryBeanList = new ArrayList<>();
     private CategoryAdapter categoryAdapter;
 
@@ -69,9 +62,13 @@ public class CategoryFragment extends MainBaseFragment implements HttpLoader.Htt
 
 
     private void initData() {
-        App.HL.get(ConstantsRedBaby.URL_CATEGORY, null, CategoryResponse.class, ConstantsRedBaby
-                .REQUEST_CODE_CATEGORY, this).setTag(this);
+        //App.HL.get(ConstantsRedBaby.URL_CATEGORY, null, CategoryResponse.class, ConstantsRedBaby
+                //.REQUEST_CODE_CATEGORY, this).setTag(this);
+        IResponse data = getData();
+        CategoryResponse response = (CategoryResponse) data;
+        handleCateResponse(response);
     }
+
 
 
     @Override
@@ -79,16 +76,10 @@ public class CategoryFragment extends MainBaseFragment implements HttpLoader.Htt
         super.onDestroyView();
         mActivity = null;
         ButterKnife.reset(this);
-        App.HL.cancelRequest(this);
     }
 
-    @Override
-    public void onGetResponseSuccess(int requestCode, IResponse response) {
-        handleCateResponse((CategoryResponse) response);
-    }
 
     private void handleCateResponse(CategoryResponse response) {
-        categoryResponse = response;
         if (response.getCategory() != null && response.getCategory().size() > 0) {
             Log.i(TAG,"获取的数据有没有");
             if (categoryAdapter == null) {
@@ -115,21 +106,5 @@ public class CategoryFragment extends MainBaseFragment implements HttpLoader.Htt
                 }
             });
         }
-    }
-
-    @Override
-    public void onGetResponseError(int requestCode, VolleyError error) {
-        Log.e(TAG, "onGetResponseerror: ");
-    }
-
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
     }
 }

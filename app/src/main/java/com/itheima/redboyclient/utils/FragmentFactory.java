@@ -1,8 +1,8 @@
 package com.itheima.redboyclient.utils;
 
-import com.itheima.redboyclient.fragment.BaseFragment;
-import com.itheima.redboyclient.fragment.ClassifyFragment;
+import com.itheima.redboyclient.fragment.CategoryFragment;
 import com.itheima.redboyclient.fragment.HomeFragment;
+import com.itheima.redboyclient.fragment.MainBaseFragment;
 import com.itheima.redboyclient.fragment.MoreFragment;
 import com.itheima.redboyclient.fragment.SearchFragment;
 import com.itheima.redboyclient.fragment.ShoppingFragment;
