@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="F:\AndroidStdudio\资料\安装包\Android Studio\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\studio\Android Studio\gradle\gradle-2.10" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -14,7 +14,14 @@
             <option value="$PROJECT_DIR$/doublescrollview" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/devpkg-android" />
+            <option value="$PROJECT_DIR$/doublescrollview" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
