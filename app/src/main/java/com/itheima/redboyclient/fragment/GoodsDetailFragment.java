@@ -185,7 +185,6 @@ public class GoodsDetailFragment extends Fragment {
             detailContainer.addView(iv);
         }
 
-
     }
 
     @Override
