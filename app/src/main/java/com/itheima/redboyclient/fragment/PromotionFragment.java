@@ -1,8 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.PromotionAdapter;
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
@@ -53,13 +53,20 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        initToolBar();
+        initToolBar();
         initData();
     }
 
-    private void initToolBar() {
+    protected void initToolBar() {
         toolBar.setTitle("");
+        toolBar.setNavigationIcon(R.drawable.arrowback);
 
+        toolBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
         textView.setText("促销快报");
     }
 
@@ -95,7 +102,7 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
      *
      * @param response
      */
-    private void handleTopicResponse(TopicResponse response) {
+    public void handleTopicResponse(TopicResponse response) {
         topics = response;
         if (topics.topic != null && topics.topic.size() > 0) {
             if (adapter == null) {

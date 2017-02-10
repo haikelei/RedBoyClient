@@ -27,6 +27,8 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 
+import java.security.NoSuchAlgorithmException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -34,7 +36,7 @@ import butterknife.InjectView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class HomeFragment extends MainBaseFragment implements AdapterView.OnItemClickListener {
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
@@ -49,19 +51,26 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         ButterKnife.inject(this, view);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
         initData();
     }
 
     protected void initData() {
-        App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
+        HomeResponse response = (HomeResponse) getData();
+        Log.e(TAG, "initData: "+response.toString() );
+        handleHomeResponse(response);
+
+        /*App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
+                Log.e(TAG, "onGetResponseSuccess: "+response.toString() );
                 handleHomeResponse((HomeResponse)response);
             }
 
@@ -69,7 +78,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             public void onGetResponseError(int requestCode, VolleyError error) {
                 Log.e(TAG, "onGetResponseerror: ");
             }
-        });
+        });*/
     }
 
     private void handleHomeResponse(HomeResponse response) {
@@ -97,6 +106,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 break;
             case 1:
 
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
                 break;
             case 2:
 
@@ -107,7 +117,6 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);
                 startActivity(intent);
-
                 break;
 
         }
