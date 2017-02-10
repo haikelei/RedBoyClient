@@ -2,7 +2,9 @@ package com.itheima.redboyclient.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,10 +37,10 @@ import butterknife.OnClick;
 public class RegisterActivity extends BaseActivity implements TextView.OnEditorActionListener, RegisterView,HttpLoader.HttpListener {
 
 
-    @InjectView(R.id.registrt_head_back_text)
-    TextView registrtHeadBackText;
-    @InjectView(R.id.fraHead)
-    FrameLayout fraHead;
+    @InjectView(R.id.tv_title)
+    TextView textView;
+    @InjectView(R.id.toolbar)
+    Toolbar toolbar;
     @InjectView(R.id.et_username)
     EditText etUsername;
     @InjectView(R.id.til_username)
@@ -75,13 +76,10 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
         mRegisterPresenter = new RegisterPresenterImpl(this);
     }
 
-    @OnClick({R.id.registrt_head_back_text, R.id.btn_regist})
+    @OnClick( R.id.btn_regist)
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.registrt_head_back_text:
-                // TODO: 2017/2/7 这边做返回的逻辑
-                    finish();
-                break;
+
             case R.id.btn_regist:
                 username = etUsername.getText().toString().trim();
                 pwd = etPwd.getText().toString().trim();
@@ -118,10 +116,25 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
     //在这边初始化了进度框,但是样式不是很好,后期可以修改一下
     @Override
     protected void initView(){
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        textView.setText("注册");
+        //显示左边的Home按钮
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                finish();
+            }
+        });
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        // progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
     }
+
+
 
     @Override
     protected void initListener() {
@@ -237,6 +250,8 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
                     +registerResponse.getError_code()+":"+registerResponse.getError());
         }
 
+        //如果注册成功的话,就finish掉,到登录界面
+        finish();
 
     }
 

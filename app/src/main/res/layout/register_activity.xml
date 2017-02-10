@@ -2,40 +2,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/gray" >
-
-    <FrameLayout
-        android:id="@id/fraHead"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/head_bg"
-        >
+    android:background="#f4ecec">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
 
         <TextView
-            style="@style/style_18_BEBEBE_BOLD"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="注 册" />
+            android:id="@+id/tv_title"
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        <TextView
+            android:text="注 册" />
+      <!--  <TextView
             android:id="@+id/registrt_head_back_text"
             style="@style/style_15_EBEBEB_BOLD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/head_back"
             android:gravity="center"
-            android:text="返  回" />
+            android:text="返  回" />-->
+    </android.support.v7.widget.Toolbar>
 
-        
-    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/register_editor"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fraHead"
+        android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_margin="10.0dip"
         android:layout_marginBottom="80.0dip"
