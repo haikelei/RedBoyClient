@@ -131,6 +131,8 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
+
+
     }
 
 
@@ -151,10 +153,14 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
                         tilUsername.setErrorEnabled(true);
                         //请求光标焦点,在右侧
                         // etUsername.requestFocus(View.FOCUS_RIGHT);
+                        //Log.e("RegisterActivity", "onFocusChange: "+"6666666666666" );
                         return;
                     }else{
                         tilUsername.setErrorEnabled(false);
+
                     }
+                }else{
+                   // Log.e("RegisterActivity", "onFocusChange: "+"33333333333" );
                 }
             }
         });
@@ -244,13 +250,14 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
             //注册成功
             App.EDIT.putString("userid",registerResponse.getUserInfo().getUserid());
             ToastUtil.showToast("注册成功,请登录");
+            //如果注册成功的话,就finish掉,到登录界面
+            finish();
         }else{
             ToastUtil.showToast("注册失败,失败原因:"
                     +registerResponse.getError_code()+":"+registerResponse.getError());
         }
 
-        //如果注册成功的话,就finish掉,到登录界面
-        finish();
+
 
     }
 
