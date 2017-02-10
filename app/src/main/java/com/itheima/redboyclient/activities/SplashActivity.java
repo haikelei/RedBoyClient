@@ -20,6 +20,7 @@ import butterknife.InjectView;
  */
 public class SplashActivity extends BaseActivity {
 
+
     @InjectView(R.id.iv)
     ImageView iv;
 
@@ -35,21 +36,21 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        RotateAnimation animation =new RotateAnimation(0,360, Animation.RELATIVE_TO_SELF,
-                0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        RotateAnimation animation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF,
+                0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(1500);
         animation.setFillAfter(true);
 
-        AlphaAnimation alphaAnimation =new AlphaAnimation(0.2f,1.0f);
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.2f, 1.0f);
         alphaAnimation.setDuration(3200);
         alphaAnimation.setFillAfter(true);
 
-        ScaleAnimation scaleAnimation =new ScaleAnimation(0.4f,1.0f,0.4f,1.0f,
-                Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0.4f, 1.0f, 0.4f, 1.0f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         scaleAnimation.setDuration(1500);
         scaleAnimation.setFillAfter(true);
 
-        AnimationSet set =new AnimationSet(false);
+        AnimationSet set = new AnimationSet(false);
         set.setFillAfter(true);
         set.addAnimation(alphaAnimation);
         set.addAnimation(scaleAnimation);
@@ -66,7 +67,7 @@ public class SplashActivity extends BaseActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -77,6 +78,7 @@ public class SplashActivity extends BaseActivity {
             }
         });
     }
+
 
 
 }
