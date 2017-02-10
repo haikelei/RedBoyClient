@@ -1,7 +1,6 @@
 package com.itheima.redboyclient.activities;
 
 
-import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
