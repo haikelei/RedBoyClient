@@ -21,8 +21,8 @@ public class GoodDetailVPAdapter extends PagerAdapter {
     private GoodResponse response;
     private Activity activity;
 
-    public GoodDetailVPAdapter(IResponse response, FragmentActivity activity) {
-        this.response = (GoodResponse) response;
+    public GoodDetailVPAdapter(GoodResponse response, FragmentActivity activity) {
+        this.response = response;
         this.activity = activity;
     }
 

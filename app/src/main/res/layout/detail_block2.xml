@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@id/textPutIntoShopcar"
+            style="@style/style_16_FFFFFF"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10.0dip"
+            android:background="@drawable/product_detail_shop"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:text="@string/shopcar" />
+
+        <TextView
+            android:id="@id/textProdToCollect"
+            style="@style/style_16_FFFFFF"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/textPutIntoShopcar"
+            android:background="@drawable/product_detail_shop"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:text="@string/collect" />
+    </RelativeLayout>
+
+</RelativeLayout>

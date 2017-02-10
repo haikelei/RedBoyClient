@@ -51,7 +51,6 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         //打开activity的时候通过intent传入商品id，这里获取商品的商品id
         pId = getIntent().getStringExtra("pId");
-
     }
 
 

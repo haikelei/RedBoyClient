@@ -1,4 +1,4 @@
-package com.itheima.redboyclient.activities;
+package com.itheima.redboyclient.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.BaseActivity;
 import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.PromotionAdapter;
 import com.itheima.redboyclient.net.resp.TopicResponse;
@@ -31,7 +30,7 @@ import butterknife.InjectView;
 /**
  * Created by Administrator on 2017/2/8.
  */
-public class PromotionActivity extends BaseActivity implements HttpLoader.HttpListener {
+public class PromotionFragment extends BaseFragment implements HttpLoader.HttpListener {
 
 
     @InjectView(R.id.toolBar)
@@ -45,17 +44,15 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
     private PromotionAdapter adapter;
     private TopicResponse topics;
 
-
-
-
     @Override
-    protected int initContentView() {
-        return R.layout.promotion_fragment;
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = View.inflate(getActivity(), R.layout.promotion_fragment, null);
+        ButterKnife.inject(this, view);
+        return view;
     }
 
     @Override
-    protected void initView() {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         initToolBar();
         initData();
     }
@@ -67,11 +64,12 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
         toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                getActivity().startActivity(new Intent(getContext(), MainActivity.class));
             }
         });
         textView.setText("促销快报");
     }
+
     /**
      * 初始化数据
      */
@@ -88,7 +86,11 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
         App.HL.get(ConstantsRedBaby.URL_TOPIC, params, TopicResponse.class, ConstantsRedBaby.REQUEST_CODE_TOPIC, this).setTag(this);
     }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
+    }
 
 
     public void onGetResponseSuccess(int requestCode, IResponse response) {
@@ -104,7 +106,7 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
         topics = response;
         if (topics.topic != null && topics.topic.size() > 0) {
             if (adapter == null) {
-                adapter = new PromotionAdapter(this, topics.topic);
+                adapter = new PromotionAdapter(getActivity(), topics.topic);
                 listview.setAdapter(adapter);
             } else {
                 adapter.notifyDataSetChanged(topics.topic);
@@ -120,6 +122,6 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
         if (adapter == null)//如果当前没有设置过数据
             myfavoriteProductlistLayout.setState(LoadStateLayout.STATE_ERROR);//显示请求错误的View
 
-        MyToast.show(this, "数据请求失败！");
+        MyToast.show(getContext(), "数据请求失败！");
     }
 }
