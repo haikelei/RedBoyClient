@@ -15,19 +15,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.android.volley.VolleyError;
-import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
+import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
-import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
-import org.senydevpkg.net.HttpLoader;
-import org.senydevpkg.net.resp.IResponse;
-
-import java.security.NoSuchAlgorithmException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -105,8 +98,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
                 break;
             case 1:
-
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
+                getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
                 break;
             case 2:
 

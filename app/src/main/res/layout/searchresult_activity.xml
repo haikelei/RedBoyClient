@@ -7,7 +7,42 @@
         android:layout_width="match_parent"
         android:background="#f00"
         android:layout_height="?attr/actionBarSize">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/head_back"
+                android:text="返回"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="搜索结果"
+                android:layout_gravity="center"
+                android:textSize="22sp"/>
+
+        </FrameLayout>
     </android.support.v7.widget.Toolbar>
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/boomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.ashokvarma.bottomnavigation.BottomNavigationBar>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
