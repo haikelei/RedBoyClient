@@ -33,10 +33,10 @@ public class ShoppingFragment extends MainBaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String userid = App.SP.getString("userid","");
+        /*String userid = App.SP.getString("userid","");
         if("".equals(userid)){
             getActivity().startActivity(new Intent(getActivity(),LoginActivity.class));
-        }
+        }*/
     }
 
     @Override

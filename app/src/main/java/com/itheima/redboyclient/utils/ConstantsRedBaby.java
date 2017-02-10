@@ -28,6 +28,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
+    public static final int REQUEST_CODE_GOODDETAIL = 10;
 
 
 }
