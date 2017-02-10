@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +14,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.android.volley.VolleyError;
-import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
+import com.itheima.redboyclient.activities.NewProductActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
-import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
-import org.senydevpkg.net.HttpLoader;
-import org.senydevpkg.net.resp.IResponse;
-
-import java.security.NoSuchAlgorithmException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -64,8 +56,10 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
     protected void initData() {
         HomeResponse response = (HomeResponse) getData();
-        Log.e(TAG, "initData: "+response.toString() );
-        handleHomeResponse(response);
+            //Log.e(TAG, "initData: "+response.toString() );
+            handleHomeResponse(response);
+
+
 
         /*App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {
             @Override
@@ -109,7 +103,8 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, new PromotionFragment()).commit();
                 break;
             case 2:
-
+                Intent intent1 = new Intent(getContext(), NewProductActivity.class);
+                startActivity(intent1);
                 break;
             case 3:
 

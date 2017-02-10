@@ -29,7 +29,8 @@
         <activity android:name=".activities.BrandActivity"></activity>
         <activity android:name=".activities.LoginActivity"
             android:launchMode="singleTask"/>
-
+        <activity android:name=".activities.NewProductActivity"/>
+        <activity android:name=".activities.NewProductDetailActivity"/>
     </application>
 
 </manifest>

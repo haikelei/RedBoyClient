@@ -11,6 +11,8 @@ public class ConstantsRedBaby {
     public static final String URL_LOGIN = URL_SERVER +"/login";
     public static final String URL_SEARCH_RECOMMEND = URL_SEARCH +"/recommend";
     public static final String URL_BRAND = URL_SERVER + "/brand";
+    public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
+    public static final String URL_NEWPRODUCT_DETAIL = URL_SERVER + "/product";
 
 
     public static final String NOHISTORY = "没有搜索记录";
@@ -21,6 +23,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_HOME = 0;
     public static final int REQUEST_CODE_RECOMMEND = 1;
     public static final int REQUEST_CODE_SHOPPING = 3;
+
     //TODO 主页五个fragment使用0-4；
 
     public static final int REQUEST_CODE_TOPIC = 5;
@@ -28,6 +31,9 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
+    public static final int REQUEST_CODE_GOODDETAIL = 10;
+    public static final int REQUEST_NEW_PRODUCT = 15;
+    public static final int REQUEST_NEW_PRODUCTDETAIL = 16;
 
 
 }
