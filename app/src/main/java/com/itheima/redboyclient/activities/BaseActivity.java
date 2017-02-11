@@ -32,13 +32,12 @@ import butterknife.ButterKnife;
  * 　　　　　┃┫┫　┃┫┫
  * 　　　　　┗┻┛　┗┻┛
  * ━━━━ bug with the XYY protecting━━━
- * <p>
+ * <p/>
  * Created by Seny on 2015/12/1.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected SharedPreferences sp;
-
 
 
     protected SharedPreferences.Editor edit;
@@ -72,7 +71,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView();
         initListener();
         initData();
-
     }
 
 

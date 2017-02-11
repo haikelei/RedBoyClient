@@ -25,16 +25,17 @@ public abstract class BaseFragment extends Fragment {
         ButterKnife.inject(this, rootView);
         initView();
         initListener();
-
+        initData();
         return rootView;
     }
-
 
     protected void initListener() {
     }
 
     protected void initView() {
 
+    }
+    protected void initData() {
     }
 
     protected int getRootViewId() {

@@ -16,7 +16,10 @@ public class ConstantsRedBaby {
     public static final String URL_COMMENT = URL_SERVER + "/product/comment";
 
 
-    public static final String NOHISTORY = "没有搜索记录";
+    public static final String NO_HISTORY = "没有搜索记录";
+    public static final String SHOPPING_CAR = "shoppingCar";
+    public static final String BROWSE_RECORD = "浏览记录";
+
 
     /**
      * topic请求码

@@ -2,14 +2,10 @@ package com.itheima.redboyclient.fragment;
 
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,20 +37,13 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     @InjectView(R.id.lv)
     ListView lv;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        ButterKnife.inject(this, view);
-        return view;
-    }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-
-        initData();
+    protected int getRootViewId() {
+        return R.layout.fragment_home;
     }
+
 
     protected void initData() {
         HomeResponse response = (HomeResponse) getData();

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.damain.SearchTitleBean;
+import com.itheima.redboyclient.domain.SearchTitle;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import java.util.ArrayList;
@@ -26,9 +26,9 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
     //搜索历史数据
     private List<String> showSearchHistory;
     //热门搜索标题
-    private SearchTitleBean hotTitle;
+    private SearchTitle hotTitle;
     //搜索历史标题
-    private SearchTitleBean historyTitle;
+    private SearchTitle historyTitle;
     //记录热门搜索和搜索历史
     private List<String> mHotSearch;
     private List<String> mSearchHistory;
@@ -46,7 +46,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
     private static final int SEARCHHISTORY = 3;
 
 
-    public SearchAdapter(SearchTitleBean hotTitle, List<String> hotSearch, SearchTitleBean historyTitle, List<String> searchHistory) {
+    public SearchAdapter(SearchTitle hotTitle, List<String> hotSearch, SearchTitle historyTitle, List<String> searchHistory) {
         this.mHotSearch = hotSearch;
         this.mSearchHistory = searchHistory;
         this.hotTitle = hotTitle;
@@ -186,7 +186,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
                 //获得点击条目的内容
                 itemName = holder.mTextView.getText().toString();
 
-                if (ConstantsRedBaby.NOHISTORY.equals(itemName)) {
+                if (ConstantsRedBaby.NO_HISTORY.equals(itemName)) {
                     //如果点击的是没有搜索历史 直接返回
                     return;
                 }
