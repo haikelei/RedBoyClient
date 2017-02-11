@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -68,6 +69,7 @@ public class FlashAdapter extends AbsBaseAdapter<FlashResponse.ProductListBean> 
             tv3 = (TextView) view.findViewById(R.id.tv3);
             tv4 = (TextView) view.findViewById(R.id.tv4);
             flash = (TextView) view.findViewById(R.id.flash);
+            setAnim(view);
             return view;
         }
 
@@ -97,6 +99,7 @@ public class FlashAdapter extends AbsBaseAdapter<FlashResponse.ProductListBean> 
 
         @Override
         public void bindData(FlashResponse.ProductListBean data) {
+
             App.HL.display(iv, ConstantsRedBaby.URL_SERVER + data.getPic());
             tv1.setText(data.getName());
             tv2.setText("¥ : " + data.getPrice());
@@ -122,5 +125,19 @@ public class FlashAdapter extends AbsBaseAdapter<FlashResponse.ProductListBean> 
 
 
         }
+    }
+    public  static void setAnim(final View view) {
+        ValueAnimator animator = ValueAnimator.ofFloat(0.5f, 1.0f);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                Float value = (Float) valueAnimator.getAnimatedValue();
+                view.setScaleX(value);
+                view.setScaleY(value);
+            }
+        });
+        animator.setDuration(400);
+        animator.setInterpolator(new OvershootInterpolator());
+        animator.start();
     }
 }
