@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.AboutRellayActivity;
+import com.itheima.redboyclient.activities.AccountCenterActivity;
 import com.itheima.redboyclient.activities.BrowsingHistoryActivity;
 import com.itheima.redboyclient.activities.FeedBackActivity;
 import com.itheima.redboyclient.activities.HelpCenterActivity;
+import com.itheima.redboyclient.activities.LoginActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -56,6 +59,12 @@ public class MoreFragment extends MainBaseFragment {
         switch (view.getId()) {
             case R.id.my_account_rl:
                 // TODO: 2017/2/10  开启账户中心的activity
+                boolean islogin = App.SP.getBoolean("islogin",false);
+                if (islogin) {
+                    startActivity(new Intent(getActivity(), AccountCenterActivity.class));
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
             case R.id.recent_browse_rl:
                 startActivity(new Intent(getActivity(), BrowsingHistoryActivity.class));

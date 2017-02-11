@@ -1,8 +1,13 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.itheima.redboyclient.fragment.GoodsDetailFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/pageOne"
@@ -11,9 +16,11 @@
         android:background="@color/ripple_material_dark"
         android:scrollbars="vertical">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#66999999"
             android:orientation="vertical">
 
             <android.support.v4.view.ViewPager
@@ -21,60 +28,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
                 android:src="@drawable/ic_launcher" />
-            <RelativeLayout
-                android:background="#22ff0000"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-                <TextView
-                    android:layout_centerInParent="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="这是商品信息模块一"
-                    android:textSize="30sp"/>
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginTop="20dp"
-                android:background="#2200ff00"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-                <TextView
-                    android:layout_centerInParent="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="这是商品信息模块二"
-                    android:textSize="30sp"/>
+            <include layout="@layout/detail_block1" />
 
-            </RelativeLayout>
+            <include layout="@layout/detail_block2" />
 
-            <RelativeLayout
-                android:layout_marginTop="20dp"
-                android:background="#220000ff"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-                <TextView
-                    android:layout_centerInParent="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="这是商品信息模块三"
-                    android:textSize="30sp"/>
+            <include layout="@layout/detail_block3" />
 
-            </RelativeLayout>
+            <include layout="@layout/detail_block4" />
+
+            <include layout="@layout/detail_block5" />
 
         </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
+
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.ysnows.doublescrollview.PageBehavior">
 
-        <WebView
-            android:id="@+id/webview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <include layout="@layout/detail_pics" />
 
-        </WebView>
     </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

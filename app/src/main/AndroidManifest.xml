@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -17,12 +18,12 @@
         <activity android:name=".activities.RegisterActivity"/>
 
         <activity android:name=".activities.MainActivity"/>
-    <activity android:name=".activities.SplashActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activities.BrowsingHistoryActivity" />
         <activity android:name=".activities.AboutRellayActivity" />
         <activity android:name=".activities.HelpDetailPageActivity" />
@@ -35,6 +36,7 @@
         <activity android:name=".activities.HotProductActivity"/>
         <activity android:name=".activities.NewProductActivity"/>
 
+        <activity android:name=".activities.GoodDetailActivity"></activity>
 
 
         <activity android:name=".activities.Category_Second_activity"></activity>
@@ -42,9 +44,7 @@
 
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
-
-
-
+        <activity android:name=".activities.AccountCenterActivity"></activity>
     </application>
 
 </manifest>

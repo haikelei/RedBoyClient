@@ -39,8 +39,6 @@ public class GoodsDetailFragment extends Fragment {
     ViewPager vp;
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
-    @InjectView(R.id.webview)
-    WebView webview;
 
     public static String pId;
 
@@ -87,7 +85,6 @@ public class GoodsDetailFragment extends Fragment {
             }
         });
 
-        webview.loadUrl("https://github.com/ysnows");
 //
     }
 
