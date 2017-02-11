@@ -132,7 +132,7 @@ public class ShoppingDBDao {
         Cursor cursor = db.query(tableName, new String[]{GoodSqliteOpenHelper.PRODUCT_ID, GoodSqliteOpenHelper.PRODUCT_PROPERTY_ID, GoodSqliteOpenHelper.PRODUCT_NUM}, GoodSqliteOpenHelper.TYPE + "=?", new String[]{ConstantsRedBaby.SHOPPING_CAR}, null, null, null);
         while (cursor.moveToNext()) {
             int productId = Integer.parseInt(cursor.getString(0));
-            int productPropertyId = Integer.parseInt(cursor.getString(1));
+            String productPropertyId = cursor.getString(1);
             int productNum = Integer.parseInt(cursor.getString(2));
             Goods goods = new Goods(productId, productPropertyId, productNum);
             goodsList.add(goods);
@@ -144,6 +144,6 @@ public class ShoppingDBDao {
 
     @NonNull
     private String[] newString(Goods goods) {
-        return new String[]{ConstantsRedBaby.SHOPPING_CAR, goods.getProductId() + "", goods.getProductPropertyId() + ""};
+        return new String[]{ConstantsRedBaby.SHOPPING_CAR, goods.getProductId() + "", goods.getProductPropertyId()};
     }
 }

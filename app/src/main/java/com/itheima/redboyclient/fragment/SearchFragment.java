@@ -102,13 +102,12 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
             }
         });
 
-        //初始化数据
-        initData();
+
 
 
     }
 
-    private void initData() {
+    protected void initData() {
         IResponse data = getData();
         SearchRecommendResponse scr = (SearchRecommendResponse) data;
         //记录热门搜索数据
