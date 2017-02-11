@@ -26,7 +26,7 @@
         <activity android:name=".activities.Category_Third_activity"></activity>
         <activity android:name=".activities.BrandActivity"></activity>
         <activity android:name=".activities.LoginActivity"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask"></activity>
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.SplashActivity">
@@ -35,6 +35,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.AccountCenterActivity">
         </activity>
     </application>
 
