@@ -2,6 +2,7 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -20,6 +21,7 @@ import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.LoginResopnse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.utils.ToastUtil;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -216,14 +218,24 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
         //没做做判断逻辑
         if (loginResopnse.userInfo != null) {
             progressbar.setVisibility(View.GONE);
-            App.EDIT.putString("username", username);
-            App.EDIT.putString("password", password);
-            App.EDIT.putString("userid",loginResopnse.userInfo.userid);
+            App.EDIT.putString("username", username)
+            .putString("password", password)
+            .putString("userid",loginResopnse.userInfo.userid)
+            .putBoolean("islogin",true);
             App.EDIT.commit();
-            startActivity(MainActivity.class, true);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    boolean islogin = App.SP.getBoolean("islogin", false);
+                    if (islogin) {
+                       finish();
+                        ToastUtil.showToast("登录成功!");
+                    }
+                }
+            });
         } else {
             progressbar.setVisibility(View.GONE);
-            Toast.makeText(this, "登录失败请检查用户名或者密码!", Toast.LENGTH_LONG).show();
+            ToastUtil.showToast("登录失败请检查用户名或者密码!");
         }
 
     }

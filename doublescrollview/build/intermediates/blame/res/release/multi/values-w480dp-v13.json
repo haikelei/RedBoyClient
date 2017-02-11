@@ -1,0 +1,57 @@
+[
+    {
+<<<<<<< HEAD
+        "outputFile": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/res/merged/release/values-w480dp-v13/values-w480dp-v13.xml",
+=======
+        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-w480dp-v13\\values-w480dp-v13.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 61,
+                    "endOffset": 112
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-w480dp/values-w480dp.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 282,
+                        "endColumn": 61,
+                        "endOffset": 339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 117,
+                    "endColumn": 71,
+                    "endOffset": 184
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-w480dp/values-w480dp.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 572,
+                        "endColumn": 71,
+                        "endOffset": 639
+                    }
+                }
+            }
+        ]
+    }
+]

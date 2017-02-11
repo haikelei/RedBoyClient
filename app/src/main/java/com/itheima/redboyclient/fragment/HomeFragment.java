@@ -18,6 +18,8 @@ import android.widget.RelativeLayout;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
 import com.itheima.redboyclient.activities.FlashActivity;
+import com.itheima.redboyclient.activities.HotProductActivity;
+import com.itheima.redboyclient.activities.NewProductActivity;
 import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
@@ -102,10 +104,10 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
                 getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
                 break;
             case 2:
-
+                getActivity().startActivity(new Intent(getContext(),NewProductActivity.class));
                 break;
             case 3:
-
+                getActivity().startActivity(new Intent(getContext(),HotProductActivity.class));
                 break;
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);

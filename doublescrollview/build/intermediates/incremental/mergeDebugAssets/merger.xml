@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<merger version="3"><dataSet config="main"><source path="/Users/yudenghao/Documents/workspace/09/doublescrollview/src/main/assets"/><source path="/Users/yudenghao/Documents/workspace/09/doublescrollview/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/yudenghao/Documents/workspace/09/doublescrollview/src/debug/assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="C:\Users\sjk\Desktop\SJK\studio  in\RedBoyClient\doublescrollview\src\main\assets"/><source path="C:\Users\sjk\Desktop\SJK\studio  in\RedBoyClient\doublescrollview\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\sjk\Desktop\SJK\studio  in\RedBoyClient\doublescrollview\src\debug\assets"/></dataSet></merger>
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+=======
+<merger version="3"><dataSet config="main"><source path="E:\android\RedBoyClient\doublescrollview\src\main\assets"/><source path="E:\android\RedBoyClient\doublescrollview\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\android\RedBoyClient\doublescrollview\src\debug\assets"/></dataSet></merger>
+>>>>>>> 89aaa53a72cdbbf5a81d8001d0c3bcf11d4f164e

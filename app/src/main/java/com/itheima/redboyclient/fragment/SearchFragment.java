@@ -136,7 +136,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
 
         if (searchHistory.size() == 0) {
             //没有搜索记录,设置默认显示
-            searchHistory.add(ConstantsRedBaby.NOHISTORY);
+            searchHistory.add(ConstantsRedBaby.NO_HISTORY);
         }
         //刷新数据
         adapter.refresh();
@@ -182,7 +182,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private void refreshHistory(String searchInfo) {
         //记录搜索
         tempSearchInfo = searchInfo;
-        if (ConstantsRedBaby.NOHISTORY.equals(searchHistory.get(0))) {
+        if (ConstantsRedBaby.NO_HISTORY.equals(searchHistory.get(0))) {
             //如果搜索记录只有搜索历史 将此条目移除
             searchHistory.remove(0);
         }

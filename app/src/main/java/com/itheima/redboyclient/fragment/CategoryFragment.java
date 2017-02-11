@@ -50,7 +50,6 @@ public class CategoryFragment extends MainBaseFragment{
 
     @Override
     protected int getRootViewId() {
-        Log.i(TAG,"1111111111111111111111");
         return R.layout.category_first;
     }
 
