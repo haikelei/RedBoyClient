@@ -1,9 +1,7 @@
 package com.itheima.redboyclient.activities;
 
 
-import android.content.Intent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,7 +13,6 @@ import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.FlashAdapter;
 
 
-import com.itheima.redboyclient.fragment.HomeFragment;
 import com.itheima.redboyclient.net.resp.FlashResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -25,9 +22,6 @@ import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/2/10.
@@ -86,19 +80,10 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
      */
     public void handleTopicResponse(FlashResponse response) {
         topics = response;
-
         if (topics.getProductList() != null && topics.getProductList().size() > 0) {
             if (adapter == null) {
                 adapter = new FlashAdapter(this, topics.getProductList());
                 listView.setAdapter(adapter);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(FlashActivity.this,GoodDetailActivity.class);
-                        intent.putExtra("pId",topics.getProductList().get(0)+"");
-                        startActivity(intent);
-                    }
-                });
             } else {
                 adapter.notifyDataSetChanged(topics.getProductList());
             }

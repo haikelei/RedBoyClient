@@ -1,10 +1,14 @@
 package com.itheima.redboyclient.adapter;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.HelpResponse;
+
+import org.senydevpkg.base.BaseHolder;
 
 import java.util.List;
 
@@ -12,30 +16,38 @@ import java.util.List;
  * Created by sjk on 2017/2/8.
  */
 
-public class HelpCenterAdapter extends BaseAdapter {
-     List<HelpResponse.HelpListBean> helpList;
-
-    public HelpCenterAdapter(List<HelpResponse.HelpListBean> helpList) {
-        this.helpList = helpList;
+public class HelpCenterAdapter extends BasicAdapter<HelpResponse.HelpListBean>{
+    public HelpCenterAdapter(Context mContext, List<HelpResponse.HelpListBean> data) {
+        super(mContext, data);
     }
 
-    @Override
-    public int getCount() {
-        return 0;
-    }
+
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    protected BaseHolder<HelpResponse.HelpListBean> getHolder(int position) {
+        return new HelpCenterHolder(mContext);
     }
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+    private class HelpCenterHolder extends BaseHolder<HelpResponse.HelpListBean> {
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        private TextView textView;
+        private ImageView imageView;
+
+        public HelpCenterHolder(Context context) {
+            super(context);
+        }
+
+        @Override
+        protected View initView() {
+            View view = View.inflate(getContext(), R.layout.item_help_center,null);
+            textView = (TextView) view.findViewById(R.id.tv);
+
+            return view;
+        }
+
+        @Override
+        public void bindData(HelpResponse.HelpListBean data) {
+            textView.setText(data.getTitle());
+        }
     }
 }

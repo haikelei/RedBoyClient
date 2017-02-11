@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_backgroud"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_title"
+            style="@style/style_18_BEBEBE_BOLD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户反馈" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="反馈内容(您可以输入对商品以及客户端的建议和意见)"/>
+    <EditText
+        android:gravity="top"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/add_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        android:maxLines="10"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/edit_text"
+        android:hint="用户评论输入框"
+        android:textSize="20sp"
+        >
+    </EditText>
+    <TextView
+        android:textSize="18sp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="联系方式"/>
+    <EditText
+        android:gravity="top"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/add_content2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/edit_text"
+        android:hint="您的姓名,手机号,邮箱"
+        android:textSize="20sp"
+        >
+    </EditText>
+
+</LinearLayout>

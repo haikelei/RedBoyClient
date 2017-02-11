@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -145,7 +144,7 @@ public class Category_Second_activity extends BaseActivity implements HttpLoader
     public void onGetResponseError(int requestCode, VolleyError error) {
         if (adapter == null)
             loadstatelayout.setState(LoadStateLayout.STATE_ERROR);
-        Log.e(TAG, "onGetResponseerror: ");
+      //  Log.e(TAG, "onGetResponseerror: ");
     }
 
     @Override

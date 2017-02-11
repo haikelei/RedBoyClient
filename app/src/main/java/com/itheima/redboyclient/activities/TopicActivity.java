@@ -69,7 +69,7 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @Override
     protected void initData() {
-//        PromotionActivity fm = new PromotionActivity();
+//        PromotionFragment fm = new PromotionFragment();
 //        getSupportFragmentManager().beginTransaction().replace(R.id.fl,fm).commit();
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "8");
 
