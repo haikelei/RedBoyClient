@@ -131,7 +131,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
                         //退出登录后添加标记
                         App.EDIT.putBoolean("islogin", false);
                         App.EDIT.commit();
-                        startActivity(LoginActivity.class, true);
+                        finish();
                         break;
                 }
                 return true;

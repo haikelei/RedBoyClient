@@ -14,16 +14,13 @@ public class ConstantsRedBaby {
     public static final String URL_BRAND = URL_SERVER + "/brand";
     public static final String URL_CATEGORY = URL_SERVER + "/category";
     public static final String URL_COMMENT = URL_SERVER + "/product/comment";
-<<<<<<< HEAD
     public static final String URL_ACCOUNT_CENTER = URL_SERVER + "/userinfo";
     public static final String URL_LOGOUT = URL_SERVER + "/logout";
-=======
     public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
     public static final String URL_HOTPRODUCT = URL_SERVER + "/hotproduct";
     public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
     public static final String URL_HELP= URL_SERVER + "/help";
     public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
 
     public static final String URL_BROWSING_HISTORY = URL_SERVER + "/product";
 

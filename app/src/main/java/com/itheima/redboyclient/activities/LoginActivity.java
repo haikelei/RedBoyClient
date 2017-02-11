@@ -228,15 +228,14 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 public void run() {
                     boolean islogin = App.SP.getBoolean("islogin", false);
                     if (islogin) {
-                       // finish();
-                        Toast.makeText(getApplicationContext(),"登录成功!",Toast.LENGTH_LONG).show();
-                        startActivity(AccountCenterActivity.class,false);
+                       finish();
+                        ToastUtil.showToast("登录成功!");
                     }
                 }
             });
         } else {
             progressbar.setVisibility(View.GONE);
-            Toast.makeText(this, "登录失败请检查用户名或者密码!", Toast.LENGTH_LONG).show();
+            ToastUtil.showToast("登录失败请检查用户名或者密码!");
         }
 
     }
