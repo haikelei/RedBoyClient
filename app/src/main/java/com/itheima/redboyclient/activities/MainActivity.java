@@ -139,8 +139,16 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 bean = HomeResponse.class;
                 break;
             case 4:
-                //Todo
-                break;
+                //更多页面不需要访问网络
+                FragmentTransaction transaction = fm.beginTransaction();
+                MainBaseFragment fragment = FragmentFactory.getFragment(position);
+                if (!fragment.isAdded()) {
+                    transaction.add(R.id.fl_content, fragment, "" + position);
+                }
+                transaction.show(fragment).commit();
+                lslMain.setState(LoadStateLayout.STATE_SUCCESS);
+            default:
+                return;
         }
         MainBaseFragment fragment = FragmentFactory.getFragment(position);
         FragmentTransaction transaction = fm.beginTransaction();
