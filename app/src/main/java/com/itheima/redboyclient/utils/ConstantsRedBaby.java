@@ -16,7 +16,11 @@ public class ConstantsRedBaby {
     public static final String URL_COMMENT = URL_SERVER + "/product/comment";
     public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
     public static final String URL_HOTPRODUCT = URL_SERVER + "/hotproduct";
+    public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
+    public static final String URL_HELP= URL_SERVER + "/help";
+    public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
 
+    public static final String URL_BROWSING_HISTORY = URL_SERVER + "/product";
 
     public static final String NO_HISTORY = "没有搜索记录";
     public static final String SHOPPING_CAR = "shoppingCar";
@@ -38,9 +42,13 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
     public static final int REQUEST_CODE_GOODDETAIL = 10;
+    public static final int REQUEST_CODE_SHOPPING_CAR = 11;
     public static final int REQUEST_CODE_FLASH = 12;
     public static final int REQUEST_NEW_PRODUCT= 15;
     public static final int REQUEST_HOT_PRODUCT= 16;
+    public static final int REQUEST_CODE_HELP = 17;
+    public static final int REQUEST_CODE_HELP_DETAIL = 18;
     public static final int REQUEST_CODE_COMMENT = 19;
 
 }
+

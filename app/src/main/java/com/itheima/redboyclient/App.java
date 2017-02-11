@@ -38,8 +38,7 @@ public class App extends Application {
     public static SharedPreferences SP;
     public static SharedPreferences.Editor EDIT;
     public static HttpLoader HL;//网络请求工具
-    private static String userId;
-
+    private static String userId ;
 
     @Override
     public void onCreate() {
@@ -50,10 +49,7 @@ public class App extends Application {
         SP = getSharedPreferences("config", MODE_PRIVATE);
         EDIT = SP.edit();
         HL = HttpLoader.getInstance(this);
-        userId = SP.getString("userid", "");
-        //
-        userId = "1234";
-
+        userId = SP.getString("userid","");
     }
 
     public static String getUserId() {
@@ -63,6 +59,4 @@ public class App extends Application {
     public static void setUserId(String userId) {
         App.userId = userId;
     }
-
-
 }

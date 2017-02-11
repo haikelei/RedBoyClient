@@ -2,25 +2,31 @@ package com.itheima.redboyclient.fragment;
 
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-
+import com.android.volley.VolleyError;
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
-import com.itheima.redboyclient.activities.FlashActivity;
-import com.itheima.redboyclient.activities.HotProductActivity;
-import com.itheima.redboyclient.activities.NewProductActivity;
-import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
-
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.resp.IResponse;
+import java.security.NoSuchAlgorithmException;
+import com.itheima.redboyclient.activities.FlashActivity;
+import com.itheima.redboyclient.activities.PromotionActivity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -39,13 +45,20 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     @InjectView(R.id.lv)
     ListView lv;
 
-
-
+    @Nullable
     @Override
-    protected int getRootViewId() {
-        return R.layout.fragment_home;
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        ButterKnife.inject(this, view);
+        return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+        initData();
+    }
 
     protected void initData() {
         HomeResponse response = (HomeResponse) getData();
@@ -93,11 +106,10 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
                 getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
                 break;
             case 2:
-                getActivity().startActivity(new Intent(getContext(),NewProductActivity.class));
 
                 break;
             case 3:
-                getActivity().startActivity(new Intent(getContext(),HotProductActivity.class));
+
                 break;
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);

@@ -11,6 +11,7 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.TopicAdapter;
+import com.itheima.redboyclient.fragment.PromotionFragment;
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -69,7 +70,7 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @Override
     protected void initData() {
-//        PromotionActivity fm = new PromotionActivity();
+//        PromotionFragment fm = new PromotionFragment();
 //        getSupportFragmentManager().beginTransaction().replace(R.id.fl,fm).commit();
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "8");
 

@@ -195,7 +195,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             //购物车临时测试
                 break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-               // list = ((HomeResponse)response).getHomeTopic();
+                list = ((HomeResponse)response).getHomeTopic();
                 break;
         }
 

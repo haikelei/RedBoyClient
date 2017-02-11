@@ -14,7 +14,7 @@ import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
-import com.itheima.redboyclient.domain.SearchTitle;
+import com.itheima.redboyclient.damain.SearchTitleBean;
 import com.itheima.redboyclient.net.resp.SearchResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -47,9 +47,9 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private List<String> searchHistory;
 
     //热门搜索标题
-    private SearchTitle hotTitle;
+    private SearchTitleBean hotTitle;
     //搜索历史标题
-    private SearchTitle historyTitle;
+    private SearchTitleBean historyTitle;
 
     private SharedPreferences.Editor edit;
     private SharedPreferences sp;
@@ -62,11 +62,11 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         searchHistory = new ArrayList<>();
 
         //热门搜索条目默认不显示
-        hotTitle = new SearchTitle();
+        hotTitle = new SearchTitleBean();
         hotTitle.setTitle("热门搜索");
         hotTitle.setShow(false);
         //搜索历史条目默认显示
-        historyTitle = new SearchTitle();
+        historyTitle = new SearchTitleBean();
         historyTitle.setTitle("搜索历史");
         historyTitle.setShow(true);
 
@@ -102,12 +102,13 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
             }
         });
 
-
+        //初始化数据
+        initData();
 
 
     }
 
-    protected void initData() {
+    private void initData() {
         IResponse data = getData();
         SearchRecommendResponse scr = (SearchRecommendResponse) data;
         //记录热门搜索数据

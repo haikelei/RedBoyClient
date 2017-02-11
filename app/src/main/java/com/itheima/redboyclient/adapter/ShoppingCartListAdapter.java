@@ -1,17 +1,13 @@
 package com.itheima.redboyclient.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.itheima.redboyclient.R;
-
-import java.security.KeyStore;
 
 
 /**
@@ -61,6 +57,7 @@ import java.security.KeyStore;
                 }
             }
         });
+
         //购物车商品详情长按事件回调
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

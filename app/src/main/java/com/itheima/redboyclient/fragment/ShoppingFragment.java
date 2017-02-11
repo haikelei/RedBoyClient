@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
@@ -31,15 +33,17 @@ public class ShoppingFragment extends MainBaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String userId = App.getUserId();
-        if("".equals(userId)){
+        String userid = App.SP.getString("userid","");
+        if("".equals(userid)){
             getActivity().startActivity(new Intent(getActivity(),LoginActivity.class));
         }
     }
 
     @Override
-    protected int getRootViewId() {
-        return R.layout.fragment_shopping;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_shopping, container, false);
+        ButterKnife.inject(this, view);
+        return view;
     }
 
     @Override
