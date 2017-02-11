@@ -84,6 +84,7 @@ public class GoodsDetailFragment extends Fragment {
     LinearLayout detailContainer;
 
     private String temppid = "1";
+    private static GoodResponse goodResponse;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -93,8 +94,8 @@ public class GoodsDetailFragment extends Fragment {
     private static GoodsDetailFragment fragment = null;
 
 
-    public static GoodsDetailFragment newInstance(String id) {
-        pId = id;
+    public static GoodsDetailFragment newInstance(GoodResponse response) {
+        goodResponse = response;
 
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
@@ -114,21 +115,7 @@ public class GoodsDetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //测试时pid用1，以后改成pid
-        HttpParams params = new HttpParams().put("pId", temppid);
-        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
-            @Override
-            public void onGetResponseSuccess(int requestCode, IResponse response) {
-                GoodResponse goodResponse = (GoodResponse) response;
-                initData(goodResponse);
-            }
-
-            @Override
-            public void onGetResponseError(int requestCode, VolleyError error) {
-
-            }
-        });
-
+        initData(goodResponse);
     }
 
     private void initData(GoodResponse goodResponse) {
