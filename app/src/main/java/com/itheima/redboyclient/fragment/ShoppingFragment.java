@@ -7,12 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.activities.LoginActivity;
 import com.itheima.redboyclient.adapter.MyItemDecoration;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
@@ -45,22 +43,22 @@ public class ShoppingFragment extends MainBaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         ShoppingCartListAdapter adapter = new ShoppingCartListAdapter();
-        adapter.setOnItemClickLitener(new ShoppingCartListAdapter.OnItemClickLitener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Log.e(TAG, "onItemClick: "+position );
-                // TODO: 2017/2/9
-                //item点击事件临时测试 打开商品详情页
-                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
-                getActivity().startActivity(intent);
-            }
-
-            @Override
-            public void onItemLongClick(View view, int position) {
-                Log.e(TAG, "onItemLongClick: "+position);
-                //item长按事件
-            }
-        });
+//        adapter.setOnItemClickLitener(new ShoppingCartListAdapter.OnItemClickLitener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Log.e(TAG, "onItemClick: "+position );
+//                // TODO: 2017/2/9
+//                //item点击事件临时测试 打开商品详情页
+//                Intent intent = new Intent(getActivity(), GoodDetailActivity.class);
+//                getActivity().startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onItemLongClick(View view, int position) {
+//                Log.e(TAG, "onItemLongClick: "+position);
+//                //item长按事件
+//            }
+//        });
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(adapter);
         rv.addItemDecoration(new MyItemDecoration());
