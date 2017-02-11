@@ -1,13 +1,20 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BaseActivity;
+import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.PromotionAdapter;
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
@@ -18,6 +25,7 @@ import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**

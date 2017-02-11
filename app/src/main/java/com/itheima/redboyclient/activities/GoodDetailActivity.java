@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,10 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
+import com.android.volley.VolleyError;
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.fragment.CommentFragment;
 import com.itheima.redboyclient.fragment.ContentDetailFragment;
 import com.itheima.redboyclient.fragment.GoodsDetailFragment;
+import com.itheima.redboyclient.net.resp.GoodResponse;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
+
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
+import org.senydevpkg.net.resp.IResponse;
 
 /**
  * Created by gary on 2017/2/8.
@@ -28,6 +35,7 @@ public class GoodDetailActivity extends AppCompatActivity {
     private ViewPager viewpager;
     private Toolbar toolbar;
     private String pId;
+    private String temppid = "1";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,11 +67,30 @@ public class GoodDetailActivity extends AppCompatActivity {
 //     * ViewPager的PagerAdapter
 
     public class MinePagerAdapter extends FragmentPagerAdapter {
-        Fragment[] fragments = new Fragment[]{GoodsDetailFragment.newInstance(pId), ContentDetailFragment.newInstance(), CommentFragment.newInstance()};
+
+
+        Fragment[] fragments;
         String[] titles = new String[]{"商品", "详情", "评价"};
 
         public MinePagerAdapter(FragmentManager fm) {
             super(fm);
+
+            //测试时pid用1，以后改成pid
+            HttpParams params = new HttpParams().put("pId", temppid);
+            App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+                @Override
+                public void onGetResponseSuccess(int requestCode, IResponse response) {
+                    GoodResponse goodResponse = (GoodResponse) response;
+                    fragments = new Fragment[]{GoodsDetailFragment.newInstance(goodResponse), ContentDetailFragment.newInstance(goodResponse), CommentFragment.newInstance()};
+                }
+
+                @Override
+                public void onGetResponseError(int requestCode, VolleyError error) {
+
+                }
+            });
+
+
         }
 
         @Override

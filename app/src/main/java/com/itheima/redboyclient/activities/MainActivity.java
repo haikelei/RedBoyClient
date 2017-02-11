@@ -139,16 +139,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 bean = HomeResponse.class;
                 break;
             case 4:
-                //更多页面不需要访问网络
-                FragmentTransaction transaction = fm.beginTransaction();
-                MainBaseFragment fragment = FragmentFactory.getFragment(position);
-                if (!fragment.isAdded()) {
-                    transaction.add(R.id.fl_content, fragment, "" + position);
-                }
-                transaction.show(fragment).commit();
-                lslMain.setState(LoadStateLayout.STATE_SUCCESS);
-            default:
-                return;
+                //Todo
+                break;
         }
         MainBaseFragment fragment = FragmentFactory.getFragment(position);
         FragmentTransaction transaction = fm.beginTransaction();
@@ -157,7 +149,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         if (fragment.isAdded()) {
             lslMain.setState(LoadStateLayout.STATE_SUCCESS);
             transaction.show(fragment).commit();
-        } else {
+        }else{
             lslMain.setState(LoadStateLayout.STATE_LOADING);
         }
         App.HL.get(url, null, bean, requestCode, this).setTag(this);
@@ -185,7 +177,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         List list = null;
         switch (requestCode) {
             case ConstantsRedBaby.REQUEST_CODE_HOME:
-                list = ((HomeResponse) response).getHomeTopic();
+                list = ((HomeResponse)response).getHomeTopic();
                 break;
             case ConstantsRedBaby.REQUEST_CODE_RECOMMEND:
                 list = ((SearchRecommendResponse) response).getSearchKeywords();
@@ -195,7 +187,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             //购物车临时测试
                 break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-                list = ((HomeResponse) response).getHomeTopic();
+               // list = ((HomeResponse)response).getHomeTopic();
                 break;
         }
 
