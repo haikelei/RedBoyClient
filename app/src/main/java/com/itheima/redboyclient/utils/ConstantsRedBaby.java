@@ -13,6 +13,7 @@ public class ConstantsRedBaby {
     public static final String URL_SEARCH_RECOMMEND = URL_SEARCH +"/recommend";
     public static final String URL_BRAND = URL_SERVER + "/brand";
     public static final String URL_CATEGORY = URL_SERVER + "/category";
+    public static final String URL_ADDRESSSLIST = URL_SERVER + "/addresslist";
 
 
     public static final String NOHISTORY = "没有搜索记录";
@@ -33,5 +34,6 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
     public static final int REQUEST_CODE_FLASH= 10;
+    public static final int REQUEST_CODE_ADDRESSSLIST= 12;
 
 }

@@ -23,9 +23,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.GoodDetailActivity">
-
-        </activity>
         <activity android:name=".activities.GoodDetailActivity"></activity>
         <activity android:name=".activities.Category_Second_activity"></activity>
         <activity android:name=".activities.Category_Third_activity"></activity>
