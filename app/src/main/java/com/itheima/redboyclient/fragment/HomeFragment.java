@@ -60,7 +60,6 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
     protected void initData() {
         HomeResponse response = (HomeResponse) getData();
-        Log.e(TAG, "initData: "+response.toString() );
         handleHomeResponse(response);
 
         /*App.HL.get(ConstantsRedBaby.URL_HOME, null, HomeResponse.class, ConstantsRedBaby.REQUEST_CODE_HOME, new HttpLoader.HttpListener() {

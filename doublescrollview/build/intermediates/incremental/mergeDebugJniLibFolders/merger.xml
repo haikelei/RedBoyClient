@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<merger version="3"><dataSet config="main"><source path="/Users/yudenghao/Documents/workspace/09/doublescrollview/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/yudenghao/Documents/workspace/09/doublescrollview/src/debug/jniLibs"/></dataSet></merger>
-=======
-<merger version="3"><dataSet config="main"><source path="E:\android\RedBoyClient\doublescrollview\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\android\RedBoyClient\doublescrollview\src\debug\jniLibs"/></dataSet></merger>
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+<merger version="3"><dataSet config="main"><source path="E:\GIT\git2\RedBoyClient\doublescrollview\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\GIT\git2\RedBoyClient\doublescrollview\src\debug\jniLibs"/></dataSet></merger>

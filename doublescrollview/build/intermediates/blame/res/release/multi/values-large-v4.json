@@ -1,10 +1,6 @@
 [
     {
-<<<<<<< HEAD
-        "outputFile": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/res/merged/release/values-large-v4/values-large-v4.xml",
-=======
-        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-large-v4\\values-large-v4.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+        "outputFile": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-large-v4\\values-large-v4.xml",
         "map": [
             {
                 "to": {
@@ -15,11 +11,7 @@
                     "endOffset": 112
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -38,11 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -61,11 +49,7 @@
                     "endOffset": 243
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -84,11 +68,7 @@
                     "endOffset": 307
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -107,11 +87,7 @@
                     "endOffset": 374
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -130,11 +106,7 @@
                     "endOffset": 441
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -153,11 +125,7 @@
                     "endOffset": 507
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -176,11 +144,7 @@
                     "endOffset": 573
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -199,11 +163,7 @@
                     "endOffset": 628
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -222,11 +182,7 @@
                     "endOffset": 732
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -245,11 +201,7 @@
                     "endOffset": 848
                 },
                 "from": {
-<<<<<<< HEAD
-                    "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-large/values-large.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
->>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-large\\values-large.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
