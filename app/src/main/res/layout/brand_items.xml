@@ -15,7 +15,7 @@
 		android:columnWidth="90.0dip"
 		android:gravity="center"
 		android:horizontalSpacing="5.0dip"
-		android:numColumns="auto_fit"
+		android:numColumns="3"
 		android:scrollbars="none"
 		android:stretchMode="columnWidth"
 		android:verticalSpacing="5.0dip"
