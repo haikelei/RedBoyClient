@@ -44,7 +44,6 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
-    public static final int REQUEST_CODE_FLASH= 10;
     public static final int REQUEST_CODE_ADDRESSSLIST= 20;
     public static final int REQUEST_CODE_GOODDETAIL = 10;
     public static final int REQUEST_CODE_SHOPPING_CAR = 11;
