@@ -22,7 +22,8 @@
             android:layout_gravity="center"
             android:singleLine="true"
             android:text="shuaige "
-            android:textSize="30sp" />
+
+            android:textSize="20sp" />
 
     </android.support.v7.widget.Toolbar>
 

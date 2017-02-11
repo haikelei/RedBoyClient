@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.itheima.redboyclient">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".App"
@@ -16,28 +18,30 @@
         <activity android:name=".activities.RegisterActivity"/>
 
         <activity android:name=".activities.MainActivity"/>
-
-
-        <activity android:name=".activities.GoodDetailActivity">
-
-        </activity>
-
-        <activity android:name=".activities.Category_Second_activity"></activity>
-        <activity android:name=".activities.Category_Third_activity"></activity>
-        <activity android:name=".activities.BrandActivity"></activity>
-        <activity android:name=".activities.LoginActivity"
-            android:launchMode="singleTask"></activity>
-        <activity android:name=".activities.PromotionActivity"></activity>
-        <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AccountCenterActivity">
-        </activity>
+        <activity android:name=".activities.BrowsingHistoryActivity" />
+        <activity android:name=".activities.AboutRellayActivity" />
+        <activity android:name=".activities.HelpDetailPageActivity" />
+        <activity android:name=".activities.GoodDetailActivity" />
+        <activity android:name=".activities.BrandActivity" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activities.FeedBackActivity" />
+
+
+
+
+        <activity android:name=".activities.Category_Second_activity"></activity>
+        <activity android:name=".activities.Category_Third_activity"></activity>
+
+        <activity android:name=".activities.PromotionActivity"></activity>
+        <activity android:name=".activities.FlashActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/res/merged/release/values-v22/values-v22.xml",
+=======
+        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-v22\\values-v22.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 125
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v22/values-v22.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v22\\values-v22.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +38,11 @@
                     "endOffset": 212
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v22/values-v22.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v22\\values-v22.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -50,7 +62,11 @@
                     "endOffset": 393
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v22/values-v22.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v22\\values-v22.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -71,7 +87,11 @@
                     "endOffset": 586
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/yudenghao/Documents/workspace/09/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v22/values-v22.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v22\\values-v22.xml",
+>>>>>>> 3bba614860a7004b3ab7a64724542cdb9d1c5fd6
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

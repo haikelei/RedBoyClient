@@ -18,12 +18,27 @@
             android:textSize="22sp" />
 
     </android.support.v7.widget.Toolbar>
+    <org.senydevpkg.view.LoadStateLayout
+        android:id="@+id/lsl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></ListView>
+    </org.senydevpkg.view.LoadStateLayout>
+
     <TextView
-        android:layout_marginTop="25dp"
+        android:id="@+id/xian"
+android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#22000000"
+        />
+
+    <TextView
+android:visibility="invisible"
+        android:layout_marginTop="35dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/tv_kefu"
         android:background="@color/red"

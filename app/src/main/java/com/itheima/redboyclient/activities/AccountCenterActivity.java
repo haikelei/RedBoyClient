@@ -228,8 +228,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         super.onStop();
         App.HL.cancelRequest(this);
     }
-
-
 }
 
 

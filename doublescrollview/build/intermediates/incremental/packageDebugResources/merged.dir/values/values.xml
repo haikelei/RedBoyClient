@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DoubleScrollViewWrapper"><attr format="integer" name="doublescrollviewwrapper_padding"/></declare-styleable>
+    <declare-styleable name="PageOne"><attr format="integer" name="pageone_padding"/></declare-styleable>
+    <dimen name="gap">100dp</dimen>
+    <item name="pageOne" type="id"/>
+    <string name="app_name">DoubleScrollView</string>
+    <string name="pageTwoBehavior" translatable="false">com.ysnows.doublescrollview.PageBehavior</string>
+</resources>
