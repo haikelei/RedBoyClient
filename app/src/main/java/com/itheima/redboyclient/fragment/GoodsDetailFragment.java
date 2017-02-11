@@ -1,14 +1,12 @@
 package com.itheima.redboyclient.fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +22,6 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.net.resp.CommentResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
@@ -49,41 +46,43 @@ public class GoodsDetailFragment extends Fragment {
 
 
     private static final String TAG = "GoodsDetailFragment";
-    @InjectView(R.id.vp)
-    ViewPager vp;
-    @InjectView(R.id.pageOne)
-    NestedScrollView pageOne;
+
 
     public static String pId;
     private static GoodPresenter goodPresenter;
+    @InjectView(R.id.vp)
+    ViewPager vp;
     @InjectView(R.id.tv_title)
     TextView tvTitle;
     @InjectView(R.id.tv_market_price)
     TextView tvMarketPrice;
-    @InjectView(R.id.tv_price)
-    TextView tvPrice;
-    @InjectView(R.id.textPutIntoShopcar)
-    TextView textPutIntoShopcar;
-    @InjectView(R.id.textProdToCollect)
-    TextView textProdToCollect;
     @InjectView(R.id.ratingBar)
     RatingBar ratingBar;
+    @InjectView(R.id.tv_price)
+    TextView tvPrice;
     @InjectView(R.id.spinner_corlor)
     AppCompatSpinner spinnerCorlor;
     @InjectView(R.id.spinner_size)
     AppCompatSpinner spinnerSize;
-    @InjectView(R.id.bt_plus)
-    Button btPlus;
-    @InjectView(R.id.et_num)
-    EditText etNum;
     @InjectView(R.id.bt_minus)
     Button btMinus;
+    @InjectView(R.id.et_num)
+    EditText etNum;
+    @InjectView(R.id.bt_plus)
+    Button btPlus;
+    @InjectView(R.id.textPutIntoShopcar)
+    TextView textPutIntoShopcar;
+    @InjectView(R.id.textProdToCollect)
+    TextView textProdToCollect;
     @InjectView(R.id.tv_area)
     TextView tvArea;
     @InjectView(R.id.tv_comment_count)
     TextView tvCommentCount;
+    @InjectView(R.id.pageOne)
+    NestedScrollView pageOne;
     @InjectView(R.id.detail_container)
     LinearLayout detailContainer;
+
 
     private String temppid = "1";
     private static GoodResponse goodResponse;
@@ -166,11 +165,11 @@ public class GoodsDetailFragment extends Fragment {
         });
         //图片描述
         ArrayList<String> pics = (ArrayList<String>) goodResponse.getProduct().getPics();
-        for (String s:pics) {
+        for (String s : pics) {
             String url = ConstantsRedBaby.URL_SERVER + s;
             ImageView iv = new ImageView(getContext());
             iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            App.HL.display(iv,url);
+            App.HL.display(iv, url);
             detailContainer.addView(iv);
         }
 
