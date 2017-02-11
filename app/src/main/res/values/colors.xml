@@ -10,6 +10,7 @@
     <color name="orange">#ffff740f</color>
     <color name="yellow">#ffe87215</color>
     <color name="red">#ffff0000</color>
+    <color name="darkred">#d50000</color>
     <color name="gray">#ff7d7d7d</color>
     <color name="darkgray">#ff808080</color>
     <color name="fontblack">#ff4b4b4b</color>

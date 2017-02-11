@@ -32,7 +32,8 @@
             android:name=".activities.LoginActivity"
             android:launchMode="singleTask" />
         <activity android:name=".activities.FeedBackActivity" />
-
+        <activity android:name=".activities.HotProductActivity"/>
+        <activity android:name=".activities.NewProductActivity"/>
 
 
 
