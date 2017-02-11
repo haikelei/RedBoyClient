@@ -92,7 +92,7 @@ public class BrandActivity extends BaseActivity implements HttpLoader.HttpListen
                adapter = new BrandAdapter(getApplicationContext(),objectList);
                listview.setAdapter(adapter);
             }else {
-               adapter.notifyDataSetChanged();brandResponse.getBrand();
+               adapter.notifyDataSetChanged(objectList);
             }
             loadstatelayout.setState(LoadStateLayout.STATE_SUCCESS);//显示请求成功的View
         } else {

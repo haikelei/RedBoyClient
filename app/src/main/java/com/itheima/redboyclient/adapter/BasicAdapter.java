@@ -39,7 +39,10 @@ public abstract class BasicAdapter<T> extends BaseAdapter{
         this.mData = data;
     }
 
-
+    public void notifyDataSetChanged(List<T> newData) {
+        this.mData = newData;
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getCount() {

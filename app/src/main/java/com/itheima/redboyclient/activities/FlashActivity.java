@@ -66,6 +66,7 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
     protected void initData() {
         tv.setText("限时抢购");
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "9");
+        App.HL.get(ConstantsRedBaby.URL_FLASH, params, FlashResponse.class, ConstantsRedBaby.REQUEST_CODE_FLASH, this).setTag(this);
     }
 
     public void onGetResponseSuccess(int requestCode, IResponse response) {

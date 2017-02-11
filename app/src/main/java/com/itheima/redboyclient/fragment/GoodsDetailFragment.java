@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.net.resp.CommentResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
