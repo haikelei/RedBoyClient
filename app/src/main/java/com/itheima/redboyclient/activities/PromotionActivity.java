@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -63,7 +64,6 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
     protected void initToolBar() {
         toolBar.setTitle("");
         toolBar.setNavigationIcon(R.drawable.arrowback);
-
         toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +106,14 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
             if (adapter == null) {
                 adapter = new PromotionAdapter(this, topics.topic);
                 listview.setAdapter(adapter);
+                listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(PromotionActivity.this,GoodDetailActivity.class);
+                        intent.putExtra("pId",topics.topic.get(position)+"");
+                        startActivity(intent);
+                    }
+                });
             } else {
                 adapter.notifyDataSetChanged(topics.topic);
             }

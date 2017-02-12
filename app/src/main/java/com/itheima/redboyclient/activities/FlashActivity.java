@@ -87,15 +87,6 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
                 adapter = new FlashAdapter(this, topics.getProductList());
                 listView.setAdapter(adapter);
 
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(FlashActivity.this,GoodDetailActivity.class);
-                        intent.putExtra("pId",topics.getProductList().get(position)+"");
-                        startActivity(intent);
-                    }
-                });
-
             } else {
                 adapter.notifyDataSetChanged(topics.getProductList());
             }
