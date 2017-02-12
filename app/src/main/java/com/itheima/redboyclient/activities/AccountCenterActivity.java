@@ -95,6 +95,8 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
          islogin = App.SP.getBoolean("islogin", false);
         if (islogin) {
             userId = App.SP.getString("userid",null);
+        } else {
+            return;
         }
         Log.d(TAG, "initData: ==============" + userId);
         HttpParams params = new HttpParams();
@@ -162,6 +164,8 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
             case R.id.my_order_rl:   //我的订单点击
                 break;
             case R.id.address_manage_rl:  //地址管理点击
+                Intent intent = new Intent(AccountCenterActivity.this,AddressActivity.class);
+                startActivity(intent);
                 break;
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;

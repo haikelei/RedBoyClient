@@ -22,7 +22,7 @@ public class ConstantsRedBaby {
     public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
     public static final String URL_HELP= URL_SERVER + "/help";
     public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
-
+    public static final String URL_ADDRESSSAVE= URL_SERVER + "/addresssave";
     public static final String URL_BROWSING_HISTORY = URL_SERVER + "/product";
 
     public static final String NO_HISTORY = "没有搜索记录";
@@ -56,6 +56,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
+    public static final int REQUEST_CODE_ADDRESSSAVE= 99;
 
 
 

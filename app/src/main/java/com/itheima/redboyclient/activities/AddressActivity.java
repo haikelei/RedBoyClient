@@ -19,6 +19,7 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
+import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ import butterknife.OnClick;
 public class AddressActivity extends BaseActivity implements HttpLoader.HttpListener {
 
 
+    private static final String TAG = "AddressActivity";
     @InjectView(R.id.add_button)
     Button addButton;
     @InjectView(R.id.toolbar)
@@ -74,6 +76,7 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("地址管理");
 
         loadstatelayout.setEmptyView(R.layout.state_empty);
         loadstatelayout.setErrorView(R.layout.state_error);
@@ -92,7 +95,7 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     @Override
     protected void initData() {
-        HttpParams params = new HttpParams().addHeader("userID",App.getUserId());
+        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
         App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this).setTag(this);
     }
 
@@ -139,7 +142,7 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     @Override
     public void onGetResponseError(int requestCode, VolleyError error) {
-
+        MyToast.show(getApplicationContext(), "数据获取失败111！");
     }
 
     @Override

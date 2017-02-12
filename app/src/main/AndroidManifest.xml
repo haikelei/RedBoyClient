@@ -36,15 +36,14 @@
         <activity android:name=".activities.HotProductActivity"/>
         <activity android:name=".activities.NewProductActivity"/>
 
-        <activity android:name=".activities.GoodDetailActivity"></activity>
-
-
         <activity android:name=".activities.Category_Second_activity"></activity>
         <activity android:name=".activities.Category_Third_activity"></activity>
 
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.AccountCenterActivity"></activity>
+        <activity android:name=".activities.AddressActivity"></activity>
+        <activity android:name=".activities.AddAddressActivity"></activity>
     </application>
 
 </manifest>

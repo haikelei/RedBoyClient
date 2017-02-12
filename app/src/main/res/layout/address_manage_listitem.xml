@@ -13,20 +13,21 @@
         android:paddingRight="15.0dip"
         android:paddingTop="5.0dip" >
 
+        <TextView
+            style="@style/style_14_9F9F9F"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="收货地址"
+            android:textSize="15.0sp"
+            android:background="@color/white"/>
+
+
         <RelativeLayout
             android:id="@+id/address_listitem_receiver_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/textView2"
-                style="@style/style_14_9F9F9F"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="收 货 人："
-                android:textSize="15.0sp" />
 
             <TextView
                 android:id="@+id/address_listitem_receiver_text"
@@ -45,13 +46,6 @@
             android:background="@color/white"
             android:orientation="horizontal" >
 
-            <TextView
-                android:id="@+id/textView1"
-                style="@style/style_14_9F9F9F"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="联系电话："
-                android:textSize="15.0sp" />
 
             <ImageView
                 android:id="@+id/address_arror_img"
@@ -81,13 +75,6 @@
             android:background="@color/white"
             android:orientation="horizontal" >
 
-            <TextView
-                android:id="@+id/textView3"
-                style="@style/style_14_9F9F9F"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="收货地址："
-                android:textSize="15.0sp" />
 
             <TextView
                 android:id="@+id/address_listitem_ads_text"
