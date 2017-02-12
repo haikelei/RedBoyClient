@@ -4,12 +4,10 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,8 +22,6 @@ import org.senydevpkg.base.BaseHolder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2017/2/10.

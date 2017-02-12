@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
-import android.os.SystemClock;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +76,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     }
 
     private void handleHomeResponse(HomeResponse response) {
-
+        //Log.e(TAG, "handleHomeResponse: "+response);
         HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(),getActivity());
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
