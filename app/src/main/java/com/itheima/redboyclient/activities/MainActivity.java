@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[3]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[4]));
         bottomNavigationBar.setActiveColor(R.color.btn_normal);
-        bottomNavigationBar.setInActiveColor(R.color.inActive);
+        bottomNavigationBar.setInActiveColor(R.color.lightgray);
         bottomNavigationBar.setFirstSelectedPosition(0);
         bottomNavigationBar.initialise();
         bottomNavigationBar.setTabSelectedListener(this);

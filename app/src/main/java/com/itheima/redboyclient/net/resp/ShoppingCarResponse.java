@@ -1,11 +1,13 @@
 package com.itheima.redboyclient.net.resp;
 
+import org.senydevpkg.net.resp.IResponse;
+
 import java.util.List;
 
 /**
  * Created by fee1in on 2017/2/11.
  */
-public class ShoppingCarResponse {
+public class ShoppingCarResponse implements IResponse {
 
     /**
      * cart : [{"prodNum":3,"product":{"buyLimit":10,"id":1,"name":"韩版时尚蕾丝裙","number":"100","pic":"/images/product/detail/c3.jpg","price":350,"productProperty":[{"id":1,"k":"颜色","v":"红色"},{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"},{"id":4,"k":"尺码","v":"XXL"}]}},{"prodNum":2,"product":{"buyLimit":10,"id":2,"name":"粉色毛衣","number":"13","pic":"/images/product/detail/q1.jpg","price":100,"productProperty":[{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"}]}}]
@@ -79,6 +81,24 @@ public class ShoppingCarResponse {
 
         private int prodNum;
         private ProductBean product;
+        private boolean isEditing = false;
+        private boolean isSelected = false;
+
+        public boolean isEditing() {
+            return isEditing;
+        }
+
+        public void setEditing(boolean editing) {
+            isEditing = editing;
+        }
+
+        public boolean isSelected() {
+            return isSelected;
+        }
+
+        public void setSelected(boolean selected) {
+            isSelected = selected;
+        }
 
         public int getProdNum() {
             return prodNum;
