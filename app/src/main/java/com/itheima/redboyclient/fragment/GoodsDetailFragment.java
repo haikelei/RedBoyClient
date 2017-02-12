@@ -13,13 +13,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.net.resp.GoodResponse;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import java.util.ArrayList;
 
@@ -121,11 +124,20 @@ public class GoodsDetailFragment extends Fragment {
                 sizes.add(bean.getV());
             }
         }
-
         ArrayAdapter corlorArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, corlors);
         spinnerCorlor.setAdapter(corlorArrayAdapter);
         ArrayAdapter sizeArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
         spinnerSize.setAdapter(sizeArrayAdapter);
+        //收藏点击事件
+        //加入购物车点击事件
+        ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
+        for (String s : list) {
+            String url = ConstantsRedBaby.URL_SERVER + s;
+            ImageView imageView = new ImageView(getContext());
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            App.HL.display(imageView,url);
+            detailContainer.addView(imageView);
+        }
 
     }
 
