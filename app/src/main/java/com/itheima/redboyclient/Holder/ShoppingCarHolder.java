@@ -11,7 +11,7 @@ import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 /**
  * Created by fee1in on 2017/2/11.
  */
-public class ShoppingCarHolder extends RecyclerView.ViewHolder {
+public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     //正常页面商品标题
     TextView tvTitle;
     //正常页面商品详情
@@ -39,16 +39,22 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder {
     //编辑按钮
     TextView tvEdit;
 
-    //是否在编辑界面
-    boolean isEditing = false;
 
+    public void setCart(ShoppingCarResponse.CartBean cart) {
+        this.cart = cart;
+    }
+
+    private ShoppingCarResponse.CartBean cart;
 
     public ShoppingCarHolder(View itemView) {
         super(itemView);
         initView(itemView);
+        initListener();
+        itemView.setTag(this);
 
 
     }
+
 
     private void initView(View itemView) {
         tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
@@ -66,7 +72,37 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder {
         tvStock = (TextView) itemView.findViewById(R.id.tv_stock);
     }
 
-    public void BindData(ShoppingCarResponse.CartBean cart){
+    private void initListener() {
+        tvEdit.setOnClickListener(this);
+    }
+
+    public void bindData() {
+        switchEditPager();
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_edit:
+                boolean editing = cart.isEditing();
+                cart.setEditing(!editing);
+                switchEditPager();
+                break;
+        }
+    }
+
+    private void switchEditPager() {
+        if (cart.isEditing()) {
+            llNormal.setVisibility(View.GONE);
+            llEdit.setVisibility(View.VISIBLE);
+            tvEdit.setText("完成");
+        } else {
+            llNormal.setVisibility(View.VISIBLE);
+            llEdit.setVisibility(View.GONE);
+            tvEdit.setText("编辑");
+
+        }
 
     }
 }

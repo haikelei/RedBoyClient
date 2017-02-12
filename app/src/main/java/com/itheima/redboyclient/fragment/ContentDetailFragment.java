@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.net.resp.GoodResponse;
 
 
 /**
@@ -17,7 +16,6 @@ import com.itheima.redboyclient.net.resp.GoodResponse;
  */
 public class ContentDetailFragment extends Fragment {
 
-    public static GoodResponse goodResponse;
 
     public ContentDetailFragment() {
         // Required empty public constructor
@@ -26,8 +24,7 @@ public class ContentDetailFragment extends Fragment {
 
     private static ContentDetailFragment fragment = null;
 
-    public static ContentDetailFragment newInstance(GoodResponse response) {
-        goodResponse = response;
+    public static ContentDetailFragment newInstance() {
         if (fragment == null) {
             fragment = new ContentDetailFragment();
         }

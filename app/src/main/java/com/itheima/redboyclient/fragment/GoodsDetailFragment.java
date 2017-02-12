@@ -4,7 +4,6 @@ package com.itheima.redboyclient.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.media.RatingCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
@@ -41,7 +40,7 @@ public class GoodsDetailFragment extends Fragment {
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
 
-    public static GoodResponse goodResponse;
+    public static String pId;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -51,8 +50,8 @@ public class GoodsDetailFragment extends Fragment {
     private static GoodsDetailFragment fragment = null;
 
 
-    public static GoodsDetailFragment newInstance(GoodResponse response) {
-        goodResponse = response;
+    public static GoodsDetailFragment newInstance(String id) {
+        pId = id;
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
         }
@@ -71,11 +70,22 @@ public class GoodsDetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(goodResponse,getActivity());
-        vp.setAdapter(adapter);
+        //测试时pid用1，以后改成pid
+        HttpParams params  = new HttpParams().put("pId","1");
+        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+            @Override
+            public void onGetResponseSuccess(int requestCode, IResponse response) {
+                GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(response,getActivity());
+                vp.setAdapter(adapter);
+            }
 
+            @Override
+            public void onGetResponseError(int requestCode, VolleyError error) {
 
+            }
+        });
 
+//
     }
 
     @Override

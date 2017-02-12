@@ -50,7 +50,6 @@ public class CategoryFragment extends MainBaseFragment{
 
     @Override
     protected int getRootViewId() {
-    Log.d(TAG, "getRootViewId:+12312312312312321111111111111111111111111111111111 " );
         return R.layout.category_first;
     }
 
@@ -62,9 +61,9 @@ public class CategoryFragment extends MainBaseFragment{
     }
 
 
-    private void initData() {
+    protected void initData() {
         //App.HL.get(ConstantsRedBaby.URL_CATEGORY, null, CategoryResponse.class, ConstantsRedBaby
-        //.REQUEST_CODE_CATEGORY, this).setTag(this);
+                //.REQUEST_CODE_CATEGORY, this).setTag(this);
         IResponse data = getData();
         CategoryResponse response = (CategoryResponse) data;
         handleCateResponse(response);
