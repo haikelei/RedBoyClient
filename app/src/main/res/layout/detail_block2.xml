@@ -15,7 +15,8 @@
         android:layout_centerHorizontal="true">
 
         <TextView
-            android:id="@id/textPutIntoShopcar"
+            android:id="@+id/textPutIntoShopcar"
+            android:clickable="true"
             style="@style/style_16_FFFFFF"
             android:layout_width="160dp"
             android:layout_height="60dp"
@@ -26,7 +27,8 @@
             android:text="@string/shopcar" />
 
         <TextView
-            android:id="@id/textProdToCollect"
+            android:id="@+id/textfavorite"
+            android:clickable="true"
             style="@style/style_16_FFFFFF"
             android:layout_width="160dp"
             android:layout_height="60dp"

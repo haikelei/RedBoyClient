@@ -7,6 +7,7 @@ public class ConstantsRedBaby {
     public static final String URL_HOME = URL_SERVER + "/home";
     public static final String URL_GOODDETAIL = URL_SERVER + "/product";
     public static final String URL_FLASH = URL_SERVER + "/limitbuy";
+    public static final String URL_FAV = URL_SERVER + "/product/favorites";
 
     public static final String URL_SEARCH = URL_SERVER +"/search";
     public static final String URL_LOGIN = URL_SERVER +"/login";
@@ -56,6 +57,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
+    public static final int REQUEST_CODE_FAV = 23;
 
 
 
