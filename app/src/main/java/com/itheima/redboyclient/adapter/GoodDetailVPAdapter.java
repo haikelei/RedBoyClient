@@ -28,11 +28,13 @@ public class GoodDetailVPAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        //详情页大图加载
         ImageView imageView = new ImageView(activity);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         App.HL.display(imageView, ConstantsRedBaby.URL_SERVER + response.getProduct().getBigPic().get(position));
         container.addView(imageView);
         return imageView;
+
     }
 
     @Override
