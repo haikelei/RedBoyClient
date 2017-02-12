@@ -49,6 +49,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_HELP = 17;
     public static final int REQUEST_CODE_HELP_DETAIL = 18;
     public static final int REQUEST_CODE_COMMENT = 19;
+    public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
 
 }
 

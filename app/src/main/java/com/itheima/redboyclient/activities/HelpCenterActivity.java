@@ -122,4 +122,10 @@ public class HelpCenterActivity extends BaseActivity implements HttpLoader.HttpL
         loadstatelayout.setState(LoadStateLayout.STATE_ERROR);
         MyToast.show(getApplicationContext(), "数据请求失败！");
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        App.HL.cancelRequest(this);
+    }
+
 }
