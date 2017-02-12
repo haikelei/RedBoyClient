@@ -4,6 +4,7 @@ package com.itheima.redboyclient.fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -12,6 +13,7 @@ import android.widget.RelativeLayout;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.SearchSecondActivity;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.damain.SearchTitleBean;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
@@ -21,6 +23,7 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
+import org.senydevpkg.utils.ALog;
 import org.senydevpkg.utils.MyToast;
 
 import java.io.Serializable;
@@ -166,13 +169,16 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
                 if (TextUtils.isEmpty(searchInfo)) {
                     MyToast.show(getActivity().getApplicationContext(), "请输入搜索内容");
                 } else {
-                    //TODO跳转到搜索页面
-
-                    String url = ConstantsRedBaby.URL_SEARCH;
+                    //TODO跳转到搜索页面lujialei
+                    Log.e(TAG, "onClick: "+searchInfo );
+                    Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
+                    intent.putExtra("keyword",searchInfo);
+                    startActivity(intent);
+                    /*String url = ConstantsRedBaby.URL_SEARCH;
                     Class clazz = SearchResponse.class;
                     int requestCode = ConstantsRedBaby.REQUEST_CODE_SEARCH;
                     HttpParams params = new HttpParams().put("keyword", searchInfo).put("page", "1").put("pageNum", "10");
-                    App.HL.get(url, params, clazz, requestCode, this);
+                    App.HL.get(url, params, clazz, requestCode, this);*/
                 }
                 break;
         }

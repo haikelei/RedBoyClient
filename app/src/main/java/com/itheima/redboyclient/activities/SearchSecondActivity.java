@@ -25,11 +25,13 @@ import org.senydevpkg.net.resp.IResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.security.auth.login.LoginException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class NewProductActivity extends BaseActivity implements HttpLoader.HttpListener, AdapterView.OnItemClickListener {
+public class SearchSecondActivity extends BaseActivity implements HttpLoader.HttpListener, AdapterView.OnItemClickListener {
 
     private static final String TAG = "NewProductActivity";
     @InjectView(R.id.back)
@@ -70,6 +72,7 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
 
     private NewProductAdapter newProductAdapter;
     private NewProductResponse newProductResponse;
+    private String keyword;
 
     @Override
     protected int initContentView() {
@@ -79,16 +82,17 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
     @Override
     protected void initView() {
         ButterKnife.inject(this);
-        newProductAdapter = new NewProductAdapter(list);
-        newProductLv.setAdapter(newProductAdapter);
+
         newProductLv.setOnItemClickListener(this);
     }
 
     @Override
     protected void initData() {
-        HttpParams params = new HttpParams().put("page", "2").put("pageNum", "15").put("orderby", orderby);
+        keyword = getIntent().getStringExtra("keyword");
+        Log.e(TAG, "initData: "+keyword);
+        HttpParams params = new HttpParams().put("keyword",keyword).put("page", "1").put("pageNum", "15").put("orderby", orderby);
 
-        App.HL.get(ConstantsRedBaby.URL_NEWPRODUCT, params, NewProductResponse.class, ConstantsRedBaby.REQUEST_NEW_PRODUCT, NewProductActivity.this).setTag(this);
+        App.HL.get(ConstantsRedBaby.URL_SEARCH, params, NewProductResponse.class, ConstantsRedBaby.REQUEST_NEW_PRODUCT, SearchSecondActivity.this).setTag(this);
     }
 
     @OnClick({R.id.back, R.id.sale, R.id.price, R.id.comment, R.id.shelves})
@@ -133,7 +137,10 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
                 list.clear();
             }
             list.addAll(newProductResponse.getProductList());
-            newProductAdapter.notifyDataSetChanged();
+
+            newProductAdapter = new NewProductAdapter(list);
+            newProductLv.setAdapter(newProductAdapter);
+//            newProductAdapter.notifyDataSetChanged();
         }
 
 
@@ -189,7 +196,6 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this,GoodDetailActivity.class);
-//        Log.e(TAG, "onItemClick: "+newProductResponse.getProductList().get(position).getId() );
         intent.putExtra("pId",newProductResponse.getProductList().get(position).getId()+"");
         startActivity(intent);
     }
