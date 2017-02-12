@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,8 +104,10 @@ public class GoodsDetailFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(goodResponse, getActivity());
         vp.setAdapter(adapter);
+
         //标题等设置
         tvTitle.setText(goodResponse.getProduct().getName());
         tvMarketPrice.setText("市场价：¥ " + goodResponse.getProduct().getMarketPrice() + "");

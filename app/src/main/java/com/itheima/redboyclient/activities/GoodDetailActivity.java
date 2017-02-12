@@ -56,6 +56,7 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         toolbar.setNavigationIcon(R.drawable.arrowback);
         pId = getIntent().getStringExtra("pId");
+        Log.e(TAG, "onCreate: "+pId);
 
 
         HttpParams params = new HttpParams().put("pId",pId);

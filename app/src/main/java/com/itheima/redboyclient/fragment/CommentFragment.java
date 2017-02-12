@@ -66,7 +66,8 @@ public class CommentFragment extends Fragment {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
                 CommentResponse commentResponse = (CommentResponse) response;
-                Log.e(TAG, "onGetResponseSuccess: "+commentResponse.getComment().size() );
+
+
                 CommentAdapter adapter = new CommentAdapter(getActivity(),commentResponse);
                 lv.setAdapter(adapter);
             }
