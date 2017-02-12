@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -36,7 +37,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
     @InjectView(R.id.relSearch)
-    RelativeLayout relSearch;
+    LinearLayout relSearch;
     @InjectView(R.id.vp)
     ViewPager vp;
     @InjectView(R.id.lv)
