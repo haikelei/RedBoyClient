@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itheima.redboyclient.App;
@@ -83,12 +84,18 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC
                 );
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[0]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[1]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[2]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[3]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, titleIds[4]));
-        bottomNavigationBar.setActiveColor(R.color.btn_normal);
+        BadgeItem numberBadgeItem = new BadgeItem()
+                .setBorderWidth(0)
+                .setBackgroundColorResource(R.color.colorPrimary)
+                .setText("5")
+                .setHideOnSelect(false);
+
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.home, titleIds[0]));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.search, titleIds[1]));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.brandhome, titleIds[2]));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.cartnew, titleIds[3]).setBadgeItem(numberBadgeItem));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.user, titleIds[4]));
+        bottomNavigationBar.setActiveColor(R.color.colorPrimary);
         bottomNavigationBar.setInActiveColor(R.color.lightgray);
         bottomNavigationBar.setFirstSelectedPosition(0);
         bottomNavigationBar.initialise();

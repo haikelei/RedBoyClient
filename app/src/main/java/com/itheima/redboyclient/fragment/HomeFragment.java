@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -127,6 +129,8 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     public void onClick() {
         String s = editSearchInfo.getText().toString();
         if(TextUtils.isEmpty(s)){
+            Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.edit_shake);
+            editSearchInfo.startAnimation(shake);
             return;
         }
         Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
