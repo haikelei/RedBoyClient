@@ -24,10 +24,12 @@
             android:maxLength="26"
             android:maxLines="1" />
         <TextView
+            android:id="@+id/tv_search"
+            android:clickable="true"
             android:layout_gravity="center"
             android:layout_marginRight="15dp"
             android:gravity="center"
-            android:background="@drawable/bg_search_pri"
+            android:background="@drawable/bg_text_selector"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="搜索"

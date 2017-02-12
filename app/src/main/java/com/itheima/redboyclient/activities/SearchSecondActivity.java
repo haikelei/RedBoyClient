@@ -76,22 +76,19 @@ public class SearchSecondActivity extends BaseActivity implements HttpLoader.Htt
 
     @Override
     protected int initContentView() {
-        return R.layout.activity_newproduct;
+        return R.layout.activity_search_second;
     }
 
     @Override
     protected void initView() {
         ButterKnife.inject(this);
-
         newProductLv.setOnItemClickListener(this);
     }
 
     @Override
     protected void initData() {
         keyword = getIntent().getStringExtra("keyword");
-        Log.e(TAG, "initData: "+keyword);
         HttpParams params = new HttpParams().put("keyword",keyword).put("page", "1").put("pageNum", "15").put("orderby", orderby);
-
         App.HL.get(ConstantsRedBaby.URL_SEARCH, params, NewProductResponse.class, ConstantsRedBaby.REQUEST_NEW_PRODUCT, SearchSecondActivity.this).setTag(this);
     }
 

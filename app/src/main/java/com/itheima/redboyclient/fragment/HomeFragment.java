@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.BrandActivity;
@@ -21,12 +23,14 @@ import com.itheima.redboyclient.activities.FlashActivity;
 import com.itheima.redboyclient.activities.HotProductActivity;
 import com.itheima.redboyclient.activities.NewProductActivity;
 import com.itheima.redboyclient.activities.PromotionActivity;
+import com.itheima.redboyclient.activities.SearchSecondActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
 import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 /**
@@ -42,6 +46,8 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     ViewPager vp;
     @InjectView(R.id.lv)
     ListView lv;
+    @InjectView(R.id.tv_search)
+    TextView tvSearch;
 
     @Nullable
     @Override
@@ -78,7 +84,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
     private void handleHomeResponse(HomeResponse response) {
         //Log.e(TAG, "handleHomeResponse: "+response);
-        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(),getActivity());
+        HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(), getActivity());
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
         lv.setAdapter(lvAdapter);
@@ -95,18 +101,18 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     //homefragment的item点击事件
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
+        switch (position) {
             case 0:
-                getActivity().startActivity(new Intent(getContext(),FlashActivity.class));
+                getActivity().startActivity(new Intent(getContext(), FlashActivity.class));
                 break;
             case 1:
-                getActivity().startActivity(new Intent(getContext(),PromotionActivity.class));
+                getActivity().startActivity(new Intent(getContext(), PromotionActivity.class));
                 break;
             case 2:
-                getActivity().startActivity(new Intent(getContext(),NewProductActivity.class));
+                getActivity().startActivity(new Intent(getContext(), NewProductActivity.class));
                 break;
             case 3:
-                getActivity().startActivity(new Intent(getContext(),HotProductActivity.class));
+                getActivity().startActivity(new Intent(getContext(), HotProductActivity.class));
                 break;
             case 4:
                 Intent intent = new Intent(getContext(), BrandActivity.class);
@@ -115,5 +121,16 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
 
         }
 
+    }
+
+    @OnClick(R.id.tv_search)
+    public void onClick() {
+        String s = editSearchInfo.getText().toString();
+        if(TextUtils.isEmpty(s)){
+            return;
+        }
+        Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
+        intent.putExtra("keyword",s);
+        startActivity(intent);
     }
 }
