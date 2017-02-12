@@ -247,7 +247,7 @@
         ]
     },
     {
-        "outputFile": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v14\\values-v14.xml",
+        "outputFile": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v14\\values-v14.xml",
         "map": [
             {
                 "to": {
@@ -259,7 +259,7 @@
                     "endOffset": 326
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -279,7 +279,7 @@
                     "endOffset": 397
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -298,7 +298,7 @@
                     "endOffset": 480
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -318,7 +318,7 @@
                     "endOffset": 890
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -339,7 +339,7 @@
                     "endOffset": 1312
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -359,7 +359,7 @@
                     "endOffset": 1432
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -378,7 +378,7 @@
                     "endOffset": 1495
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -398,7 +398,7 @@
                     "endOffset": 1649
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -418,7 +418,7 @@
                     "endOffset": 1712
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -437,7 +437,7 @@
                     "endOffset": 1844
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 33,
                         "startColumn": 4,

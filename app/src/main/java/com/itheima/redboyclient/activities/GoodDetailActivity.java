@@ -10,13 +10,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.fragment.CommentFragment;
 import com.itheima.redboyclient.fragment.ContentDetailFragment;
 import com.itheima.redboyclient.fragment.GoodsDetailFragment;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 /**
  * Created by gary on 2017/2/8.
@@ -24,6 +28,7 @@ import com.itheima.redboyclient.fragment.GoodsDetailFragment;
 
 public class GoodDetailActivity extends AppCompatActivity {
 
+    private static final String TAG = "GoodDetailActivity";
     private TabLayout tabs;
     private ViewPager viewpager;
     private Toolbar toolbar;
@@ -51,6 +56,9 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         //打开activity的时候通过intent传入商品id，这里获取商品的商品id
         pId = getIntent().getStringExtra("pId");
+        Log.e(TAG, "onCreate: "+ pId );
+
+//        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL,)
 
     }
 
@@ -80,6 +88,13 @@ public class GoodDetailActivity extends AppCompatActivity {
         public int getCount() {
             return fragments.length;
         }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

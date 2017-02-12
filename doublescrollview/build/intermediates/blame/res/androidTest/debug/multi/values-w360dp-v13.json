@@ -32,7 +32,7 @@
         ]
     },
     {
-        "outputFile": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w360dp-v13\\values-w360dp-v13.xml",
+        "outputFile": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w360dp-v13\\values-w360dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -43,7 +43,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

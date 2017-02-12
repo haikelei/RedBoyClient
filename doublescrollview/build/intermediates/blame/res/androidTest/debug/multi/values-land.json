@@ -172,7 +172,7 @@
         ]
     },
     {
-        "outputFile": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-land\\values-land.xml",
+        "outputFile": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -183,7 +183,7 @@
                     "endOffset": 112
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -202,7 +202,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -221,7 +221,7 @@
                     "endOffset": 254
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -240,7 +240,7 @@
                     "endOffset": 318
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -259,7 +259,7 @@
                     "endOffset": 389
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -278,7 +278,7 @@
                     "endOffset": 457
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -298,7 +298,7 @@
                     "endOffset": 639
                 },
                 "from": {
-                    "file": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\values-land\\values-land.xml",
+                    "file": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
