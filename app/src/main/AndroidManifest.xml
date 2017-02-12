@@ -35,7 +35,7 @@
         <activity android:name=".activities.FeedBackActivity" />
         <activity android:name=".activities.HotProductActivity"/>
         <activity android:name=".activities.NewProductActivity"/>
-
+        <activity android:name=".activities.SearchSecondActivity"></activity>
 
 
         <activity android:name=".activities.Category_Second_activity"></activity>
