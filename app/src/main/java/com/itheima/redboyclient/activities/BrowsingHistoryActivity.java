@@ -1,6 +1,8 @@
 package com.itheima.redboyclient.activities;
 
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
@@ -80,15 +82,29 @@ public class BrowsingHistoryActivity extends BaseActivity implements HttpLoader.
         tvQingkong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (idlist.size() == 0) {
-                    MyToast.show(BrowsingHistoryActivity.this, "无浏览记录");
-                } else {
-                    recordDBDao.deleteAll();
-                }
+                initDialog();
             }
         });
 
 
+    }
+    public void initDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("确认清空");
+        builder.setMessage("是否清空浏览记录?");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (idlist.size() == 0) {
+                    MyToast.show(BrowsingHistoryActivity.this, "无浏览记录");
+                } else {
+
+                    recordDBDao.deleteAll();
+                }
+            }
+        });
+        builder.setNegativeButton("取消",null);
+        builder.show();
     }
 
     @Override

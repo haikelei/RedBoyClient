@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,7 +51,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     @InjectView(R.id.recent_browse_rl)
     RelativeLayout recentBrowse;  //收藏夹点击
     private Toolbar mToolbar;
-    private TextView mTextView;
+    //private TextView mTextView;
     private int bonus;
     private String level;
     private String orderCount;
@@ -61,6 +60,9 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     private UserInfoResponse mUserInfoResponse;
     String userId;
     boolean islogin;
+    private ImageView ivBack;
+    private TextView tvTuichu;
+
     @Override
     protected int initContentView() {
         return R.layout.accountcenter_activity;
@@ -68,12 +70,28 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
 
     @Override
     protected void initView() {
-        super.initView();
+        ivBack = (ImageView) findViewById(R.id.iv_back);
+        tvTuichu = (TextView) findViewById(R.id.tv_tuichu);
+
         mToolbar = (Toolbar) findViewById(R.id.ac_toolbar);
-        mTextView = (TextView) findViewById(R.id.ac_tv_title);
+        //mTextView = (TextView) findViewById(R.id.ac_tv_title);
         acUsername = (TextView) findViewById(R.id.ac_username);
 
-
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        tvTuichu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //退出登录后添加标记
+                App.EDIT.putBoolean("islogin", false);
+                App.EDIT.commit();
+                finish();
+            }
+        });
         initToolBar();
     }
 
@@ -84,9 +102,10 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         //默认ToolBar的标题在左侧，我们不需要
         mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
-        mTextView.setText("账户中心");
+        //mTextView.setText("账户中心");
         //显示左边的Home按钮
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -104,40 +123,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.accountcenter, menu);
-        return true;
-    }
 
-
-    @Override
-    protected void initListener() {
-        super.initListener();
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        /*
-        * 退出登录
-        * */
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.logout:
-                        //退出登录后添加标记
-                        App.EDIT.putBoolean("islogin", false);
-                        App.EDIT.commit();
-                        finish();
-                        break;
-                }
-                return true;
-            }
-        });
-    }
 
 
     public void startActivity(Class clazz, boolean isFinish) {

@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.adapter;
 
+import android.graphics.Paint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -62,6 +63,9 @@ public class BrowsingHistoryAdapter extends BaseAdapter {
         App.HL.display(viewHolder.iv_pic, ConstantsRedBaby.URL_BROWSING_HISTORY +list.get(position)
                 .getProduct().getPics().get(0) );
         viewHolder.tv_name .setText(list.get(position).getProduct().getName());
+        //设置价格上的横杠
+        viewHolder.market_price.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );
+        viewHolder.market_price.getPaint().setAntiAlias(true);// 抗锯齿
         viewHolder.market_price.setText(list.get(position).getProduct().getMarketPrice());
         viewHolder.tv_price.setText(list.get(position).getProduct().getPrice());
         return convertView;
