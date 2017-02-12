@@ -15,12 +15,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.fragment.CommentFragment;
 import com.itheima.redboyclient.fragment.ContentDetailFragment;
 import com.itheima.redboyclient.fragment.GoodsDetailFragment;
+import com.itheima.redboyclient.net.resp.GoodResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
+import org.senydevpkg.net.resp.IResponse;
 
 /**
  * Created by gary on 2017/2/8.
@@ -33,6 +39,7 @@ public class GoodDetailActivity extends AppCompatActivity {
     private ViewPager viewpager;
     private Toolbar toolbar;
     private String pId;
+    private Fragment[] fragments;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,17 +55,36 @@ public class GoodDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationIcon(R.drawable.arrowback);
+        pId = getIntent().getStringExtra("pId");
+        Log.e(TAG, "onCreate: "+pId);
 
-        MinePagerAdapter minePagerAdapter = new MinePagerAdapter(getSupportFragmentManager());
-        viewpager.setOffscreenPageLimit(3);
-        viewpager.setAdapter(minePagerAdapter);
-        tabs.setupWithViewPager(viewpager);
+
+        HttpParams params = new HttpParams().put("pId",pId);
+        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+            @Override
+            public void onGetResponseSuccess(int requestCode, IResponse response) {
+
+                GoodResponse goodResponse = (GoodResponse) response;
+                fragments = new Fragment[]{GoodsDetailFragment.newInstance(goodResponse),
+                        ContentDetailFragment.newInstance(goodResponse), CommentFragment.newInstance(pId)};
+                MinePagerAdapter minePagerAdapter = new MinePagerAdapter(getSupportFragmentManager());
+                viewpager.setOffscreenPageLimit(3);
+                viewpager.setAdapter(minePagerAdapter);
+                tabs.setupWithViewPager(viewpager);
+            }
+
+            @Override
+            public void onGetResponseError(int requestCode, VolleyError error) {
+
+            }
+        });
+
 
         //打开activity的时候通过intent传入商品id，这里获取商品的商品id
-        pId = getIntent().getStringExtra("pId");
+
         Log.e(TAG, "onCreate: "+ pId );
 
-//        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL,)
+
 
     }
 
@@ -67,11 +93,15 @@ public class GoodDetailActivity extends AppCompatActivity {
 //     * ViewPager的PagerAdapter
 
     public class MinePagerAdapter extends FragmentPagerAdapter {
-        Fragment[] fragments = new Fragment[]{GoodsDetailFragment.newInstance(pId), ContentDetailFragment.newInstance(), CommentFragment.newInstance()};
+
         String[] titles = new String[]{"商品", "详情", "评价"};
+
 
         public MinePagerAdapter(FragmentManager fm) {
             super(fm);
+
+
+
         }
 
         @Override
