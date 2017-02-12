@@ -33,6 +33,7 @@ import butterknife.OnClick;
 
 public class AccountCenterActivity extends BaseActivity implements HttpLoader.HttpListener {
     private static final String TAG = "AccountCenterActivity";
+    TextView mLougout;
     TextView acUsername;   //用户名
     @InjectView(R.id.member_mum)
     TextView member;  //会员等级
@@ -73,6 +74,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         mToolbar = (Toolbar) findViewById(R.id.ac_toolbar);
         mTextView = (TextView) findViewById(R.id.ac_tv_title);
         acUsername = (TextView) findViewById(R.id.ac_username);
+        mLougout = (TextView) findViewById(R.id.logout);
         initToolBar();
     }
 
@@ -103,12 +105,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.accountcenter, menu);
-        return true;
-    }
-
 
     @Override
     protected void initListener() {
@@ -122,7 +118,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         /*
         * 退出登录
         * */
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+ /*       mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
@@ -138,6 +134,20 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
                         break;
                 }
                 return true;
+            }
+        });*/
+
+        mLougout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout out = new Logout();
+                out.logout();
+                boolean isLogout = App.SP.getBoolean("islogout",false);
+                if (isLogout) {
+                    App.EDIT.putBoolean("islogin", false);
+                    App.EDIT.commit();
+                    finish();
+                }
             }
         });
     }
