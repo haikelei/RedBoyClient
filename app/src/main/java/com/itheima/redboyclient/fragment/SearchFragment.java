@@ -13,8 +13,8 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.SearchAdapter;
-import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.damain.SearchTitleBean;
+import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.net.resp.SearchResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 

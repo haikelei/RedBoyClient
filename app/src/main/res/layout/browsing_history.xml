@@ -44,6 +44,7 @@
             android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tv_price"
            android:layout_marginLeft="20dp"
                 android:text="￥68"
             android:layout_width="wrap_content"
@@ -51,7 +52,7 @@
 
     </LinearLayout>
             <TextView
-                android:id="@+id/vip_price"
+                android:id="@+id/pinglun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="已有887人评价"
