@@ -23,7 +23,6 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
-import com.itheima.redboyclient.db.GoodSqliteOpenHelper;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.FavResponse;
