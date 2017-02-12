@@ -11,10 +11,6 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.TopicAdapter;
-<<<<<<< HEAD
-
-=======
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -25,6 +21,8 @@ import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
 import butterknife.InjectView;
+
+
 
 public class TopicActivity extends BaseActivity implements HttpLoader.HttpListener {
 

@@ -53,12 +53,10 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_HELP = 17;
     public static final int REQUEST_CODE_HELP_DETAIL = 18;
     public static final int REQUEST_CODE_COMMENT = 19;
-<<<<<<< HEAD
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
-=======
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+
 
 
 }

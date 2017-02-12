@@ -76,7 +76,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     }
 
     private void handleHomeResponse(HomeResponse response) {
-
+        //Log.e(TAG, "handleHomeResponse: "+response);
         HomeVPAdapter adapter = new HomeVPAdapter(response.getHomeTopic(),getActivity());
         vp.setAdapter(adapter);
         HomeLVAdapter lvAdapter = new HomeLVAdapter();
