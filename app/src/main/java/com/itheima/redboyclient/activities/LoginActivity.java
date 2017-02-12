@@ -222,6 +222,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             .putString("userid",loginResopnse.userInfo.userid)
             .putBoolean("islogin",true);
             App.EDIT.commit();
+            App.setUserId(loginResopnse.userInfo.userid);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

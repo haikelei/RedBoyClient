@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.UserInfoResponse;
+import com.itheima.redboyclient.present.Logout;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
@@ -72,8 +73,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         mToolbar = (Toolbar) findViewById(R.id.ac_toolbar);
         mTextView = (TextView) findViewById(R.id.ac_tv_title);
         acUsername = (TextView) findViewById(R.id.ac_username);
-
-
         initToolBar();
     }
 
@@ -128,10 +127,14 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.logout:
-                        //退出登录后添加标记
-                        App.EDIT.putBoolean("islogin", false);
-                        App.EDIT.commit();
-                        finish();
+                            Logout out = new Logout();
+                            out.logout();
+                            boolean isLogout = App.SP.getBoolean("islogout",false);
+                        if (isLogout) {
+                            App.EDIT.putBoolean("islogin", false);
+                            App.EDIT.commit();
+                            finish();
+                        }
                         break;
                 }
                 return true;
