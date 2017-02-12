@@ -9,15 +9,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.FlashAdapter;
-
-
 import com.itheima.redboyclient.net.resp.FlashResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
