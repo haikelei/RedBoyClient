@@ -130,4 +130,9 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
 
         MyToast.show(this, "数据请求失败！");
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App.HL.cancelRequest(this);
+    }
 }

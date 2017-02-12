@@ -1310,11 +1310,7 @@
         <item name="actionModeShareDrawable">?android:attr/actionModeShareDrawable</item>
     </style><style name="Base.Theme.AppCompat" parent="Base.V22.Theme.AppCompat"/><style name="Base.V22.Theme.AppCompat.Light" parent="Base.V21.Theme.AppCompat.Light">
         <item name="actionModeShareDrawable">?android:attr/actionModeShareDrawable</item>
-<<<<<<< HEAD
-    </style><style name="Base.Theme.AppCompat.Light" parent="Base.V22.Theme.AppCompat.Light"/></file><file path="C:\Users\sjk\Desktop\SJK\studio  in\RedBoyClient\doublescrollview\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\res\values-v23\values-v23.xml" qualifiers="v23"><style name="Base.V23.Theme.AppCompat.Light" parent="Base.V22.Theme.AppCompat.Light">
-=======
     </style><style name="Base.Theme.AppCompat.Light" parent="Base.V22.Theme.AppCompat.Light"/></file><file path="E:\RedBoyClient\doublescrollview\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\res\values-v23\values-v23.xml" qualifiers="v23"><style name="Base.V23.Theme.AppCompat.Light" parent="Base.V22.Theme.AppCompat.Light">
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
         <!-- We can use the platform drawable on v23+ -->
         <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
 
