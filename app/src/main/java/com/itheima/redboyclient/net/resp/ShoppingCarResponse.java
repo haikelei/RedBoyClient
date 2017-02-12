@@ -1,5 +1,7 @@
 package com.itheima.redboyclient.net.resp;
 
+import android.widget.RadioButton;
+
 import org.senydevpkg.net.resp.IResponse;
 
 import java.util.List;
@@ -88,6 +90,13 @@ public class ShoppingCarResponse implements IResponse {
             return isEditing;
         }
 
+        public void setRadioButton(RadioButton radioButton) {
+            this.radioButton = radioButton;
+        }
+
+        private RadioButton radioButton;
+
+
         public void setEditing(boolean editing) {
             isEditing = editing;
         }
@@ -98,6 +107,9 @@ public class ShoppingCarResponse implements IResponse {
 
         public void setSelected(boolean selected) {
             isSelected = selected;
+            if (radioButton != null) {
+                radioButton.setChecked(selected);
+            }
         }
 
         public int getProdNum() {

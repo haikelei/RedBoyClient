@@ -36,7 +36,6 @@
         <activity android:name=".activities.HotProductActivity"/>
         <activity android:name=".activities.NewProductActivity"/>
 
-        <activity android:name=".activities.GoodDetailActivity"></activity>
 
 
         <activity android:name=".activities.Category_Second_activity"></activity>
