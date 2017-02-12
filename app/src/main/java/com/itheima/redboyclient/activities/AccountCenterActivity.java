@@ -173,6 +173,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.my_order_rl:   //我的订单点击
+                startActivity(MyOrderActivity.class,false);
                 break;
             case R.id.address_manage_rl:  //地址管理点击
                 break;

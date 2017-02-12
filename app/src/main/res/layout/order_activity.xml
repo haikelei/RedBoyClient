@@ -1,32 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
-<LinearLayout
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    >
     <android.support.v7.widget.Toolbar
+        android:id="@+id/order_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#f00">
+        android:background="@color/colorPrimary"
+        >
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/head_button"
-                android:gravity="center"
-                android:text="我的订单"
-                android:textColor="#fff"
-                android:textSize="12sp" />
-
+            android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,6 +24,20 @@
                 android:textSize="28sp" />
         </FrameLayout>
     </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/normal_order"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,6 +46,7 @@
         android:padding="8dp">
 
         <RelativeLayout
+            android:id="@+id/wuliu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rounded_down_selectable"
@@ -76,14 +79,13 @@
             android:background="@drawable/shape_rounded_down_selectable"
             android:orientation="vertical"
             android:padding="8dp">
-
             <TextView
                 android:id="@+id/orderId"
                 style="@style/TextView1"
                 android:text="订单号 :" />
 
             <TextView
-
+                android:id="@+id/address"
                 style="@style/TextView1"
                 android:text="收货人地址 :" />
 
@@ -280,14 +282,37 @@
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <TextView
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:background="@drawable/head_button_selected"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="取消订单"/>
+
+        <Button
+
+            android:id="@+id/cancel_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/login_btn_selector"
+            android:text="取消订单"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            />
     </LinearLayout>
     </LinearLayout>
 </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/no_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="对不起没有订单信息!!!"
+            />
+    </RelativeLayout>
+</LinearLayout>

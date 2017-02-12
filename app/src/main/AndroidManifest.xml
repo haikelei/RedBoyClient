@@ -44,6 +44,7 @@
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.AccountCenterActivity"></activity>
+        <activity android:name=".activities.MyOrderActivity"></activity>
     </application>
 
 </manifest>
