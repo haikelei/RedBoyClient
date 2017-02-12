@@ -6,17 +6,19 @@
     <string name="login_pwd">密码：</string>
     <string name="app_name">红孩子商城</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
-    <string name="my_account_title">我的账户</string>
+    <string name="my_account_title">账户中心</string>
     <string name="my_ordr_title">我的订单</string>
-    <string name="address_manage_title">地址管理</string>
-    <string name="my_favorite_title">收藏夹</string>
-    <string name="recent_browse_title">最近浏览</string>
+    <string name="recent_browse_title">浏览记录</string>
     <string name="menu_home">主页</string>
     <string name="menu_search">搜索</string>
+    <string name="menu_classify">品牌</string>
+    <string name="menu_shopping">购物车</string>
+    <string name="menu_more">更多</string>
     <string name="menu_favorites">收藏夹</string>
     <string name="menu_myorder">我的订单</string>
     <string name="menu_history">浏览历史</string>
     <string name="menu_exit">退出</string>
+    <string name="user_feedback">用户反馈</string>
     <string name="about_title">关 于</string>
     <string name="about_comp">天津红孩子商贸有限公司</string>
     <string name="more">更多</string>
@@ -58,6 +60,10 @@
     <string name="hotproduct">hotproduct</string>
     <string name="brand">brand</string>
     <string name="addresslist">addresslist</string>
+    <string name="username">用户名</string>
+    <string name="pwd">密码</string>
+    <string name="pwd2">确认密码</string>
+    <string name="regist">注册</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

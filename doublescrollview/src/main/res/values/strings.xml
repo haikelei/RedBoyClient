@@ -1,0 +1,5 @@
+<resources >
+    <string name="app_name" >DoubleScrollView</string >
+
+    <string name="pageTwoBehavior" translatable="false" >com.ysnows.doublescrollview.PageBehavior</string >
+</resources >
