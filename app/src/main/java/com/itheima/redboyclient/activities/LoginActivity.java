@@ -172,6 +172,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             case R.id.tv_backpwd:
                 break;
             default:
+                startActivity(BookmarksActivity.class,false);
                 break;
         }
     }

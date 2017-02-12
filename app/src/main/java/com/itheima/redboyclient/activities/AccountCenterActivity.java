@@ -166,6 +166,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;
             case R.id.recent_browse_rl: //收藏夹点击
+                startActivity(new Intent(this,BookmarksActivity.class));
                 break;
         }
     }
