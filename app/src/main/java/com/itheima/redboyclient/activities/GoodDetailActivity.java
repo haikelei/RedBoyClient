@@ -65,7 +65,7 @@ public class GoodDetailActivity extends AppCompatActivity {
 
                 GoodResponse goodResponse = (GoodResponse) response;
                 fragments = new Fragment[]{GoodsDetailFragment.newInstance(goodResponse),
-                        ContentDetailFragment.newInstance(goodResponse), CommentFragment.newInstance()};
+                        ContentDetailFragment.newInstance(goodResponse), CommentFragment.newInstance(pId)};
                 MinePagerAdapter minePagerAdapter = new MinePagerAdapter(getSupportFragmentManager());
                 viewpager.setOffscreenPageLimit(3);
                 viewpager.setAdapter(minePagerAdapter);
