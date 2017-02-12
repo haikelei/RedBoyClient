@@ -37,7 +37,7 @@ public class GoodsDetailFragment extends Fragment {
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
 
-    public static String pId;
+    public static GoodResponse goodResponse;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -47,8 +47,8 @@ public class GoodsDetailFragment extends Fragment {
     private static GoodsDetailFragment fragment = null;
 
 
-    public static GoodsDetailFragment newInstance(String id) {
-        pId = id;
+    public static GoodsDetailFragment newInstance(GoodResponse response) {
+        goodResponse = response;
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
         }
@@ -67,22 +67,10 @@ public class GoodsDetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //测试时pid用1，以后改成pid
-        HttpParams params  = new HttpParams().put("pId","1");
-        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
-            @Override
-            public void onGetResponseSuccess(int requestCode, IResponse response) {
-                GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(response,getActivity());
-                vp.setAdapter(adapter);
-            }
 
-            @Override
-            public void onGetResponseError(int requestCode, VolleyError error) {
+        GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(goodResponse,getActivity());
+        vp.setAdapter(adapter);
 
-            }
-        });
-
-//
     }
 
     @Override
