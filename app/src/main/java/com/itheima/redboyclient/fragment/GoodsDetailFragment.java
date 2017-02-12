@@ -130,6 +130,7 @@ public class GoodsDetailFragment extends Fragment {
         spinnerSize.setAdapter(sizeArrayAdapter);
         //收藏点击事件
         //加入购物车点击事件
+        //商品详情图片
         ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
         for (String s : list) {
             String url = ConstantsRedBaby.URL_SERVER + s;
