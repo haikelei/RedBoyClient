@@ -1,5 +1,7 @@
 package com.itheima.redboyclient.activities;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
