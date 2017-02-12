@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f4ecec"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:targetApi="lollipop"
+        android:id="@+id/toolbar">
+        <TextView
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textColor="#ffffff"
+            android:id="@+id/tv_title"
+            android:text="欢迎登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+       <!-- <TextView
+            android:id="@+id/back_home"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:background="@drawable/head_back"
+            android:text="返回"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>-->
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/biq"
+        android:id="@+id/imageView"/>
+
+    <android.support.design.widget.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/til_username"
+    android:layout_marginTop="20dp"
+    >
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:imeOptions="actionNext"
+            android:inputType="text"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_password"
+        android:layout_marginTop="5dp"
+        >
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:imeOptions="actionDone"
+            android:inputType="numberPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/login_btn_selector"
+        android:text="点击登录"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_newuser"
+           android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="点击注册"
+            android:textColor="@color/login_text_select"/>
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:gravity="right"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/tv_backpwd"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="找回密码"
+            android:textColor="@color/login_text_select"/>
+    </LinearLayout>
+  p<ProgressBar
+    android:id="@+id/pb"
+    android:visibility="gone"
+    android:layout_marginTop="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    />
+
+</LinearLayout>

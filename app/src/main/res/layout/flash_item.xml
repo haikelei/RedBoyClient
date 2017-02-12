@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_launcher" />
+
+        <TextView
+            android:textSize="30sp"
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/iv"
+            android:text="乳加力胶丸" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/iv"
+            android:text="¥" />
+
+        <TextView
+            android:textSize="20sp"
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/iv"
+            android:text="限时特价" />
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/tv4"
+            android:textColor="#f00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv3"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/iv"
+            android:text="剩余时间" />
+
+        <TextView
+            android:gravity="center"
+            android:textSize="15sp"
+            android:id="@+id/flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv4"
+            android:layout_marginLeft="59dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_normal"
+            android:text="开始抢购" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv2"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/arrow" />
+    </RelativeLayout>
