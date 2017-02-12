@@ -91,7 +91,7 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(FlashActivity.this,GoodDetailActivity.class);
-                        intent.putExtra("pId",topics.getProductList().get(position)+"");
+                        intent.putExtra("pId",topics.getProductList().get(position).getId()+"");
                         startActivity(intent);
                     }
                 });
