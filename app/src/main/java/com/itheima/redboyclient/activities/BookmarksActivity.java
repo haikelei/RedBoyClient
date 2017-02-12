@@ -2,6 +2,7 @@ package com.itheima.redboyclient.activities;
 
 
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -47,8 +48,17 @@ public class BookmarksActivity extends BaseActivity implements HttpLoader.HttpLi
 
     @Override
     protected void initView() {
-
+        initToolBar();
         initData();
+    }
+
+    private void initToolBar() {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     /**

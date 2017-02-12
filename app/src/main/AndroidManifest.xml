@@ -41,9 +41,9 @@
         <activity android:name=".activities.Category_Second_activity"></activity>
         <activity android:name=".activities.Category_Third_activity"></activity>
 
-        <activity android:name=".activities.PromotionActivity"></activity>
-        <activity android:name=".activities.FlashActivity"></activity>
-        <activity android:name=".activities.AccountCenterActivity"></activity>
+        <activity android:name=".activities.PromotionActivity"/>
+        <activity android:name=".activities.FlashActivity"/>
+        <activity android:name=".activities.AccountCenterActivity"/>
         <activity android:name=".activities.BookmarksActivity"/>
     </application>
 
