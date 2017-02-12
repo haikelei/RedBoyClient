@@ -13,8 +13,8 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.SearchAdapter;
-import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.damain.SearchTitleBean;
+import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.net.resp.SearchResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -102,13 +102,12 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
             }
         });
 
-        //初始化数据
-        initData();
+
 
 
     }
 
-    private void initData() {
+    protected void initData() {
         IResponse data = getData();
         SearchRecommendResponse scr = (SearchRecommendResponse) data;
         //记录热门搜索数据

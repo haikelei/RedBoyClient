@@ -6,11 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
@@ -22,7 +20,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
-import org.w3c.dom.ProcessingInstruction;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -39,8 +36,6 @@ public class GoodsDetailFragment extends Fragment {
     ViewPager vp;
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
-    @InjectView(R.id.webview)
-    WebView webview;
 
     public static String pId;
 
@@ -87,7 +82,6 @@ public class GoodsDetailFragment extends Fragment {
             }
         });
 
-        webview.loadUrl("https://github.com/ysnows");
 //
     }
 

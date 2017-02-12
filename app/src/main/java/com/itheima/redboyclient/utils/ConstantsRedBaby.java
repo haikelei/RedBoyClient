@@ -13,7 +13,10 @@ public class ConstantsRedBaby {
     public static final String URL_SEARCH_RECOMMEND = URL_SEARCH +"/recommend";
     public static final String URL_BRAND = URL_SERVER + "/brand";
     public static final String URL_CATEGORY = URL_SERVER + "/category";
+    public static final String URL_ADDRESSSLIST = URL_SERVER + "/addresslist";
     public static final String URL_COMMENT = URL_SERVER + "/product/comment";
+    public static final String URL_ACCOUNT_CENTER = URL_SERVER + "/userinfo";
+    public static final String URL_LOGOUT = URL_SERVER + "/logout";
     public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
     public static final String URL_HOTPRODUCT = URL_SERVER + "/hotproduct";
     public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
@@ -41,6 +44,7 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_REGIST = 7;
     public static final int REQUEST_CODE_BRAND = 8;
     public static final int REQUEST_CODE_SEARCH = 9;
+    public static final int REQUEST_CODE_ADDRESSSLIST= 20;
     public static final int REQUEST_CODE_GOODDETAIL = 10;
     public static final int REQUEST_CODE_SHOPPING_CAR = 11;
     public static final int REQUEST_CODE_FLASH = 12;
@@ -49,7 +53,12 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_HELP = 17;
     public static final int REQUEST_CODE_HELP_DETAIL = 18;
     public static final int REQUEST_CODE_COMMENT = 19;
+<<<<<<< HEAD
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
+=======
+    public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
+    public static final int REQUEST_CODE_LOGOUT = 14;
+>>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+
 
 }
-

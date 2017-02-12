@@ -1,8 +1,10 @@
 package com.itheima.redboyclient.adapter;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,6 +55,7 @@ public class PromotionAdapter extends AbsBaseAdapter<TopicResponse.TopicEntity> 
         protected View initView() {
             View view = View.inflate(getContext(), R.layout.promotion_item, null);
             ButterKnife.inject(this, view);
+            setAnim(view);
             return view;
         }
 
@@ -62,5 +65,19 @@ public class PromotionAdapter extends AbsBaseAdapter<TopicResponse.TopicEntity> 
             App.HL.display(mProIV, ConstantsRedBaby.URL_SERVER + data.pic);
             mProTV.setText(data.name);
         }
+    }
+    public  static void setAnim(final View view) {
+        ValueAnimator animator = ValueAnimator.ofFloat(0.5f, 1.0f);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                Float value = (Float) valueAnimator.getAnimatedValue();
+                view.setScaleX(value);
+                view.setScaleY(value);
+            }
+        });
+        animator.setDuration(400);
+        animator.setInterpolator(new OvershootInterpolator());
+        animator.start();
     }
 }

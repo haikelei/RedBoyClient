@@ -1,21 +1,19 @@
 package com.itheima.redboyclient.activities;
 
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.FlashAdapter;
-
-
 import com.itheima.redboyclient.net.resp.FlashResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -84,6 +82,16 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
             if (adapter == null) {
                 adapter = new FlashAdapter(this, topics.getProductList());
                 listView.setAdapter(adapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(FlashActivity.this,GoodDetailActivity.class);
+                        intent.putExtra("pId",topics.getProductList().get(position)+"");
+                        startActivity(intent);
+                    }
+                });
+
             } else {
                 adapter.notifyDataSetChanged(topics.getProductList());
             }

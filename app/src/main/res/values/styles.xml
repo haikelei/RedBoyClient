@@ -6,7 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppTheme" parent="BaseAppTheme"></style>
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:textColorPrimary">#fff</item>
+    </style>
     <style name="style_18_BEBEBE_BOLD">
         <item name="android:textSize">18.0sp</item>
         <item name="android:textStyle">bold</item>

@@ -1,108 +1,69 @@
 package com.itheima.redboyclient.adapter;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.animation.OvershootInterpolator;
+import android.widget.BaseAdapter;
 
+import com.itheima.redboyclient.Holder.ShoppingCarHolder;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
+import com.nineoldandroids.view.ViewHelper;
+import com.nineoldandroids.view.ViewPropertyAnimator;
+
+import java.util.List;
 
 
 /**
  * Created by gary on 2017/2/8.
  */
 
- public class ShoppingCartListAdapter extends RecyclerView.Adapter<ShoppingCartListAdapter.MyHolder> {
+public class ShoppingCartListAdapter extends BaseAdapter {
+    protected List<ShoppingCarResponse.CartBean> list;
 
-    private static final String TAG = "ShoppingCartListAdapter";
-
-    @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shoppingcart_listitem, parent, false);
-        MyHolder holder = new MyHolder(view);
-        return holder;
+    public ShoppingCartListAdapter(List<ShoppingCarResponse.CartBean> list) {
+        super();
+        this.list = list;
     }
 
     @Override
-    public void onBindViewHolder(final MyHolder holder, final int position) {
-
-        //购物车条目编辑按钮的点击事件
-        holder.tvEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.isEditing = !holder.isEditing;
-
-                if(holder.isEditing){   //编辑状态
-                    holder.editState.setVisibility(View.VISIBLE);
-                    holder.normalState.setVisibility(View.GONE);
-                    holder.tvEdit.setText("完成");
-                }else{ //非编辑状态
-                    holder.editState.setVisibility(View.GONE);
-                    holder.normalState.setVisibility(View.VISIBLE);
-                    holder.tvEdit.setText("编辑");
-                }
-
-
-            }
-        });
-
-        //购物车商品详情点击事件回调
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mOnItemClickLitener != null){
-                    mOnItemClickLitener.onItemClick(v,position);
-                }
-            }
-        });
-
-        //购物车商品详情长按事件回调
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if(mOnItemClickLitener != null){
-                    mOnItemClickLitener.onItemLongClick(v,position);
-                }
-                return true;
-            }
-        });
+    public int getCount() {
+        return list.size();
     }
 
     @Override
-    public int getItemCount() {
-        return 3;
+    public Object getItem(int position) {
+        return list.get(position);
     }
 
-    public class MyHolder extends RecyclerView.ViewHolder {
-        private TextView tv;
-        private TextView tvEdit;
-        private boolean isEditing = false;
-        private RelativeLayout editState;
-        private RelativeLayout normalState;
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        public MyHolder(View itemView) {
-            super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv_good_num);
-            tvEdit = (TextView) itemView.findViewById(R.id.tv_edit);
-            editState = (RelativeLayout) itemView.findViewById(R.id.rl_edit);
-            normalState = (RelativeLayout) itemView.findViewById(R.id.rl_normal);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        //1. 初始化holder
+        ShoppingCarHolder holder;
+        if(convertView == null){
+            convertView = View.inflate(parent.getContext(), R.layout.shoppingcart_listitem,null);
+            holder = new ShoppingCarHolder(convertView);
+        }else{
+            holder = (ShoppingCarHolder) convertView.getTag();
 
         }
+        //3. 绑定数据
+        holder.setCart(list.get(position));
+        holder.bindData();
+        //4. 增加炫酷动画
+        //一开始缩小
+        ViewHelper.setScaleX(convertView, 0.5f);
+        ViewHelper.setScaleY(convertView, 0.5f);
+        //执行放大动画
+        ViewPropertyAnimator.animate(convertView).scaleX(1.0f).setInterpolator(new OvershootInterpolator()).setDuration(400).start();
+        ViewPropertyAnimator.animate(convertView).scaleY(1.0f).setInterpolator(new OvershootInterpolator()).setDuration(400).start();
+        return convertView;
     }
 
-    //recycerview的item的事件回调
-    public interface OnItemClickLitener
-    {
-        void onItemClick(View view, int position);
-        void onItemLongClick(View view , int position);
-    }
 
-    private OnItemClickLitener mOnItemClickLitener;
-
-    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener)
-    {
-        this.mOnItemClickLitener = mOnItemClickLitener;
-    }
 }

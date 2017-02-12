@@ -125,9 +125,7 @@ public class HotProductActivity extends BaseActivity implements HttpLoader.HttpL
     public void onGetResponseSuccess(int requestCode, IResponse response) {
         HotProductResponse hotProductResponse = (HotProductResponse) response;
         if (hotProductResponse != null) {
-            if (list.size() != 0 && list != null) {
-                list.clear();
-            }
+            list.clear();
             list.addAll(hotProductResponse.getProductList());
             hotProductAdapter.notifyDataSetChanged();
         }

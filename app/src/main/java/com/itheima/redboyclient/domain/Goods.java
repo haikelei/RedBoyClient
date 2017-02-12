@@ -5,10 +5,15 @@ package com.itheima.redboyclient.domain;
  */
 public class Goods {
     private int productId;
-    private int productPropertyId;
+    private String productPropertyId;
     private int productNum;
 
-    public Goods(int productId, int productPropertyId, int productNum) {
+    public String getProductPropertyId() {
+        return productPropertyId;
+    }
+
+    public Goods(int productId, String productPropertyId, int productNum) {
+
         this.productId = productId;
         this.productPropertyId = productPropertyId;
         this.productNum = productNum;
@@ -22,13 +27,7 @@ public class Goods {
         this.productId = productId;
     }
 
-    public int getProductPropertyId() {
-        return productPropertyId;
-    }
 
-    public void setProductPropertyId(int productPropertyId) {
-        this.productPropertyId = productPropertyId;
-    }
 
     public int getProductNum() {
         return productNum;
