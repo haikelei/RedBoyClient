@@ -1,10 +1,6 @@
 [
     {
-<<<<<<< HEAD
         "outputFile": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w480dp-v13\\values-w480dp-v13.xml",
-=======
-        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-w480dp-v13\\values-w480dp-v13.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
         "map": [
             {
                 "to": {
@@ -15,11 +11,7 @@
                     "endOffset": 112
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -38,11 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w480dp\\values-w480dp.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

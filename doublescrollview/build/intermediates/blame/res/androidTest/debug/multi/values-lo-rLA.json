@@ -1,10 +1,6 @@
 [
     {
-<<<<<<< HEAD
         "outputFile": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
         "map": [
             {
                 "to": {
@@ -15,11 +11,7 @@
                     "endOffset": 153
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -38,11 +30,7 @@
                     "endOffset": 261
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -61,11 +49,7 @@
                     "endOffset": 384
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -84,11 +68,7 @@
                     "endOffset": 481
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -107,11 +87,7 @@
                     "endOffset": 588
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -130,11 +106,7 @@
                     "endOffset": 673
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -153,11 +125,7 @@
                     "endOffset": 778
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -176,11 +144,7 @@
                     "endOffset": 890
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -199,11 +163,7 @@
                     "endOffset": 970
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -222,11 +182,7 @@
                     "endOffset": 1077
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -245,11 +201,7 @@
                     "endOffset": 1174
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -268,11 +220,7 @@
                     "endOffset": 1272
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -291,11 +239,7 @@
                     "endOffset": 1377
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -314,11 +258,7 @@
                     "endOffset": 1480
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -337,11 +277,7 @@
                     "endOffset": 1584
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -360,11 +296,7 @@
                     "endOffset": 1706
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -383,11 +315,7 @@
                     "endOffset": 1802
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -406,11 +334,7 @@
                     "endOffset": 1903
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
-=======
-                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-lo-rLA\\values-lo-rLA.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,

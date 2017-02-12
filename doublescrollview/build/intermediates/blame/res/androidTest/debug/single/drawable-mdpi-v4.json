@@ -4,7 +4,6 @@
         "source": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-<<<<<<< HEAD
         "merged": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -15,18 +14,6 @@
     {
         "merged": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_go_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_go_search_api_mtrl_alpha.png"
-=======
-        "merged": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png",
-        "source": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
-    },
-    {
-        "merged": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
-        "source": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable-mdpi\\abc_textfield_default_mtrl_alpha.9.png"
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
     },
     {
         "merged": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_search_api_mtrl_alpha.png",
