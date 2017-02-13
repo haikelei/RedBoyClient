@@ -24,16 +24,16 @@
         "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
+        "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
         "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
-        "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\aaa\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_popup_enter.xml"
+        "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\ApplicationWorkSpace\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
