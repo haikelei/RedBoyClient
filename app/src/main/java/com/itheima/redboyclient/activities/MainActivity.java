@@ -174,10 +174,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 bean = CategoryResponse.class;
                 break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-                //购物车测试url用home
-                url = ConstantsRedBaby.URL_HOME;
-                bean = HomeResponse.class;
-                break;
+                //购物车页面需要先验证登陆 由自己访问网络
             case 4:
                 //更多页面不需要访问网络
                 FragmentTransaction transaction = fm.beginTransaction();
@@ -232,11 +229,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 break;
             case ConstantsRedBaby.REQUEST_CODE_CATEGORY:
                 list = ((CategoryResponse)response).getCategory();
-            //购物车临时测试
                 break;
-            case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-                list = ((HomeResponse)response).getHomeTopic();
-                break;
+
         }
 
         if (list != null && list.size() > 0) {
