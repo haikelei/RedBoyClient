@@ -131,7 +131,22 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     }
 
 
+    //小圆点的限时
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEventMainThread(EventBean bean) {
+        ShoppingDBDao dao = new ShoppingDBDao(this);
+        ArrayList<Goods> list = (ArrayList<Goods>) dao.findAll();
+        Log.e(TAG, "111onMessageEventMainThread: "+list.size() );
+        int goodNum = 0;
+        for (Goods good : list) {
+            goodNum += good.getProductNum();
+        }
+        Log.e(TAG, "222onMessageEventMainThread: "+goodNum );
 
+        numberBadgeItem.setText(goodNum+"").show();
+        item4.setBadgeItem(numberBadgeItem);
+        bottomNavigationBar.refreshDrawableState();
+    }
 
 
     @Override
