@@ -59,7 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         //界面中如果有EditText，默认隐藏输入法
         getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //初始化通用的SP&EDIT
         sp = App.SP;
         edit = App.EDIT;

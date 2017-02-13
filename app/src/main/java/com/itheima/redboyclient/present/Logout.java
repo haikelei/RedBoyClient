@@ -42,9 +42,11 @@ public class Logout implements HttpLoader.HttpListener {
     private void handleLogoutResopnse(LogoutResponse response) {
         mLogoutResopnse = response;
         if (mLogoutResopnse.response.equals("logout")) {
-            ToastUtil.showToast("退出登录成功!");
             App.EDIT.putBoolean("islogout",true).commit();
+            ToastUtil.showToast("退出登录成功!");
             App.setUserId("");
+        } else {
+            ToastUtil.showToast("退出登录失败,请检查网络!");
         }
     }
 

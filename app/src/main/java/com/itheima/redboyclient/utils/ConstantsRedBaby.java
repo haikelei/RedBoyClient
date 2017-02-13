@@ -30,6 +30,8 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final String NO_HISTORY = "没有搜索记录";
     public static final String SHOPPING_CAR = "shoppingCar";
     public static final String BROWSE_RECORD = "浏览记录";
+    public static final String URL_ORDERLIST = URL_SERVER + "/orderlist";
+    public static final String URL_ORDERSUMBIT = URL_SERVER + "/ordersumbit";
 
 
 
@@ -59,6 +61,9 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
+    public static final int REQUEST_CODE_ORDERLIST  = 23;
+    public static final int REQUEST_CODE_ORDERSUMBIT = 25;
+
 
 
 

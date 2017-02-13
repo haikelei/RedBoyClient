@@ -124,7 +124,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 return true;
             }
         }
-        return false;
+        return true;
     }
 
     /**
@@ -228,7 +228,8 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 public void run() {
                     boolean islogin = App.SP.getBoolean("islogin", false);
                     if (islogin) {
-                       finish();
+                        App.EDIT.putBoolean("islogout",true).commit();
+                        finish();
                         ToastUtil.showToast("登录成功!");
                     }
                 }

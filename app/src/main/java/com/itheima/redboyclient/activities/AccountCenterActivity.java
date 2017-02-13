@@ -220,11 +220,13 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
              }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.orderCount)) {
-                myOrderCount.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                myOrderCount.setText("(" + mUserInfoResponse.userInfo.orderCount + ")");
+                App.EDIT.putString("orderCount",mUserInfoResponse.userInfo.orderCount);
             }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.favoritesCount)) {
                 favoritesCounts.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                App.EDIT.putString("favoritesCount",mUserInfoResponse.userInfo.favoritesCount);
             }
 
             }
