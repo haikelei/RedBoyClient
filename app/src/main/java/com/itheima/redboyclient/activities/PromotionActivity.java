@@ -49,7 +49,6 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
 
     @Override
     protected int initContentView() {
-
         return R.layout.promotion_fragment;
 
     }
@@ -106,7 +105,7 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(PromotionActivity.this, GoodDetailActivity.class);
-                        intent.putExtra("pId", topics.topic.get(position) + "");
+                        intent.putExtra("pId", topics.topic.get(position).id + "");
                         startActivity(intent);
                     }
                 });
