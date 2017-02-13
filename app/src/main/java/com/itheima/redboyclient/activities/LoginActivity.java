@@ -124,7 +124,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 return true;
             }
         }
-        return false;
+        return true;
     }
 
     /**
@@ -172,6 +172,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             case R.id.tv_backpwd:
                 break;
             default:
+                startActivity(BookmarksActivity.class,false);
                 break;
         }
     }
@@ -222,12 +223,14 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             .putString("userid",loginResopnse.userInfo.userid)
             .putBoolean("islogin",true);
             App.EDIT.commit();
+            App.setUserId(loginResopnse.userInfo.userid);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     boolean islogin = App.SP.getBoolean("islogin", false);
                     if (islogin) {
-                       finish();
+                        App.EDIT.putBoolean("islogout",true).commit();
+                        finish();
                         ToastUtil.showToast("登录成功!");
                     }
                 }

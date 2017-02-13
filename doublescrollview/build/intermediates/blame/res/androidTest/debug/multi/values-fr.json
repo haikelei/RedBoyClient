@@ -1,10 +1,10 @@
 [
     {
 <<<<<<< HEAD
-        "outputFile": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fr\\values-fr.xml",
+        "outputFile": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/androidTest/debug/values-fr/values-fr.xml",
 =======
         "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
         "map": [
             {
                 "to": {
@@ -16,10 +16,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -39,10 +39,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -62,10 +62,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -85,10 +85,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -108,10 +108,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -131,10 +131,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -154,10 +154,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -177,10 +177,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -200,10 +200,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -223,10 +223,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -246,10 +246,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -269,10 +269,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -292,10 +292,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -315,10 +315,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -338,10 +338,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -361,10 +361,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -384,10 +384,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -407,10 +407,10 @@
                 },
                 "from": {
 <<<<<<< HEAD
-                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\studio  in\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
+                    "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-fr/values-fr.xml",
 =======
                     "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-fr\\values-fr.xml",
->>>>>>> 7602f0a114f850dba7462edcdef5ab5183ab22d7
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,

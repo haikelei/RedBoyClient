@@ -8,7 +8,15 @@ public class Goods {
     private String productPropertyId;
     private int productNum;
 
+    public Goods() {
+    }
+
+    public void setProductPropertyId(String productPropertyId) {
+        this.productPropertyId = productPropertyId;
+    }
+
     public String getProductPropertyId() {
+
         return productPropertyId;
     }
 
@@ -28,7 +36,6 @@ public class Goods {
     }
 
 
-
     public int getProductNum() {
         return productNum;
     }
@@ -37,12 +44,5 @@ public class Goods {
         this.productNum = productNum;
     }
 
-    @Override
-    public String toString() {
-        return "Goods{" +
-                "productId=" + productId +
-                ", productPropertyId=" + productPropertyId +
-                ", productNum=" + productNum +
-                '}';
-    }
+
 }

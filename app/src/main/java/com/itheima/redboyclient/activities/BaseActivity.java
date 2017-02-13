@@ -8,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.itheima.redboyclient.App;
+import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.utils.StatusBarUtils;
 
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.utils.NetworkUtils;
@@ -40,7 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected SharedPreferences sp;
 
 
-
     protected SharedPreferences.Editor edit;
     protected FragmentManager fm;
 
@@ -56,24 +57,25 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        StatusBarUtils.setWindowStatusBarColor(this,R.color.colorPrimaryDark);
+
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         //界面中如果有EditText，默认隐藏输入法
         getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //初始化通用的SP&EDIT
         sp = App.SP;
         edit = App.EDIT;
 
         //Fragment相关
         fm = getSupportFragmentManager();
-
         setContentView(initContentView());
         ButterKnife.inject(this);//初始化ButterKnife
         initView();
         initListener();
         initData();
-
     }
+
 
 
     @Override

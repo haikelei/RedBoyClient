@@ -41,7 +41,7 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
     RelativeLayout mBottomSpace;
     @InjectView(R.id.imgHome)
     ImageView mImgHome;
-    @InjectView(R.id.imgClassify)
+    @InjectView(R.id.imgCategory)
     ImageView mImgClassify;
     @InjectView(R.id.imgSearch)
     ImageView mImgSearch;

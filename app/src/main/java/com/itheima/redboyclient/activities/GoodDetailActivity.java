@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,13 +9,34 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.android.volley.Cache;
+import com.android.volley.VolleyError;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.fragment.CommentFragment;
 import com.itheima.redboyclient.fragment.ContentDetailFragment;
 import com.itheima.redboyclient.fragment.GoodsDetailFragment;
+import com.itheima.redboyclient.net.resp.GoodResponse;
+import com.itheima.redboyclient.net.resp.HomeResponse;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
+
+import org.greenrobot.eventbus.EventBus;
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
+import org.senydevpkg.net.resp.IResponse;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by gary on 2017/2/8.
@@ -24,10 +44,12 @@ import com.itheima.redboyclient.fragment.GoodsDetailFragment;
 
 public class GoodDetailActivity extends AppCompatActivity {
 
+    private static final String TAG = "GoodDetailActivity";
     private TabLayout tabs;
     private ViewPager viewpager;
     private Toolbar toolbar;
     private String pId;
+    private Fragment[] fragments;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,16 +63,28 @@ public class GoodDetailActivity extends AppCompatActivity {
         viewpager = (ViewPager) findViewById(R.id.viewpager);
 
         setSupportActionBar(toolbar);
-
-        toolbar.setNavigationIcon(R.drawable.arrowback);
-
-        MinePagerAdapter minePagerAdapter = new MinePagerAdapter(getSupportFragmentManager());
-        viewpager.setOffscreenPageLimit(3);
-        viewpager.setAdapter(minePagerAdapter);
-        tabs.setupWithViewPager(viewpager);
-
-        //打开activity的时候通过intent传入商品id，这里获取商品的商品id
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pId = getIntent().getStringExtra("pId");
+
+        HttpParams params = new HttpParams().put("pId",pId);
+        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL,params,GoodResponse.class,ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+            @Override
+            public void onGetResponseSuccess(int requestCode, IResponse response) {
+
+                GoodResponse goodResponse = (GoodResponse) response;
+                fragments = new Fragment[]{GoodsDetailFragment.newInstance(goodResponse),
+                        ContentDetailFragment.newInstance(goodResponse), CommentFragment.newInstance(pId)};
+                MinePagerAdapter minePagerAdapter = new MinePagerAdapter(getSupportFragmentManager());
+                viewpager.setOffscreenPageLimit(3);
+                viewpager.setAdapter(minePagerAdapter);
+                tabs.setupWithViewPager(viewpager);
+            }
+
+            @Override
+            public void onGetResponseError(int requestCode, VolleyError error) {
+
+            }
+        });
 
     }
 
@@ -59,11 +93,13 @@ public class GoodDetailActivity extends AppCompatActivity {
 //     * ViewPager的PagerAdapter
 
     public class MinePagerAdapter extends FragmentPagerAdapter {
-        Fragment[] fragments = new Fragment[]{GoodsDetailFragment.newInstance(pId), ContentDetailFragment.newInstance(), CommentFragment.newInstance()};
+
         String[] titles = new String[]{"商品", "详情", "评价"};
+
 
         public MinePagerAdapter(FragmentManager fm) {
             super(fm);
+
         }
 
         @Override
@@ -82,9 +118,15 @@ public class GoodDetailActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return super.onOptionsItemSelected(item);
     }
+
+    public void setSelected(int position){
+        viewpager.setCurrentItem(position);
+    }
+
 }

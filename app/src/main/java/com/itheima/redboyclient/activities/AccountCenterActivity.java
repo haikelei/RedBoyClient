@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.UserInfoResponse;
+import com.itheima.redboyclient.present.Logout;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
@@ -32,6 +33,7 @@ import butterknife.OnClick;
 
 public class AccountCenterActivity extends BaseActivity implements HttpLoader.HttpListener {
     private static final String TAG = "AccountCenterActivity";
+    TextView mLougout;
     TextView acUsername;   //用户名
     @InjectView(R.id.member_mum)
     TextView member;  //会员等级
@@ -72,8 +74,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         mToolbar = (Toolbar) findViewById(R.id.ac_toolbar);
         mTextView = (TextView) findViewById(R.id.ac_tv_title);
         acUsername = (TextView) findViewById(R.id.ac_username);
-
-
+        mLougout = (TextView) findViewById(R.id.logout);
         initToolBar();
     }
 
@@ -106,12 +107,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.accountcenter, menu);
-        return true;
-    }
-
 
     @Override
     protected void initListener() {
@@ -125,18 +120,36 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         /*
         * 退出登录
         * */
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+ /*       mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.logout:
-                        //退出登录后添加标记
-                        App.EDIT.putBoolean("islogin", false);
-                        App.EDIT.commit();
-                        finish();
+                            Logout out = new Logout();
+                            out.logout();
+                            boolean isLogout = App.SP.getBoolean("islogout",false);
+                        if (isLogout) {
+                            App.EDIT.putBoolean("islogin", false);
+                            App.EDIT.commit();
+                            finish();
+                        }
                         break;
                 }
                 return true;
+            }
+        });*/
+
+        mLougout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout out = new Logout();
+                out.logout();
+                boolean isLogout = App.SP.getBoolean("islogout",false);
+                if (isLogout) {
+                    App.EDIT.putBoolean("islogin", false);
+                    App.EDIT.commit();
+                    finish();
+                }
             }
         });
     }
@@ -162,6 +175,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.my_order_rl:   //我的订单点击
+                startActivity(MyOrderActivity.class,false);
                 break;
             case R.id.address_manage_rl:  //地址管理点击
                 Intent intent = new Intent(AccountCenterActivity.this,AddressActivity.class);
@@ -170,6 +184,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;
             case R.id.recent_browse_rl: //收藏夹点击
+                startActivity(new Intent(this,BookmarksActivity.class));
                 break;
         }
     }
@@ -210,11 +225,13 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
              }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.orderCount)) {
-                myOrderCount.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                myOrderCount.setText("(" + mUserInfoResponse.userInfo.orderCount + ")");
+                App.EDIT.putString("orderCount",mUserInfoResponse.userInfo.orderCount);
             }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.favoritesCount)) {
                 favoritesCounts.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                App.EDIT.putString("favoritesCount",mUserInfoResponse.userInfo.favoritesCount);
             }
 
             }

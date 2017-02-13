@@ -3,23 +3,29 @@ package com.itheima.redboyclient.fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.SearchSecondActivity;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.damain.SearchTitleBean;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
-import com.itheima.redboyclient.net.resp.SearchResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
-import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 
@@ -27,18 +33,22 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 public class SearchFragment extends MainBaseFragment implements View.OnClickListener, HttpLoader.HttpListener {
-    @InjectView(R.id.editSearchInfo)
-    EditText editSearchInfo;
     @InjectView(R.id.relSearch)
-    RelativeLayout relSearch;
+    LinearLayout relSearch;
     @InjectView(R.id.lv_search)
     ListView lvSearch;
 
     private static final String TAG = "SearchFragment";
+    @InjectView(R.id.editSearchInfo)
+    TextInputEditText editSearchInfo;
+    @InjectView(R.id.tv_search)
+    TextView tvSearch;
 
     private SearchAdapter adapter;
     //热门搜索
@@ -103,8 +113,6 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         });
 
 
-
-
     }
 
     protected void initData() {
@@ -166,13 +174,16 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
                 if (TextUtils.isEmpty(searchInfo)) {
                     MyToast.show(getActivity().getApplicationContext(), "请输入搜索内容");
                 } else {
-                    //TODO跳转到搜索页面
-
-                    String url = ConstantsRedBaby.URL_SEARCH;
+                    //TODO跳转到搜索页面lujialei
+                    Log.e(TAG, "onClick: " + searchInfo);
+                    Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
+                    intent.putExtra("keyword", searchInfo);
+                    startActivity(intent);
+                    /*String url = ConstantsRedBaby.URL_SEARCH;
                     Class clazz = SearchResponse.class;
                     int requestCode = ConstantsRedBaby.REQUEST_CODE_SEARCH;
                     HttpParams params = new HttpParams().put("keyword", searchInfo).put("page", "1").put("pageNum", "10");
-                    App.HL.get(url, params, clazz, requestCode, this);
+                    App.HL.get(url, params, clazz, requestCode, this);*/
                 }
                 break;
         }
@@ -215,5 +226,32 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         if (requestCode == ConstantsRedBaby.REQUEST_CODE_SEARCH) {
             MyToast.show(mActivity.getApplicationContext(), "数据请求失败！");
         }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
+    }
+
+    @OnClick(R.id.tv_search)
+    public void onClick() {
+        String s = editSearchInfo.getText().toString();
+        if(TextUtils.isEmpty(s)){
+            Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.edit_shake);
+            editSearchInfo.startAnimation(shake);
+            return;
+        }
+        Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
+        intent.putExtra("keyword",s);
+        startActivity(intent);
     }
 }
