@@ -1,6 +1,5 @@
 package com.itheima.redboyclient.activities;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -41,7 +40,6 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected SharedPreferences sp;
-
 
 
     protected SharedPreferences.Editor edit;

@@ -62,15 +62,12 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
-<<<<<<< HEAD
-    public static final int REQUEST_CODE_ORDERLIST  = 23;
+    public static final int REQUEST_CODE_ORDERLIST  = 29;
     public static final int REQUEST_CODE_ORDERSUMBIT = 25;
 
 
-=======
     public static final int REQUEST_CODE_BOOKMARK = 24;
     public static final int REQUEST_CODE_FAV = 23;
->>>>>>> 0b53a82349693ea7b1cb2aed07c9ef81df2e539e
 
 
 }

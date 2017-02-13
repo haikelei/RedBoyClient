@@ -1,15 +1,6 @@
 [
     {
-<<<<<<< HEAD
         "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
         "source": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v23/abc_color_highlight_material.xml"
-=======
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_color_highlight_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_color_highlight_material.xml",
-        "source": "E:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
->>>>>>> 0b53a82349693ea7b1cb2aed07c9ef81df2e539e
     }
 ]
