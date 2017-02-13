@@ -7,33 +7,43 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
-import com.itheima.redboyclient.net.resp.CommentResponse;
+import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.EventBean;
+import com.itheima.redboyclient.domain.Goods;
+import com.itheima.redboyclient.net.resp.FavResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
-import com.itheima.redboyclient.present.GoodPresenter;
+import com.itheima.redboyclient.net.resp.HomeResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
+import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -43,47 +53,53 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GoodsDetailFragment extends Fragment {
+public class GoodsDetailFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
 
     private static final String TAG = "GoodsDetailFragment";
-    @InjectView(R.id.vp)
-    ViewPager vp;
+
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
 
-    public static String pId;
-    private static GoodPresenter goodPresenter;
+    public static GoodResponse goodResponse;
+
     @InjectView(R.id.tv_title)
     TextView tvTitle;
     @InjectView(R.id.tv_market_price)
     TextView tvMarketPrice;
-    @InjectView(R.id.tv_price)
-    TextView tvPrice;
-    @InjectView(R.id.textPutIntoShopcar)
-    TextView textPutIntoShopcar;
-    @InjectView(R.id.textProdToCollect)
-    TextView textProdToCollect;
     @InjectView(R.id.ratingBar)
     RatingBar ratingBar;
+    @InjectView(R.id.tv_price)
+    TextView tvPrice;
     @InjectView(R.id.spinner_corlor)
     AppCompatSpinner spinnerCorlor;
     @InjectView(R.id.spinner_size)
     AppCompatSpinner spinnerSize;
-    @InjectView(R.id.bt_plus)
-    Button btPlus;
+
     @InjectView(R.id.et_num)
     EditText etNum;
-    @InjectView(R.id.bt_minus)
-    Button btMinus;
+
     @InjectView(R.id.tv_area)
     TextView tvArea;
     @InjectView(R.id.tv_comment_count)
     TextView tvCommentCount;
     @InjectView(R.id.detail_container)
     LinearLayout detailContainer;
-
-    private String temppid = "1";
+    @InjectView(R.id.bt_minus)
+    TextView btMinus;
+    @InjectView(R.id.bt_plus)
+    TextView btPlus;
+    @InjectView(R.id.textPutIntoShopcar)
+    TextView textPutIntoShopcar;
+    @InjectView(R.id.textfavorite)
+    TextView textfavorite;
+    @InjectView(R.id.ll_comment)
+    LinearLayout llComment;
+    @InjectView(R.id.slider)
+    SliderLayout slider;
+    @InjectView(R.id.custom_indicator)
+    PagerIndicator customIndicator;
+    private ArrayList<GoodResponse.ProductBean.ProductPropertyBean> beans;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -93,14 +109,15 @@ public class GoodsDetailFragment extends Fragment {
     private static GoodsDetailFragment fragment = null;
 
 
-    public static GoodsDetailFragment newInstance(String id) {
-        pId = id;
+    public static GoodsDetailFragment newInstance(GoodResponse response) {
+        goodResponse = response;
 
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
         }
         return fragment;
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,77 +131,41 @@ public class GoodsDetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //测试时pid用1，以后改成pid
-        HttpParams params = new HttpParams().put("pId", temppid);
-        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
-            @Override
-            public void onGetResponseSuccess(int requestCode, IResponse response) {
-                GoodResponse goodResponse = (GoodResponse) response;
-                initData(goodResponse);
-            }
+        //设置slider
+        handleSlider(goodResponse);
 
-            @Override
-            public void onGetResponseError(int requestCode, VolleyError error) {
-
-            }
-        });
-
-    }
-
-    private void initData(GoodResponse goodResponse) {
-        GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(goodResponse, getActivity());
-        vp.setAdapter(adapter);
-        //标题价格信息
+        //标题等设置
         tvTitle.setText(goodResponse.getProduct().getName());
-        tvMarketPrice.setText("市场价：¥ " + goodResponse.getProduct().getMarketPrice());
-        tvPrice.setText("会员价：¥ " + goodResponse.getProduct().getPrice());
+        tvMarketPrice.setText("市场价：¥ " + goodResponse.getProduct().getMarketPrice() + "");
+        tvPrice.setText("会员价：¥ " + goodResponse.getProduct().getPrice() + "");
         ratingBar.setRating(goodResponse.getProduct().getScore());
-
-        ArrayList<GoodResponse.ProductBean.ProductPropertyBean> list = (ArrayList<GoodResponse.ProductBean.ProductPropertyBean>) goodResponse.getProduct().getProductProperty();
+        tvArea.setText("查看库存：" + goodResponse.getProduct().getInventoryArea() + "(有货)");
+        tvCommentCount.setText("用户评论：共有" + goodResponse.getProduct().getCommentCount() + "人评论");
+        //下拉框设置
         ArrayList<String> corlors = new ArrayList<>();
         ArrayList<String> sizes = new ArrayList<>();
-        for (GoodResponse.ProductBean.ProductPropertyBean bean : list) {
-            if (bean.getK().equals("颜色")) {
+        beans = (ArrayList<GoodResponse.ProductBean.ProductPropertyBean>) goodResponse.getProduct().getProductProperty();
+        for (GoodResponse.ProductBean.ProductPropertyBean bean : beans) {
+            if ("颜色".equals(bean.getK())) {
                 corlors.add(bean.getV());
-            } else if (bean.getK().equals("尺码")) {
+            } else if ("尺码".equals(bean.getK())) {
                 sizes.add(bean.getV());
             }
-
         }
-        // 颜色尺码的信息
-        ArrayAdapter corlorsAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, corlors);
-        spinnerCorlor.setAdapter(corlorsAdapter);
-        ArrayAdapter sizesAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
-        spinnerSize.setAdapter(sizesAdapter);
-        //区域信息
-        String area = goodResponse.getProduct().getInventoryArea();
-        tvArea.setText("查看库存：" + area + "仓（有货）");
-        //评论信息 用临时pid
-        HttpParams params = new HttpParams();
-        params.put("pId", temppid).put("page", "1").put("pageNum", "10");
-        App.HL.get(ConstantsRedBaby.URL_COMMENT, params, CommentResponse.class, ConstantsRedBaby.REQUEST_CODE_COMMENT, new HttpLoader.HttpListener() {
-            @Override
-            public void onGetResponseSuccess(int requestCode, IResponse response) {
-                CommentResponse comment = (CommentResponse) response;
-                int count = comment.getComment().size();
-                tvCommentCount.setText("用户评论：共有" + count + "人评论");
-            }
+        ArrayAdapter corlorArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, corlors);
+        spinnerCorlor.setAdapter(corlorArrayAdapter);
+        ArrayAdapter sizeArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
+        spinnerSize.setAdapter(sizeArrayAdapter);
 
-            @Override
-            public void onGetResponseError(int requestCode, VolleyError error) {
-
-            }
-        });
-        //图片描述
-        ArrayList<String> pics = (ArrayList<String>) goodResponse.getProduct().getPics();
-        for (String s:pics) {
+        //商品详情图片
+        ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
+        for (String s : list) {
             String url = ConstantsRedBaby.URL_SERVER + s;
-            ImageView iv = new ImageView(getContext());
-            iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            App.HL.display(iv,url);
-            detailContainer.addView(iv);
+            ImageView imageView = new ImageView(getContext());
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            App.HL.display(imageView, url);
+            detailContainer.addView(imageView);
         }
-
 
     }
 
@@ -195,20 +176,124 @@ public class GoodsDetailFragment extends Fragment {
     }
 
 
-    @OnClick({R.id.bt_minus, R.id.bt_plus})
+    @OnClick({R.id.bt_minus, R.id.bt_plus, R.id.textPutIntoShopcar, R.id.textfavorite})
     public void onClick(View view) {
         String s = etNum.getText().toString();
-        int i = Integer.parseInt(s);
+        int count = Integer.parseInt(s);
         switch (view.getId()) {
             case R.id.bt_minus:
-                if (i <= 1) {
+                if (count <= 1) {
                     return;
                 }
-                etNum.setText(--i + "");
+                etNum.setText(--count + "");
                 break;
             case R.id.bt_plus:
-                etNum.setText(++i + "");
+                etNum.setText(++count + "");
                 break;
+            case R.id.textfavorite:
+                //添加到收藏
+                HttpParams params = new HttpParams().put("pId", goodResponse.getProduct().getId() + "");
+                boolean islogin = App.SP.getBoolean("islogin", false);
+                if (islogin) {
+                    String userId = App.SP.getString("userid", null);
+                    params.addHeader("userid", userId);
+                } else {
+                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+                }
+
+                App.HL.get(ConstantsRedBaby.URL_FAV, params, FavResponse.class, ConstantsRedBaby.REQUEST_CODE_FAV, new HttpLoader.HttpListener() {
+                    @Override
+                    public void onGetResponseSuccess(int requestCode, IResponse response) {
+                        Toast.makeText(getActivity(), "添加收藏夹成功", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onGetResponseError(int requestCode, VolleyError error) {
+
+                    }
+                });
+                break;
+            case R.id.textPutIntoShopcar:
+                //添加到购物车
+                ShoppingDBDao dao = new ShoppingDBDao(getActivity());
+                String corlor = spinnerCorlor.getSelectedItem().toString();
+                String size = spinnerSize.getSelectedItem().toString();
+                StringBuilder sb = new StringBuilder();
+                for (GoodResponse.ProductBean.ProductPropertyBean bean : beans) {
+                    if (corlor.equals(bean.getV())) {
+                        sb.append(bean.getId());
+                    }
+                    if (size.equals(bean.getV())) {
+                        sb.append("," + bean.getId());
+                    }
+                    Goods goods = new Goods(goodResponse.getProduct().getId(),
+                            sb.toString(), Integer.parseInt(etNum.getText().toString()));
+                    boolean suc = dao.add(goods);
+                    if (suc) {
+                        Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
+                        EventBus.getDefault().post(new EventBean());
+                    } else {
+                        Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                }
         }
+    }
+
+    @OnClick(R.id.ll_comment)
+    public void onClick() {
+        GoodDetailActivity activity = (GoodDetailActivity) getActivity();
+        activity.setSelected(2);
+    }
+
+    private void handleSlider(GoodResponse goodResponse) {
+        ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getBigPic();
+        HashMap<String, String> urlMap = new HashMap<String, String>();
+        for (int i = 0; i < list.size(); i++) {
+            urlMap.put(goodResponse.getProduct().getName() + i, ConstantsRedBaby.URL_SERVER + list.get(i));
+        }
+
+        for (String name : urlMap.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(getActivity());
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(urlMap.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra", name);
+
+            slider.addSlider(textSliderView);
+        }
+        slider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        slider.setCustomAnimation(new DescriptionAnimation());
+        slider.setDuration(4000);
+        slider.addOnPageChangeListener(this);
+    }
+
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }

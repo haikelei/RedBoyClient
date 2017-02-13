@@ -1,19 +1,18 @@
-package com.itheima.redboyclient.fragment;
+package com.itheima.redboyclient.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.PromotionAdapter;
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
@@ -30,44 +29,45 @@ import butterknife.InjectView;
 /**
  * Created by Administrator on 2017/2/8.
  */
-public class PromotionFragment extends BaseFragment implements HttpLoader.HttpListener {
+public class PromotionActivity extends BaseActivity implements HttpLoader.HttpListener {
 
 
     @InjectView(R.id.toolBar)
     Toolbar toolBar;
     @InjectView(R.id.listview)
     ListView listview;
-    @InjectView(R.id.toolbar_title)
-    TextView textView;
     @InjectView(R.id.myfavorite_productlist_layout)
     LoadStateLayout myfavoriteProductlistLayout;
+    @InjectView(R.id.button)
+    Button button;
+    @InjectView(R.id.tv)
+    TextView tv;
+
     private PromotionAdapter adapter;
     private TopicResponse topics;
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.promotion_fragment, null);
-        ButterKnife.inject(this, view);
-        return view;
+    protected int initContentView() {
+        return R.layout.promotion_fragment;
+
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    protected void initView() {
         initToolBar();
         initData();
     }
 
     protected void initToolBar() {
-        toolBar.setTitle("");
-        toolBar.setNavigationIcon(R.drawable.arrowback);
 
-        toolBar.setNavigationOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getContext(), MainActivity.class));
+                finish();
             }
         });
-        textView.setText("促销快报");
+        tv.setText("促销快报");
     }
 
     /**
@@ -81,15 +81,8 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
         myfavoriteProductlistLayout.setState(LoadStateLayout.STATE_LOADING);
 
 
-
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "9");
         App.HL.get(ConstantsRedBaby.URL_TOPIC, params, TopicResponse.class, ConstantsRedBaby.REQUEST_CODE_TOPIC, this).setTag(this);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
     }
 
 
@@ -106,8 +99,16 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
         topics = response;
         if (topics.topic != null && topics.topic.size() > 0) {
             if (adapter == null) {
-                adapter = new PromotionAdapter(getActivity(), topics.topic);
+                adapter = new PromotionAdapter(this, topics.topic);
                 listview.setAdapter(adapter);
+                listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(PromotionActivity.this, GoodDetailActivity.class);
+                        intent.putExtra("pId", topics.topic.get(position).id + "");
+                        startActivity(intent);
+                    }
+                });
             } else {
                 adapter.notifyDataSetChanged(topics.topic);
             }
@@ -122,6 +123,19 @@ public class PromotionFragment extends BaseFragment implements HttpLoader.HttpLi
         if (adapter == null)//如果当前没有设置过数据
             myfavoriteProductlistLayout.setState(LoadStateLayout.STATE_ERROR);//显示请求错误的View
 
-        MyToast.show(getContext(), "数据请求失败！");
+        MyToast.show(this, "数据请求失败！");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App.HL.cancelRequest(this);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.inject(this);
     }
 }

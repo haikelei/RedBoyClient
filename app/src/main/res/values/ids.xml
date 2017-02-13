@@ -138,7 +138,7 @@
     <item type="id" name="textLabel_comment_content">false</item>
     <item type="id" name="linToolBar">false</item>
     <item type="id" name="imgHome">false</item>
-    <item type="id" name="imgClassify">false</item>
+    <item type="id" name="imgCategory">false</item>
     <item type="id" name="imgSearch">false</item>
     <item type="id" name="imgShoppingCar">false</item>
     <item type="id" name="imgMore">false</item>

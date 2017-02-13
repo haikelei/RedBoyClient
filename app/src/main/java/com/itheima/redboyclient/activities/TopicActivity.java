@@ -22,6 +22,8 @@ import org.senydevpkg.view.LoadStateLayout;
 
 import butterknife.InjectView;
 
+
+
 public class TopicActivity extends BaseActivity implements HttpLoader.HttpListener {
 
 
@@ -39,7 +41,7 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
     RelativeLayout mBottomSpace;
     @InjectView(R.id.imgHome)
     ImageView mImgHome;
-    @InjectView(R.id.imgClassify)
+    @InjectView(R.id.imgCategory)
     ImageView mImgClassify;
     @InjectView(R.id.imgSearch)
     ImageView mImgSearch;
@@ -69,7 +71,7 @@ public class TopicActivity extends BaseActivity implements HttpLoader.HttpListen
 
     @Override
     protected void initData() {
-//        PromotionActivity fm = new PromotionActivity();
+//        PromotionFragment fm = new PromotionFragment();
 //        getSupportFragmentManager().beginTransaction().replace(R.id.fl,fm).commit();
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "8");
 

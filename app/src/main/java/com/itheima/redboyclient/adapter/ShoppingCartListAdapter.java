@@ -1,111 +1,167 @@
 package com.itheima.redboyclient.adapter;
 
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.BaseAdapter;
 
+import com.itheima.redboyclient.Holder.ShoppingCarHolder;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.domain.Goods;
+import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 
-import java.security.KeyStore;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * Created by gary on 2017/2/8.
  */
 
- public class ShoppingCartListAdapter extends RecyclerView.Adapter<ShoppingCartListAdapter.MyHolder> {
+public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarHolder.OnStatusChangeListener {
+    protected List<ShoppingCarResponse.CartBean> list;
+    protected List<Goods> selectedGoodsList;
+    private OnStatusChangeListener listener;
 
-    private static final String TAG = "ShoppingCartListAdapter";
+    public void setOnStatusChangeListener(OnStatusChangeListener listener) {
+        this.listener = listener;
+    }
 
-    @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shoppingcart_listitem, parent, false);
-        MyHolder holder = new MyHolder(view);
-        return holder;
+    public ShoppingCartListAdapter(List<ShoppingCarResponse.CartBean> list) {
+        super();
+        this.list = list;
+        selectedGoodsList = new ArrayList<>();
     }
 
     @Override
-    public void onBindViewHolder(final MyHolder holder, final int position) {
-
-        //购物车条目编辑按钮的点击事件
-        holder.tvEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.isEditing = !holder.isEditing;
-
-                if(holder.isEditing){   //编辑状态
-                    holder.editState.setVisibility(View.VISIBLE);
-                    holder.normalState.setVisibility(View.GONE);
-                    holder.tvEdit.setText("完成");
-                }else{ //非编辑状态
-                    holder.editState.setVisibility(View.GONE);
-                    holder.normalState.setVisibility(View.VISIBLE);
-                    holder.tvEdit.setText("编辑");
-                }
-
-
-            }
-        });
-
-        //购物车商品详情点击事件回调
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mOnItemClickLitener != null){
-                    mOnItemClickLitener.onItemClick(v,position);
-                }
-            }
-        });
-        //购物车商品详情长按事件回调
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if(mOnItemClickLitener != null){
-                    mOnItemClickLitener.onItemLongClick(v,position);
-                }
-                return true;
-            }
-        });
+    public int getCount() {
+        //TODO 使用假数据
+        if (list.size() > 0) {
+            list.get(0).getProduct().setNumber("0");
+        }
+        return list.size();
     }
 
     @Override
-    public int getItemCount() {
-        return 3;
+    public Object getItem(int position) {
+        return list.get(position);
     }
 
-    public class MyHolder extends RecyclerView.ViewHolder {
-        private TextView tv;
-        private TextView tvEdit;
-        private boolean isEditing = false;
-        private RelativeLayout editState;
-        private RelativeLayout normalState;
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        public MyHolder(View itemView) {
-            super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv_good_num);
-            tvEdit = (TextView) itemView.findViewById(R.id.tv_edit);
-            editState = (RelativeLayout) itemView.findViewById(R.id.rl_edit);
-            normalState = (RelativeLayout) itemView.findViewById(R.id.rl_normal);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        //1. 初始化holder
+        ShoppingCarHolder holder;
+        if (convertView == null) {
+            convertView = View.inflate(parent.getContext(), R.layout.shoppingcart_listitem, null);
+            holder = new ShoppingCarHolder(convertView);
+            holder.setOnStatusChangeListener(this);
+        } else {
+            holder = (ShoppingCarHolder) convertView.getTag();
 
+        }
+        //3. 绑定数据
+        holder.setCart(list.get(position));
+        holder.bindData();
+        return convertView;
+    }
+
+
+    @Override
+    public void onDeleteCart(ShoppingCarResponse.CartBean cart) {
+        //删除条目数据，刷新界面
+        list.remove(cart);
+        if (cart.isSelected()) {
+            //如果商品是选中状态，通知界面更新结算数据
+            onSelectedChange();
+        }
+        notifyDataSetChanged();
+        //TODO 通知购物车数量改变
+    }
+
+    @Override
+    public void onSelectedChange() {
+        //重新获取所有被点击条目的集合
+        boolean isAllSelected = refreshSelectedGoodsList();
+        //通知主界面更新
+        if (listener != null) {
+            listener.onSelectedChange(selectedGoodsList, isAllSelected);
         }
     }
 
-    //recycerview的item的事件回调
-    public interface OnItemClickLitener
-    {
-        void onItemClick(View view, int position);
-        void onItemLongClick(View view , int position);
+    private boolean refreshSelectedGoodsList() {
+        selectedGoodsList.clear();
+        boolean isAllSelected = true;
+        //从列表中根据商品的是否选中来添加商品
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            ShoppingCarResponse.CartBean cartBean = list.get(i);
+            if (cartBean.isSelected()) {
+                //如果是选中的直接添加商品
+
+                //获取每个商品的数量
+                int prodNum = cartBean.getProdNum();
+                ShoppingCarResponse.CartBean.ProductBean product = cartBean.getProduct();
+                //获取商品ID
+                int id = product.getId();
+                //获取商品属性
+                List<ShoppingCarResponse.CartBean.ProductBean.ProductPropertyBean> productProperty = product.getProductProperty();
+                //拼接商品属性
+                StringBuilder productPropertyId = new StringBuilder();
+                for (int j = 0; ; j++) {
+                    ShoppingCarResponse.CartBean.ProductBean.ProductPropertyBean productPropertyBean = productProperty.get(j);
+                    int PropertyId = productPropertyBean.getId();
+                    productPropertyId.append(PropertyId);
+                    if (j == productProperty.size() - 1) {
+                        break;
+                    }
+                    productPropertyId.append(",");
+                }
+                Goods goods = new Goods();
+                goods.setProductId(id);
+                goods.setProductNum(prodNum);
+                goods.setProductPropertyId(productPropertyId.toString());
+                selectedGoodsList.add(goods);
+            } else {
+                //如果是未选中的状态，查看库存是否为0
+                if (!"0".equals(cartBean.getProduct().getNumber())) {
+                    //库存不为0 则不是全选状态
+                    isAllSelected = false;
+                }
+            }
+        }
+        return isAllSelected;
     }
 
-    private OnItemClickLitener mOnItemClickLitener;
+    public void selectEmpty() {
+        for (ShoppingCarResponse.CartBean cart : list) {
+            //将所有的条目selcted属性设置为未选中
+            cart.setSelected(false);
+        }
+        //通知主界面请求网络获取结算中心数据
+        onSelectedChange();
 
-    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener)
-    {
-        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
+
+    public void selectAll() {
+        for (ShoppingCarResponse.CartBean cart : list) {
+            //将所有有库存的条目selcted属性设置为选中
+            if (!"0".equals(cart.getProduct().getNumber())) {
+                cart.setSelected(true);
+            }
+        }
+
+        //通知主界面请求网络获取结算中心数据
+        onSelectedChange();
+
+    }
+
+
+    public interface OnStatusChangeListener {
+
+        void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected);
     }
 }

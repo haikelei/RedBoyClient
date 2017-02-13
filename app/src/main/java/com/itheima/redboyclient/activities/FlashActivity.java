@@ -1,21 +1,19 @@
 package com.itheima.redboyclient.activities;
 
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.FlashAdapter;
-
-
 import com.itheima.redboyclient.net.resp.FlashResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -61,11 +59,11 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
     }
 
 
-
     @Override
     protected void initData() {
         tv.setText("限时抢购");
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "9");
+        App.HL.get(ConstantsRedBaby.URL_FLASH, params, FlashResponse.class, ConstantsRedBaby.REQUEST_CODE_FLASH, this).setTag(this);
     }
 
     public void onGetResponseSuccess(int requestCode, IResponse response) {
@@ -83,6 +81,16 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
             if (adapter == null) {
                 adapter = new FlashAdapter(this, topics.getProductList());
                 listView.setAdapter(adapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(FlashActivity.this, GoodDetailActivity.class);
+                        intent.putExtra("pId", topics.getProductList().get(position).getId() + "");
+                        startActivity(intent);
+                    }
+                });
+
             } else {
                 adapter.notifyDataSetChanged(topics.getProductList());
             }
@@ -103,5 +111,11 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
     @Override
     public void onClick(View v) {
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App.HL.cancelRequest(this);
     }
 }

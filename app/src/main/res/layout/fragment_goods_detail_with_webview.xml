@@ -1,8 +1,14 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.itheima.redboyclient.fragment.GoodsDetailFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/pageOne"
@@ -11,37 +17,65 @@
         android:background="@color/ripple_material_dark"
         android:scrollbars="vertical">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#66999999"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp"
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
                 android:layout_width="match_parent"
-                android:layout_height="360dp"
-                android:src="@drawable/ic_launcher" />
+                custom:pager_animation="Accordion"
+                custom:auto_cycle="true"
+                custom:indicator_visibility="visible"
+                custom:pager_animation_span="1100"
+                android:layout_height="@dimen/y180"/>
 
-            <include layout="@layout/detail_block1"></include>
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/custom_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                custom:selected_color="#0095BF"
+                custom:unselected_color="#55333333"
+                custom:selected_drawable="@drawable/bird"
+                custom:shape="oval"
+                custom:selected_padding_left="@dimen/x2"
+                custom:selected_padding_right="@dimen/x2"
+                custom:unselected_padding_left="@dimen/x2"
+                custom:unselected_padding_right="@dimen/x2"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                custom:selected_width="@dimen/x3"
+                custom:selected_height="@dimen/y3"
+                custom:unselected_width="@dimen/x3"
+                custom:unselected_height="@dimen/y3"
+                />
 
-            <include layout="@layout/detail_block2"></include>
+            <include layout="@layout/detail_block1" />
 
-            <include layout="@layout/detail_block3"></include>
+            <include layout="@layout/detail_block2" />
 
-            <include layout="@layout/detail_block4"></include>
+            <include layout="@layout/detail_block3" />
 
-            <include layout="@layout/detail_block5"></include>
+            <include layout="@layout/detail_block4" />
+
+            <include layout="@layout/detail_block5" />
+
         </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
+
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.ysnows.doublescrollview.PageBehavior">
 
+        <include layout="@layout/detail_pics" />
 
-        <include layout="@layout/detail_pics"></include>
     </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

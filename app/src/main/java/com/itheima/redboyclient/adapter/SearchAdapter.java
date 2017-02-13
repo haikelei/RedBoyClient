@@ -186,7 +186,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
                 //获得点击条目的内容
                 itemName = holder.mTextView.getText().toString();
 
-                if (ConstantsRedBaby.NOHISTORY.equals(itemName)) {
+                if (ConstantsRedBaby.NO_HISTORY.equals(itemName)) {
                     //如果点击的是没有搜索历史 直接返回
                     return;
                 }

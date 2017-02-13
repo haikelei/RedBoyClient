@@ -3,12 +3,11 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#f4ecec"
     android:orientation="vertical"
     >
 
     <android.support.v7.widget.Toolbar
-        android:background="#453d3d"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:targetApi="lollipop"
