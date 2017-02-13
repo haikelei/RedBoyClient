@@ -1,10 +1,7 @@
 package com.itheima.redboyclient.activities;
 
-import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -129,6 +126,24 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 //        fragmentTransaction.commit();
 //        getSupportFragmentManager().beginTransaction().add(R.id.fl_content, FragmentFactory.getFragment(0), "0").commit();
 
+    }
+
+
+    //小圆点的限时
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEventMainThread(EventBean bean) {
+        ShoppingDBDao dao = new ShoppingDBDao(this);
+        ArrayList<Goods> list = (ArrayList<Goods>) dao.findAll();
+        Log.e(TAG, "111onMessageEventMainThread: "+list.size() );
+        int goodNum = 0;
+        for (Goods good : list) {
+            goodNum += good.getProductNum();
+        }
+        Log.e(TAG, "222onMessageEventMainThread: "+goodNum );
+
+        numberBadgeItem.setText(goodNum+"").show();
+        item4.setBadgeItem(numberBadgeItem);
+        bottomNavigationBar.refreshDrawableState();
     }
 
 
