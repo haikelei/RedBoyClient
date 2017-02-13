@@ -2,6 +2,7 @@ package com.itheima.redboyclient.fragment;
 
 
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -19,7 +20,6 @@ import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
-import org.senydevpkg.utils.ALog;
 import org.senydevpkg.utils.MyToast;
 
 import java.util.ArrayList;
@@ -42,8 +42,8 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     TextView tvTotal;
     @InjectView(R.id.tv_point)
     TextView tvPoint;
-    @InjectView(R.id.relativeLayout)
-    RelativeLayout relativeLayout;
+    @InjectView(R.id.rl_root)
+    RelativeLayout rlRoot;
     private TextView tvPromoation;
     private View promotionRoot;
     private List<ShoppingCarResponse.CartBean> cartList;
@@ -63,17 +63,9 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         adapter = new ShoppingCartListAdapter(cartList);
         lvCart.setAdapter(adapter);
         lvCart.setDivider(null);
-        lvCart.addFooterView(promotionRoot);
 
     }
 
-    private void initAccount() {
-        tvTotal.setText("￥ " + 0);
-        tvPoint.setText("赠送积分:" + 0);
-        tvBuy.setText("结算(0)");
-        tvBuy.setBackgroundColor(mActivity.getResources().getColor(R.color.gray));
-        tvBuy.setEnabled(false);
-    }
 
     @Override
     protected void initListener() {
@@ -84,7 +76,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
     @Override
     protected void initData() {
-        //判断登陆
+        //TODO 判断登陆
 //        String userId = App.getUserId();
 //        if("".equals(userId)){
 //            getActivity().startActivity(new Intent(getActivity(),LoginActivity.class));
@@ -93,10 +85,20 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         requestDataFromNet();
     }
 
+    private void initAccount() {
+        tvTotal.setText("￥ " + 0);
+        tvPoint.setText("赠送积分:" + 0);
+        tvBuy.setText("结算(0)");
+        tvBuy.setBackgroundColor(mActivity.getResources().getColor(R.color.gray));
+        tvBuy.setEnabled(false);
+    }
     private void requestDataFromNet() {
         //TODO 外面包裹一个layout 访问网络切换状态
         //TODO 从数据库获取购物车条目
         String sku = "1:10:1|1:3:2|2:2:2|3:2:2";
+        if (TextUtils.isEmpty(sku)) {
+            rlRoot.setVisibility(View.INVISIBLE);
+        }
         //从网络上获取购物车数据
         HttpParams params = new HttpParams().put("sku", sku);
         App.HL.post(ConstantsRedBaby.URL_SHOPPING_CAR, params, ShoppingCarResponse.class, ConstantsRedBaby.REQUEST_CODE_SHOPPING_CAR, new HttpLoader.HttpListener() {
@@ -110,11 +112,11 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
                     if (cart != null && cart.size() > 0) {
                         //数据传给listview 显示购物车信息
                         handleShoppingCarData(cart);
-                        ALog.e("..........................................................");
+
 
                     } else {
                         //TODO 请求的是空数据 显示空购物车
-                        ALog.e("..........................................................empty");
+                        //RelativeLayout.
                     }
 
                 }
@@ -123,16 +125,19 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
             @Override
             public void onGetResponseError(int requestCode, VolleyError error) {
                 //TODO
-                ALog.e("..........................................................");
+
             }
         }).setTag(this);
     }
 
 
     private void handleShoppingCarData(List<ShoppingCarResponse.CartBean> cart) {
+        //刷新界面数据
         cartList.clear();
         cartList.addAll(cart);
         adapter.notifyDataSetChanged();
+        //增加脚布局优惠信息
+        lvCart.addFooterView(promotionRoot);
 
     }
 
@@ -170,10 +175,13 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
 
     @Override
-    public void onSelectedChange(List<Goods> selectedGoodsList) {
+    public void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected) {
+        rbSelectAll.setChecked(isAllSelected);
         if (selectedGoodsList.size() == 0) {
             //如果没有选中商品 初始化底边栏信息
             initAccount();
+            //将促销信息设置为无
+            tvPromoation.setText("无");
             return;
         }
         //获取sku属性

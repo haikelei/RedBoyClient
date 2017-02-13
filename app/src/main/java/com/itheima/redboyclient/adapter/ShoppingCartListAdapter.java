@@ -9,8 +9,6 @@ import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 
-import org.senydevpkg.utils.ALog;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +36,6 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
     public int getCount() {
         //TODO 使用假数据
         if (list.size() > 0) {
-            ALog.e("..........................................................");
-            ALog.e(list.toString());
             list.get(0).getProduct().setNumber("0");
         }
         return list.size();
@@ -89,20 +85,23 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
     @Override
     public void onSelectedChange() {
         //重新获取所有被点击条目的集合
-        refreshSelectedGoodsList();
+        boolean isAllSelected = refreshSelectedGoodsList();
         //通知主界面更新
         if (listener != null) {
-            listener.onSelectedChange(selectedGoodsList);
+            listener.onSelectedChange(selectedGoodsList, isAllSelected);
         }
     }
 
-    private void refreshSelectedGoodsList() {
+    private boolean refreshSelectedGoodsList() {
         selectedGoodsList.clear();
+        boolean isAllSelected = true;
         //从列表中根据商品的是否选中来添加商品
         int size = list.size();
         for (int i = 0; i < size; i++) {
             ShoppingCarResponse.CartBean cartBean = list.get(i);
             if (cartBean.isSelected()) {
+                //如果是选中的直接添加商品
+
                 //获取每个商品的数量
                 int prodNum = cartBean.getProdNum();
                 ShoppingCarResponse.CartBean.ProductBean product = cartBean.getProduct();
@@ -126,8 +125,15 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
                 goods.setProductNum(prodNum);
                 goods.setProductPropertyId(productPropertyId.toString());
                 selectedGoodsList.add(goods);
+            } else {
+                //如果是未选中的状态，查看库存是否为0
+                if (!"0".equals(cartBean.getProduct().getNumber())) {
+                    //库存不为0 则不是全选状态
+                    isAllSelected = false;
+                }
             }
         }
+        return isAllSelected;
     }
 
     public void selectEmpty() {
@@ -147,6 +153,7 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
                 cart.setSelected(true);
             }
         }
+
         //通知主界面请求网络获取结算中心数据
         onSelectedChange();
 
@@ -155,6 +162,6 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
 
     public interface OnStatusChangeListener {
 
-        void onSelectedChange(List<Goods> selectedGoodsList);
+        void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected);
     }
 }

@@ -63,7 +63,12 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         this.cart = cart;
         this.product = cart.getProduct();
         //单选框与此条目绑定
-        cart.setRadioButton(rbSelect);
+        cart.setOnSelectedChangeListener(new ShoppingCarResponse.CartBean.OnSelectedChangeListener() {
+            @Override
+            public void onSelectedChange(boolean selected) {
+                rbSelect.setChecked(selected);
+            }
+        });
     }
 
     public void setOnStatusChangeListener(OnStatusChangeListener listener) {
