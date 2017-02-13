@@ -91,12 +91,12 @@ public class NewProductDetailActivity extends BaseActivity implements HttpLoader
         if (newProductDetailResponse != null) {
 
             productBean = newProductDetailResponse.getProduct();
-            System.out.println("aaaa" + productBean.getBigPic().size());
+
         }
     }
 
     @Override
     public void onGetResponseError(int requestCode, VolleyError error) {
-        System.out.println("aaaa走了吗??????" );
+
     }
 }
