@@ -69,6 +69,7 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
     @Override
     protected int initContentView() {
         return R.layout.activity_newproduct;
+        //maks测试
     }
 
     @Override
