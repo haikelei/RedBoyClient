@@ -10,21 +10,30 @@ import java.util.List;
 
 public class MyOrderResponse implements IResponse {
 
-
     /**
-     * checkoutAddup : {"freight":10,"totalCount":5,"totalPoint":30,"totalPrice":450}
-     * checkoutProm : ["促销信息一","促销信息二"]
-     * deliveryList : [{"des":"周一至周五送货","type":1},{"des":"双休日及公众假期送货","type":2},{"des":"时间不限，工作日双休日及公众假期均可送货","type":3}]
-     * paymentList : [{"des":"到付-现金","type":1},{"des":"到付-POS机","type":2},{"des":"支付宝","type":1}]
-     * productList : [{"prodNum":3,"product":{"id":1,"name":"韩版时尚蕾丝裙","pic":"/images/product/detail/c3.jpg","price":350,"productProperty":[{"id":1,"k":"颜色","v":"红色"},{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"},{"id":4,"k":"尺码","v":"XXL"}]}},{"prodNum":2,"product":{"id":2,"name":"粉色毛衣","pic":"/images/product/detail/q1.jpg","price":100,"productProperty":[{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"}]}}]
-     * response : checkOut
+     * prom : ["促销信息一","促销信息二"]
+     * checkoutAddup : {"freight":10,"totalPoint":30,"totalCount":5,"totalPrice":1250}
+     * productList : [{"prodNum":3,"product":{"id":1,"pic":"/images/product/detail/c3.jpg",
+     * "name":"韩版时尚蕾丝裙","price":350,"productProperty":[{"id":0,"k":"颜色","v":"红色"},
+     * {"id":1,"k":"颜色","v":"绿色"}]}},{"prodNum":2,"product":
+     * {"id":2,"pic":"/images/product/detail/q1.jpg","name":"粉色毛衣","price":100,"productProperty":
+     * [{"id":0,"k":"颜色","v":"绿色"},{"id":1,"k":"尺码","v":"M"}]}}]
+     * response : orderDetail
+     * addressInfo : {"addressArea":"密云县","id":139,"addressDetail":"街道口地铁c口","name":"itcast"}
+     * orderInfo : {"flag":3,"status":"未处理","orderId":"098593","time":"1449107098604"}
+     * deliveryInfo : {"type":"1"}
+     * invoiceInfo : {"invoiceContent":"传智慧播客教育科技有限公司","invoiceTitle":"传智慧播客教育科技有限公司"}
+     * paymentInfo : {"type":1}
      */
 
     public CheckoutAddupBean checkoutAddup;
     public String response;
-    public List<String> checkoutProm;
-    public List<DeliveryListBean> deliveryList;
-    public List<DeliveryListBean> paymentList;
+    public AddressInfoBean addressInfo;
+    public OrderInfoBean orderInfo;
+    public DeliveryInfoBean deliveryInfo;
+    public InvoiceInfoBean invoiceInfo;
+    public PaymentInfoBean paymentInfo;
+    public List<String> prom;
     public List<ProductListBean> productList;
 
     public CheckoutAddupBean getCheckoutAddup() {
@@ -43,28 +52,52 @@ public class MyOrderResponse implements IResponse {
         this.response = response;
     }
 
-    public List<String> getCheckoutProm() {
-        return checkoutProm;
+    public AddressInfoBean getAddressInfo() {
+        return addressInfo;
     }
 
-    public void setCheckoutProm(List<String> checkoutProm) {
-        this.checkoutProm = checkoutProm;
+    public void setAddressInfo(AddressInfoBean addressInfo) {
+        this.addressInfo = addressInfo;
     }
 
-    public List<DeliveryListBean> getDeliveryList() {
-        return deliveryList;
+    public OrderInfoBean getOrderInfo() {
+        return orderInfo;
     }
 
-    public void setDeliveryList(List<DeliveryListBean> deliveryList) {
-        this.deliveryList = deliveryList;
+    public void setOrderInfo(OrderInfoBean orderInfo) {
+        this.orderInfo = orderInfo;
     }
 
-    public List<DeliveryListBean> getPaymentList() {
-        return paymentList;
+    public DeliveryInfoBean getDeliveryInfo() {
+        return deliveryInfo;
     }
 
-    public void setPaymentList(List<DeliveryListBean> paymentList) {
-        this.paymentList = paymentList;
+    public void setDeliveryInfo(DeliveryInfoBean deliveryInfo) {
+        this.deliveryInfo = deliveryInfo;
+    }
+
+    public InvoiceInfoBean getInvoiceInfo() {
+        return invoiceInfo;
+    }
+
+    public void setInvoiceInfo(InvoiceInfoBean invoiceInfo) {
+        this.invoiceInfo = invoiceInfo;
+    }
+
+    public PaymentInfoBean getPaymentInfo() {
+        return paymentInfo;
+    }
+
+    public void setPaymentInfo(PaymentInfoBean paymentInfo) {
+        this.paymentInfo = paymentInfo;
+    }
+
+    public List<String> getProm() {
+        return prom;
+    }
+
+    public void setProm(List<String> prom) {
+        this.prom = prom;
     }
 
     public List<ProductListBean> getProductList() {
@@ -78,14 +111,14 @@ public class MyOrderResponse implements IResponse {
     public static class CheckoutAddupBean {
         /**
          * freight : 10
-         * totalCount : 5
          * totalPoint : 30
-         * totalPrice : 450
+         * totalCount : 5
+         * totalPrice : 1250
          */
 
         public int freight;
-        public int totalCount;
         public int totalPoint;
+        public int totalCount;
         public int totalPrice;
 
         public int getFreight() {
@@ -96,20 +129,20 @@ public class MyOrderResponse implements IResponse {
             this.freight = freight;
         }
 
-        public int getTotalCount() {
-            return totalCount;
-        }
-
-        public void setTotalCount(int totalCount) {
-            this.totalCount = totalCount;
-        }
-
         public int getTotalPoint() {
             return totalPoint;
         }
 
         public void setTotalPoint(int totalPoint) {
             this.totalPoint = totalPoint;
+        }
+
+        public int getTotalCount() {
+            return totalCount;
+        }
+
+        public void setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
         }
 
         public int getTotalPrice() {
@@ -121,22 +154,146 @@ public class MyOrderResponse implements IResponse {
         }
     }
 
-    public static class DeliveryListBean {
+    public static class AddressInfoBean {
         /**
-         * des : 周一至周五送货
+         * addressArea : 密云县
+         * id : 139
+         * addressDetail : 街道口地铁c口
+         * name : itcast
+         */
+
+        public String addressArea;
+        public int id;
+        public String addressDetail;
+        public String name;
+
+        public String getAddressArea() {
+            return addressArea;
+        }
+
+        public void setAddressArea(String addressArea) {
+            this.addressArea = addressArea;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getAddressDetail() {
+            return addressDetail;
+        }
+
+        public void setAddressDetail(String addressDetail) {
+            this.addressDetail = addressDetail;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+    public static class OrderInfoBean {
+        /**
+         * flag : 3
+         * status : 未处理
+         * orderId : 098593
+         * time : 1449107098604
+         */
+
+        public int flag;
+        public String status;
+        public String orderId;
+        public String time;
+
+        public int getFlag() {
+            return flag;
+        }
+
+        public void setFlag(int flag) {
+            this.flag = flag;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getOrderId() {
+            return orderId;
+        }
+
+        public void setOrderId(String orderId) {
+            this.orderId = orderId;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+    }
+
+    public static class DeliveryInfoBean {
+        /**
          * type : 1
          */
 
-        public String des;
+        public String type;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+    }
+
+    public static class InvoiceInfoBean {
+        /**
+         * invoiceContent : 传智慧播客教育科技有限公司
+         * invoiceTitle : 传智慧播客教育科技有限公司
+         */
+
+        public String invoiceContent;
+        public String invoiceTitle;
+
+        public String getInvoiceContent() {
+            return invoiceContent;
+        }
+
+        public void setInvoiceContent(String invoiceContent) {
+            this.invoiceContent = invoiceContent;
+        }
+
+        public String getInvoiceTitle() {
+            return invoiceTitle;
+        }
+
+        public void setInvoiceTitle(String invoiceTitle) {
+            this.invoiceTitle = invoiceTitle;
+        }
+    }
+
+    public static class PaymentInfoBean {
+        /**
+         * type : 1
+         */
+
         public int type;
-
-        public String getDes() {
-            return des;
-        }
-
-        public void setDes(String des) {
-            this.des = des;
-        }
 
         public int getType() {
             return type;
@@ -150,7 +307,7 @@ public class MyOrderResponse implements IResponse {
     public static class ProductListBean {
         /**
          * prodNum : 3
-         * product : {"id":1,"name":"韩版时尚蕾丝裙","pic":"/images/product/detail/c3.jpg","price":350,"productProperty":[{"id":1,"k":"颜色","v":"红色"},{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"},{"id":4,"k":"尺码","v":"XXL"}]}
+         * product : {"id":1,"pic":"/images/product/detail/c3.jpg","name":"韩版时尚蕾丝裙","price":350,"productProperty":[{"id":0,"k":"颜色","v":"红色"},{"id":1,"k":"颜色","v":"绿色"}]}
          */
 
         public int prodNum;
@@ -175,15 +332,15 @@ public class MyOrderResponse implements IResponse {
         public static class ProductBean {
             /**
              * id : 1
-             * name : 韩版时尚蕾丝裙
              * pic : /images/product/detail/c3.jpg
+             * name : 韩版时尚蕾丝裙
              * price : 350
-             * productProperty : [{"id":1,"k":"颜色","v":"红色"},{"id":2,"k":"颜色","v":"绿色"},{"id":3,"k":"尺码","v":"M"},{"id":4,"k":"尺码","v":"XXL"}]
+             * productProperty : [{"id":0,"k":"颜色","v":"红色"},{"id":1,"k":"颜色","v":"绿色"}]
              */
 
             public int id;
-            public String name;
             public String pic;
+            public String name;
             public int price;
             public List<ProductPropertyBean> productProperty;
 
@@ -195,20 +352,20 @@ public class MyOrderResponse implements IResponse {
                 this.id = id;
             }
 
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
             public String getPic() {
                 return pic;
             }
 
             public void setPic(String pic) {
                 this.pic = pic;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
             }
 
             public int getPrice() {
@@ -229,7 +386,7 @@ public class MyOrderResponse implements IResponse {
 
             public static class ProductPropertyBean {
                 /**
-                 * id : 1
+                 * id : 0
                  * k : 颜色
                  * v : 红色
                  */

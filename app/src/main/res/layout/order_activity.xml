@@ -29,7 +29,6 @@
 
     <LinearLayout
         android:id="@+id/normal_order"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 <ScrollView
@@ -159,11 +158,13 @@
                 android:text="是否开具发票 :" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/Header"
                 style="@style/TextView1"
                 android:text="发票抬头 :" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/advice"
                 style="@style/TextView1"
                 android:text="送货要求 :" />
