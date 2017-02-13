@@ -34,7 +34,7 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final String URL_ORDERSUMBIT = URL_SERVER + "/ordersumbit";
 
     public static final String URL_ORDERDETAIL = URL_SERVER + "/orderdetail";
-
+    public static final String URL_ORDER= URL_SERVER + "/orderlist";
 
 
 
@@ -66,7 +66,7 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final int REQUEST_CODE_LOGOUT = 14;
     public static final int REQUEST_CODE_ORDERDETAIL = 25;
 
-
+    public static final int REQUEST_CODE_ORDER = 26;
 
     public static final int REQUEST_CODE_BOOKMARK = 24;
     public static final int REQUEST_CODE_FAV = 23;
