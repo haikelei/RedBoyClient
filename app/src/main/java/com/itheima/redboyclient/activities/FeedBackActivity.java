@@ -1,12 +1,10 @@
 package com.itheima.redboyclient.activities;
 
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.itheima.redboyclient.R;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
@@ -35,10 +33,5 @@ public class FeedBackActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.inject(this);
-    }
+
 }

@@ -9,15 +9,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.FlashAdapter;
-
-
 import com.itheima.redboyclient.net.resp.FlashResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
-
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -63,7 +59,6 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
     }
 
 
-
     @Override
     protected void initData() {
         tv.setText("限时抢购");
@@ -90,8 +85,8 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(FlashActivity.this,GoodDetailActivity.class);
-                        intent.putExtra("pId",topics.getProductList().get(position)+"");
+                        Intent intent = new Intent(FlashActivity.this, GoodDetailActivity.class);
+                        intent.putExtra("pId", topics.getProductList().get(position).getId() + "");
                         startActivity(intent);
                     }
                 });
@@ -116,5 +111,11 @@ public class FlashActivity extends BaseActivity implements HttpLoader.HttpListen
     @Override
     public void onClick(View v) {
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        App.HL.cancelRequest(this);
     }
 }

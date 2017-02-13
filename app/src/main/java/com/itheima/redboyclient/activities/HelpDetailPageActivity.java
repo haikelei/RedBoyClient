@@ -75,4 +75,10 @@ public class HelpDetailPageActivity extends BaseActivity implements HttpLoader.H
     public void onGetResponseError(int requestCode, VolleyError error) {
         MyToast.show(getApplicationContext(), "数据请求失败！");
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        App.HL.cancelRequest(this);
+    }
+
 }

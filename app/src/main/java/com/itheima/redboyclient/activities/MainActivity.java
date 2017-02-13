@@ -1,8 +1,11 @@
 package com.itheima.redboyclient.activities;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -13,6 +16,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.EventBean;
+import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.fragment.MainBaseFragment;
 import com.itheima.redboyclient.net.resp.CategoryResponse;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -20,11 +26,15 @@ import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import com.itheima.redboyclient.utils.FragmentFactory;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
@@ -35,6 +45,7 @@ import butterknife.InjectView;
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener, HttpLoader.HttpListener {
 
 
+    private static final String TAG = "MainActivity";
     @InjectView(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
     @InjectView(R.id.fl_content)
@@ -47,7 +58,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     LoadStateLayout lslMain;
 
     private int[] titleIds = {R.string.menu_home, R.string.menu_search, R.string.menu_classify, R.string.menu_shopping, R.string.menu_more};
-    private BadgeItem mBadgeItem;
+    private BadgeItem numberBadgeItem;
+    private BottomNavigationItem item4;
 
     @Override
     protected int initContentView() {
@@ -60,13 +72,15 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         initToolBar();
         initLoadStateLayout();
         initBottomNavigation();
+        //initFirstFragment();
         onTabSelected(0);
+        EventBus.getDefault().register(this);
 
     }
 
     private void initToolBar() {
         toolbar.setTitle("");
-
+        //setSupportActionBar(toolbar);
         tvTitle.setText("首页");
     }
 
@@ -83,19 +97,20 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC
                 );
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.menu_home, titleIds[0]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.menu_search, titleIds[1]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.menu_history, titleIds[2]));
-        //设置购物车显示数量
-        mBadgeItem = new BadgeItem();
-        mBadgeItem.setGravity(Gravity.RIGHT);
-        mBadgeItem.setTextColor("#ffffff");
-        mBadgeItem.setBackgroundColor("#ff0000");
-        mBadgeItem.setText("5");
-        //第一次一定设置为show()否则，以后hide()之后再显示，需要调用两次show();
-        mBadgeItem.show();
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.menu_favorites, titleIds[3]).setBadgeItem(mBadgeItem));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.menu_myorder, titleIds[4]));
+        numberBadgeItem = new BadgeItem()
+                .setBorderWidth(0)
+                .setBackgroundColorResource(R.color.colorPrimary)
+                .setHideOnSelect(false)
+                .hide();
+
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.home, titleIds[0]));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.search, titleIds[1]));
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.brandhome, titleIds[2]));
+
+        item4 = new BottomNavigationItem(R.drawable.cartnew, titleIds[3]);
+        bottomNavigationBar.addItem(item4.setBadgeItem(numberBadgeItem));
+
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.user, titleIds[4]));
         bottomNavigationBar.setActiveColor(R.color.colorPrimary);
         bottomNavigationBar.setInActiveColor(R.color.lightgray);
         bottomNavigationBar.setFirstSelectedPosition(0);
@@ -103,11 +118,28 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
+    private void initFirstFragment() {
+//        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//        for (int i = 0; i < titleIds.length; i++) {
+//            Fragment fragment = fm.findFragmentByTag(i + "");
+//            if (fragment != null) {
+//                fragmentTransaction.remove(fragment);
+//            }
+//        }
+//        fragmentTransaction.commit();
+//        getSupportFragmentManager().beginTransaction().add(R.id.fl_content, FragmentFactory.getFragment(0), "0").commit();
+
+    }
 
 
     @Override
     public void onTabSelected(int position) {
-
+//        FragmentTransaction transaction = fm.beginTransaction();
+//        BaseFragment fragment = FragmentFactory.getFragment(position);
+//        if (!fragment.isAdded()) {
+//            transaction.add(R.id.fl_content, fragment, "" + position);
+//        }
+//        transaction.show(fragment).commit();
         //改变标题栏
         tvTitle.setText(titleIds[position]);
         String url = null;

@@ -22,6 +22,8 @@ import org.senydevpkg.view.LoadStateLayout;
 
 import butterknife.InjectView;
 
+
+
 public class TopicActivity extends BaseActivity implements HttpLoader.HttpListener {
 
 

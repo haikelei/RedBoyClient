@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 
 import android.content.Intent;
-import android.os.SystemClock;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -173,6 +172,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             case R.id.tv_backpwd:
                 break;
             default:
+                startActivity(BookmarksActivity.class,false);
                 break;
         }
     }

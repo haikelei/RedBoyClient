@@ -66,6 +66,7 @@ public class HotProductActivity extends BaseActivity implements HttpLoader.HttpL
 
 
     private HotProductAdapter hotProductAdapter;
+    private HotProductResponse hotProductResponse;
 
     @Override
     protected int initContentView() {
