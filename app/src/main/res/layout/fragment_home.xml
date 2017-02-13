@@ -46,7 +46,7 @@
         custom:auto_cycle="true"
         custom:indicator_visibility="visible"
         custom:pager_animation_span="1100"
-        android:layout_height="@dimen/y100"/>
+        android:layout_height="@dimen/y120"/>
 
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/custom_indicator"
