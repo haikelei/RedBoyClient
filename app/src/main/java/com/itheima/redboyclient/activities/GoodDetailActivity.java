@@ -52,8 +52,8 @@ public class GoodDetailActivity extends AppCompatActivity {
         viewpager = (ViewPager) findViewById(R.id.viewpager);
 
         setSupportActionBar(toolbar);
-
-        toolbar.setNavigationIcon(R.drawable.arrowback);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setNavigationIcon(R.drawable.arrowback);
         pId = getIntent().getStringExtra("pId");
 
 
@@ -118,9 +118,8 @@ public class GoodDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+    public void setSelected(int position){
+        viewpager.setCurrentItem(position);
     }
+
 }

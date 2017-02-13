@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
 import com.itheima.redboyclient.domain.Goods;
@@ -84,6 +84,8 @@ public class GoodsDetailFragment extends Fragment {
     TextView textPutIntoShopcar;
     @InjectView(R.id.textfavorite)
     TextView textfavorite;
+    @InjectView(R.id.ll_comment)
+    LinearLayout llComment;
     private ArrayList<GoodResponse.ProductBean.ProductPropertyBean> beans;
 
     public GoodsDetailFragment() {
@@ -216,13 +218,19 @@ public class GoodsDetailFragment extends Fragment {
                     Goods goods = new Goods(goodResponse.getProduct().getId(),
                             sb.toString(), Integer.parseInt(etNum.getText().toString()));
                     boolean suc = dao.add(goods);
-                    if(suc){
+                    if (suc) {
                         Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
                     }
                     break;
                 }
         }
+    }
+
+    @OnClick(R.id.ll_comment)
+    public void onClick() {
+        GoodDetailActivity activity = (GoodDetailActivity) getActivity();
+        activity.setSelected(2);
     }
 }
