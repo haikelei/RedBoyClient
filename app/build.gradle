@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.itheima.redboyclient"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 16
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.youth.banner:banner:1.4.8'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile files('libs/nineoldandroids-2.4.0.jar')
-
+    compile project(':doublescrollview')
+    compile 'com.daimajia.slider:library:1.1.5'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

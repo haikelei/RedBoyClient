@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.UserInfoResponse;
+import com.itheima.redboyclient.present.Logout;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
@@ -31,6 +33,7 @@ import butterknife.OnClick;
 
 public class AccountCenterActivity extends BaseActivity implements HttpLoader.HttpListener {
     private static final String TAG = "AccountCenterActivity";
+    TextView mLougout;
     TextView acUsername;   //用户名
     @InjectView(R.id.member_mum)
     TextView member;  //会员等级
@@ -51,7 +54,7 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     @InjectView(R.id.recent_browse_rl)
     RelativeLayout recentBrowse;  //收藏夹点击
     private Toolbar mToolbar;
-    //private TextView mTextView;
+    private TextView mTextView;
     private int bonus;
     private String level;
     private String orderCount;
@@ -60,9 +63,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     private UserInfoResponse mUserInfoResponse;
     String userId;
     boolean islogin;
-    private ImageView ivBack;
-    private TextView tvTuichu;
-
     @Override
     protected int initContentView() {
         return R.layout.accountcenter_activity;
@@ -70,28 +70,11 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
 
     @Override
     protected void initView() {
-        ivBack = (ImageView) findViewById(R.id.iv_back);
-        tvTuichu = (TextView) findViewById(R.id.tv_tuichu);
-
+        super.initView();
         mToolbar = (Toolbar) findViewById(R.id.ac_toolbar);
-        //mTextView = (TextView) findViewById(R.id.ac_tv_title);
+        mTextView = (TextView) findViewById(R.id.ac_tv_title);
         acUsername = (TextView) findViewById(R.id.ac_username);
-
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        tvTuichu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //退出登录后添加标记
-                App.EDIT.putBoolean("islogin", false);
-                App.EDIT.commit();
-                finish();
-            }
-        });
+        mLougout = (TextView) findViewById(R.id.logout);
         initToolBar();
     }
 
@@ -102,10 +85,9 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         //默认ToolBar的标题在左侧，我们不需要
         mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
-        //mTextView.setText("账户中心");
+        mTextView.setText("账户中心");
         //显示左边的Home按钮
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -124,6 +106,51 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
 
 
 
+    @Override
+    protected void initListener() {
+        super.initListener();
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        /*
+        * 退出登录
+        * */
+ /*       mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.logout:
+                            Logout out = new Logout();
+                            out.logout();
+                            boolean isLogout = App.SP.getBoolean("islogout",false);
+                        if (isLogout) {
+                            App.EDIT.putBoolean("islogin", false);
+                            App.EDIT.commit();
+                            finish();
+                        }
+                        break;
+                }
+                return true;
+            }
+        });*/
+
+        mLougout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout out = new Logout();
+                out.logout();
+                boolean isLogout = App.SP.getBoolean("islogout",false);
+                if (isLogout) {
+                    App.EDIT.putBoolean("islogin", false);
+                    App.EDIT.commit();
+                    finish();
+                }
+            }
+        });
+    }
 
 
     public void startActivity(Class clazz, boolean isFinish) {
@@ -146,12 +173,14 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.my_order_rl:   //我的订单点击
+                startActivity(ORderActivity.class,false);
                 break;
             case R.id.address_manage_rl:  //地址管理点击
                 break;
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;
             case R.id.recent_browse_rl: //收藏夹点击
+                startActivity(new Intent(this,BookmarksActivity.class));
                 break;
         }
     }
@@ -192,11 +221,13 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
              }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.orderCount)) {
-                myOrderCount.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                myOrderCount.setText("(" + mUserInfoResponse.userInfo.orderCount + ")");
+                App.EDIT.putString("orderCount",mUserInfoResponse.userInfo.orderCount);
             }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.favoritesCount)) {
                 favoritesCounts.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
+                App.EDIT.putString("favoritesCount",mUserInfoResponse.userInfo.favoritesCount);
             }
 
             }

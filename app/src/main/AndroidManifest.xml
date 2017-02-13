@@ -46,8 +46,7 @@
         <activity android:name=".activities.AccountCenterActivity"></activity>
         <activity android:name=".activities.MyOrderActivity"></activity>
         <activity android:name=".activities.BookmarksActivity"/>
-        <activity android:name=".activities.SettlementCenterActivity"/>
-        <activity android:name=".activities.PresentActivity"/>
+        <activity android:name=".activities.ORderActivity"/>
     </application>
 
 </manifest>
