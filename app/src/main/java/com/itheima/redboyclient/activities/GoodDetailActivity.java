@@ -14,15 +14,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.android.volley.Cache;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.fragment.CommentFragment;
 import com.itheima.redboyclient.fragment.ContentDetailFragment;
 import com.itheima.redboyclient.fragment.GoodsDetailFragment;
 import com.itheima.redboyclient.net.resp.GoodResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
+import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
@@ -53,9 +56,7 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        toolbar.setNavigationIcon(R.drawable.arrowback);
         pId = getIntent().getStringExtra("pId");
-
 
         HttpParams params = new HttpParams().put("pId",pId);
         App.HL.get(ConstantsRedBaby.URL_GOODDETAIL,params,GoodResponse.class,ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
@@ -80,7 +81,6 @@ public class GoodDetailActivity extends AppCompatActivity {
     }
 
 
-
 //     * ViewPager的PagerAdapter
 
     public class MinePagerAdapter extends FragmentPagerAdapter {
@@ -90,8 +90,6 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         public MinePagerAdapter(FragmentManager fm) {
             super(fm);
-
-
 
         }
 

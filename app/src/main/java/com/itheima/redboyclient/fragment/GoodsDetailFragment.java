@@ -24,11 +24,13 @@ import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.FavResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
+import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
@@ -143,9 +145,7 @@ public class GoodsDetailFragment extends Fragment {
         spinnerCorlor.setAdapter(corlorArrayAdapter);
         ArrayAdapter sizeArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
         spinnerSize.setAdapter(sizeArrayAdapter);
-        //收藏点击事件
 
-        //加入购物车点击事件
         //商品详情图片
         ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
         for (String s : list) {
@@ -220,6 +220,7 @@ public class GoodsDetailFragment extends Fragment {
                     boolean suc = dao.add(goods);
                     if (suc) {
                         Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
+                        EventBus.getDefault().post(new EventBean());
                     } else {
                         Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
                     }
