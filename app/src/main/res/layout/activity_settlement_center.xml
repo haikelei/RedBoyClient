@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_settlement_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/shoppingcar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/head_button"
+                android:text="购物车"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="结算中心"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/submitorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/head_button"
+                android:text="提交订单"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_usermsg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:clickable="true"
+            android:padding="10.0dip"
+            android:transitionName="address">
+
+            <TextView
+            android:id="@+id/payment_user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户信息:"
+            android:textColor="#000"
+            android:textSize="16sp" />
+            <LinearLayout
+                android:layout_below="@id/payment_user_text"
+                android:id="@+id/ll_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:text="收货人"
+                    android:textColor="#666666" />
+
+
+                <TextView
+                    android:id="@+id/payment_addressDetail_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20.0dip"
+                    android:text="详细地址"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:clickable="true"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:text="支付方式："
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+
+                android:id="@+id/payment_payValue_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_pay"
+                android:text="未选择"
+                android:textColor="#ffa10d0b"
+                android:textSize="16sp" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pay"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/pay_rb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:text="到付-现金"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/pay_rb2"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="到付-POS机"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/pay_rb3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="支付宝"
+                    android:textColor="#666666" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:clickable="true"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:text="送货时间："
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/payment_sendTimeValue_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20.0dip"
+                android:layout_toRightOf="@id/tv_time"
+                android:text="未选择"
+                android:textColor="#ffa10d0b"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/payment_sendTimeValue_text"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/time_rb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:text="周一至周五送货"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/time_rb2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="双休日及公众假期送货"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/time_rb3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="时间不限，工作日双休日及公众假期均可送货"
+                    android:textColor="#666666" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_deliverymode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:clickable="true"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_deliverymode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:text="送货方式："
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_dy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20.0dip"
+                android:layout_toRightOf="@id/tv_deliverymode"
+                android:text="未选择"
+                android:textColor="#ffa10d0b"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_dy"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/mode_rb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:text="顺丰快递"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/mode_rb2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="圆通快递"
+                    android:textColor="#666666" />
+
+                <RadioButton
+                    android:id="@+id/mode_rb3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:text="中国邮政"
+                    android:textColor="#666666" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:gravity="center_vertical"
+            android:padding="10.0dip">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:gravity="center_vertical"
+                android:text="使用优惠券:"
+                android:textColor="#000"
+                android:textSize="22sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="center_vertical"
+            android:text="无优惠券"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/shape_rounded_selectable"
+            android:gravity="center_vertical"
+            android:padding="10.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10.0dip"
+                android:gravity="center_vertical"
+                android:text="索取发票"
+                android:textColor="#000"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/goodsdetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/temp_word"
+            android:padding="8dp"
+            android:text="商品明细"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <com.itheima.redboyclient.view.NoScrollListView
+            android:id="@+id/lv_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_gravity="center"
+            android:background="@drawable/button_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交订单"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+    </LinearLayout>
+</ScrollView>

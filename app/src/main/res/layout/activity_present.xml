@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_present"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/head_button"
+            android:text="结算中心"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="使用礼品卡"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/head_button"
+            android:text="添加"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:text="已有优惠券"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <CheckedTextView
+            android:id="@+id/ctv1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/item_setting_first"
+            android:checkMark="?android:attr/listChoiceIndicatorSingle"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="9月惊喜50元礼券"
+            android:textSize="22sp" />
+
+        <CheckedTextView
+            android:id="@+id/ctv2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/item_setting_middle"
+            android:checkMark="?android:attr/listChoiceIndicatorSingle"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="国庆节80元礼券"
+            android:textSize="22sp"
+
+            />
+
+        <CheckedTextView
+            android:id="@+id/ctv3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/item_setting_last"
+            android:checkMark="?android:attr/listChoiceIndicatorSingle"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="圣诞节大放送80元礼券"
+            android:textSize="22sp"
+
+            />
+    </LinearLayout>
+</LinearLayout>

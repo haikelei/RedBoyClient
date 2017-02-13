@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dip">
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="80dip"
+        android:layout_height="105dip"
+        android:layout_marginRight="10dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/product_loading" />
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip"
+        android:layout_toRightOf="@id/iv_pic"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="长裙"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/color"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="颜色："
+            android:textColor="#6000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/size"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尺码：M"
+            android:textColor="#6000"
+            android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="价格："
+            android:textColor="#88000000"
+            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:text="数量：1"
+                android:textColor="#88000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/countprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小计："
+                android:textColor="#6000"
+                android:textSize="18sp" />
+
+
+    </LinearLayout>
+</RelativeLayout>
