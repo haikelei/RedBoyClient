@@ -1,1 +1,1 @@
-include ':app', ':devpkg-android', ':doublescrollview'
+include ':app', ':devpkg-android'
