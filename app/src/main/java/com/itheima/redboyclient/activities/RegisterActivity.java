@@ -126,6 +126,7 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
             public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
                 finish();
+
             }
         });
 
@@ -253,6 +254,8 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
             ToastUtil.showToast("注册成功,请登录");
             //如果注册成功的话,就finish掉,到登录界面
             finish();
+            overridePendingTransition(R.anim.anim_out,R.anim.anim_in);
+
         }else{
             ToastUtil.showToast("注册失败,失败原因:"
                     +registerResponse.getError_code()+":"+registerResponse.getError());
@@ -283,6 +286,11 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
     protected void onDestroy() {
         super.onDestroy();
         progressDialog.dismiss();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
 

@@ -2,14 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="?attr/colorPrimaryDark"
     android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:background="@color/colorPrimary">
+        android:layout_height="?android:actionBarSize"
+        android:background="#f00">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -41,7 +38,6 @@
     <org.senydevpkg.view.LoadStateLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
         android:id="@+id/loadstatelayout">
         <ListView
             android:layout_width="match_parent"

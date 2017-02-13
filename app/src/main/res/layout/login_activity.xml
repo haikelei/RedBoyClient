@@ -4,6 +4,7 @@
               android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:id="@+id/ll"
     >
 
     <android.support.v7.widget.Toolbar
@@ -20,22 +21,14 @@
             android:text="欢迎登录"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-       <!-- <TextView
-            android:id="@+id/back_home"
-            android:layout_marginLeft="5dp"
-            android:gravity="center"
-            android:background="@drawable/head_back"
-            android:text="返回"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>-->
     </android.support.v7.widget.Toolbar>
 
 
     <ImageView
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:src="@drawable/biq"
         android:id="@+id/imageView"/>
 
@@ -48,9 +41,14 @@
 
         <EditText
             android:id="@+id/et_username"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入用户名"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:hint="@string/username"
+            android:textColorHint="#999999"
             android:imeOptions="actionNext"
             android:inputType="text"/>
     </android.support.design.widget.TextInputLayout>
@@ -59,36 +57,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/til_password"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         >
 
         <EditText
             android:id="@+id/et_password"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入密码"
-            android:imeOptions="actionDone"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:hint="@string/pwd"
+            android:textColorHint="#999999"
             android:inputType="numberPassword"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/login_btn_selector"
         android:text="点击登录"
         android:textColor="#ffffff"
-        android:textSize="22sp"
+        android:textSize="14sp"
         />
 
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:textSize="12sp"
             android:layout_marginLeft="15dp"
             android:id="@+id/tv_newuser"
            android:layout_width="0dp"
@@ -100,6 +104,7 @@
             android:textColor="@color/login_text_select"/>
 
         <TextView
+            android:textSize="12sp"
             android:layout_marginRight="15dp"
             android:gravity="right"
             android:layout_marginLeft="5dp"
@@ -111,7 +116,7 @@
             android:text="找回密码"
             android:textColor="@color/login_text_select"/>
     </LinearLayout>
-  p<ProgressBar
+  <ProgressBar
     android:id="@+id/pb"
     android:visibility="gone"
     android:layout_marginTop="10dp"
@@ -121,3 +126,4 @@
     />
 
 </LinearLayout>
+

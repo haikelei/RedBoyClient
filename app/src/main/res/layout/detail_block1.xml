@@ -89,7 +89,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -100,17 +99,11 @@
             android:layout_height="wrap_content"
             android:text="数量：" />
 
-        <TextView
-            android:clickable="true"
-            android:gravity="center"
-            android:width="40dp"
-            android:height="30dp"
-            android:background="@drawable/bg_shopping_text"
+        <Button
             android:id="@+id/bt_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="30sp"/>
+            android:text="减" />
 
         <EditText
             android:id="@+id/et_num"
@@ -118,16 +111,10 @@
             android:layout_height="wrap_content"
             android:text="1" />
 
-        <TextView
-            android:clickable="true"
-            android:gravity="center"
-            android:width="40dp"
-            android:height="30dp"
-            android:background="@drawable/bg_shopping_text"
+        <Button
             android:id="@+id/bt_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="30sp"/>
+            android:text="加" />
     </LinearLayout>
 </LinearLayout>

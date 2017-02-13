@@ -3,14 +3,12 @@
     android:id="@+id/fl_newproduct"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimaryDark"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/red"
         android:padding="5dp">
 
         <Button
@@ -28,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="新品上架"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_alignBaseline="@+id/back"
             android:layout_alignBottom="@+id/back"
             android:layout_centerHorizontal="true" />
@@ -37,7 +35,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
         android:padding="2dp">
 
         <RelativeLayout
@@ -122,9 +119,9 @@
     </LinearLayout>
 
     <ListView
-        android:background="#ffffff"
         android:id="@+id/new_product_lv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip" />
 
 </LinearLayout>

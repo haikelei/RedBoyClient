@@ -11,6 +11,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import butterknife.InjectView;
+
+import static com.itheima.redboyclient.R.anim.anim_out;
 
 /**
  * Created by yudenghao on 2017/2/7.
@@ -64,6 +67,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
     private String username;
     private String password;
     private LoginResopnse loginResopnse;
+    private LinearLayout linearLayout;
 
     @Override
     protected int initContentView() {
@@ -74,6 +78,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
     protected void initView() {
         super.initView();
         initToolBar();
+        linearLayout = (LinearLayout) findViewById(R.id.ll);
     }
 
     private void initToolBar() {
@@ -112,6 +117,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
             @Override
             public void onClick(View v) {
               finish();
+
             }
         });
     }
@@ -168,11 +174,11 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                 break;
             case R.id.tv_newuser:
                 startActivity(RegisterActivity.class, false);
+                this.overridePendingTransition(R.anim.anim_in, anim_out);
                 break;
             case R.id.tv_backpwd:
                 break;
             default:
-                startActivity(BookmarksActivity.class,false);
                 break;
         }
     }
@@ -232,6 +238,7 @@ public class LoginActivity extends BaseActivity implements TextView.OnEditorActi
                         App.EDIT.putBoolean("islogout",true).commit();
                         finish();
                         ToastUtil.showToast("登录成功!");
+
                     }
                 }
             });

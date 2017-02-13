@@ -2,17 +2,19 @@ package com.itheima.redboyclient.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.BaseActivity;
+import com.itheima.redboyclient.activities.MainActivity;
 import com.itheima.redboyclient.adapter.PromotionAdapter;
 import com.itheima.redboyclient.net.resp.TopicResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
@@ -36,15 +38,14 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
     Toolbar toolBar;
     @InjectView(R.id.listview)
     ListView listview;
+    @InjectView(R.id.toolbar_title)
+    TextView textView;
     @InjectView(R.id.myfavorite_productlist_layout)
     LoadStateLayout myfavoriteProductlistLayout;
-    @InjectView(R.id.button)
-    Button button;
-    @InjectView(R.id.tv)
-    TextView tv;
-
     private PromotionAdapter adapter;
     private TopicResponse topics;
+
+
 
 
     @Override
@@ -60,16 +61,17 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
     }
 
     protected void initToolBar() {
+        toolBar.setTitle("");
+        toolBar.setNavigationIcon(R.drawable.arrowback);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        tv.setText("促销快报");
+        textView.setText("促销快报");
     }
-
     /**
      * 初始化数据
      */
@@ -81,9 +83,12 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
         myfavoriteProductlistLayout.setState(LoadStateLayout.STATE_LOADING);
 
 
+
         HttpParams params = new HttpParams().put("page", "1").put("pageNum", "9");
         App.HL.get(ConstantsRedBaby.URL_TOPIC, params, TopicResponse.class, ConstantsRedBaby.REQUEST_CODE_TOPIC, this).setTag(this);
     }
+
+
 
 
     public void onGetResponseSuccess(int requestCode, IResponse response) {
@@ -101,14 +106,6 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
             if (adapter == null) {
                 adapter = new PromotionAdapter(this, topics.topic);
                 listview.setAdapter(adapter);
-                listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(PromotionActivity.this, GoodDetailActivity.class);
-                        intent.putExtra("pId", topics.topic.get(position).id + "");
-                        startActivity(intent);
-                    }
-                });
             } else {
                 adapter.notifyDataSetChanged(topics.topic);
             }
@@ -124,18 +121,5 @@ public class PromotionActivity extends BaseActivity implements HttpLoader.HttpLi
             myfavoriteProductlistLayout.setState(LoadStateLayout.STATE_ERROR);//显示请求错误的View
 
         MyToast.show(this, "数据请求失败！");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        App.HL.cancelRequest(this);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.inject(this);
     }
 }

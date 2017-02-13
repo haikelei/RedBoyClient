@@ -1,7 +1,6 @@
 package com.itheima.redboyclient.activities;
 
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -11,7 +10,6 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.BookmarkAdapter;
-import com.itheima.redboyclient.net.resp.AddressResponse;
 import com.itheima.redboyclient.net.resp.BookmarkResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 

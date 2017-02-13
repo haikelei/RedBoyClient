@@ -1,6 +1,5 @@
 package com.itheima.redboyclient.activities;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +29,6 @@ import butterknife.OnClick;
 
 public class NewProductActivity extends BaseActivity implements HttpLoader.HttpListener, AdapterView.OnItemClickListener {
 
-    private static final String TAG = "NewProductActivity";
     @InjectView(R.id.back)
     Button back;
     @InjectView(R.id.title)
@@ -68,7 +66,6 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
 
 
     private NewProductAdapter newProductAdapter;
-    private NewProductResponse newProductResponse;
 
     @Override
     protected int initContentView() {
@@ -126,7 +123,7 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
 
     @Override
     public void onGetResponseSuccess(int requestCode, IResponse response) {
-        newProductResponse = (NewProductResponse) response;
+        NewProductResponse newProductResponse = (NewProductResponse) response;
         if (newProductResponse != null) {
             if (list.size() != 0 && list != null) {
                 list.clear();
@@ -187,9 +184,6 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this,GoodDetailActivity.class);
-//        Log.e(TAG, "onItemClick: "+newProductResponse.getProductList().get(position).getId() );
-        intent.putExtra("pId",newProductResponse.getProductList().get(position).getId()+"");
-        startActivity(intent);
+
     }
 }

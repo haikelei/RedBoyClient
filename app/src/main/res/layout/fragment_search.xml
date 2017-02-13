@@ -2,42 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
+    <RelativeLayout
         android:id="@+id/relSearch"
-        android:layout_width="fill_parent"
-        android:layout_height="39.0dip" >
-        <android.support.design.widget.TextInputEditText
-            android:id="@id/editSearchInfo"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:hint="请输入您要搜索的商品"
-            android:gravity="bottom"
-            android:textSize="15sp"
-            android:maxLength="26"
-            android:maxLines="1" />
-        <TextView
-            android:id="@+id/tv_search"
-            android:clickable="true"
-            android:layout_gravity="center"
-            android:layout_marginRight="15dp"
-            android:gravity="center"
-            android:background="@drawable/bg_text_selector"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="搜索"
-            android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_search2">
+
+        <EditText
+            android:id="@+id/editSearchInfo"
+            style="@style/style_14_4B4B4B"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textColor="#ffffff"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35.0dip"
+            android:background="#00ffffff"
+            android:hint="请输入关键字"
+            android:maxLength="26"
+            android:singleLine="true" />
+    </RelativeLayout>
 
 
 

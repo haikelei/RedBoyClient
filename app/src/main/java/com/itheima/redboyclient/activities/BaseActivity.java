@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +10,6 @@ import android.view.WindowManager;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.utils.StatusBarUtils;
 
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.utils.NetworkUtils;
@@ -42,6 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected SharedPreferences sp;
 
 
+
     protected SharedPreferences.Editor edit;
     protected FragmentManager fm;
 
@@ -57,25 +58,24 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        StatusBarUtils.setWindowStatusBarColor(this,R.color.colorPrimaryDark);
-
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         //界面中如果有EditText，默认隐藏输入法
         getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         //初始化通用的SP&EDIT
         sp = App.SP;
         edit = App.EDIT;
 
         //Fragment相关
         fm = getSupportFragmentManager();
+
         setContentView(initContentView());
         ButterKnife.inject(this);//初始化ButterKnife
         initView();
         initListener();
         initData();
-    }
 
+    }
 
 
     @Override
@@ -121,5 +121,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void initData() {
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_pre_in,R.anim.anim_pre_out);
+    }
 
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.anim_in,R.anim.anim_out);
+    }
 }

@@ -17,7 +17,6 @@ import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
-import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
