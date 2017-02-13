@@ -12,18 +12,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
+import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.Goods;
+import com.itheima.redboyclient.net.resp.FavResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+
+import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
+import org.senydevpkg.net.resp.IResponse;
 
 import java.util.ArrayList;
 
@@ -58,22 +66,25 @@ public class GoodsDetailFragment extends Fragment {
     AppCompatSpinner spinnerCorlor;
     @InjectView(R.id.spinner_size)
     AppCompatSpinner spinnerSize;
-    @InjectView(R.id.bt_minus)
-    Button btMinus;
+
     @InjectView(R.id.et_num)
     EditText etNum;
-    @InjectView(R.id.bt_plus)
-    Button btPlus;
-    @InjectView(R.id.textPutIntoShopcar)
-    TextView textPutIntoShopcar;
-    @InjectView(R.id.textProdToCollect)
-    TextView textProdToCollect;
+
     @InjectView(R.id.tv_area)
     TextView tvArea;
     @InjectView(R.id.tv_comment_count)
     TextView tvCommentCount;
     @InjectView(R.id.detail_container)
     LinearLayout detailContainer;
+    @InjectView(R.id.bt_minus)
+    TextView btMinus;
+    @InjectView(R.id.bt_plus)
+    TextView btPlus;
+    @InjectView(R.id.textPutIntoShopcar)
+    TextView textPutIntoShopcar;
+    @InjectView(R.id.textfavorite)
+    TextView textfavorite;
+    private ArrayList<GoodResponse.ProductBean.ProductPropertyBean> beans;
 
     public GoodsDetailFragment() {
         // Required empty public constructor
@@ -118,12 +129,11 @@ public class GoodsDetailFragment extends Fragment {
         //下拉框设置
         ArrayList<String> corlors = new ArrayList<>();
         ArrayList<String> sizes = new ArrayList<>();
-        ArrayList<GoodResponse.ProductBean.ProductPropertyBean> beans =
-                (ArrayList<GoodResponse.ProductBean.ProductPropertyBean>) goodResponse.getProduct().getProductProperty();
+        beans = (ArrayList<GoodResponse.ProductBean.ProductPropertyBean>) goodResponse.getProduct().getProductProperty();
         for (GoodResponse.ProductBean.ProductPropertyBean bean : beans) {
-            if("颜色".equals(bean.getK())){
+            if ("颜色".equals(bean.getK())) {
                 corlors.add(bean.getV());
-            } else if("尺码".equals(bean.getK())){
+            } else if ("尺码".equals(bean.getK())) {
                 sizes.add(bean.getV());
             }
         }
@@ -132,6 +142,7 @@ public class GoodsDetailFragment extends Fragment {
         ArrayAdapter sizeArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
         spinnerSize.setAdapter(sizeArrayAdapter);
         //收藏点击事件
+
         //加入购物车点击事件
         //商品详情图片
         ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
@@ -139,7 +150,7 @@ public class GoodsDetailFragment extends Fragment {
             String url = ConstantsRedBaby.URL_SERVER + s;
             ImageView imageView = new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            App.HL.display(imageView,url);
+            App.HL.display(imageView, url);
             detailContainer.addView(imageView);
         }
 
@@ -151,20 +162,67 @@ public class GoodsDetailFragment extends Fragment {
         ButterKnife.reset(this);
     }
 
-    @OnClick({R.id.bt_minus, R.id.bt_plus})
+
+    @OnClick({R.id.bt_minus, R.id.bt_plus, R.id.textPutIntoShopcar, R.id.textfavorite})
     public void onClick(View view) {
         String s = etNum.getText().toString();
         int count = Integer.parseInt(s);
         switch (view.getId()) {
             case R.id.bt_minus:
-                if(count <= 1){
+                if (count <= 1) {
                     return;
                 }
-                etNum.setText(--count+"");
+                etNum.setText(--count + "");
                 break;
             case R.id.bt_plus:
-                etNum.setText(++count+"");
+                etNum.setText(++count + "");
                 break;
+            case R.id.textfavorite:
+                //添加到收藏
+                HttpParams params = new HttpParams().put("pId", goodResponse.getProduct().getId() + "");
+                boolean islogin = App.SP.getBoolean("islogin", false);
+                if (islogin) {
+                    String userId = App.SP.getString("userid", null);
+                    params.addHeader("userid", userId);
+                } else {
+                    Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+                }
+
+                App.HL.get(ConstantsRedBaby.URL_FAV, params, FavResponse.class, ConstantsRedBaby.REQUEST_CODE_FAV, new HttpLoader.HttpListener() {
+                    @Override
+                    public void onGetResponseSuccess(int requestCode, IResponse response) {
+                        Toast.makeText(getActivity(), "添加收藏夹成功", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onGetResponseError(int requestCode, VolleyError error) {
+
+                    }
+                });
+                break;
+            case R.id.textPutIntoShopcar:
+                //添加到购物车
+                ShoppingDBDao dao = new ShoppingDBDao(getActivity());
+                String corlor = spinnerCorlor.getSelectedItem().toString();
+                String size = spinnerSize.getSelectedItem().toString();
+                StringBuilder sb = new StringBuilder();
+                for (GoodResponse.ProductBean.ProductPropertyBean bean : beans) {
+                    if (corlor.equals(bean.getV())) {
+                        sb.append(bean.getId());
+                    }
+                    if (size.equals(bean.getV())) {
+                        sb.append("," + bean.getId());
+                    }
+                    Goods goods = new Goods(goodResponse.getProduct().getId(),
+                            sb.toString(), Integer.parseInt(etNum.getText().toString()));
+                    boolean suc = dao.add(goods);
+                    if(suc){
+                        Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                }
         }
     }
 }

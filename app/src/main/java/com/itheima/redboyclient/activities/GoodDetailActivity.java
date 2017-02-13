@@ -2,7 +2,6 @@ package com.itheima.redboyclient.activities;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -56,11 +55,10 @@ public class GoodDetailActivity extends AppCompatActivity {
 
         toolbar.setNavigationIcon(R.drawable.arrowback);
         pId = getIntent().getStringExtra("pId");
-        Log.e(TAG, "onCreate: "+pId);
 
 
         HttpParams params = new HttpParams().put("pId",pId);
-        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL, params, GoodResponse.class, ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
+        App.HL.get(ConstantsRedBaby.URL_GOODDETAIL,params,GoodResponse.class,ConstantsRedBaby.REQUEST_CODE_GOODDETAIL, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
 
@@ -78,13 +76,6 @@ public class GoodDetailActivity extends AppCompatActivity {
 
             }
         });
-
-
-        //打开activity的时候通过intent传入商品id，这里获取商品的商品id
-
-        Log.e(TAG, "onCreate: "+ pId );
-
-
 
     }
 

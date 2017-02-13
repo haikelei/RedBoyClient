@@ -41,10 +41,17 @@
         <activity android:name=".activities.Category_Second_activity"></activity>
         <activity android:name=".activities.Category_Third_activity"></activity>
 
+<<<<<<< HEAD
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.AccountCenterActivity"></activity>
         <activity android:name=".activities.MyOrderActivity"></activity>
+=======
+        <activity android:name=".activities.PromotionActivity"/>
+        <activity android:name=".activities.FlashActivity"/>
+        <activity android:name=".activities.AccountCenterActivity"/>
+        <activity android:name=".activities.BookmarksActivity"/>
+>>>>>>> 0b53a82349693ea7b1cb2aed07c9ef81df2e539e
     </application>
 
 </manifest>
