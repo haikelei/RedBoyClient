@@ -33,7 +33,6 @@
         android:layout_marginTop="20dp">
 
         <RelativeLayout
-            android:id="@+id/recevier_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
@@ -64,7 +63,6 @@
                 android:hint="(必填)"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/phone_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/middle_selector">
@@ -94,7 +92,6 @@
                 android:hint="(必填)"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/province_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/middle_selector">
@@ -124,7 +121,6 @@
                 android:hint="(必填)"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/city_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/middle_selector">
@@ -154,7 +150,6 @@
                 android:hint="(必填)"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/area_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/middle_selector">
@@ -184,7 +179,6 @@
                 android:hint="(必填)"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/address_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/middle_selector">
@@ -215,7 +209,6 @@
                 android:ellipsize="end"/>
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/zipcode_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/last_selector">
@@ -231,7 +224,7 @@
                 android:textSize="16sp"/>
 
             <EditText
-                android:id="@+id/zipcode__edtx"
+                android:id="@+id/zipcode_edtx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.VolleyError;
@@ -63,6 +63,7 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     private AddressAdapter adapter;
     private AddressResponse appAddressResponse;
+    private List<AddressResponse.AddressListBean> list;
 
     @Override
     protected int initContentView() {
@@ -95,8 +96,9 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     @Override
     protected void initData() {
-        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
-        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this).setTag(this);
+        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
+
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
     }
 
     @Override
@@ -104,6 +106,17 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.inject(this);
+        list = new ArrayList<>();
+        adapter = new AddressAdapter(this,list);
+        categoryRecyclerview.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG,"99999999999999999999");
+        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
     }
 
     @OnClick(R.id.add_button)
@@ -115,23 +128,25 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     @Override
     public void onGetResponseSuccess(int requestCode, IResponse response) {
+        Log.i(TAG,"走了这!!!!!!!!!!!!!!!!!!!!!!");
         handleTopicResponse((AddressResponse) response);
     }
 
     private void handleTopicResponse(AddressResponse response) {
         appAddressResponse = response;
-        final List<AddressResponse.AddressListBean> list = new ArrayList<>();
+
         if (appAddressResponse.getAddressList() != null && appAddressResponse.getAddressList().size() != 0) {
-            if (adapter == null) {
-                adapter = new AddressAdapter(list);
-                categoryRecyclerview.setAdapter(adapter);
-            }
-            adapter.setOnItemClickListen(new AddressAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(View v, int position) {
-                    adapter.notifyDataSetChanged(list,position);
-                }
-            });
+                list.clear();
+                list.addAll(appAddressResponse.getAddressList());
+                adapter.notifyDataSetChanged();
+
+
+//            adapter.setOnItemClickListen(new AddressAdapter.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(View v, int position) {
+//                    adapter.notifyDataSetChanged(list,position);
+//                }
+//            });
             loadstatelayout.setState(LoadStateLayout.STATE_SUCCESS);//显示请求成功的View
         } else {
             loadstatelayout.setState(LoadStateLayout.STATE_EMPTY);//显示数据为空的View
@@ -149,5 +164,10 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
     protected void onDestroy() {
         super.onDestroy();
         App.HL.cancelRequest(this);
+    }
+
+    public void refresh() {
+        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
     }
 }

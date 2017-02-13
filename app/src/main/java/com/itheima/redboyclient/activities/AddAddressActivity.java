@@ -5,18 +5,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.android.volley.VolleyError;
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.net.resp.AddressResponse;
+import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.utils.ToastUtil;
 
 import org.senydevpkg.net.HttpLoader;
+import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * ━━━━ Code is far away from ━━━━━━
@@ -44,36 +49,24 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
     Toolbar toolbar;
     @InjectView(R.id.add_button)
     Button addButton;
-    @InjectView(R.id.receiver_tv)
-    TextView receiverTv;
-    @InjectView(R.id.recevier_layout)
-    RelativeLayout recevierLayout;
-    @InjectView(R.id.phone_tv)
-    TextView phoneTv;
-    @InjectView(R.id.phone_layout)
-    RelativeLayout phoneLayout;
-    @InjectView(R.id.province_tv)
-    TextView provinceTv;
-    @InjectView(R.id.province_layout)
-    RelativeLayout provinceLayout;
-    @InjectView(R.id.city_tv)
-    TextView cityTv;
-    @InjectView(R.id.city_layout)
-    RelativeLayout cityLayout;
-    @InjectView(R.id.area_tv)
-    TextView areaTv;
-    @InjectView(R.id.area_layout)
-    RelativeLayout areaLayout;
-    @InjectView(R.id.address_tv)
-    TextView addressTv;
-    @InjectView(R.id.address_layout)
-    RelativeLayout addressLayout;
-    @InjectView(R.id.zipcode_tv)
-    TextView zipcodeTv;
-    @InjectView(R.id.zipcode_layout)
-    RelativeLayout zipcodeLayout;
+    @InjectView(R.id.receiver_edtx)
+    EditText receiverEdtx;
+    @InjectView(R.id.phone_edtx)
+    EditText phoneEdtx;
+    @InjectView(R.id.province_edtx)
+    EditText provinceEdtx;
+    @InjectView(R.id.city_edtx)
+    EditText cityEdtx;
+    @InjectView(R.id.area_edtx)
+    EditText areaEdtx;
+    @InjectView(R.id.address_edtx)
+    EditText addressEdtx;
+    @InjectView(R.id.zipcode_edtx)
+    EditText zipcodeEdtx;
     @InjectView(R.id.checkbox)
     CheckBox checkbox;
+
+    private int id;
 
     @Override
     protected int initContentView() {
@@ -99,6 +92,28 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
 
     @Override
     protected void initData() {
+        id = getIntent().getIntExtra("id",0);
+        String name = getIntent().getStringExtra("name");
+        String phoneNumber = getIntent().getStringExtra("phoneNumber");
+        String province = getIntent().getStringExtra("province");
+        String city = getIntent().getStringExtra("city");
+        String addressArea = getIntent().getStringExtra("addressArea");
+        String addressDetail = getIntent().getStringExtra("addressDetail");
+        String zipCode = getIntent().getStringExtra("zipCode");
+        int isDefault = getIntent().getIntExtra("isDefault",0);
+
+        receiverEdtx.setText(name);
+        phoneEdtx.setText(phoneNumber);
+        provinceEdtx.setText(province);
+        cityEdtx.setText(city);
+        areaEdtx.setText(addressArea);
+        addressEdtx.setText(addressDetail);
+        zipcodeEdtx.setText(zipCode);
+        if (isDefault == 0) {
+            checkbox.setChecked(false);
+        }else {
+            checkbox.setChecked(true);
+        }
     }
 
     @Override
@@ -108,38 +123,59 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
         ButterKnife.inject(this);
     }
 
-//    @OnClick(R.id.add_button)
-//    public void onClick() {
-//        if (receiverTv.getText().toString() == null || phoneTv.getText().toString() == null || provinceTv.getText().toString() ==
-//                null || addressTv.getText().toString() == null || areaTv.getText().toString() == null || cityTv.getText
-//                ().toString() == null || zipcodeTv.getText().toString() == null) {
-//            ToastUtil.showToast("地址资料未填满");
-//
-//        }else {
-//            HttpParams params = new HttpParams().addHeader("userid", App.SP.getString("userid", null));
-//            params.put("name", receiverTv.getText().toString().trim())
-//                    .put("phoneNumber", phoneTv.getText().toString().trim())
-//                    .put("province", provinceTv.getText().toString().trim())
-//                    .put("city", cityTv.getText().toString().trim())
-//                    .put("addressArea", areaTv.getText().toString().trim())
-//                    .put("addressDetail", addressTv.getText().toString().trim())
-//                    .put("zipCode", zipcodeTv.getText().toString().trim())
-//                    .put("isDefault", checkbox.isChecked()? 1+"" : 0+"");
-//            App.HL.post(ConstantsRedBaby.URL_ADDRESSSAVE, params, AddressResponse.class,
-//                    ConstantsRedBaby.REQUEST_CODE_ADDRESSSAVE, this).setTag(this);
-//        }
-//
-//    }
+    @OnClick(R.id.add_button)
+    public void onClick() {
+        //ToastUtil.showToast(receiverEdtx.getText().toString().trim());
+        if (receiverEdtx.getText().toString().trim().equals("") || phoneEdtx.getText().toString().trim().equals("") ||
+                provinceEdtx.getText().toString().trim().equals("") || addressEdtx.getText().toString().trim().equals("") || areaEdtx.getText().toString().trim().equals("") || cityEdtx.getText().toString().trim().equals("") || zipcodeEdtx.getText().toString().trim().equals("")) {
+            ToastUtil.showToast("地址资料未填满");
+            return;
+        } else {
+            HttpParams params = new HttpParams().addHeader("userid", App.SP.getString("userid",
+                    null));
+            if (id == 0) {
+                params.put("name", receiverEdtx.getText().toString().trim())
+                        .put("phoneNumber", phoneEdtx.getText().toString().trim())
+                        .put("province", provinceEdtx.getText().toString().trim())
+                        .put("city", cityEdtx.getText().toString().trim())
+                        .put("addressArea", areaEdtx.getText().toString().trim())
+                        .put("addressDetail", addressEdtx.getText().toString().trim())
+                        .put("zipCode", zipcodeEdtx.getText().toString().trim())
+                        .put("isDefault", checkbox.isChecked() ? 1 + "" : 0 + "");
+            }else {
+                params.put("id",id + "")
+                        .put("name", receiverEdtx.getText().toString().trim())
+                        .put("phoneNumber", phoneEdtx.getText().toString().trim())
+                        .put("province", provinceEdtx.getText().toString().trim())
+                        .put("city", cityEdtx.getText().toString().trim())
+                        .put("addressArea", areaEdtx.getText().toString().trim())
+                        .put("addressDetail", addressEdtx.getText().toString().trim())
+                        .put("zipCode", zipcodeEdtx.getText().toString().trim())
+                        .put("isDefault", checkbox.isChecked() ? 1 + "" : 0 + "");
+            }
 
+            App.HL.post(ConstantsRedBaby.URL_ADDRESSSAVE, params, AddressResponse.class,
+                    ConstantsRedBaby.REQUEST_CODE_ADDRESSSAVE, this).setTag(this);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
 
     @Override
     public void onGetResponseSuccess(int requestCode, IResponse response) {
         MyToast.show(getApplicationContext(), "数据传送成功！");
         finish();
+        //handleTopicResponse((AddressResponse) response);
     }
+
 
     @Override
     public void onGetResponseError(int requestCode, VolleyError error) {
         MyToast.show(getApplicationContext(), "数据传送失败！");
     }
+
 }

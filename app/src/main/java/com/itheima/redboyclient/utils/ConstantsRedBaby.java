@@ -24,7 +24,8 @@ public class ConstantsRedBaby {
     public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
     public static final String URL_ADDRESSSAVE= URL_SERVER + "/addresssave";
     public static final String URL_BROWSING_HISTORY = URL_SERVER + "/product";
-
+    public static final String URL_ADDRESSDELETE = URL_SERVER + "/addressdelete";
+    public static final String URL_ADDRESSDEFAULT = URL_SERVER + "/addressdefault";
     public static final String NO_HISTORY = "没有搜索记录";
     public static final String SHOPPING_CAR = "shoppingCar";
     public static final String BROWSE_RECORD = "浏览记录";
@@ -57,7 +58,8 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
     public static final int REQUEST_CODE_ADDRESSSAVE= 99;
-
+    public static final int REQUEST_CODE_ADDRESSDELETE= 100;
+    public static final int REQUEST_CODE_ADDRESSDEFAULT= 101;
 
 
 }
