@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.itheima.redboyclient.App;
+import com.itheima.redboyclient.R;
 
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.utils.NetworkUtils;
@@ -119,5 +121,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void initData() {
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_pre_in,R.anim.anim_pre_out);
+    }
 
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.anim_in,R.anim.anim_out);
+    }
 }

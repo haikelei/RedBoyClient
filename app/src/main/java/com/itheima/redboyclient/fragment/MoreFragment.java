@@ -65,6 +65,7 @@ public class MoreFragment extends MainBaseFragment {
                 } else {
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
+                getActivity().overridePendingTransition(R.anim.anim_in,R.anim.anim_out);
                 break;
             case R.id.recent_browse_rl:
                 startActivity(new Intent(getActivity(), BrowsingHistoryActivity.class));
