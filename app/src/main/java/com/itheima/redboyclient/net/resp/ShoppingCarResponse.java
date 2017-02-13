@@ -83,9 +83,17 @@ public class ShoppingCarResponse implements IResponse {
         private ProductBean product;
         private boolean isEditing = false;
         private boolean isSelected = false;
-
         public boolean isEditing() {
             return isEditing;
+        }
+
+        private OnSelectedChangeListener listener;
+        public interface OnSelectedChangeListener{
+            void onSelectedChange(boolean selected);
+        }
+
+        public void setOnSelectedChangeListener(OnSelectedChangeListener listener) {
+            this.listener = listener;
         }
 
         public void setEditing(boolean editing) {
@@ -98,6 +106,9 @@ public class ShoppingCarResponse implements IResponse {
 
         public void setSelected(boolean selected) {
             isSelected = selected;
+            if (listener != null) {
+                listener.onSelectedChange(selected);
+            }
         }
 
         public int getProdNum() {

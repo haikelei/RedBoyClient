@@ -1,9 +1,8 @@
 package com.itheima.redboyclient.activities;
 
-import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -14,6 +13,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.EventBean;
+import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.fragment.MainBaseFragment;
 import com.itheima.redboyclient.net.resp.CategoryResponse;
 import com.itheima.redboyclient.net.resp.HomeResponse;
@@ -21,11 +23,15 @@ import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 import com.itheima.redboyclient.utils.FragmentFactory;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
@@ -36,6 +42,7 @@ import butterknife.InjectView;
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener, HttpLoader.HttpListener {
 
 
+    private static final String TAG = "MainActivity";
     @InjectView(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
     @InjectView(R.id.fl_content)
@@ -48,6 +55,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     LoadStateLayout lslMain;
 
     private int[] titleIds = {R.string.menu_home, R.string.menu_search, R.string.menu_classify, R.string.menu_shopping, R.string.menu_more};
+    private BadgeItem numberBadgeItem;
+    private BottomNavigationItem item4;
 
     @Override
     protected int initContentView() {
@@ -61,6 +70,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         initBottomNavigation();
         //initFirstFragment();
         onTabSelected(0);
+        EventBus.getDefault().register(this);
 
     }
 
@@ -83,16 +93,19 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC
                 );
-        BadgeItem numberBadgeItem = new BadgeItem()
+        numberBadgeItem = new BadgeItem()
                 .setBorderWidth(0)
                 .setBackgroundColorResource(R.color.colorPrimary)
-                .setText("5")
-                .setHideOnSelect(false);
+                .setHideOnSelect(false)
+                .hide();
 
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.home, titleIds[0]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.search, titleIds[1]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.brandhome, titleIds[2]));
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.cartnew, titleIds[3]).setBadgeItem(numberBadgeItem));
+
+        item4 = new BottomNavigationItem(R.drawable.cartnew, titleIds[3]);
+        bottomNavigationBar.addItem(item4.setBadgeItem(numberBadgeItem));
+
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.user, titleIds[4]));
         bottomNavigationBar.setActiveColor(R.color.colorPrimary);
         bottomNavigationBar.setInActiveColor(R.color.lightgray);
@@ -112,6 +125,24 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 //        fragmentTransaction.commit();
 //        getSupportFragmentManager().beginTransaction().add(R.id.fl_content, FragmentFactory.getFragment(0), "0").commit();
 
+    }
+
+
+    //小圆点的限时
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEventMainThread(EventBean bean) {
+        ShoppingDBDao dao = new ShoppingDBDao(this);
+        ArrayList<Goods> list = (ArrayList<Goods>) dao.findAll();
+        Log.e(TAG, "111onMessageEventMainThread: "+list.size() );
+        int goodNum = 0;
+        for (Goods good : list) {
+            goodNum += good.getProductNum();
+        }
+        Log.e(TAG, "222onMessageEventMainThread: "+goodNum );
+
+        numberBadgeItem.setText(goodNum+"").show();
+        item4.setBadgeItem(numberBadgeItem);
+        bottomNavigationBar.refreshDrawableState();
     }
 
 

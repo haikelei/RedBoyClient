@@ -64,7 +64,6 @@ public class ContentDetailFragment extends Fragment {
             App.HL.display(imageView,url);
             detailContainer.addView(imageView);
         }
-
         super.onViewCreated(view, savedInstanceState);
     }
 

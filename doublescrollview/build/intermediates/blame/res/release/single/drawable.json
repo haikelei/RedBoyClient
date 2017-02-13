@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/release/drawable/abc_item_background_holo_light.xml",
-        "source": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/release/drawable/abc_dialog_material_background_dark.xml",
         "source": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/release/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",

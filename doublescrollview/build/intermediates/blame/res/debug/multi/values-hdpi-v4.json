@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/debug/values-hdpi-v4/values-hdpi-v4.xml",
+=======
+        "outputFile": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
         "map": [
             {
                 "to": {
@@ -12,7 +16,11 @@
                     "endOffset": 327
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-hdpi/values-hdpi.xml",
+=======
+                    "file": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

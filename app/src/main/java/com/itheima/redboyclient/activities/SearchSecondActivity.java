@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
@@ -88,7 +89,7 @@ public class SearchSecondActivity extends BaseActivity implements HttpLoader.Htt
     @Override
     protected void initData() {
         keyword = getIntent().getStringExtra("keyword");
-        HttpParams params = new HttpParams().put("keyword",keyword).put("page", "1").put("pageNum", "15").put("orderby", orderby);
+        HttpParams params = new HttpParams().put("keyword",keyword).put("page", "1").put("pageNum", "15").put("orderby",orderby);
         App.HL.get(ConstantsRedBaby.URL_SEARCH, params, NewProductResponse.class, ConstantsRedBaby.REQUEST_NEW_PRODUCT, SearchSecondActivity.this).setTag(this);
     }
 
@@ -134,13 +135,14 @@ public class SearchSecondActivity extends BaseActivity implements HttpLoader.Htt
                 list.clear();
             }
             list.addAll(newProductResponse.getProductList());
-
             newProductAdapter = new NewProductAdapter(list);
             newProductLv.setAdapter(newProductAdapter);
-//            newProductAdapter.notifyDataSetChanged();
+            newProductAdapter.notifyDataSetChanged();
+            if(list.size() == 0){
+                requestAndNotifyDataChanged();
+                Toast.makeText(this,"当前关键词没有匹配项，已经为您展示默认商品",Toast.LENGTH_SHORT).show();
+            }
         }
-
-
     }
 
     @Override
@@ -185,7 +187,7 @@ public class SearchSecondActivity extends BaseActivity implements HttpLoader.Htt
 
     public void requestAndNotifyDataChanged() {
         changeState();
-        HttpParams params = new HttpParams().put("page", "2").put("pageNum", "15").put("orderby", orderby);
+        HttpParams params = new HttpParams().put("page", "1").put("pageNum", "15").put("orderby", orderby);
         App.HL.get(ConstantsRedBaby.URL_NEWPRODUCT, params, NewProductResponse.class, ConstantsRedBaby.REQUEST_NEW_PRODUCT, this).setTag(this);
     }
 

@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,20 +19,31 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.FavResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
+import com.itheima.redboyclient.net.resp.HomeResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
+import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -43,12 +53,11 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GoodsDetailFragment extends Fragment {
+public class GoodsDetailFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
 
     private static final String TAG = "GoodsDetailFragment";
-    @InjectView(R.id.vp)
-    ViewPager vp;
+
     @InjectView(R.id.pageOne)
     NestedScrollView pageOne;
 
@@ -84,6 +93,12 @@ public class GoodsDetailFragment extends Fragment {
     TextView textPutIntoShopcar;
     @InjectView(R.id.textfavorite)
     TextView textfavorite;
+    @InjectView(R.id.ll_comment)
+    LinearLayout llComment;
+    @InjectView(R.id.slider)
+    SliderLayout slider;
+    @InjectView(R.id.custom_indicator)
+    PagerIndicator customIndicator;
     private ArrayList<GoodResponse.ProductBean.ProductPropertyBean> beans;
 
     public GoodsDetailFragment() {
@@ -96,11 +111,13 @@ public class GoodsDetailFragment extends Fragment {
 
     public static GoodsDetailFragment newInstance(GoodResponse response) {
         goodResponse = response;
+
         if (fragment == null) {
             fragment = new GoodsDetailFragment();
         }
         return fragment;
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,10 +131,8 @@ public class GoodsDetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-        GoodDetailVPAdapter adapter = new GoodDetailVPAdapter(goodResponse, getActivity());
-        vp.setAdapter(adapter);
+        //设置slider
+        handleSlider(goodResponse);
 
         //标题等设置
         tvTitle.setText(goodResponse.getProduct().getName());
@@ -141,9 +156,7 @@ public class GoodsDetailFragment extends Fragment {
         spinnerCorlor.setAdapter(corlorArrayAdapter);
         ArrayAdapter sizeArrayAdapter = new ArrayAdapter(getContext(), R.layout.spinner_item, sizes);
         spinnerSize.setAdapter(sizeArrayAdapter);
-        //收藏点击事件
 
-        //加入购物车点击事件
         //商品详情图片
         ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getPics();
         for (String s : list) {
@@ -216,13 +229,71 @@ public class GoodsDetailFragment extends Fragment {
                     Goods goods = new Goods(goodResponse.getProduct().getId(),
                             sb.toString(), Integer.parseInt(etNum.getText().toString()));
                     boolean suc = dao.add(goods);
-                    if(suc){
+                    if (suc) {
                         Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
-                    }else {
+                        EventBus.getDefault().post(new EventBean());
+                    } else {
                         Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
                     }
                     break;
                 }
         }
+    }
+
+    @OnClick(R.id.ll_comment)
+    public void onClick() {
+        GoodDetailActivity activity = (GoodDetailActivity) getActivity();
+        activity.setSelected(2);
+    }
+
+    private void handleSlider(GoodResponse goodResponse) {
+        ArrayList<String> list = (ArrayList<String>) goodResponse.getProduct().getBigPic();
+        HashMap<String, String> urlMap = new HashMap<String, String>();
+        for (int i = 0; i < list.size(); i++) {
+            urlMap.put(goodResponse.getProduct().getName() + i, ConstantsRedBaby.URL_SERVER + list.get(i));
+        }
+
+        for (String name : urlMap.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(getActivity());
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(urlMap.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra", name);
+
+            slider.addSlider(textSliderView);
+        }
+        slider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        slider.setCustomAnimation(new DescriptionAnimation());
+        slider.setDuration(4000);
+        slider.addOnPageChangeListener(this);
+    }
+
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }

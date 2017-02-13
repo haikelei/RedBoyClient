@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="/Users/yudenghao/workspace/rbc/doublescrollview/src/androidTest/shaders"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="E:\android\RedBoyClient\doublescrollview\src\androidTest\shaders"/></dataSet></merger>
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719

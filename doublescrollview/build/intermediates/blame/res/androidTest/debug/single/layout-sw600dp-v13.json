@@ -1,6 +1,11 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/res/merged/androidTest/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/yudenghao/workspace/rbc/doublescrollview/build/intermediates/exploded-aar/com.android.support/design/23.0.1/res/layout-sw600dp/design_layout_snackbar.xml"
+=======
+        "merged": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "E:\\android\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
+>>>>>>> 75e356fce3bab79f444cc6af1525b56656ed6719
     }
 ]
