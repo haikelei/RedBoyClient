@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.itheima.redboyclient"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 16
         versionCode 1
         versionName "1.0"
