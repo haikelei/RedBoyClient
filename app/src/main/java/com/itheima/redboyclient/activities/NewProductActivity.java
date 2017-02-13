@@ -100,7 +100,7 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
                 orderby = "saleDown";
                 requestAndNotifyDataChanged();
 
-                break;
+                 break;
             case R.id.price:
                 priceState = true;
                 orderby = "priceUp";
