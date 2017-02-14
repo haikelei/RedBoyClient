@@ -8,6 +8,7 @@ import com.itheima.redboyclient.Holder.ShoppingCarHolder;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
+import com.itheima.redboyclient.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +35,6 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
 
     @Override
     public int getCount() {
-        //TODO 使用假数据
-        if (list.size() > 0) {
-            list.get(0).getProduct().setNumber("0");
-        }
         return list.size();
     }
 
@@ -74,12 +71,16 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
     public void onDeleteCart(ShoppingCarResponse.CartBean cart) {
         //删除条目数据，刷新界面
         list.remove(cart);
+        if (list.size() == 0 && listener != null) {
+            //如果购物车条目为空，则通知主界面更换到空购物车界面
+            listener.emptyCart();
+
+        }
         if (cart.isSelected()) {
             //如果商品是选中状态，通知界面更新结算数据
             onSelectedChange();
         }
         notifyDataSetChanged();
-        //TODO 通知购物车数量改变
     }
 
     @Override
@@ -101,29 +102,9 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
             ShoppingCarResponse.CartBean cartBean = list.get(i);
             if (cartBean.isSelected()) {
                 //如果是选中的直接添加商品
+                Goods goods = StringUtils.getGoods(cartBean);
 
-                //获取每个商品的数量
-                int prodNum = cartBean.getProdNum();
-                ShoppingCarResponse.CartBean.ProductBean product = cartBean.getProduct();
-                //获取商品ID
-                int id = product.getId();
-                //获取商品属性
-                List<ShoppingCarResponse.CartBean.ProductBean.ProductPropertyBean> productProperty = product.getProductProperty();
-                //拼接商品属性
-                StringBuilder productPropertyId = new StringBuilder();
-                for (int j = 0; ; j++) {
-                    ShoppingCarResponse.CartBean.ProductBean.ProductPropertyBean productPropertyBean = productProperty.get(j);
-                    int PropertyId = productPropertyBean.getId();
-                    productPropertyId.append(PropertyId);
-                    if (j == productProperty.size() - 1) {
-                        break;
-                    }
-                    productPropertyId.append(",");
-                }
-                Goods goods = new Goods();
-                goods.setProductId(id);
-                goods.setProductNum(prodNum);
-                goods.setProductPropertyId(productPropertyId.toString());
+
                 selectedGoodsList.add(goods);
             } else {
                 //如果是未选中的状态，查看库存是否为0
@@ -135,6 +116,7 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
         }
         return isAllSelected;
     }
+
 
     public void selectEmpty() {
         for (ShoppingCarResponse.CartBean cart : list) {
@@ -161,6 +143,7 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
 
 
     public interface OnStatusChangeListener {
+        void emptyCart();
 
         void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected);
     }

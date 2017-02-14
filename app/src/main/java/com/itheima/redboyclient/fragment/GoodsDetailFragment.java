@@ -4,7 +4,6 @@ package com.itheima.redboyclient.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.LayoutInflater;
@@ -28,16 +27,12 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.activities.GoodDetailActivity;
-import com.itheima.redboyclient.adapter.GoodDetailVPAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
-import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.FavResponse;
 import com.itheima.redboyclient.net.resp.GoodResponse;
-import com.itheima.redboyclient.net.resp.HomeResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
-import org.greenrobot.eventbus.EventBus;
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
@@ -231,7 +226,7 @@ public class GoodsDetailFragment extends Fragment implements BaseSliderView.OnSl
                     boolean suc = dao.add(goods);
                     if (suc) {
                         Toast.makeText(getActivity(), "添加购物车成功", Toast.LENGTH_SHORT).show();
-                        EventBus.getDefault().post(new EventBean());
+
                     } else {
                         Toast.makeText(getActivity(), "添加购物车失败", Toast.LENGTH_SHORT).show();
                     }

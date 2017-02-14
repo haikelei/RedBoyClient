@@ -8,8 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 
 import com.itheima.redboyclient.db.GoodSqliteOpenHelper;
+import com.itheima.redboyclient.domain.EventBean;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +57,7 @@ public class ShoppingDBDao {
         SQLiteDatabase db = helper.getWritableDatabase();
         long result = db.insert(tableName, null, values);
         db.close();//关闭数据库释放资源
+        EventBus.getDefault().post(new EventBean());
         if (result != -1) {
             return true;
         } else {
@@ -74,6 +78,7 @@ public class ShoppingDBDao {
         result = db.delete(tableName, whereClause, newString(goods));
         db.close();
         if (result > 0) {
+            EventBus.getDefault().post(new EventBean());
             return true;
         } else {
             return false;
@@ -94,6 +99,7 @@ public class ShoppingDBDao {
         result = db.update(tableName, values, whereClause, newString(goods));
         db.close();
         if (result > 0) {
+            EventBus.getDefault().post(new EventBean());
             return true;
         } else {
             return false;

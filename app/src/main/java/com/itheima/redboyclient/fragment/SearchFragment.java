@@ -74,7 +74,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         //热门搜索条目默认不显示
         hotTitle = new SearchTitleBean();
         hotTitle.setTitle("热门搜索");
-        hotTitle.setShow(false);
+        hotTitle.setShow(true);
         //搜索历史条目默认显示
         historyTitle = new SearchTitleBean();
         historyTitle.setTitle("搜索历史");
@@ -133,7 +133,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private void fillDataForSearchHistory() {
         String localHistory = sp.getString("searchHistory", "");
         String[] historyNames = localHistory.split(",");
-        //记录搜索记录数据
+        //重新加载搜索记录
         searchHistory.clear();
         for (String historyName : historyNames) {
             if (!TextUtils.isEmpty(historyName)) {
@@ -167,7 +167,6 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.relSearch:
-                MyToast.show(getActivity().getApplicationContext(), "relSearch");
                 String searchInfo = editSearchInfo.getText().toString().trim();
                 //刷新搜索历史
                 refreshHistory(searchInfo);
@@ -193,12 +192,12 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         //记录搜索
         tempSearchInfo = searchInfo;
         if (ConstantsRedBaby.NO_HISTORY.equals(searchHistory.get(0))) {
-            //如果搜索记录只有搜索历史 将此条目移除
+            //如果搜索记录第一条是 没有搜索历史 将此条目移除
             searchHistory.remove(0);
         }
-        //将搜索历史中相同的条目移除
+        //将搜索历史中已经包含的条目移除
         searchHistory.remove(searchInfo);
-        //添加条目
+        //将最新的搜索历史加到第一行
         searchHistory.add(0, searchInfo);
         //将搜索历史中的条目拼接好，存入sp
         StringBuilder localHistory = new StringBuilder();

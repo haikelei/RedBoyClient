@@ -1,7 +1,6 @@
 package com.itheima.redboyclient.fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -17,17 +16,16 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.LoginActivity;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.utils.StringUtils;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
 import org.senydevpkg.net.resp.IResponse;
-import org.senydevpkg.utils.ALog;
 import org.senydevpkg.utils.MyToast;
 import org.senydevpkg.view.LoadStateLayout;
 
@@ -79,6 +77,8 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         adapter = new ShoppingCartListAdapter(cartList);
         lvCart.setAdapter(adapter);
         lvCart.setDivider(null);
+        //增加脚布局优惠信息
+        lvCart.addFooterView(promotionRoot);
 
         lslCart.setEmptyView(R.layout.shopping_empty);
         lslCart.setErrorView(R.layout.state_error);
@@ -98,37 +98,15 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     @Override
     public void onStart() {
         super.onStart();
-        checklogin();
-
-    }
-
-    private void checklogin() {
-
-        //TODO 判断登陆
-        String userId = App.getUserId();
-
-        if ("".equals(userId)) {
-            //显示需要登录
-            getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
-            return;
-        }
-        lslCart.setState(LoadStateLayout.STATE_LOADING);
+        //从网络上获取数据填充页面数据
         requestDataFromNet();
     }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (!hidden) {
-            //fragment初始化信息
-            checklogin();
-        }
 
-
-    }
 
 
     private void initAccount() {
+        rbSelectAll.setChecked(false);
         tvTotal.setText("￥ " + 0);
         tvPoint.setText("赠送积分:" + 0);
         tvBuy.setText("结算(0)");
@@ -137,10 +115,11 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     }
 
     private void requestDataFromNet() {
-
-        //TODO 从数据库获取购物车条目
+        //将状态设置为加载中
+        lslCart.setState(LoadStateLayout.STATE_LOADING);
+        // 从数据库获取购物车条目
         List<Goods> all = new ShoppingDBDao(App.application).findAll();
-        String sku = getSku(all);
+        String sku = StringUtils.getSku(all);
         //String sku = null;
         if (TextUtils.isEmpty(sku)) {
             //空购物车
@@ -160,7 +139,6 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
                     //说明请求的不是空数据
                     if (cart != null && cart.size() > 0) {
                         //数据传给listview 显示购物车信息
-                        ALog.e(cart.size()+".................................................................");
                         handleShoppingCarData(cart);
                         lslCart.setState(LoadStateLayout.STATE_SUCCESS);
 
@@ -175,8 +153,11 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
             @Override
             public void onGetResponseError(int requestCode, VolleyError error) {
-                lslCart.setState(LoadStateLayout.STATE_ERROR);
+
                 MyToast.show(App.application, "数据请求失败！");
+
+                    lslCart.setState(LoadStateLayout.STATE_ERROR);
+
 
             }
         }).setTag(this);
@@ -188,8 +169,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         cartList.clear();
         cartList.addAll(cart);
         adapter.notifyDataSetChanged();
-        //增加脚布局优惠信息
-        lvCart.addFooterView(promotionRoot);
+
 
     }
 
@@ -227,6 +207,13 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
 
     @Override
+    public void emptyCart() {
+        //切换到空购物车界面
+        lslCart.setState(LoadStateLayout.STATE_EMPTY);
+//        initAccount();
+    }
+
+    @Override
     public void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected) {
         rbSelectAll.setChecked(isAllSelected);
         if (selectedGoodsList.size() == 0) {
@@ -237,13 +224,16 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
             return;
         }
         //获取sku属性
-        String sku = getSku(selectedGoodsList);
+        String sku = StringUtils.getSku(selectedGoodsList);
         //从网络上获取数据
         HttpParams params = new HttpParams().put("sku", sku);
+
+        pbShopping.setVisibility(View.VISIBLE);
         App.HL.post(ConstantsRedBaby.URL_SHOPPING_CAR, params, ShoppingCarResponse.class, ConstantsRedBaby.REQUEST_CODE_SHOPPING_CAR, new HttpLoader.HttpListener() {
             @Override
             public void onGetResponseSuccess(int requestCode, IResponse response) {
-
+                //隐藏加载控件
+                pbShopping.setVisibility(View.GONE);
                 //请求成功处理数据
                 ShoppingCarResponse shoppingCar = (ShoppingCarResponse) response;
                 List<ShoppingCarResponse.CartBean> cart = shoppingCar.getCart();
@@ -263,32 +253,14 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
             @Override
             public void onGetResponseError(int requestCode, VolleyError error) {
+                //隐藏加载控件
+                pbShopping.setVisibility(View.GONE);
                 MyToast.show(App.application, error.getMessage());
             }
         });
 
     }
 
-
-    private String getSku(List<Goods> selectedGoodsList) {
-        StringBuilder sku = new StringBuilder();
-        int size = selectedGoodsList.size();
-        for (int i = 0; ; i++) {
-            Goods goods = selectedGoodsList.get(i);
-            int productId = goods.getProductId();
-            int productNum = goods.getProductNum();
-            String productPropertyId = goods.getProductPropertyId();
-            sku.append(productId)
-                    .append(":")
-                    .append(productNum)
-                    .append(":")
-                    .append(productPropertyId);
-            if (i == size - 1) {
-                return sku.toString();
-            }
-            sku.append("|");
-        }
-    }
 
     @Override
     public void onStop() {
@@ -326,7 +298,6 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.inject(this, rootView);
         return rootView;

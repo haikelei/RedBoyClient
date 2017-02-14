@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/devpkg-android/devpkg-android.iml" filepath="$PROJECT_DIR$/devpkg-android/devpkg-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/doublescrollview/doublescrollview.iml" filepath="$PROJECT_DIR$/doublescrollview/doublescrollview.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rbc.iml" filepath="$PROJECT_DIR$/rbc.iml" />
     </modules>
   </component>
 </project>
