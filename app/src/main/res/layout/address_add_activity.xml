@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="@color/colorPrimary">
+        </android.support.v7.widget.Toolbar>
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="保存"
+            android:background="#d45a5a"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/first_selector">
+
+            <TextView
+                android:id="@+id/receiver_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="收货人 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/receiver_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/receiver_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_selector">
+
+            <TextView
+                android:id="@+id/phone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="手机 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/phone_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/phone_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_selector">
+
+            <TextView
+                android:id="@+id/province_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="省 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/province_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/province_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_selector">
+
+            <TextView
+                android:id="@+id/city_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="市 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/city_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/city_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_selector">
+
+            <TextView
+                android:id="@+id/area_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="区 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/area_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/area_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_selector">
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="详细地址 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/address_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/address_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"
+                android:ellipsize="end"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/last_selector">
+
+            <TextView
+                android:id="@+id/zipcode_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_centerVertical="true"
+                android:text="区号 :"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/zipcode_edtx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/zipcode_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                style="?android:attr/textViewStyle"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:hint="(必填)"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

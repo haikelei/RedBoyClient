@@ -35,6 +35,7 @@
         <activity android:name=".activities.FeedBackActivity" />
         <activity android:name=".activities.HotProductActivity"/>
         <activity android:name=".activities.NewProductActivity"/>
+
         <activity android:name=".activities.SearchSecondActivity"></activity>
 
 
@@ -44,6 +45,8 @@
         <activity android:name=".activities.PromotionActivity"></activity>
         <activity android:name=".activities.FlashActivity"></activity>
         <activity android:name=".activities.AccountCenterActivity"></activity>
+        <activity android:name=".activities.AddressActivity"></activity>
+        <activity android:name=".activities.AddAddressActivity"></activity>
         <activity android:name=".activities.MyOrderActivity"></activity>
         <activity android:name=".activities.BookmarksActivity"/>
     </application>

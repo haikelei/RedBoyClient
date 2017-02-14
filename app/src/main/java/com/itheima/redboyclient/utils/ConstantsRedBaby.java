@@ -1,8 +1,8 @@
 package com.itheima.redboyclient.utils;
 
 public class ConstantsRedBaby {
-//    public static final String URL_SERVER = "http://192.168.56.1:8080/RedBabyServer";
-public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer";
+   public static final String URL_SERVER = "http://192.168.56.1:8080/RedBabyServer";
+//public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer";
 
     public static final String URL_TOPIC = URL_SERVER + "/topic";
     public static final String URL_REGIST = URL_SERVER + "/register";
@@ -23,10 +23,13 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
     public static final String URL_HOTPRODUCT = URL_SERVER + "/hotproduct";
     public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
+    public static final String URL_ADDRESSSAVE= URL_SERVER + "/addresssave";
     public static final String URL_HELP = URL_SERVER + "/help";
     public static final String URL_HELP_DETAIL = URL_SERVER + "/helpDetail";
 
     public static final String URL_BROWSING_HISTORY = URL_SERVER + "/product";
+    public static final String URL_ADDRESSDELETE = URL_SERVER + "/addressdelete";
+    public static final String URL_ADDRESSDEFAULT = URL_SERVER + "/addressdefault";
     public static final String URL_BOOKMARK = URL_SERVER + "/favorites";
     public static final String NO_HISTORY = "没有搜索记录";
     public static final String SHOPPING_CAR = "shoppingCar";
@@ -64,6 +67,9 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final int REQUEST_CODE_BROWSING_HISTORY = 22;
     public static final int REQUEST_CODE_ACCOUNT_CENTER = 13;
     public static final int REQUEST_CODE_LOGOUT = 14;
+    public static final int REQUEST_CODE_ADDRESSSAVE= 99;
+    public static final int REQUEST_CODE_ADDRESSDELETE= 100;
+    public static final int REQUEST_CODE_ADDRESSDEFAULT= 101;
     public static final int REQUEST_CODE_ORDERDETAIL = 25;
 
 

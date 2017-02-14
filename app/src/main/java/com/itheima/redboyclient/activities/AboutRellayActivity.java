@@ -25,7 +25,7 @@ public class AboutRellayActivity extends BaseActivity {
     protected void initView() {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        //显示左边的Home按钮
+        //显示左边的Home按钮lujialei
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,35 +4,29 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
-        android:background="@color/colorPrimary">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical">
-            <Button
-                android:id="@+id/add_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:text="新增地址"
-                android:background="#071876"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-        </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
 
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="@color/colorPrimary">
+        </android.support.v7.widget.Toolbar>
+
+    </RelativeLayout>
+
+
+
 
     <org.senydevpkg.view.LoadStateLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/loadstatelayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/category_recyclerview"
@@ -41,4 +35,15 @@
         </android.support.v7.widget.RecyclerView>
 
     </org.senydevpkg.view.LoadStateLayout>
+
+
+
+    <Button
+        android:id="@+id/address_button"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:textSize="18sp"
+        android:text="添 加 地 址"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"/>
 </LinearLayout>
