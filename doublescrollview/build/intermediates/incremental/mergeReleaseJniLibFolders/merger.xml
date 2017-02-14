@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\studioapp\RedBoyClient\doublescrollview\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="E:\studioapp\RedBoyClient\doublescrollview\src\release\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\GIT\git2\RedBoyClient\doublescrollview\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="E:\GIT\git2\RedBoyClient\doublescrollview\src\release\jniLibs"/></dataSet></merger>
