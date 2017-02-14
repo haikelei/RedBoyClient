@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_marginTop="@dimen/y5"
         android:orientation="horizontal"
-        android:id="@+id/relSearch"
+        android:id="@+id/llSearch"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/y20" >
         <android.support.design.widget.TextInputEditText

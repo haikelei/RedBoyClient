@@ -1,11 +1,14 @@
 package com.itheima.redboyclient.adapter;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.Holder.ShoppingCarHolder;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.GoodDetailActivity;
 import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 import com.itheima.redboyclient.utils.StringUtils;
@@ -35,6 +38,10 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
 
     @Override
     public int getCount() {
+        if (list.size() > 0) {
+            //将第一个条目的库存设置为0
+            list.get(0).getProduct().setNumber("0");
+        }
         return list.size();
     }
 
@@ -49,7 +56,7 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         //1. 初始化holder
         ShoppingCarHolder holder;
         if (convertView == null) {
@@ -63,6 +70,18 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
         //3. 绑定数据
         holder.setCart(list.get(position));
         holder.bindData();
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = list.get(position).getProduct().getId();
+                Intent intent = new Intent(App.application, GoodDetailActivity.class);
+                intent.putExtra("pId", id+"");
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                App.application.startActivity(intent);
+
+
+            }
+        });
         return convertView;
     }
 
@@ -130,10 +149,11 @@ public class ShoppingCartListAdapter extends BaseAdapter implements ShoppingCarH
 
     public void selectAll() {
         for (ShoppingCarResponse.CartBean cart : list) {
-            //将所有有库存的条目selcted属性设置为选中
             if (!"0".equals(cart.getProduct().getNumber())) {
+                //将有库存的条目selected属性设置为true
                 cart.setSelected(true);
             }
+
         }
 
         //通知主界面请求网络获取结算中心数据

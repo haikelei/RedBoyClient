@@ -4,26 +4,20 @@ package com.itheima.redboyclient.fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
-import com.itheima.redboyclient.activities.SearchSecondActivity;
 import com.itheima.redboyclient.adapter.SearchAdapter;
 import com.itheima.redboyclient.damain.SearchTitleBean;
 import com.itheima.redboyclient.net.resp.SearchRecommendResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.view.MySearchView;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.resp.IResponse;
@@ -35,20 +29,13 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
 
 
-public class SearchFragment extends MainBaseFragment implements View.OnClickListener, HttpLoader.HttpListener {
-    @InjectView(R.id.relSearch)
-    LinearLayout relSearch;
+public class SearchFragment extends MainBaseFragment implements  HttpLoader.HttpListener, MySearchView.OnSearchListener {
+
     @InjectView(R.id.lv_search)
     ListView lvSearch;
 
-    private static final String TAG = "SearchFragment";
-    @InjectView(R.id.editSearchInfo)
-    TextInputEditText editSearchInfo;
-    @InjectView(R.id.tv_search)
-    TextView tvSearch;
 
     private SearchAdapter adapter;
     //热门搜索
@@ -64,7 +51,8 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     private SharedPreferences.Editor edit;
     private SharedPreferences sp;
     //临时记录搜索条目
-    private String tempSearchInfo;
+    private String tempSearchInfo = "";
+    private MySearchView mSearchView;
 
 
     public SearchFragment() {
@@ -94,21 +82,22 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     @Override
     protected void initView() {
         lvSearch.setAdapter(adapter);
+        mSearchView = new MySearchView(mActivity);
+        lvSearch.addHeaderView(mSearchView);
     }
 
     @Override
     protected void initListener() {
-        relSearch.setOnClickListener(this);
-        adapter.setItemOnClickListener(new SearchAdapter.ItemOnClickListener() {
+        mSearchView.setOnSearchListener(this);
+        adapter.setOnItemClickListener(new SearchAdapter.OnItemClickListener() {
             @Override
-            public void onClick(String itemName) {
+            public void onItemClick(String itemName) {
                 // 将内容显示到搜索栏并搜索
                 MyToast.show(getActivity().getApplicationContext(), itemName);
-                editSearchInfo.setText(itemName);
-                //将光标焦点移到最后
-                editSearchInfo.setSelection(itemName.length());
+
+                mSearchView.setText(itemName);
                 //点击搜索按钮
-                SearchFragment.this.onClick(relSearch);
+                mSearchView.search();
             }
         });
 
@@ -153,7 +142,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     public void onStart() {
         super.onStart();
         //回显搜索记录
-        editSearchInfo.setText(tempSearchInfo);
+        mSearchView.setText(tempSearchInfo);
     }
 
     @Override
@@ -163,30 +152,7 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.relSearch:
-                String searchInfo = editSearchInfo.getText().toString().trim();
-                //刷新搜索历史
-                refreshHistory(searchInfo);
-                if (TextUtils.isEmpty(searchInfo)) {
-                    MyToast.show(getActivity().getApplicationContext(), "请输入搜索内容");
-                } else {
-                    //TODO跳转到搜索页面lujialei
-                    Log.e(TAG, "onClick: " + searchInfo);
-                    Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
-                    intent.putExtra("keyword", searchInfo);
-                    startActivity(intent);
-                    /*String url = ConstantsRedBaby.URL_SEARCH;
-                    Class clazz = SearchResponse.class;
-                    int requestCode = ConstantsRedBaby.REQUEST_CODE_SEARCH;
-                    HttpParams params = new HttpParams().put("keyword", searchInfo).put("page", "1").put("pageNum", "10");
-                    App.HL.get(url, params, clazz, requestCode, this);*/
-                }
-                break;
-        }
-    }
+
 
     private void refreshHistory(String searchInfo) {
         //记录搜索
@@ -241,16 +207,21 @@ public class SearchFragment extends MainBaseFragment implements View.OnClickList
         ButterKnife.reset(this);
     }
 
-    @OnClick(R.id.tv_search)
-    public void onClick() {
-        String s = editSearchInfo.getText().toString();
-        if(TextUtils.isEmpty(s)){
-            Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.edit_shake);
-            editSearchInfo.startAnimation(shake);
-            return;
-        }
-        Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
-        intent.putExtra("keyword",s);
-        startActivity(intent);
+    @Override
+    public void onSearch(String searchInfo) {
+        refreshHistory(searchInfo);
     }
+
+//    @OnClick(R.id.tv_search)
+//    public void onItemClick() {
+//        String s = editSearchInfo.getText().toString();
+//        if (TextUtils.isEmpty(s)) {
+//            Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.edit_shake);
+//            editSearchInfo.startAnimation(shake);
+//            return;
+//        }
+//        Intent intent = new Intent(getActivity(), SearchSecondActivity.class);
+//        intent.putExtra("keyword", s);
+//        startActivity(intent);
+//    }
 }

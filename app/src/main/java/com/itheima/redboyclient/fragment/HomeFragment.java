@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +31,6 @@ import com.itheima.redboyclient.activities.NewProductActivity;
 import com.itheima.redboyclient.activities.PromotionActivity;
 import com.itheima.redboyclient.activities.SearchSecondActivity;
 import com.itheima.redboyclient.adapter.HomeLVAdapter;
-import com.itheima.redboyclient.adapter.HomeVPAdapter;
 import com.itheima.redboyclient.net.resp.HomeResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
@@ -51,7 +49,7 @@ public class HomeFragment extends MainBaseFragment implements AdapterView.OnItem
     private static final String TAG = "HomeFragment";
     @InjectView(R.id.editSearchInfo)
     EditText editSearchInfo;
-    @InjectView(R.id.relSearch)
+    @InjectView(R.id.llSearch)
     LinearLayout relSearch;
     @InjectView(R.id.lv)
     ListView lv;

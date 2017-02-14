@@ -59,7 +59,7 @@
             android:orientation="vertical" >
 
             <RelativeLayout
-                android:id="@id/relSearch"
+                android:id="@id/llSearch"
                 android:layout_width="fill_parent"
                 android:layout_height="39.0dip"
                 android:layout_below="@id/relTop"
@@ -82,9 +82,9 @@
                     android:id="@id/ok"
                     android:layout_width="40.0dip"
                     android:layout_height="60.0dip"
-                    android:layout_alignBottom="@id/relSearch"
+                    android:layout_alignBottom="@id/llSearch"
                     android:layout_alignParentRight="true"
-                    android:layout_alignTop="@id/relSearch"
+                    android:layout_alignTop="@id/llSearch"
                     android:paddingLeft="3.0dip"
                     android:paddingRight="5.0dip"
                     android:src="@drawable/temp_bg" />
@@ -93,7 +93,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/relSearch"
+                android:layout_below="@id/llSearch"
                 android:padding="5.0dip" >
 
                 <android.support.v4.view.ViewPager

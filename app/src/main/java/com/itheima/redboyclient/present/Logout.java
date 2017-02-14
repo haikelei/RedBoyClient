@@ -42,7 +42,8 @@ public class Logout implements HttpLoader.HttpListener {
     private void handleLogoutResopnse(LogoutResponse response) {
         mLogoutResopnse = response;
         if (mLogoutResopnse.response.equals("logout")) {
-            App.EDIT.putBoolean("islogout",true).commit();
+          //  App.EDIT.putBoolean("islogout",true).commit();
+            logout.isFinish();
             ToastUtil.showToast("退出登录成功!");
             App.setUserId("");
         } else {
@@ -53,5 +54,18 @@ public class Logout implements HttpLoader.HttpListener {
     @Override
     public void onGetResponseError(int requestCode, VolleyError error) {
         ToastUtil.showToast("退出登录失败" + error);
+    }
+
+
+    public static void setLgoutFinish(LogoutFinish mlogout) {
+        logout = mlogout;
+    }
+
+    public static LogoutFinish logout;
+
+
+
+    public interface LogoutFinish {
+        void isFinish();
     }
 }

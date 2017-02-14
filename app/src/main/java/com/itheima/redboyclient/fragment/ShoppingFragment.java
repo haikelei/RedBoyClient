@@ -62,6 +62,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     private View promotionRoot;
     private List<ShoppingCarResponse.CartBean> cartList;
     private ShoppingCartListAdapter adapter;
+    private String sku;
 
     @Override
     protected int getRootViewId() {
@@ -98,20 +99,24 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     @Override
     public void onStart() {
         super.onStart();
+        //初始化底部结算栏
+        initAccount();
         //从网络上获取数据填充页面数据
         requestDataFromNet();
     }
 
 
-
-
     private void initAccount() {
+        rbSelectAll.setSelected(false);
         rbSelectAll.setChecked(false);
         tvTotal.setText("￥ " + 0);
         tvPoint.setText("赠送积分:" + 0);
         tvBuy.setText("结算(0)");
         tvBuy.setBackgroundColor(mActivity.getResources().getColor(R.color.gray));
         tvBuy.setEnabled(false);
+
+        //将促销信息设置为无
+        tvPromoation.setText("无");
     }
 
     private void requestDataFromNet() {
@@ -156,7 +161,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
 
                 MyToast.show(App.application, "数据请求失败！");
 
-                    lslCart.setState(LoadStateLayout.STATE_ERROR);
+                lslCart.setState(LoadStateLayout.STATE_ERROR);
 
 
             }
@@ -216,15 +221,15 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     @Override
     public void onSelectedChange(List<Goods> selectedGoodsList, boolean isAllSelected) {
         rbSelectAll.setChecked(isAllSelected);
+        rbSelectAll.setSelected(isAllSelected);
         if (selectedGoodsList.size() == 0) {
             //如果没有选中商品 初始化底边栏信息
             initAccount();
-            //将促销信息设置为无
-            tvPromoation.setText("无");
+
             return;
         }
         //获取sku属性
-        String sku = StringUtils.getSku(selectedGoodsList);
+        sku = StringUtils.getSku(selectedGoodsList);
         //从网络上获取数据
         HttpParams params = new HttpParams().put("sku", sku);
 
@@ -290,10 +295,28 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         if (selected) {
             //全选
             adapter.selectAll();
+            //重新设置屏幕上可视的选择框
+            resetVisibileRadioButton();
         } else {
             //全不选
             adapter.selectEmpty();
         }
+    }
+
+    private void resetVisibileRadioButton() {
+        int firstVisiblePosition = lvCart.getFirstVisiblePosition();
+        int lastVisiblePosition = lvCart.getLastVisiblePosition();
+        for (int i = firstVisiblePosition; i <= lastVisiblePosition && i < cartList.size(); i++) {
+            ShoppingCarResponse.CartBean cart = cartList.get(i);
+            if ("0".equals(cart.getProduct().getNumber())) {
+                //将没有库存的条目selected属性设置为false
+                cart.setSelected(false);
+            } else {
+                //将没有库存的条目selected属性设置为true
+                cart.setSelected(true);
+            }
+        }
+
     }
 
     @Override

@@ -33,9 +33,9 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
     private List<String> mHotSearch;
     private List<String> mSearchHistory;
     //条目点击监听
-    private ItemOnClickListener listener;
+    private OnItemClickListener listener;
 
-    public void setItemOnClickListener(ItemOnClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
 
@@ -191,7 +191,7 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
                     return;
                 }
                 if (listener != null) {
-                    listener.onClick(itemName);
+                    listener.onItemClick(itemName);
                 }
                 break;
         }
@@ -214,8 +214,8 @@ public class SearchAdapter extends BaseAdapter implements View.OnClickListener {
         }
     }
 
-    public interface ItemOnClickListener {
-        void onClick(String itemName);
+    public interface OnItemClickListener {
+        void onItemClick(String itemName);
     }
 
 }

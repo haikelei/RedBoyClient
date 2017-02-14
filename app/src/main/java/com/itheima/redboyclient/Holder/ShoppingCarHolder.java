@@ -27,40 +27,45 @@ import java.util.List;
  */
 public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     //商品图片
-    ImageView ivPic;
+    private ImageView ivPic;
     //正常页面商品标题
-    TextView tvTitle;
+    private TextView tvTitle;
     //正常页面商品详情
-    TextView tvDetail;
+    private TextView tvDetail;
     //正常页面商品价格
-    TextView tvPrice;
+    private TextView tvPrice;
     //正常页面商品个数
-    TextView tvNum;
+    private TextView tvNum;
     //正常页面父控件
-    LinearLayout llNormal;
+    private LinearLayout llNormal;
     //编辑页面减少商品数量
-    TextView tvReduce;
+    private TextView tvReduce;
     //编辑页面商品数量
-    TextView tvEditNum;
+    private TextView tvEditNum;
     //编辑页面增加商品数量
-    TextView tvAdd;
+    private TextView tvAdd;
     //编辑页面商品详情
-    TextView tvEditDetail;
+    private TextView tvEditDetail;
     //编辑页面删除商品
-    TextView tvDelete;
+    private TextView tvDelete;
     //编辑页面父控件
-    LinearLayout llEdit;
+    private LinearLayout llEdit;
     //库存信息
-    TextView tvStock;
+    private TextView tvStock;
     //编辑按钮
-    TextView tvEdit;
+    private TextView tvEdit;
+    //条目根目录
 
-    //选择框
-    RadioButton rbSelect;
+    private RadioButton rbSelect;
     private ShoppingCarResponse.CartBean cart;
     private ShoppingCarResponse.CartBean.ProductBean product;
     private OnStatusChangeListener listener;
     private int colorGrayId = App.application.getResources().getColor(R.color.gray);
+
+
+    public void setOnStatusChangeListener(OnStatusChangeListener listener) {
+        this.listener = listener;
+    }
 
     public void setCart(ShoppingCarResponse.CartBean cart) {
         this.cart = cart;
@@ -72,10 +77,6 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
                 rbSelect.setChecked(selected);
             }
         });
-    }
-
-    public void setOnStatusChangeListener(OnStatusChangeListener listener) {
-        this.listener = listener;
     }
 
     public ShoppingCarHolder(View itemView) {
@@ -112,6 +113,7 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         tvAdd.setOnClickListener(this);
         tvReduce.setOnClickListener(this);
         rbSelect.setOnClickListener(this);
+
     }
 
     public void bindData() {
@@ -133,16 +135,16 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         int stockNum = Integer.parseInt(number);
         int buyLimit = product.getBuyLimit();
         int prodNum = cart.getProdNum();
-        if (stockNum > buyLimit && prodNum >= buyLimit) {
+        if (stockNum > buyLimit && prodNum > buyLimit) {
             //如果库存大于限购，购买的商品数量大于等于限购,重置购买的商品数量
 
             cart.setProdNum(buyLimit);
             //将最新商品数据传入数据库
             Goods goods = StringUtils.getGoods(cart);
             new ShoppingDBDao(App.application).add(goods);
-        } else if (stockNum < buyLimit && prodNum >= stockNum) {
+        } else if (stockNum < buyLimit && prodNum > stockNum) {
             //如果库存小于限购，购买的商品数量大于等于库存,重置购买的商品数量
-            cart.setProdNum(prodNum);
+            cart.setProdNum(stockNum);
             //将最新商品数据传入数据库
             Goods goods = StringUtils.getGoods(cart);
             new ShoppingDBDao(App.application).add(goods);
