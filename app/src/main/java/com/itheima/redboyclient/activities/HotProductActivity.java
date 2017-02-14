@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
@@ -183,6 +184,8 @@ public class HotProductActivity extends BaseActivity implements HttpLoader.HttpL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent = new Intent(HotProductActivity.this, GoodDetailActivity.class);
+        intent.putExtra("pId", list.get(position).getId()+"");
+        startActivity(intent);
     }
 }

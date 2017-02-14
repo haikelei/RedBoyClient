@@ -10,6 +10,7 @@ public class ConstantsRedBaby {
     public static final String URL_GOODDETAIL = URL_SERVER + "/product";
     public static final String URL_FLASH = URL_SERVER + "/limitbuy";
     public static final String URL_FAV = URL_SERVER + "/product/favorites";
+    public static final String URL_SETTLEMENTCENTER = URL_SERVER + "/checkout";
 
     public static final String URL_SEARCH = URL_SERVER + "/search";
     public static final String URL_LOGIN = URL_SERVER + "/login";
@@ -74,7 +75,8 @@ public class ConstantsRedBaby {
     public static final String URL_CANCEL = URL_SERVER + "/ordercancel";
     public static final int REQUEST_CODE_CANCEL = 66;
     public static final int REQUEST_CODE_BOOKMARK = 24;
-    public static final int REQUEST_CODE_FAV = 23;
 
+    public static final int REQUEST_CODE_FAV = 23;
+    public static final int REQUEST_SETTLEMENT_CENTER = 33;
 
 }

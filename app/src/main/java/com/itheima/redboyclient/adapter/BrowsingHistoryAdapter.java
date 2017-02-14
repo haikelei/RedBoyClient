@@ -46,7 +46,7 @@ public class BrowsingHistoryAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder= null;
         if(convertView == null){
-            convertView = View.inflate(parent.getContext(),R.layout.browsing_history,null);
+            convertView = View.inflate(activity,R.layout.browsing_history,null);
             viewHolder = new ViewHolder();
             viewHolder.pinlun = (TextView) convertView.findViewById(R.id.pinglun);
             viewHolder.iv_pic = (ImageView) convertView.findViewById(R.id.iv_pic);

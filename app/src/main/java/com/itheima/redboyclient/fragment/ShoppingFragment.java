@@ -1,6 +1,7 @@
 package com.itheima.redboyclient.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.activities.SettlementCenterActivity;
 import com.itheima.redboyclient.adapter.ShoppingCartListAdapter;
 import com.itheima.redboyclient.db.dao.ShoppingDBDao;
 import com.itheima.redboyclient.domain.Goods;
@@ -62,6 +64,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
     private View promotionRoot;
     private List<ShoppingCarResponse.CartBean> cartList;
     private ShoppingCartListAdapter adapter;
+    private String sku;
 
     @Override
     protected int getRootViewId() {
@@ -119,7 +122,7 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         lslCart.setState(LoadStateLayout.STATE_LOADING);
         // 从数据库获取购物车条目
         List<Goods> all = new ShoppingDBDao(App.application).findAll();
-        String sku = StringUtils.getSku(all);
+        sku = StringUtils.getSku(all);
         //String sku = null;
         if (TextUtils.isEmpty(sku)) {
             //空购物车
@@ -273,6 +276,9 @@ public class ShoppingFragment extends MainBaseFragment implements ShoppingCartLi
         switch (v.getId()) {
             case R.id.tv_buy:
                 MyToast.show(App.application, "结算");
+                Intent intent = new Intent(getContext(), SettlementCenterActivity.class);
+                intent.putExtra("sku", sku);
+                startActivity(intent);
                 break;
             case R.id.rb_select_all:
                 selectAllProduct();

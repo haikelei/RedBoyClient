@@ -4,16 +4,12 @@
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
@@ -24,40 +20,28 @@
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
     },
     {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
-    },
-    {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
@@ -68,8 +52,308 @@
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
@@ -80,12 +364,12 @@
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
@@ -96,52 +380,64 @@
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_dark.xml",
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
-    },
-    {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
@@ -172,16 +468,28 @@
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
@@ -192,16 +500,8 @@
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
-    },
-    {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
@@ -212,12 +512,12 @@
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
@@ -236,40 +536,20 @@
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
-        "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
-        "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
-        "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
-        "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
@@ -280,11 +560,19 @@
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
-        "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
     }
 ]

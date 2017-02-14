@@ -1,11 +1,23 @@
 [
     {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
@@ -18,6 +30,18 @@
     {
         "merged": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",

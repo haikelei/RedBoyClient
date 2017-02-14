@@ -1,5 +1,6 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
@@ -95,6 +96,7 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
         shelvesState = false;
         switch (view.getId()) {
             case R.id.back:
+                finish();
                 break;
             case R.id.sale:
                 saleState = true;
@@ -184,8 +186,8 @@ public class NewProductActivity extends BaseActivity implements HttpLoader.HttpL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        /*Intent intent = new Intent(getApplicationContext(), NewProductDetailActivity.class);
-        intent.putExtra("position",position);
-        startActivity(intent);*/
+        Intent intent = new Intent(NewProductActivity.this, GoodDetailActivity.class);
+        intent.putExtra("pId", list.get(position).getId()+"");
+        startActivity(intent);
     }
 }

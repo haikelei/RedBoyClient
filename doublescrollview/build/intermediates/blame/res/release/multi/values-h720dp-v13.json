@@ -1,5 +1,29 @@
 [
     {
+        "outputFile": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-h720dp\\values-h720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 66,
+                        "endOffset": 345
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "E:\\GIT\\git2\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-h720dp-v13\\values-h720dp-v13.xml",
         "map": [
             {
@@ -60,6 +84,54 @@
                 },
                 "from": {
                     "file": "E:\\studioapp\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-h720dp\\values-h720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 66,
+                        "endOffset": 345
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-h720dp\\values-h720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 66,
+                        "endOffset": 345
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-h720dp\\values-h720dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

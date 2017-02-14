@@ -48,6 +48,54 @@
         ]
     },
     {
+        "outputFile": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\sjk\\Desktop\\SJK\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 280,
+                        "endColumn": 55,
+                        "endOffset": 331
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "H:\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 280,
+                        "endColumn": 55,
+                        "endOffset": 331
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-port\\values-port.xml",
         "map": [
             {
@@ -60,6 +108,30 @@
                 },
                 "from": {
                     "file": "E:\\teacher\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 280,
+                        "endColumn": 55,
+                        "endOffset": 331
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\res\\merged\\release\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "E:\\GIT\\git4\\RedBoyClient\\doublescrollview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
