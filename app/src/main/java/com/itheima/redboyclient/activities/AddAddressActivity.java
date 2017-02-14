@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.android.volley.VolleyError;
@@ -63,10 +62,9 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
     EditText addressEdtx;
     @InjectView(R.id.zipcode_edtx)
     EditText zipcodeEdtx;
-    @InjectView(R.id.checkbox)
-    CheckBox checkbox;
 
     private int id;
+    private int isDefault;
 
     @Override
     protected int initContentView() {
@@ -100,7 +98,7 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
         String addressArea = getIntent().getStringExtra("addressArea");
         String addressDetail = getIntent().getStringExtra("addressDetail");
         String zipCode = getIntent().getStringExtra("zipCode");
-        int isDefault = getIntent().getIntExtra("isDefault",0);
+        isDefault = getIntent().getIntExtra("isDefault",0);
 
         receiverEdtx.setText(name);
         phoneEdtx.setText(phoneNumber);
@@ -109,11 +107,6 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
         areaEdtx.setText(addressArea);
         addressEdtx.setText(addressDetail);
         zipcodeEdtx.setText(zipCode);
-        if (isDefault == 0) {
-            checkbox.setChecked(false);
-        }else {
-            checkbox.setChecked(true);
-        }
     }
 
     @Override
@@ -141,7 +134,7 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
                         .put("addressArea", areaEdtx.getText().toString().trim())
                         .put("addressDetail", addressEdtx.getText().toString().trim())
                         .put("zipCode", zipcodeEdtx.getText().toString().trim())
-                        .put("isDefault", checkbox.isChecked() ? 1 + "" : 0 + "");
+                        .put("isDefault", 0 + "");
             }else {
                 params.put("id",id + "")
                         .put("name", receiverEdtx.getText().toString().trim())
@@ -151,7 +144,7 @@ public class AddAddressActivity extends BaseActivity implements HttpLoader.HttpL
                         .put("addressArea", areaEdtx.getText().toString().trim())
                         .put("addressDetail", addressEdtx.getText().toString().trim())
                         .put("zipCode", zipcodeEdtx.getText().toString().trim())
-                        .put("isDefault", checkbox.isChecked() ? 1 + "" : 0 + "");
+                        .put("isDefault", isDefault + "");
             }
 
             App.HL.post(ConstantsRedBaby.URL_ADDRESSSAVE, params, AddressResponse.class,

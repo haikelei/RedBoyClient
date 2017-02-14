@@ -1,8 +1,8 @@
 package com.itheima.redboyclient.utils;
 
 public class ConstantsRedBaby {
-//    public static final String URL_SERVER = "http://192.168.56.1:8080/RedBabyServer";
-public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer";
+   public static final String URL_SERVER = "http://192.168.56.1:8080/RedBabyServer";
+//public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer";
 
     public static final String URL_TOPIC = URL_SERVER + "/topic";
     public static final String URL_REGIST = URL_SERVER + "/register";
@@ -23,8 +23,6 @@ public static final String URL_SERVER = "http://192.168.16.45:8080/RedBabyServer
     public static final String URL_NEWPRODUCT = URL_SERVER + "/newproduct";
     public static final String URL_HOTPRODUCT = URL_SERVER + "/hotproduct";
     public static final String URL_SHOPPING_CAR = URL_SERVER + "/cart";
-    public static final String URL_HELP= URL_SERVER + "/help";
-    public static final String URL_HELP_DETAIL= URL_SERVER + "/helpDetail";
     public static final String URL_ADDRESSSAVE= URL_SERVER + "/addresssave";
     public static final String URL_HELP = URL_SERVER + "/help";
     public static final String URL_HELP_DETAIL = URL_SERVER + "/helpDetail";

@@ -52,14 +52,15 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
 
     private static final String TAG = "AddressActivity";
-    @InjectView(R.id.add_button)
-    Button addButton;
+
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.category_recyclerview)
     RecyclerView categoryRecyclerview;
     @InjectView(R.id.loadstatelayout)
     LoadStateLayout loadstatelayout;
+    @InjectView(R.id.address_button)
+    Button addressButton;
 
     private AddressAdapter adapter;
     private AddressResponse appAddressResponse;
@@ -96,9 +97,10 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
 
     @Override
     protected void initData() {
-        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
+        HttpParams params = new HttpParams().addHeader("userid", App.SP.getString("userid", ""));
 
-        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST, params, AddressResponse.class,
+                ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST, this, false).setTag(this);
     }
 
     @Override
@@ -107,38 +109,34 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
         // TODO: add setContentView(...) invocation
         ButterKnife.inject(this);
         list = new ArrayList<>();
-        adapter = new AddressAdapter(this,list);
+        adapter = new AddressAdapter(this, list);
         categoryRecyclerview.setAdapter(adapter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG,"99999999999999999999");
-        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
-        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
-    }
-
-    @OnClick(R.id.add_button)
-    public void onClick() {
-        Intent intent = new Intent(AddressActivity.this, AddAddressActivity.class);
-        startActivity(intent);
+        Log.i(TAG, "99999999999999999999");
+        HttpParams params = new HttpParams().addHeader("userid", App.SP.getString("userid", ""));
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST, params, AddressResponse.class,
+                ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST, this, false).setTag(this);
     }
 
 
     @Override
     public void onGetResponseSuccess(int requestCode, IResponse response) {
-        Log.i(TAG,"走了这!!!!!!!!!!!!!!!!!!!!!!");
+        Log.i(TAG, "走了这!!!!!!!!!!!!!!!!!!!!!!");
         handleTopicResponse((AddressResponse) response);
     }
 
     private void handleTopicResponse(AddressResponse response) {
         appAddressResponse = response;
 
-        if (appAddressResponse.getAddressList() != null && appAddressResponse.getAddressList().size() != 0) {
-                list.clear();
-                list.addAll(appAddressResponse.getAddressList());
-                adapter.notifyDataSetChanged();
+        if (appAddressResponse.getAddressList() != null && appAddressResponse.getAddressList()
+                .size() != 0) {
+            list.clear();
+            list.addAll(appAddressResponse.getAddressList());
+            adapter.notifyDataSetChanged();
 
 
 //            adapter.setOnItemClickListen(new AddressAdapter.OnItemClickListener() {
@@ -167,7 +165,14 @@ public class AddressActivity extends BaseActivity implements HttpLoader.HttpList
     }
 
     public void refresh() {
-        HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",""));
-        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST,params, AddressResponse.class,ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST,this,false).setTag(this);
+        HttpParams params = new HttpParams().addHeader("userid", App.SP.getString("userid", ""));
+        App.HL.get(ConstantsRedBaby.URL_ADDRESSSLIST, params, AddressResponse.class,
+                ConstantsRedBaby.REQUEST_CODE_ADDRESSSLIST, this, false).setTag(this);
+    }
+
+    @OnClick(R.id.address_button)
+    public void onClick() {
+        Intent intent = new Intent(AddressActivity.this, AddAddressActivity.class);
+        startActivity(intent);
     }
 }

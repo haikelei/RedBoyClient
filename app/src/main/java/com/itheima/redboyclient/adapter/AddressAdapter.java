@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,6 +71,12 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
         holder.address_listitem_ads_text.setText(bean.getProvince() + bean.getCity() + bean.getAddressArea() + bean.getAddressDetail());
         holder.address_listitem_receiver_text.setText(bean.getName());
         holder.address_listitem_phone_text.setText(bean.getPhoneNumber());
+        holder.checkbox.setChecked(bean.getIsDefault() == 0?false:true);
+        if (bean.getIsDefault() == 0) {
+            holder.checkbox.setText("设置默认");
+        }else {
+            holder.checkbox.setText("默认地址");
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,98 +85,89 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
                 }
             }
         });
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.checkbox.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(final View v) {
+            public void onClick(View v) {
+                HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
+                params.put("id",bean.getId() + "");
+                App.HL.get(ConstantsRedBaby.URL_ADDRESSDEFAULT, params, AddressResponse.class, ConstantsRedBaby.REQUEST_CODE_ADDRESSDEFAULT, new HttpLoader.HttpListener() {
+
+                    @Override
+                    public void onGetResponseSuccess(int requestCode, IResponse response) {
+
+                        ToastUtil.showToast("设置默认地址成功");
+                        addressActivity.refresh();
+
+                    }
+
+                    @Override
+                    public void onGetResponseError(int requestCode, VolleyError error) {
+                        ToastUtil.showToast("设置默认地址失败");
+                    }
+                }).setTag(this);
+            }
+        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 new AlertDialog.Builder(v.getContext())
-                    .setCancelable(false)
-                    .setTitle("请选择")
-                    .setItems(new String[]{"        修改地址", "        删除地址", "        设为默认地址"}, new DialogInterface.OnClickListener() {
+                        .setCancelable(false)
+                        .setTitle("请选择")
+                        .setMessage("请问是否删除地址?")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            switch (which) {
-                                case 0:
-                                    Intent intent = new Intent(addressActivity, AddAddressActivity.class);
-                                    intent.putExtra("id",bean.getId())
-                                            .putExtra("name", bean.getName())
-                                            .putExtra("phoneNumber", bean.getPhoneNumber())
-                                            .putExtra("province", bean.getProvince())
-                                            .putExtra("city", bean.getCity())
-                                            .putExtra("addressArea", bean.getAddressArea())
-                                            .putExtra("addressDetail", bean.getAddressDetail())
-                                            .putExtra("zipCode", bean.getZipCode())
-                                            .putExtra("isDefault", bean.getIsDefault());
-                                    v.getContext().startActivity(intent);
-                                    break;
-                                case 1:
-                                    new AlertDialog.Builder(v.getContext())
-                                            .setCancelable(false)
-                                            .setTitle("请选择")
-                                            .setMessage("请问是否删除地址?")
-                                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(final DialogInterface dialog, int
+                                    which) {
+                                HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
+                                params.put("id",bean.getId() + "");
+                                App.HL.get(ConstantsRedBaby.URL_ADDRESSDELETE, params, AddressResponse.class, ConstantsRedBaby.REQUEST_CODE_ADDRESSDELETE, new HttpLoader.HttpListener() {
 
-                                                @Override
-                                                public void onClick(final DialogInterface dialog, int
-                                                        which) {
-                                                    HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
-                                                    params.put("id",bean.getId() + "");
-                                                    App.HL.get(ConstantsRedBaby.URL_ADDRESSDELETE, params, AddressResponse.class, ConstantsRedBaby.REQUEST_CODE_ADDRESSDELETE, new HttpLoader.HttpListener() {
+                                    @Override
+                                    public void onGetResponseSuccess(int requestCode, IResponse response) {
+                                        dialog.dismiss();
+                                        ToastUtil.showToast("删除成功");
+                                        addressActivity.refresh();
+                                    }
 
-                                                        @Override
-                                                        public void onGetResponseSuccess(int requestCode, IResponse response) {
-                                                            dialog.dismiss();
-                                                            ToastUtil.showToast("删除成功");
-                                                            addressActivity.refresh();
-                                                        }
-
-                                                        @Override
-                                                        public void onGetResponseError(int requestCode, VolleyError error) {
-                                                            ToastUtil.showToast("删除失败");
-                                                        }
-                                                    }).setTag(this);
-                                                }
-                                            })
-                                            .setNegativeButton("取消",null)
-                                            .show();
-                                    break;
-                                case 2:
-                                    new AlertDialog.Builder(v.getContext())
-                                            .setCancelable(false)
-                                            .setTitle("请选择")
-                                            .setMessage("请问是否设为默认地址?")
-                                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-                                                @Override
-                                                public void onClick(final DialogInterface dialog, int
-                                                        which) {
-                                                    HttpParams params = new HttpParams().addHeader("userid",App.SP.getString("userid",null));
-                                                    params.put("id",bean.getId() + "");
-                                                    App.HL.get(ConstantsRedBaby.URL_ADDRESSDEFAULT, params, AddressResponse.class, ConstantsRedBaby.REQUEST_CODE_ADDRESSDEFAULT, new HttpLoader.HttpListener() {
-
-                                                        @Override
-                                                        public void onGetResponseSuccess(int requestCode, IResponse response) {
-                                                            dialog.dismiss();
-                                                            ToastUtil.showToast("设置默认地址成功");
-                                                            addressActivity.refresh();
-                                                        }
-
-                                                        @Override
-                                                        public void onGetResponseError(int requestCode, VolleyError error) {
-                                                            ToastUtil.showToast("设置默认地址失败");
-                                                        }
-                                                    }).setTag(this);
-                                                }
-                                            })
-                                            .setNegativeButton("取消",null)
-                                            .show();
-                                    break;
+                                    @Override
+                                    public void onGetResponseError(int requestCode, VolleyError error) {
+                                        ToastUtil.showToast("删除失败");
+                                    }
+                                }).setTag(this);
                             }
-                        }
-                    })
-                    .setNegativeButton("取消", null)
-                    .show();
-                return true;
+                        })
+                        .setNegativeButton("取消",null)
+                        .show();
+            }
+        });
+        holder.modify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                new AlertDialog.Builder(v.getContext())
+                        .setCancelable(false)
+                        .setTitle("请选择")
+                        .setMessage("请问是否修改地址?")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(final DialogInterface dialog, int
+                                    which) {
+                                Intent intent = new Intent(addressActivity, AddAddressActivity.class);
+                                intent.putExtra("id",bean.getId())
+                                        .putExtra("name", bean.getName())
+                                        .putExtra("phoneNumber", bean.getPhoneNumber())
+                                        .putExtra("province", bean.getProvince())
+                                        .putExtra("city", bean.getCity())
+                                        .putExtra("addressArea", bean.getAddressArea())
+                                        .putExtra("addressDetail", bean.getAddressDetail())
+                                        .putExtra("zipCode", bean.getZipCode())
+                                        .putExtra("isDefault", bean.getIsDefault());
+                                v.getContext().startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("取消",null)
+                        .show();
             }
         });
 
@@ -199,6 +197,9 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
         TextView address_listitem_phone_text;
         ImageView address_arror_img;
         TextView address_listitem_ads_text;
+        CheckBox checkbox;
+        TextView delete;
+        TextView modify;
 
         public AddressViewHolder(View itemView) {
             super(itemView);
@@ -206,6 +207,9 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
             address_listitem_ads_text = (TextView) itemView.findViewById(R.id.address_listitem_ads_text);
             address_listitem_phone_text = (TextView) itemView.findViewById(R.id.address_listitem_phone_text);
             address_listitem_receiver_text = (TextView) itemView.findViewById(R.id.address_listitem_receiver_text);
+            checkbox = (CheckBox) itemView.findViewById(R.id.checkbox);
+            delete = (TextView) itemView.findViewById(R.id.delete);
+            modify = (TextView) itemView.findViewById(R.id.modify);
         }
     }
 
