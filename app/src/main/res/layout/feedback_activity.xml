@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="反馈内容(您可以输入对商品以及客户端的建议和意见)"/>
+
     <EditText
         android:gravity="top"
         android:layout_marginLeft="8dp"
@@ -48,6 +49,7 @@
         android:textSize="20sp"
         >
     </EditText>
+
     <TextView
         android:textSize="18sp"
         android:layout_marginLeft="8dp"

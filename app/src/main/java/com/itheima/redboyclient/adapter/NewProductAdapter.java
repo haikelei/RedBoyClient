@@ -1,9 +1,7 @@
 package com.itheima.redboyclient.adapter;
 
-import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,7 +45,6 @@ public class NewProductAdapter extends BaseAdapter {
         viewHolder.market_price.setText(newList.get(position).getMarketPrice() + "元");
         viewHolder.vip_price.setText(newList.get(position).getPrice()+"元");
         App.HL.display(viewHolder.ivIcon, ConstantsRedBaby.URL_SERVER + newList.get(position).getPic());
-        setAnim(convertView);
         return convertView;
     }
 
@@ -71,20 +68,5 @@ public class NewProductAdapter extends BaseAdapter {
            market_price = (TextView) convertView.findViewById(R.id.market_price);
            vip_price = (TextView) convertView.findViewById(R.id.vip_price);
         }
-    }
-
-    public void setAnim(final View view) {
-        ValueAnimator animator = ValueAnimator.ofFloat(0.5f, 1.0f);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                Float value = (Float) valueAnimator.getAnimatedValue();
-                view.setScaleX(value);
-                view.setScaleY(value);
-            }
-        });
-        animator.setDuration(400);
-        animator.setInterpolator(new OvershootInterpolator());
-        animator.start();
     }
 }

@@ -1,6 +1,5 @@
 package com.itheima.redboyclient.activities;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -43,7 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected SharedPreferences sp;
 
 
-
     protected SharedPreferences.Editor edit;
     protected FragmentManager fm;
 
@@ -64,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);//隐藏标题
         //界面中如果有EditText，默认隐藏输入法
         getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //初始化通用的SP&EDIT
         sp = App.SP;
         edit = App.EDIT;
