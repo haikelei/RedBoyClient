@@ -12,8 +12,11 @@ import android.widget.TextView;
 
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
+import com.itheima.redboyclient.db.dao.ShoppingDBDao;
+import com.itheima.redboyclient.domain.Goods;
 import com.itheima.redboyclient.net.resp.ShoppingCarResponse;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.utils.StringUtils;
 
 import org.senydevpkg.utils.MyToast;
 
@@ -130,9 +133,21 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         int stockNum = Integer.parseInt(number);
         int buyLimit = product.getBuyLimit();
         int prodNum = cart.getProdNum();
-        prodNum = prodNum < stockNum ? prodNum : stockNum;
-        prodNum = prodNum < buyLimit ? prodNum : buyLimit;
-        cart.setProdNum(prodNum);
+        if (stockNum > buyLimit && prodNum >= buyLimit) {
+            //如果库存大于限购，购买的商品数量大于等于限购,重置购买的商品数量
+
+            cart.setProdNum(buyLimit);
+            //将最新商品数据传入数据库
+            Goods goods = StringUtils.getGoods(cart);
+            new ShoppingDBDao(App.application).add(goods);
+        } else if (stockNum < buyLimit && prodNum >= stockNum) {
+            //如果库存小于限购，购买的商品数量大于等于库存,重置购买的商品数量
+            cart.setProdNum(prodNum);
+            //将最新商品数据传入数据库
+            Goods goods = StringUtils.getGoods(cart);
+            new ShoppingDBDao(App.application).add(goods);
+        }
+
     }
 
     private void checkStock() {
@@ -249,6 +264,9 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         } else {
             //增加商品数量
             cart.setProdNum(prodNum + 1);
+            //将最新商品数据传入数据库
+            Goods goods = StringUtils.getGoods(cart);
+            new ShoppingDBDao(App.application).add(goods);
             //刷新编辑页面
             switchEditPager();
         }
@@ -269,6 +287,9 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         }
         //减少商品数量
         cart.setProdNum(prodNum - 1);
+        //将最新商品数据传入数据库
+        Goods goods = StringUtils.getGoods(cart);
+        new ShoppingDBDao(App.application).add(goods);
         //刷新编辑页面
         switchEditPager();
         //在选中状态下通知页面刷新结算数据
@@ -284,6 +305,9 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                //删除数据库数据
+                Goods goods = StringUtils.getGoods(cart);
+                new ShoppingDBDao(App.application).delete(goods);
                 if (listener != null) {
                     //通知界面条目被删除
                     listener.onDeleteCart(cart);
@@ -317,17 +341,6 @@ public class ShoppingCarHolder extends RecyclerView.ViewHolder implements View.O
         }
 
     }
-
-//    @Override
-//    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//
-//        cart.setSelected(isChecked);
-//        if (listener != null) {
-//            //通知adapter条目被选中
-//            listener.onSelectedChange();
-//        }
-//
-//    }
 
     public interface OnStatusChangeListener {
         void onDeleteCart(ShoppingCarResponse.CartBean cart);

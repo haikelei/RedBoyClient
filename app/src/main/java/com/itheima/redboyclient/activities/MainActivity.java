@@ -1,9 +1,8 @@
 package com.itheima.redboyclient.activities;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -57,6 +56,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     private int[] titleIds = {R.string.menu_home, R.string.menu_search, R.string.menu_classify, R.string.menu_shopping, R.string.menu_more};
     private BadgeItem numberBadgeItem;
     private BottomNavigationItem item4;
+    private int prePosition;
 
     @Override
     protected int initContentView() {
@@ -71,6 +71,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         //initFirstFragment();
         onTabSelected(0);
         EventBus.getDefault().register(this);
+        showBadgeItem();
 
     }
 
@@ -97,7 +98,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 .setBorderWidth(0)
                 .setBackgroundColorResource(R.color.colorPrimary)
                 .setHideOnSelect(false)
-                .hide();
+                .show();
 
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.home, titleIds[0]));
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.search, titleIds[1]));
@@ -131,18 +132,28 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     //小圆点的限时
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEventMainThread(EventBean bean) {
+        showBadgeItem();
+    }
+
+    private void showBadgeItem() {
         ShoppingDBDao dao = new ShoppingDBDao(this);
         ArrayList<Goods> list = (ArrayList<Goods>) dao.findAll();
-        Log.e(TAG, "111onMessageEventMainThread: "+list.size() );
         int goodNum = 0;
         for (Goods good : list) {
             goodNum += good.getProductNum();
         }
-        Log.e(TAG, "222onMessageEventMainThread: "+goodNum );
-
+        if (goodNum > 99) {
+            numberBadgeItem.setText("99+");
+            numberBadgeItem.show(true);
+        } else if (goodNum > 0) {
+            numberBadgeItem.setText(goodNum + "");
+            numberBadgeItem.show(true);
+        } else {
+            numberBadgeItem.hide(true);
+        }
         numberBadgeItem.setText(goodNum+"").show();
-        item4.setBadgeItem(numberBadgeItem);
-        bottomNavigationBar.refreshDrawableState();
+//        item4.setBadgeItem(numberBadgeItem);
+//        bottomNavigationBar.refreshDrawableState();
     }
 
 
@@ -173,7 +184,17 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 bean = CategoryResponse.class;
                 break;
             case ConstantsRedBaby.REQUEST_CODE_SHOPPING:
-                //购物车页面需要先验证登陆 由自己访问网络
+                //验证登陆
+                //TODO 判断登陆
+                String userId = App.getUserId();
+                if ("".equals(userId)) {
+                    //切回原来的fragment
+                    bottomNavigationBar.selectTab(prePosition);
+                    //显示需要登录
+                    startActivity(new Intent(this, LoginActivity.class));
+                    MyToast.show(this,"请先登录");
+                    return;
+                }
             case 4:
                 //更多页面不需要访问网络
                 FragmentTransaction transaction = fm.beginTransaction();
@@ -203,6 +224,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     @Override
     public void onTabUnselected(int position) {
         //fragment从选中状态到未选中状态，隐藏fragment
+        prePosition = position;
         fm.beginTransaction().hide(FragmentFactory.getFragment(position)).commit();
     }
 
@@ -262,5 +284,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     protected void onStop() {
         super.onStop();
         App.HL.cancelRequest(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
