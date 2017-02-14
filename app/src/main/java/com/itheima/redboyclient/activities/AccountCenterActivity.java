@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,7 +16,6 @@ import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.UserInfoResponse;
 import com.itheima.redboyclient.present.Logout;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
-import com.itheima.redboyclient.utils.ToastUtil;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -180,10 +177,12 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
                 startActivity(MyOrderActivity.class,false);
                 break;
             case R.id.address_manage_rl:  //地址管理点击
+                Intent intent = new Intent(AccountCenterActivity.this,AddressActivity.class);
+                startActivity(intent);
                 break;
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;
-            case R.id.recent_browse_rl: //收藏夹点击
+           case R.id.recent_browse_rl: //收藏夹点击
                 startActivity(new Intent(this,BookmarksActivity.class));
                 break;
         }
