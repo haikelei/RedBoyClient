@@ -18,6 +18,7 @@ import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.UserInfoResponse;
 import com.itheima.redboyclient.present.Logout;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
+import com.itheima.redboyclient.utils.ToastUtil;
 
 import org.senydevpkg.net.HttpLoader;
 import org.senydevpkg.net.HttpParams;
@@ -62,7 +63,10 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
     private String username;
     private UserInfoResponse mUserInfoResponse;
     String userId;
+    String bouns;
     boolean islogin;
+    String name;
+    String levels;
     @Override
     protected int initContentView() {
         return R.layout.accountcenter_activity;
@@ -96,8 +100,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
          islogin = App.SP.getBoolean("islogin", false);
         if (islogin) {
             userId = App.SP.getString("userid",null);
-        } else {
-            return;
         }
         Log.d(TAG, "initData: ==============" + userId);
         HttpParams params = new HttpParams();
@@ -178,8 +180,6 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
                 startActivity(MyOrderActivity.class,false);
                 break;
             case R.id.address_manage_rl:  //地址管理点击
-                Intent intent = new Intent(AccountCenterActivity.this,AddressActivity.class);
-                startActivity(intent);
                 break;
             case R.id.my_favorite_rl:   //礼品卡点击
                 break;
@@ -211,8 +211,17 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
         if ( mUserInfoResponse!= null) {
             Log.d(TAG, "handleLoginResopnse: ----------" + mUserInfoResponse.toString());
             String name = App.SP.getString("username",null);
-            String levels = mUserInfoResponse.userInfo.level;
-            String bouns = mUserInfoResponse.userInfo.bonus + "";
+            if (TextUtils.isEmpty(name)) {
+                return;
+            }
+            //String levels = mUserInfoResponse.userInfo.level;
+          //  String bouns = mUserInfoResponse.userInfo.bonus + "";
+            if (mUserInfoResponse.userInfo != null) {
+                bouns = mUserInfoResponse.userInfo.bonus + "";
+            }
+            if (mUserInfoResponse.userInfo != null) {
+                levels =  mUserInfoResponse.userInfo.level;
+            }
             if (!TextUtils.isEmpty(name)) {
                 acUsername.setText(name);
             }
@@ -223,19 +232,19 @@ public class AccountCenterActivity extends BaseActivity implements HttpLoader.Ht
             if (!TextUtils.isEmpty(bouns)) {
                 integral.setText(bouns);
              }
-
+    if (mUserInfoResponse.userInfo == null) {
+        return;
+    }
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.orderCount)) {
                 myOrderCount.setText("(" + mUserInfoResponse.userInfo.orderCount + ")");
-                App.EDIT.putString("orderCount",mUserInfoResponse.userInfo.orderCount);
+                App.EDIT.putString("orderCount",mUserInfoResponse.userInfo.orderCount).commit();
             }
 
             if (!TextUtils.isEmpty(mUserInfoResponse.userInfo.favoritesCount)) {
                 favoritesCounts.setText("(" + mUserInfoResponse.userInfo.favoritesCount + ")");
                 App.EDIT.putString("favoritesCount",mUserInfoResponse.userInfo.favoritesCount);
+                }
             }
-
-            }
-
         }
 
 

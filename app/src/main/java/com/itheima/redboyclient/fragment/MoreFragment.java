@@ -59,8 +59,9 @@ public class MoreFragment extends MainBaseFragment {
         switch (view.getId()) {
             case R.id.my_account_rl:
                 // TODO: 2017/2/10  开启账户中心的activity
-                boolean islogin = App.SP.getBoolean("islogin",false);
-                if (islogin) {
+                //boolean islogin = App.SP.getBoolean("islogin",false);
+               String islogin= App.getUserId();
+                if (islogin != "") {
                     startActivity(new Intent(getActivity(), AccountCenterActivity.class));
                 } else {
                     startActivity(new Intent(getActivity(), LoginActivity.class));

@@ -71,9 +71,8 @@ public class ConstantsRedBaby {
     public static final int REQUEST_CODE_ADDRESSDELETE= 100;
     public static final int REQUEST_CODE_ADDRESSDEFAULT= 101;
     public static final int REQUEST_CODE_ORDERDETAIL = 25;
-
-
-
+    public static final String URL_CANCEL = URL_SERVER + "/ordercancel";
+    public static final int REQUEST_CODE_CANCEL = 66;
     public static final int REQUEST_CODE_BOOKMARK = 24;
     public static final int REQUEST_CODE_FAV = 23;
 

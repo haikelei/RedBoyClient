@@ -11,6 +11,7 @@ import com.android.volley.VolleyError;
 import com.itheima.redboyclient.App;
 import com.itheima.redboyclient.R;
 import com.itheima.redboyclient.net.resp.MyOrderResponse;
+import com.itheima.redboyclient.present.CancelOrder;
 import com.itheima.redboyclient.utils.ConstantsRedBaby;
 
 import org.senydevpkg.net.HttpLoader;
@@ -119,6 +120,19 @@ public class MyOrderActivity extends BaseActivity implements HttpLoader.HttpList
     @Override
     protected void initListener() {
         super.initListener();
+        cancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CancelOrder order = new CancelOrder();
+                order.cancle();
+                order.setmFinish(new CancelOrder.Finish() {
+                    @Override
+                    public void isFinish() {
+                        finish();
+                    }
+                });
+            }
+        });
         orderToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,9 +147,9 @@ public class MyOrderActivity extends BaseActivity implements HttpLoader.HttpList
         ordersumbit();
         String orderCount = App.SP.getString("orderCount",null);
         if (orderCount.equals("0")) {
-            normalOrder.setVisibility(View.VISIBLE);
-        } else {
             noOrder.setVisibility(View.VISIBLE);
+        } else {
+            normalOrder.setVisibility(View.VISIBLE);
         }
     }
 
@@ -161,7 +175,7 @@ public class MyOrderActivity extends BaseActivity implements HttpLoader.HttpList
                 orderId = myOrderResponse.orderInfo.orderId;//订单号
                 mOrderId.setText("订单号:     " + orderId);
 
-        }
+            }
             if (myOrderResponse.addressInfo != null) {
                 name = myOrderResponse.addressInfo.name;  //收件人姓名
                 orderTest.setText(name);
@@ -173,7 +187,7 @@ public class MyOrderActivity extends BaseActivity implements HttpLoader.HttpList
             }
 
             if (myOrderResponse.orderInfo != null) {
-               states = myOrderResponse.orderInfo.status;
+                states = myOrderResponse.orderInfo.status;
                 statue.setText("订单状态 :      " + states);
                 goods.setText("送货方式 :      " + "快递");
                 pay.setText("支付方式 :      " + "支付宝");
